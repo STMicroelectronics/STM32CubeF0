@@ -601,6 +601,11 @@
               <FileType>1</FileType>
               <FilePath>..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_pcd_ex.c</FilePath>
             </File>
+            <File>
+              <FileName>stm32f0xx_ll_usb.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_ll_usb.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

@@ -28,7 +28,7 @@
 		<link>
 			<name>Doc/readme.txt</name>
 			<type>1</type>
-			<locationURI>PARENT-2-PROJECT_LOC../readme.txt</locationURI>
+			<locationURI>PARENT-2-PROJECT_LOC/readme.txt</locationURI>
 		</link>
 		<link>
 			<name>Application/SW4STM32/startup_stm32f072xb.s</name>
@@ -149,6 +149,11 @@
 			<name>Drivers/STM32F0xx_HAL_Driver/stm32f0xx_hal_uart_ex.c</name>
 			<type>1</type>
 			<locationURI>PARENT-7-PROJECT_LOC/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_uart_ex.c</locationURI>
+		</link>
+		<link>
+			<name>Drivers/STM32F0xx_HAL_Driver/stm32f0xx_ll_usb.c</name>
+			<type>1</type>
+			<locationURI>PARENT-7-PROJECT_LOC/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_ll_usb.c</locationURI>
 		</link>
 		<link>
 			<name>Drivers/BSP/STM32072B_EVAL/stm32072b_eval.c</name>

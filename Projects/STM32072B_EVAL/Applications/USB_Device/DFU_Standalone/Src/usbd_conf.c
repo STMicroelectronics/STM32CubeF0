@@ -6,47 +6,22 @@
   ******************************************************************************
   * @attention
   *
-  * <h2><center>&copy; Copyright (c) 2016 STMicroelectronics International N.V. 
+  * <h2><center>&copy; Copyright (c) 2015 STMicroelectronics.
   * All rights reserved.</center></h2>
   *
-  * Redistribution and use in source and binary forms, with or without 
-  * modification, are permitted, provided that the following conditions are met:
-  *
-  * 1. Redistribution of source code must retain the above copyright notice, 
-  *    this list of conditions and the following disclaimer.
-  * 2. Redistributions in binary form must reproduce the above copyright notice,
-  *    this list of conditions and the following disclaimer in the documentation
-  *    and/or other materials provided with the distribution.
-  * 3. Neither the name of STMicroelectronics nor the names of other 
-  *    contributors to this software may be used to endorse or promote products 
-  *    derived from this software without specific written permission.
-  * 4. This software, including modifications and/or derivative works of this 
-  *    software, must execute solely and exclusively on microcontroller or
-  *    microprocessor devices manufactured by or for STMicroelectronics.
-  * 5. Redistribution and use of this software other than as permitted under 
-  *    this license is void and will automatically terminate your rights under 
-  *    this license. 
-  *
-  * THIS SOFTWARE IS PROVIDED BY STMICROELECTRONICS AND CONTRIBUTORS "AS IS" 
-  * AND ANY EXPRESS, IMPLIED OR STATUTORY WARRANTIES, INCLUDING, BUT NOT 
-  * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A 
-  * PARTICULAR PURPOSE AND NON-INFRINGEMENT OF THIRD PARTY INTELLECTUAL PROPERTY
-  * RIGHTS ARE DISCLAIMED TO THE FULLEST EXTENT PERMITTED BY LAW. IN NO EVENT 
-  * SHALL STMICROELECTRONICS OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
-  * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
-  * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, 
-  * OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF 
-  * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING 
-  * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
-  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  * This software component is licensed by ST under Ultimate Liberty license
+  * SLA0044, the "License"; You may not use this file except in compliance with
+  * the License. You may obtain a copy of the License at:
+  *                             www.st.com/SLA0044
   *
   ******************************************************************************
   */
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f0xx_hal.h"
-#include "usbd_core.h"
 #include "main.h"
+#include "usbd_core.h"
+#include "usbd_dfu.h"
 /* Private typedef -----------------------------------------------------------*/
 /* Private define ------------------------------------------------------------*/
 /* Private macro -------------------------------------------------------------*/
@@ -67,10 +42,10 @@ PCD_HandleTypeDef hpcd;
 void HAL_PCD_MspInit(PCD_HandleTypeDef *hpcd)
 {
   GPIO_InitTypeDef  GPIO_InitStruct;
-  
+
   /* Enable the GPIOA clock */
   __HAL_RCC_GPIOA_CLK_ENABLE();
-  
+
   /* Configure USB DM and DP pins.
      This is optional, and maintained only for user guidance. */
   GPIO_InitStruct.Pin = (GPIO_PIN_11 | GPIO_PIN_12);
@@ -78,14 +53,14 @@ void HAL_PCD_MspInit(PCD_HandleTypeDef *hpcd)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
   GPIO_InitStruct.Alternate = GPIO_AF2_USB;
-  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct); 
-  
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
   /* Enable USB FS Clock */
   __HAL_RCC_USB_CLK_ENABLE();
-  
+
   /* Set USB FS Interrupt priority */
   HAL_NVIC_SetPriority(USB_IRQn, 3, 0);
-  
+
   /* Enable USB FS Interrupt */
   HAL_NVIC_EnableIRQ(USB_IRQn);
 }
@@ -153,7 +128,7 @@ void HAL_PCD_SOFCallback(PCD_HandleTypeDef *hpcd)
   * @retval None
   */
 void HAL_PCD_ResetCallback(PCD_HandleTypeDef *hpcd)
-{   
+{
   USBD_LL_SetSpeed((USBD_HandleTypeDef*)hpcd->pData, USBD_SPEED_FULL);
   /* Reset Device */
   USBD_LL_Reset((USBD_HandleTypeDef*)hpcd->pData);
@@ -179,7 +154,7 @@ void HAL_PCD_ResumeCallback(PCD_HandleTypeDef *hpcd)
 
 /**
   * @brief  SOF callback.
-  * @param  hpcd: PCD handle 
+  * @param  hpcd: PCD handle
   * @param  epnum: Endpoint Number
   * @retval None
   */
@@ -190,7 +165,7 @@ void HAL_PCD_ISOOUTIncompleteCallback(PCD_HandleTypeDef *hpcd, uint8_t epnum)
 
 /**
   * @brief  SOF callback.
-  * @param  hpcd: PCD handle 
+  * @param  hpcd: PCD handle
   * @param  epnum: Endpoint Number
   * @retval None
   */
@@ -229,11 +204,10 @@ void HAL_PCD_DisconnectCallback(PCD_HandleTypeDef *hpcd)
   * @retval USBD Status
   */
 USBD_StatusTypeDef USBD_LL_Init(USBD_HandleTypeDef *pdev)
-{    
+{
   /* Set LL Driver parameters */
   hpcd.Instance = USB;
   hpcd.Init.dev_endpoints = 8;
-  hpcd.Init.ep0_mps = 0x40;
   hpcd.Init.phy_itface = PCD_PHY_EMBEDDED;
   hpcd.Init.speed = PCD_SPEED_FULL;
   /* Link The driver to the stack */
@@ -241,9 +215,9 @@ USBD_StatusTypeDef USBD_LL_Init(USBD_HandleTypeDef *pdev)
   pdev->pData = &hpcd;
   /* Initialize LL Driver */
   HAL_PCD_Init(&hpcd);
-  
+
   HAL_PCDEx_PMAConfig(&hpcd , 0x00 , PCD_SNG_BUF, 0x18);
-  HAL_PCDEx_PMAConfig(&hpcd , 0x80 , PCD_SNG_BUF, 0x58); 
+  HAL_PCDEx_PMAConfig(&hpcd , 0x80 , PCD_SNG_BUF, 0x58);
 
   return USBD_OK;
 }
@@ -260,7 +234,7 @@ USBD_StatusTypeDef USBD_LL_DeInit(USBD_HandleTypeDef *pdev)
 }
 
 /**
-  * @brief  Starts the Low Level portion of the Device driver. 
+  * @brief  Starts the Low Level portion of the Device driver.
   * @param  pdev: Device handle
   * @retval USBD Status
   */
@@ -298,7 +272,7 @@ USBD_StatusTypeDef USBD_LL_OpenEP(USBD_HandleTypeDef *pdev,
                   ep_addr,
                   ep_mps,
                   ep_type);
-  
+
   return USBD_OK;
 }
 
@@ -347,7 +321,7 @@ USBD_StatusTypeDef USBD_LL_StallEP(USBD_HandleTypeDef *pdev, uint8_t ep_addr)
 USBD_StatusTypeDef USBD_LL_ClearStallEP(USBD_HandleTypeDef *pdev, uint8_t ep_addr)
 {
   HAL_PCD_EP_ClrStall((PCD_HandleTypeDef*)pdev->pData, ep_addr);
-  return USBD_OK; 
+  return USBD_OK;
 }
 
 /**
@@ -359,7 +333,7 @@ USBD_StatusTypeDef USBD_LL_ClearStallEP(USBD_HandleTypeDef *pdev, uint8_t ep_add
 uint8_t USBD_LL_IsStallEP(USBD_HandleTypeDef *pdev, uint8_t ep_addr)
 {
   PCD_HandleTypeDef *hpcd = (PCD_HandleTypeDef*)pdev->pData;
-  
+
   if((ep_addr & 0x80) == 0x80)
   {
     return hpcd->IN_ep[ep_addr & 0x7F].is_stall;
@@ -379,7 +353,7 @@ uint8_t USBD_LL_IsStallEP(USBD_HandleTypeDef *pdev, uint8_t ep_addr)
 USBD_StatusTypeDef USBD_LL_SetUSBAddress(USBD_HandleTypeDef *pdev, uint8_t dev_addr)
 {
   HAL_PCD_SetAddress((PCD_HandleTypeDef*)pdev->pData, dev_addr);
-  return USBD_OK; 
+  return USBD_OK;
 }
 
 /**
@@ -387,10 +361,10 @@ USBD_StatusTypeDef USBD_LL_SetUSBAddress(USBD_HandleTypeDef *pdev, uint8_t dev_a
   * @param  pdev: Device handle
   * @param  ep_addr: Endpoint Number
   * @param  pbuf: Pointer to data to be sent
-  * @param  size: Data size    
+  * @param  size: Data size
   * @retval USBD Status
   */
-USBD_StatusTypeDef USBD_LL_Transmit(USBD_HandleTypeDef *pdev, 
+USBD_StatusTypeDef USBD_LL_Transmit(USBD_HandleTypeDef *pdev,
                                     uint8_t ep_addr,
                                     uint8_t *pbuf,
                                     uint16_t size)
@@ -407,7 +381,7 @@ USBD_StatusTypeDef USBD_LL_Transmit(USBD_HandleTypeDef *pdev,
   * @param  size: Data size
   * @retval USBD Status
   */
-USBD_StatusTypeDef USBD_LL_PrepareReceive(USBD_HandleTypeDef *pdev, 
+USBD_StatusTypeDef USBD_LL_PrepareReceive(USBD_HandleTypeDef *pdev,
                                           uint8_t ep_addr,
                                           uint8_t *pbuf,
                                           uint16_t size)
@@ -444,7 +418,7 @@ void USBD_LL_Delay(uint32_t Delay)
   */
 void *USBD_static_malloc(uint32_t size)
 {
-  static uint32_t mem[MAX_STATIC_ALLOC_SIZE];
+  static uint32_t mem[sizeof(USBD_DFU_HandleTypeDef) / 4 + 1]; /* On 32-bit boundary */
   return mem;
 }
 

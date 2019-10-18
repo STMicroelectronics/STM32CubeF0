@@ -7,63 +7,39 @@
   * @author  MCD Application Team
   * @brief   Description of the FreeRTOS low power example.
   ******************************************************************************
+  * @attention
   *
-  * Copyright (c) 2016 STMicroelectronics International N.V. All rights reserved.
+  * <h2><center>&copy; Copyright (c) 2016 STMicroelectronics.
+  * All rights reserved.</center></h2>
   *
-  * Redistribution and use in source and binary forms, with or without 
-  * modification, are permitted, provided that the following conditions are met:
-  *
-  * 1. Redistribution of source code must retain the above copyright notice, 
-  *    this list of conditions and the following disclaimer.
-  * 2. Redistributions in binary form must reproduce the above copyright notice,
-  *    this list of conditions and the following disclaimer in the documentation
-  *    and/or other materials provided with the distribution.
-  * 3. Neither the name of STMicroelectronics nor the names of other 
-  *    contributors to this software may be used to endorse or promote products 
-  *    derived from this software without specific written permission.
-  * 4. This software, including modifications and/or derivative works of this 
-  *    software, must execute solely and exclusively on microcontroller or
-  *    microprocessor devices manufactured by or for STMicroelectronics.
-  * 5. Redistribution and use of this software other than as permitted under 
-  *    this license is void and will automatically terminate your rights under 
-  *    this license. 
-  *
-  * THIS SOFTWARE IS PROVIDED BY STMICROELECTRONICS AND CONTRIBUTORS "AS IS" 
-  * AND ANY EXPRESS, IMPLIED OR STATUTORY WARRANTIES, INCLUDING, BUT NOT 
-  * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A 
-  * PARTICULAR PURPOSE AND NON-INFRINGEMENT OF THIRD PARTY INTELLECTUAL PROPERTY
-  * RIGHTS ARE DISCLAIMED TO THE FULLEST EXTENT PERMITTED BY LAW. IN NO EVENT 
-  * SHALL STMICROELECTRONICS OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
-  * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
-  * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, 
-  * OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF 
-  * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING 
-  * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
-  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  * This software component is licensed by ST under Ultimate Liberty license
+  * SLA0044, the "License"; You may not use this file except in compliance with
+  * the License. You may obtain a copy of the License at:
+  *                             www.st.com/SLA0044
   *
   ******************************************************************************
   @endverbatim
 
 @par Application Description
 
-This application shows how to enter and exit low power mode with CMSIS RTOS API.
+How to enter and exit low-power mode with CMSIS RTOS API.
 
 This example creates two threads.
 
-   + A Rx thread that blocks on a queue to wait for data, blinking the LED1 each 
+   + An Rx thread that blocks on a queue to wait for data, blinking the LED1 each 
      time data is received (turning it on and then off again) before returning 
      to block on the queue once more.
 
-   + A Tx thread that repeatedly enters the Blocked state for 500ms.  
+   + A Tx thread that repeatedly enters blocked state for 500ms.  
      On exiting the blocked state the Tx thread sends a value through the queue 
      to the Rx thread (causing the Rx thread to exit the blocked state and blink 
      the LED1).
 
-Blocking for a finite period allows the kernel to stop the tick interrupt
-and place the STM32 into sleep mode - the lowest power mode possible
+Blocking for a finite period allows the kernel to stop tick interrupt
+and place STM32 into Sleep mode - the lowest-power mode possible
 that allows the CPU registers and RAM to retain their state.
 
-In this example, non-used GPIO's are configured to analog, thus helping to reduce 
+In this example, non-used GPIOs are configured to analog, thus helping to reduce 
 the power consumption of the device.
 
 Observed behaviour:

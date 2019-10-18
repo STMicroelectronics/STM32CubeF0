@@ -113,6 +113,10 @@
 			<type>1</type>
 			<location>PARENT-5-PROJECT_LOC/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_dma.c</location>
 		</link><link>
+			<name>Drivers/STM32F0xx_HAL_Driver/stm32f0xx_ll_usb.c</name>
+			<type>1</type>
+			<location>PARENT-5-PROJECT_LOC/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_ll_usb.c</location>
+		</link><link>
 			<name>Demo/User/stm32f0xx_it.c</name>
 			<type>1</type>
 			<location>PARENT-2-PROJECT_LOC/Src/stm32f0xx_it.c</location>

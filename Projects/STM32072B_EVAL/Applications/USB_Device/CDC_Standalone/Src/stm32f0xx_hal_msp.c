@@ -6,18 +6,13 @@
   ******************************************************************************
   * @attention
   *
-  * <h2><center>&copy; COPYRIGHT(c) 2016 STMicroelectronics</center></h2>
+  * <h2><center>&copy; Copyright (c) 2016 STMicroelectronics.
+  * All rights reserved.</center></h2>
   *
-  * Redistribution and use in source and binary forms, with or without modification,
-  * are permitted provided that the following conditions are met:
-  *   1. Redistributions of source code must retain the above copyright notice,
-  *      this list of conditions and the following disclaimer.
-  *   2. Redistributions in binary form must reproduce the above copyright notice,
-  *      this list of conditions and the following disclaimer in the documentation
-  *      and/or other materials provided with the distribution.
-  *   3. Neither the name of STMicroelectronics nor the names of its contributors
-  *      may be used to endorse or promote products derived from this software
-  *      without specific prior written permission.
+  * This software component is licensed by ST under BSD 3-Clause license,
+  * the "License"; You may not use this file except in compliance with the
+  * License. You may obtain a copy of the License at:
+  *                        opensource.org/licenses/BSD-3-Clause
   *
   ******************************************************************************
   */
@@ -74,7 +69,7 @@ void HAL_UART_MspInit(UART_HandleTypeDef *huart)
   HAL_GPIO_Init(USARTx_RX_GPIO_PORT, &GPIO_InitStruct);
   
     /*##-3- Configure the NVIC for UART ########################################*/   
-  HAL_NVIC_SetPriority(USARTx_IRQn, 4, 0);
+  HAL_NVIC_SetPriority(USARTx_IRQn, 2, 0);
   HAL_NVIC_EnableIRQ(USARTx_IRQn);
 
   /*##-3- Configure the DMA channels ##########################################*/
@@ -97,7 +92,7 @@ void HAL_UART_MspInit(UART_HandleTypeDef *huart)
   
   /*##-4- Configure the NVIC for DMA #########################################*/
   /* NVIC configuration for DMA transfer complete interrupt (USARTx_TX) */
-  HAL_NVIC_SetPriority(USARTx_DMA_TX_RX_IRQn, 5, 0);
+  HAL_NVIC_SetPriority(USARTx_DMA_TX_RX_IRQn, 3, 0);
   HAL_NVIC_EnableIRQ(USARTx_DMA_TX_RX_IRQn);
   
   /*##-6- Enable TIM peripherals Clock #######################################*/
@@ -105,7 +100,7 @@ void HAL_UART_MspInit(UART_HandleTypeDef *huart)
   
   /*##-7- Configure the NVIC for TIMx ########################################*/
   /* Set Interrupt Group Priority */ 
-  HAL_NVIC_SetPriority(TIMx_IRQn, 5, 0);
+  HAL_NVIC_SetPriority(TIMx_IRQn, 3, 0);
   
   /* Enable the TIMx global Interrupt */
   HAL_NVIC_EnableIRQ(TIMx_IRQn);

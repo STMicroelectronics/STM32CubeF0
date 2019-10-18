@@ -6,29 +6,13 @@
   ******************************************************************************
   * @attention
   *
-  * <h2><center>&copy; COPYRIGHT(c) 2016 STMicroelectronics</center></h2>
+  * <h2><center>&copy; Copyright (c) 2016 STMicroelectronics.
+  * All rights reserved.</center></h2>
   *
-  * Redistribution and use in source and binary forms, with or without modification,
-  * are permitted provided that the following conditions are met:
-  *   1. Redistributions of source code must retain the above copyright notice,
-  *      this list of conditions and the following disclaimer.
-  *   2. Redistributions in binary form must reproduce the above copyright notice,
-  *      this list of conditions and the following disclaimer in the documentation
-  *      and/or other materials provided with the distribution.
-  *   3. Neither the name of STMicroelectronics nor the names of its contributors
-  *      may be used to endorse or promote products derived from this software
-  *      without specific prior written permission.
-  *
-  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
-  * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-  * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-  * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-  * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-  * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-  * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-  * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  * This software component is licensed by ST under BSD 3-Clause license,
+  * the "License"; You may not use this file except in compliance with the
+  * License. You may obtain a copy of the License at:
+  *                        opensource.org/licenses/BSD-3-Clause
   *
   ******************************************************************************
   */
@@ -129,33 +113,31 @@ int main(void)
     Error_Handler();
   }
 
-
-  /*##-3- Start the conversion process #######################################*/
-  if (HAL_ADC_Start(&AdcHandle) != HAL_OK)
-  {
-    /* Start Conversation Error */
-    Error_Handler();
-  }
-
-  /*##-4- Wait for the end of conversion #####################################*/
-  /*  For simplicity reasons, this example is just waiting till the end of the
-      conversion, but application may perform other tasks while conversion
-      operation is ongoing. */
-  if (HAL_ADC_PollForConversion(&AdcHandle, 10) != HAL_OK)
-  {
-    /* End Of Conversion flag not set on time */
-    Error_Handler();
-  }
-  else
-  {
-    /* ADC conversion completed */
-    /*##-5- Get the converted value of regular channel  ########################*/
-    uhADCxConvertedValue = HAL_ADC_GetValue(&AdcHandle);
-  }
-  
   /* Infinite loop */
   while (1)
   {
+    /*##-3- Start the conversion process #######################################*/
+    if (HAL_ADC_Start(&AdcHandle) != HAL_OK)
+    {
+      /* Start Conversation Error */
+      Error_Handler();
+    }
+
+    /*##-4- Wait for the end of conversion #####################################*/
+    /*  For simplicity reasons, this example is just waiting till the end of the
+    conversion, but application may perform other tasks while conversion
+    operation is ongoing. */
+    if (HAL_ADC_PollForConversion(&AdcHandle, 10) != HAL_OK)
+    {
+      /* End Of Conversion flag not set on time */
+      Error_Handler();
+    }
+    else
+    {
+      /* ADC conversion completed */
+      /*##-5- Get the converted value of regular channel  ########################*/
+      uhADCxConvertedValue = HAL_ADC_GetValue(&AdcHandle);
+    }
   }
 }
 
@@ -227,7 +209,7 @@ static void Error_Handler(void)
   * @param  line: assert_param error line source number
   * @retval None
   */
-void assert_failed(char *file, uint32_t line)
+void assert_failed(uint8_t *file, uint32_t line)
 {
   /* User can add his own implementation to report the file name and line number,
      ex: printf("Wrong parameters value: file %s on line %d\r\n", file, line) */

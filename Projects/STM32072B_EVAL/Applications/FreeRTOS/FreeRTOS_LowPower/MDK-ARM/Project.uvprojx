@@ -10,19 +10,20 @@
       <TargetName>STM32072B_EVAL</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
-      <pCCUsed>5060061::V5.06 update 1 (build 61)::ARMCC</pCCUsed>
+      <pCCUsed>5060750::V5.06 update 6 (build 750)::ARMCC</pCCUsed>
+      <uAC6>0</uAC6>
       <TargetOption>
         <TargetCommonOption>
-          <Device>STM32F072VB</Device>
+          <Device>STM32F072VBTx</Device>
           <Vendor>STMicroelectronics</Vendor>
-          <PackID>Keil.STM32F0xx_DFP.1.5.0</PackID>
+          <PackID>Keil.STM32F0xx_DFP.2.0.0</PackID>
           <PackURL>http://www.keil.com/pack/</PackURL>
-          <Cpu>IROM(0x08000000,0x20000) IRAM(0x20000000,0x4000) CPUTYPE("Cortex-M0") CLOCK(12000000) ELITTLE</Cpu>
+          <Cpu>IROM(0x08000000-0x801FFFF) IRAM(0x20000000-0x20003FFF) CLOCK(8000000) CPUTYPE("Cortex-M0")</Cpu>
           <FlashUtilSpec></FlashUtilSpec>
           <StartupFile></StartupFile>
-          <FlashDriverDll>UL2CM3(-S0 -C0 -P0 -FD20000000 -FC1000 -FN1 -FF0STM32F0xx_128 -FS08000000 -FL020000 -FP0($$Device:STM32F072VB$Flash\STM32F0xx_128.FLM))</FlashDriverDll>
-          <DeviceId>0</DeviceId>
-          <RegisterFile>$$Device:STM32F072VB$Device\Include\stm32f0xx.h</RegisterFile>
+          <FlashDriverDll></FlashDriverDll>
+          <DeviceId></DeviceId>
+          <RegisterFile></RegisterFile>
           <MemoryEnv></MemoryEnv>
           <Cmp></Cmp>
           <Asm></Asm>
@@ -32,7 +33,7 @@
           <SLE66CMisc></SLE66CMisc>
           <SLE66AMisc></SLE66AMisc>
           <SLE66LinkerMisc></SLE66LinkerMisc>
-          <SFDFile>$$Device:STM32F072VB$SVD\STM32F0x2.svd</SFDFile>
+          <SFDFile>$$Device:STM32F072VBTx$CMSIS\SVD\STM32F0x2.svd</SFDFile>
           <bCustSvd>0</bCustSvd>
           <UseEnv>0</UseEnv>
           <BinPath></BinPath>
@@ -47,8 +48,8 @@
             <NotGenerated>0</NotGenerated>
             <InvalidFlash>1</InvalidFlash>
           </TargetStatus>
-          <OutputDirectory>STM32072B_EVAL\</OutputDirectory>
-          <OutputName>STM32072B_EVAL</OutputName>
+          <OutputDirectory>STM32072B_EVAL\Exe\</OutputDirectory>
+          <OutputName>Project</OutputName>
           <CreateExecutable>1</CreateExecutable>
           <CreateLib>0</CreateLib>
           <CreateHexFile>0</CreateHexFile>
@@ -109,11 +110,11 @@
         </CommonProperty>
         <DllOption>
           <SimDllName>SARMCM3.DLL</SimDllName>
-          <SimDllArguments> -REMAP </SimDllArguments>
+          <SimDllArguments>-REMAP</SimDllArguments>
           <SimDlgDll>DARMCM1.DLL</SimDlgDll>
           <SimDlgDllArguments>-pCM0</SimDlgDllArguments>
           <TargetDllName>SARMCM3.DLL</TargetDllName>
-          <TargetDllArguments> </TargetDllArguments>
+          <TargetDllArguments></TargetDllArguments>
           <TargetDlgDll>TARMCM1.DLL</TargetDlgDll>
           <TargetDlgDllArguments>-pCM0</TargetDlgDllArguments>
         </DllOption>
@@ -125,47 +126,6 @@
             <HexOffset>0</HexOffset>
             <Oh166RecLen>16</Oh166RecLen>
           </OPTHX>
-          <Simulator>
-            <UseSimulator>0</UseSimulator>
-            <LoadApplicationAtStartup>1</LoadApplicationAtStartup>
-            <RunToMain>1</RunToMain>
-            <RestoreBreakpoints>1</RestoreBreakpoints>
-            <RestoreWatchpoints>1</RestoreWatchpoints>
-            <RestoreMemoryDisplay>1</RestoreMemoryDisplay>
-            <RestoreFunctions>1</RestoreFunctions>
-            <RestoreToolbox>1</RestoreToolbox>
-            <LimitSpeedToRealTime>0</LimitSpeedToRealTime>
-            <RestoreSysVw>1</RestoreSysVw>
-          </Simulator>
-          <Target>
-            <UseTarget>1</UseTarget>
-            <LoadApplicationAtStartup>1</LoadApplicationAtStartup>
-            <RunToMain>1</RunToMain>
-            <RestoreBreakpoints>1</RestoreBreakpoints>
-            <RestoreWatchpoints>1</RestoreWatchpoints>
-            <RestoreMemoryDisplay>1</RestoreMemoryDisplay>
-            <RestoreFunctions>1</RestoreFunctions>
-            <RestoreToolbox>1</RestoreToolbox>
-            <RestoreTracepoints>1</RestoreTracepoints>
-            <RestoreSysVw>1</RestoreSysVw>
-          </Target>
-          <RunDebugAfterBuild>0</RunDebugAfterBuild>
-          <TargetSelection>11</TargetSelection>
-          <SimDlls>
-            <CpuDll></CpuDll>
-            <CpuDllArguments></CpuDllArguments>
-            <PeripheralDll></PeripheralDll>
-            <PeripheralDllArguments></PeripheralDllArguments>
-            <InitializationFile></InitializationFile>
-          </SimDlls>
-          <TargetDlls>
-            <CpuDll></CpuDll>
-            <CpuDllArguments></CpuDllArguments>
-            <PeripheralDll></PeripheralDll>
-            <PeripheralDllArguments></PeripheralDllArguments>
-            <InitializationFile></InitializationFile>
-            <Driver>STLink\ST-LINKIII-KEIL_SWO.dll</Driver>
-          </TargetDlls>
         </DebugOption>
         <Utilities>
           <Flash1>
@@ -177,7 +137,7 @@
             <DriverSelection>4107</DriverSelection>
           </Flash1>
           <bUseTDR>1</bUseTDR>
-          <Flash2>BIN\UL2CM3.DLL</Flash2>
+          <Flash2>STLink\ST-LINKIII-KEIL_SWO.dll</Flash2>
           <Flash3></Flash3>
           <Flash4></Flash4>
           <pFcarmOut></pFcarmOut>
@@ -224,6 +184,7 @@
             <hadXRAM>0</hadXRAM>
             <uocXRam>0</uocXRam>
             <RvdsVP>0</RvdsVP>
+            <RvdsMve>0</RvdsMve>
             <hadIRAM2>0</hadIRAM2>
             <hadIROM2>0</hadIROM2>
             <StupSel>8</StupSel>
@@ -363,17 +324,21 @@
             <wLevel>2</wLevel>
             <uThumb>0</uThumb>
             <uSurpInc>0</uSurpInc>
-            <uC99>0</uC99>
+            <uC99>1</uC99>
+            <uGnu>0</uGnu>
             <useXO>0</useXO>
-            <v6Lang>0</v6Lang>
-            <v6LangP>0</v6LangP>
-            <vShortEn>0</vShortEn>
-            <vShortWch>0</vShortWch>
+            <v6Lang>1</v6Lang>
+            <v6LangP>1</v6LangP>
+            <vShortEn>1</vShortEn>
+            <vShortWch>1</vShortWch>
+            <v6Lto>0</v6Lto>
+            <v6WtE>0</v6WtE>
+            <v6Rtti>0</v6Rtti>
             <VariousControls>
-              <MiscControls>--C99</MiscControls>
+              <MiscControls></MiscControls>
               <Define>STM32F072xB,USE_HAL_DRIVER,USE_STM32072B_EVAL</Define>
               <Undefine></Undefine>
-              <IncludePath>..\Inc;..\..\..\..\..\..\Drivers\CMSIS\Device\ST\STM32F0xx\Include;..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc;..\..\..\..\..\..\Drivers\BSP\STM32072B_EVAL;..\..\..\..\..\..\Drivers\BSP\Components\Common;..\..\..\..\..\..\Utilities\Log;..\..\..\..\..\..\Utilities\CPU;..\..\..\..\..\..\Middlewares\Third_Party\FreeRTOS\Source\portable\RVDS\ARM_CM0;..\..\..\..\..\..\Middlewares\Third_Party\FreeRTOS\Source\CMSIS_RTOS;..\..\..\..\..\..\Middlewares\Third_Party\FreeRTOS\Source\include</IncludePath>
+              <IncludePath>../Inc;../../../../../../Drivers/CMSIS/Device/ST/STM32F0xx/Include;../../../../../../Drivers/STM32F0xx_HAL_Driver/Inc;../../../../../../Drivers/BSP/STM32072B_EVAL;../../../../../../Drivers/BSP/Components/Common;../../../../../../Utilities/Log;../../../../../../Utilities/CPU;../../../../../../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM0;../../../../../../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS;../../../../../../Middlewares/Third_Party/FreeRTOS/Source/include</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -386,11 +351,12 @@
             <NoWarn>0</NoWarn>
             <uSurpInc>0</uSurpInc>
             <useXO>0</useXO>
+            <uClangAs>0</uClangAs>
             <VariousControls>
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath>ROJ_DIR$\..\Inc</IncludePath>
+              <IncludePath>../Inc</IncludePath>
             </VariousControls>
           </Aads>
           <LDads>
@@ -406,7 +372,7 @@
             <ScatterFile></ScatterFile>
             <IncludeLibs></IncludeLibs>
             <IncludeLibsPath></IncludeLibsPath>
-            <Misc>--diag_suppress=L6329</Misc>
+            <Misc></Misc>
             <LinkerInputFile></LinkerInputFile>
             <DisabledWarnings></DisabledWarnings>
           </LDads>
@@ -414,47 +380,35 @@
       </TargetOption>
       <Groups>
         <Group>
+          <GroupName>::CMSIS</GroupName>
+        </Group>
+        <Group>
           <GroupName>Doc</GroupName>
           <Files>
             <File>
               <FileName>readme.txt</FileName>
               <FileType>5</FileType>
-              <FilePath>..\readme.txt</FilePath>
+              <FilePath>../readme.txt</FilePath>
             </File>
           </Files>
         </Group>
         <Group>
-          <GroupName>Middlewares/FreeRTOS</GroupName>
+          <GroupName>Application/User</GroupName>
           <Files>
             <File>
-              <FileName>tasks.c</FileName>
+              <FileName>main.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\Middlewares\Third_Party\FreeRTOS\Source\tasks.c</FilePath>
+              <FilePath>../Src/main.c</FilePath>
             </File>
             <File>
-              <FileName>timers.c</FileName>
+              <FileName>stm32f0xx_it.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\Middlewares\Third_Party\FreeRTOS\Source\timers.c</FilePath>
+              <FilePath>../Src/stm32f0xx_it.c</FilePath>
             </File>
             <File>
-              <FileName>list.c</FileName>
+              <FileName>stm32f0xx_hal_timebase_tim.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\Middlewares\Third_Party\FreeRTOS\Source\list.c</FilePath>
-            </File>
-            <File>
-              <FileName>queue.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\Middlewares\Third_Party\FreeRTOS\Source\queue.c</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>Middlewares/FreeRTOS/CMSIS_RTOS</GroupName>
-          <Files>
-            <File>
-              <FileName>cmsis_os.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\Middlewares\Third_Party\FreeRTOS\Source\CMSIS_RTOS\cmsis_os.c</FilePath>
+              <FilePath>../Src/stm32f0xx_hal_timebase_tim.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -469,42 +423,67 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>Application/User</GroupName>
-          <Files>
-            <File>
-              <FileName>stm32f0xx_it.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Src\stm32f0xx_it.c</FilePath>
-            </File>
-            <File>
-              <FileName>main.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Src\main.c</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
           <GroupName>Drivers/BSP/STM32072B_EVAL</GroupName>
           <Files>
             <File>
               <FileName>stm32072b_eval.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\Drivers\BSP\STM32072B_EVAL\stm32072b_eval.c</FilePath>
+              <FilePath>../../../../../../Drivers/BSP/STM32072B_EVAL/stm32072b_eval.c</FilePath>
             </File>
           </Files>
         </Group>
         <Group>
-          <GroupName>Middlewares/FreeRTOS/portable</GroupName>
+          <GroupName>Drivers/STM32F0xx_HAL_Driver</GroupName>
           <Files>
             <File>
-              <FileName>heap_4.c</FileName>
+              <FileName>stm32f0xx_hal.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\Middlewares\Third_Party\FreeRTOS\Source\portable\MemMang\heap_4.c</FilePath>
+              <FilePath>../../../../../../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c</FilePath>
             </File>
             <File>
-              <FileName>port.c</FileName>
+              <FileName>stm32f0xx_hal_cortex.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\Middlewares\Third_Party\FreeRTOS\Source\portable\RVDS\ARM_CM0\port.c</FilePath>
+              <FilePath>../../../../../../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f0xx_hal_dma.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../../../../../../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_dma.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f0xx_hal_gpio.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../../../../../../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_gpio.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f0xx_hal_rcc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../../../../../../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f0xx_hal_pwr.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../../../../../../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_pwr.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f0xx_hal_pwr_ex.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../../../../../../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_pwr_ex.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f0xx_hal_tim.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../../../../../../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f0xx_hal_tim_ex.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../../../../../../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f0xx_hal_rcc_ex.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../../../../../../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc_ex.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -514,52 +493,59 @@
             <File>
               <FileName>system_stm32f0xx.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\Src\system_stm32f0xx.c</FilePath>
+              <FilePath>../Src/system_stm32f0xx.c</FilePath>
             </File>
           </Files>
         </Group>
         <Group>
-          <GroupName>Drivers/STM32F0xx_HAL_Driver</GroupName>
+          <GroupName>Middlewares/FreeRTOS</GroupName>
           <Files>
             <File>
-              <FileName>stm32f0xx_hal_gpio.c</FileName>
+              <FileName>list.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_gpio.c</FilePath>
+              <FilePath>../../../../../../Middlewares/Third_Party/FreeRTOS/Source/list.c</FilePath>
             </File>
             <File>
-              <FileName>stm32f0xx_hal_pwr_ex.c</FileName>
+              <FileName>queue.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_pwr_ex.c</FilePath>
+              <FilePath>../../../../../../Middlewares/Third_Party/FreeRTOS/Source/queue.c</FilePath>
             </File>
             <File>
-              <FileName>stm32f0xx_hal.c</FileName>
+              <FileName>tasks.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal.c</FilePath>
+              <FilePath>../../../../../../Middlewares/Third_Party/FreeRTOS/Source/tasks.c</FilePath>
             </File>
             <File>
-              <FileName>stm32f0xx_hal_cortex.c</FileName>
+              <FileName>timers.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_cortex.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f0xx_hal_rcc.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_rcc.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f0xx_hal_pwr.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_pwr.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f0xx_hal_rcc_ex.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_rcc_ex.c</FilePath>
+              <FilePath>../../../../../../Middlewares/Third_Party/FreeRTOS/Source/timers.c</FilePath>
             </File>
           </Files>
         </Group>
         <Group>
-          <GroupName>::CMSIS</GroupName>
+          <GroupName>Middlewares/FreeRTOS/CMSIS_RTOS</GroupName>
+          <Files>
+            <File>
+              <FileName>cmsis_os.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../../../../../../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Middlewares/FreeRTOS/portable</GroupName>
+          <Files>
+            <File>
+              <FileName>heap_4.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../../../../../../Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c</FilePath>
+            </File>
+            <File>
+              <FileName>port.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../../../../../../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM0/port.c</FilePath>
+            </File>
+          </Files>
         </Group>
       </Groups>
     </Target>
@@ -568,7 +554,7 @@
   <RTE>
     <apis/>
     <components>
-      <component Cclass="CMSIS" Cgroup="CORE" Cvendor="ARM" Cversion="4.3.0" condition="Cortex-M Device">
+      <component Cclass="CMSIS" Cgroup="CORE" Cvendor="ARM" Cversion="4.3.0" condition="CMSIS Core">
         <package name="CMSIS" schemaVersion="1.3" url="http://www.keil.com/pack/" vendor="ARM" version="4.5.0"/>
         <targetInfos>
           <targetInfo name="STM32072B_EVAL"/>
