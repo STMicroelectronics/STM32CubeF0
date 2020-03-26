@@ -15,6 +15,10 @@ Please take a look to the Release Note document to get detailed information on t
 
 In this FW Package, the module **Middlewares/ST/STemWin** is not directly accessible. It must be downloaded from a ST server. The URL is available in a readme.txt file inside the module.
 
+## Release note
+
+Details about the content of this release are available in the release note [here](https://htmlpreview.github.io/?https://github.com/STMicroelectronics/STM32CubeF0/blob/master/Release_Notes.html).
+
 ## Boards available
   * STM32F0 
     * [32F0308DISCOVERY](https://www.st.com/en/evaluation-tools/32f0308discovery.html)
