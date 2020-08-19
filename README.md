@@ -13,25 +13,21 @@ The **STM32CubeF0 MCU Package** projects are directly running on the STM32F0 ser
 
 Please take a look to the Release Note document to get detailed information on the STM32F0 features 
 
-In this FW Package, the module **Middlewares/ST/STemWin** is not directly accessible. It must be downloaded from a ST server. The URL is available in a readme.txt file inside the module.
-
-## Release note
-
-Details about the content of this release are available in the release note [here](https://htmlpreview.github.io/?https://github.com/STMicroelectronics/STM32CubeF0/blob/master/Release_Notes.html).
+In this FW Package, the module **Middlewares/ST/STemWin** is not directly accessible. It must be downloaded from a ST server, the URL is available in a readme.txt file inside the module.
 
 ## Boards available
   * STM32F0 
     * [32F0308DISCOVERY](https://www.st.com/en/evaluation-tools/32f0308discovery.html)
     * [32F072BDISCOVERY](https://www.st.com/en/evaluation-tools/32f072bdiscovery.html)
-    * [NUCLEO-F030R8](https://www.st.com/en/evaluation-tools/nucleo-f030r8.html)
-    * [NUCLEO-F031K6](https://www.st.com/en/evaluation-tools/nucleo-f031k6.html)
-    * [NUCLEO-F042K6](https://www.st.com/en/evaluation-tools/nucleo-f042k6.html)
-    * [NUCLEO-F070RB](https://www.st.com/en/evaluation-tools/nucleo-f070rb.html)
-    * [NUCLEO-F072RB](https://www.st.com/en/evaluation-tools/nucleo-f072rb.html)
-    * [NUCLEO-F091RC](https://www.st.com/en/evaluation-tools/nucleo-f091rc.html)
-    * [STM32072B-EVAL](https://www.st.com/en/evaluation-tools/stm32072b-eval.html)
-    * [STM32091C-EVAL](https://www.st.com/en/evaluation-tools/stm32091c-eval.html)
-    * [STM32F0DISCOVERY](https://www.st.com/en/evaluation-tools/stm32f0discovery.html)
+	* [NUCLEO-F030R8](https://www.st.com/en/evaluation-tools/nucleo-f030r8.html)
+	* [NUCLEO-F031K6](https://www.st.com/en/evaluation-tools/nucleo-f031k6.html)
+	* [NUCLEO-F042K6](https://www.st.com/en/evaluation-tools/nucleo-f042k6.html)
+	* [NUCLEO-F070RB](https://www.st.com/en/evaluation-tools/nucleo-f070rb.html)
+	* [NUCLEO-F072RB](https://www.st.com/en/evaluation-tools/nucleo-f072rb.html)
+	* [NUCLEO-F091RC](https://www.st.com/en/evaluation-tools/nucleo-f091rc.html)
+	* [STM32072B-EVAL](https://www.st.com/en/evaluation-tools/stm32072b-eval.html)
+	* [STM32091C-EVAL](https://www.st.com/en/evaluation-tools/stm32091c-eval.html)
+	* [STM32F0DISCOVERY](https://www.st.com/en/evaluation-tools/stm32f0discovery.html)
 
 ## Troubleshooting
 
