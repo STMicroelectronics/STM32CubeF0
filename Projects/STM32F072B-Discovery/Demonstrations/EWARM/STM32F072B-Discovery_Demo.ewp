@@ -1073,6 +1073,9 @@
             <group>
                 <name>Components</name>
                 <file>
+                    <name>$PROJ_DIR$\..\..\..\..\Drivers\BSP\Components\i3g4250d\i3g4250d.c</name>
+                </file>
+                <file>
                     <name>$PROJ_DIR$\..\..\..\..\Drivers\BSP\Components\l3gd20\l3gd20.c</name>
                 </file>
             </group>

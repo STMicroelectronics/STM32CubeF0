@@ -54,6 +54,7 @@ Here below a detailed description of the example code:
     Before that key press, LED2 is blinking.
     
      - Press again the User push-button to exit the low power mode.
+     - In the case of standby mode, connect PA0 (PWR_WAKEUP_PIN1) to 3V3 pin.
      
   2. After exit from low power mode, LED2 is blinking again.
     In the case of exit from stand-by mode, LED2 is first ON for two seconds before
@@ -89,7 +90,7 @@ Here below a detailed description of the example code:
     ==============
             - RTC OFF
             - IWDG and LSI OFF 
-            - Wakeup using WakeUp Pin PWR_WAKEUP_PIN2 connected to PC.13
+            - Wakeup using WakeUp Pin PWR_WAKEUP_PIN1 connected to PA.00
 
    @endverbatim
 

@@ -656,6 +656,11 @@
               <FileType>1</FileType>
               <FilePath>..\..\..\..\Drivers\BSP\STM32F072B-Discovery\stm32f072b_discovery.c</FilePath>
             </File>
+            <File>
+              <FileName>i3g4250d.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\Drivers\BSP\Components\i3g4250d\i3g4250d.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

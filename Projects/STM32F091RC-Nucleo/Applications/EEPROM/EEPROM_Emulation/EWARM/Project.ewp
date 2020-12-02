@@ -969,6 +969,9 @@
       <file>
         <name>$PROJ_DIR$\..\Src\eeprom.c</name>
       </file>
+	  <file>
+        <name>$PROJ_DIR$\..\Src\flash_interface.c</name>
+      </file>
     </group>
   </group>
   <group>

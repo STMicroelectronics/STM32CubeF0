@@ -32,6 +32,11 @@
 			<name>Middlewares/STM32_USBD_Library/Core/usbd_ioreq.c</name>
 			<type>1</type>
 			<location>PARENT-5-PROJECT_LOC/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c</location>
+        </link><link>
+			<name>Drivers/BSP/Components/i3g4250d.c</name>
+			<type>1</type>
+			<location>PARENT-5-PROJECT_LOC/Drivers/BSP/Components/i3g4250d/i3g4250d.c</location>
+		</link><link>
 		</link><link>
 			<name>Drivers/BSP/Components/l3gd20.c</name>
 			<type>1</type>

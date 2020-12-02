@@ -30,6 +30,7 @@
 
 /* Private typedef -----------------------------------------------------------*/
 /* Private define ------------------------------------------------------------*/
+#define NB_OF_VAR             ((uint8_t)0x03)
 /* Private macro -------------------------------------------------------------*/
 /* Private variables ---------------------------------------------------------*/
 
@@ -49,7 +50,6 @@ static void SystemClock_Config(void);
   */
 int main(void)
 {
-
   /* STM32F0xx HAL library initialization:
        - Configure the Flash prefetch
        - Systick timer is configured by default as source of time base, but user 
@@ -68,40 +68,38 @@ int main(void)
   HAL_FLASH_Unlock();
 
   /* EEPROM Init */
-  EE_Init();
-
-/* --- Store successively many values of the three variables in the EEPROM ---*/
-  /* Store 0x1000 values of Variable1 in EEPROM */
-  for (VarValue = 1; VarValue <= 0x1000; VarValue++)
+  if(EE_Init(EE_FORCED_ERASE) == EE_OK)
   {
-    EE_WriteVariable(VirtAddVarTab[0], VarValue);
+    /* --- Store successively many values of the three variables in the EEPROM ---*/
+    /* Store 0x1000 values of Variable1 in EEPROM */
+    for (VarValue = 1; VarValue <= 0x1000; VarValue++)
+    {
+      EE_WriteVariable16bits(VirtAddVarTab[0], VarValue);
+    }
+    /* read the last stored variables data*/
+    EE_ReadVariable16bits(VirtAddVarTab[0], &VarDataTab[0]);
+    
+    
+    /* Store 0x2000 values of Variable2 in EEPROM */
+    for (VarValue = 1; VarValue <= 0x2000; VarValue++)
+    {
+      EE_WriteVariable16bits(VirtAddVarTab[1], VarValue);
+    }
+    /* read the last stored variables data*/
+    EE_ReadVariable16bits(VirtAddVarTab[0], &VarDataTab[0]);
+    EE_ReadVariable16bits(VirtAddVarTab[1], &VarDataTab[1]);
+    
+    
+    /* Store 0x3000 values of Variable3 in EEPROM */
+    for (VarValue = 1; VarValue <= 0x3000; VarValue++)
+    {
+      EE_WriteVariable16bits(VirtAddVarTab[2], VarValue);
+    }
+    /* read the last stored variables data*/
+    EE_ReadVariable16bits(VirtAddVarTab[0], &VarDataTab[0]);
+    EE_ReadVariable16bits(VirtAddVarTab[1], &VarDataTab[1]);
+    EE_ReadVariable16bits(VirtAddVarTab[2], &VarDataTab[2]);
   }
-
-  /* read the last stored variables data*/
-  EE_ReadVariable(VirtAddVarTab[0], &VarDataTab[0]);
-
-
-  /* Store 0x2000 values of Variable2 in EEPROM */
-  for (VarValue = 1; VarValue <= 0x2000; VarValue++)
-  {
-    EE_WriteVariable(VirtAddVarTab[1], VarValue);
-  }
-
-  /* read the last stored variables data*/
-  EE_ReadVariable(VirtAddVarTab[0], &VarDataTab[0]);
-  EE_ReadVariable(VirtAddVarTab[1], &VarDataTab[1]);
-
-
-  /* Store 0x3000 values of Variable3 in EEPROM */
-  for (VarValue = 1; VarValue <= 0x3000; VarValue++)
-  {
-    EE_WriteVariable(VirtAddVarTab[2], VarValue);
-  }
-
-  /* read the last stored variables data*/
-  EE_ReadVariable(VirtAddVarTab[0], &VarDataTab[0]);
-  EE_ReadVariable(VirtAddVarTab[1], &VarDataTab[1]);
-  EE_ReadVariable(VirtAddVarTab[2], &VarDataTab[2]);
 
   while (1)
   {

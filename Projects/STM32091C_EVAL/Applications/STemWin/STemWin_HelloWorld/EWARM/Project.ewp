@@ -733,7 +733,7 @@
         </option>
         <option>
           <name>IlinkSuppressDiags</name>
-          <state></state>
+          <state>Lt009</state>
         </option>
         <option>
           <name>IlinkTreatAsRem</name>

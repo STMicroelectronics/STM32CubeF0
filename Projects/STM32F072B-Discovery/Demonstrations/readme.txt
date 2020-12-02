@@ -29,7 +29,7 @@ Below you find the sequence to launch the discover demonstration :
 
   - Four LEDs blink
        
-  - The gyroscope MEMS sensor (L3GD20):  move the board and observe LEDs blinking
+  - The gyroscope MEMS sensor (L3GD20 or I3G4250D):  move the board and observe LEDs blinking
     according to motion direction.
     Right : LED5 is ON.
     Left  : LED4 is ON.

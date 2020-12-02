@@ -1,6 +1,6 @@
 /**
   ******************************************************************************
-  * @file    Demonstrations/Src/main.c 
+  * @file    Demonstrations/Src/main.c
   * @author  MCD Application Team
   * @brief   Main program body
   ******************************************************************************
@@ -45,7 +45,7 @@ static void USB_Demo(void);
 static void USB_Test(void);
 static void USB_GetPointerData_Test(uint8_t *pbuf);
 static void USB_GetPointerData_Demo(uint8_t *pbuf);
-static void Demo_GyroReadAngRate (float* pfData);
+static void Demo_GyroReadAngRate(float *pfData);
 
 static void TSL_Test(void);
 
@@ -66,10 +66,10 @@ int main(void)
 
   /* STM32F0xx HAL library initialization:
        - Configure the Flash prefetch
-       - Systick timer is configured by default as source of time base, but user 
-         can eventually implement his proper time base source (a general purpose 
-         timer for example or other time source), keeping in mind that Time base 
-         duration should be kept 1ms since PPP_TIMEOUT_VALUEs are defined and 
+       - Systick timer is configured by default as source of time base, but user
+         can eventually implement his proper time base source (a general purpose
+         timer for example or other time source), keeping in mind that Time base
+         duration should be kept 1ms since PPP_TIMEOUT_VALUEs are defined and
          handled in milliseconds basis.
        - Low Level Initialization
      */
@@ -77,7 +77,7 @@ int main(void)
 
   /* Initialize LEDs, User_Button on STM32F052B-Discovery board ***********/
   BSP_PB_Init(BUTTON_USER, BUTTON_MODE_EXTI);
-  
+
   BSP_LED_Init(LED3);
   BSP_LED_Init(LED4);
   BSP_LED_Init(LED5);
@@ -88,47 +88,47 @@ int main(void)
 
   /* Init USB Device Library */
   USBD_Init(&USBD_Device, &HID_Desc, 0);
-  
+
   /* Register the USB HID class */
   USBD_RegisterClass(&USBD_Device, &USBD_HID);
-  
+
   /* Start Device Process */
   USBD_Start(&USBD_Device);
-  
+
   /* Delay 1s to select Test Program or to go directly througt the demo*/
   HAL_Delay(1000);
 
-  if(BSP_PB_GetState(BUTTON_USER) == GPIO_PIN_SET)
+  if (BSP_PB_GetState(BUTTON_USER) == GPIO_PIN_SET)
   {
     /* Wait for User button is released */
-    while(BSP_PB_GetState(BUTTON_USER) != GPIO_PIN_RESET)
+    while (BSP_PB_GetState(BUTTON_USER) != GPIO_PIN_RESET)
     {
     }
-    
-    /* Set ButtonPressed at 0 value  */ 
+
+    /* Set ButtonPressed at 0 value  */
     ButtonPressed = 0;
-    
-    /* LED test : Blinking LEDs  */ 
+
+    /* LED test : Blinking LEDs  */
     LED_Test();
-    
+
     /* Wait for User button to be pressed to switch to USB Test
     the cursor move in square path and led On corresponding to such direction  */
     USB_Test();
 
     /* Move Discovery board to execute MEMS Test, Mems detect the angular rate
-    and led On corresponding to such direction*/ 
+    and led On corresponding to such direction*/
     MEMS_Test();
 
     /* Wait for User button to be pressed to switch to Touch Sensor Test
     each bank pointed correspond to specific Leds On, test can performed
-    in both direction */ 
+    in both direction */
     TSL_Test();
   }
   else
   {
     Demo();
   }
-  
+
   /* Infinite loop */
   while (1)
   {
@@ -144,7 +144,7 @@ int main(void)
 static void Demo(void)
 {
   /*  Blinking LEDs & Wait for User button to be pressed to switch to MEMES demo */
-  while(BSP_PB_GetState(BUTTON_USER) != GPIO_PIN_SET)
+  while (BSP_PB_GetState(BUTTON_USER) != GPIO_PIN_SET)
   {
     /* Toggle LED3, LED4, LED5 & LED6 */
     BSP_LED_Toggle(LED3);
@@ -153,31 +153,31 @@ static void Demo(void)
     BSP_LED_Toggle(LED6);
 
     /* Insert 100ms delay */
-    HAL_Delay(100);   
+    HAL_Delay(100);
   }
 
   /* Wait for User button is released */
-  while(BSP_PB_GetState(BUTTON_USER) != GPIO_PIN_RESET)
+  while (BSP_PB_GetState(BUTTON_USER) != GPIO_PIN_RESET)
   {
   }
-  
-  /* Turn Off Leds */   
+
+  /* Turn Off Leds */
   BSP_LED_Off(LED3);
   BSP_LED_Off(LED4);
   BSP_LED_Off(LED5);
   BSP_LED_Off(LED6);
 
   /* Move Discovery board to execute MEMS demo, Mems detect the angular rate
-  and led On corresponding to such direction*/ 
+  and led On corresponding to such direction*/
   MEMS_Test();
-  
+
   /* Wait for User button to be pressed to switch to USB demo
   Mouse cursor moving corresponding to board move direction  */
   USB_Demo();
-  
+
   /* Wait for User button to be pressed to switch to Touch Sensor Test
   each bank pointed correspond to specific Leds On, test can performed
-  in both direction */ 
+  in both direction */
   TSL_Test();
 }
 
@@ -188,21 +188,21 @@ static void Demo(void)
 */
 static void LED_Test(void)
 {
-  while(ButtonPressed != 1)
+  while (ButtonPressed != 1)
   {
     /* Toggle LED3 */
     BSP_LED_Toggle(LED3);
 
     /* Insert 50ms delay */
     HAL_Delay(50);
-    
+
     /* Toggle LED5 */
     BSP_LED_Toggle(LED5);
 
     /* Insert 50ms delay */
     HAL_Delay(50);
 
-    if(ButtonPressed == 1)
+    if (ButtonPressed == 1)
     {
       BSP_LED_Off(LED3);
       BSP_LED_Off(LED4);
@@ -226,11 +226,11 @@ static void LED_Test(void)
   }
 
   /* Wait for User button is released */
-  while(BSP_PB_GetState(BUTTON_USER) != GPIO_PIN_RESET)
+  while (BSP_PB_GetState(BUTTON_USER) != GPIO_PIN_RESET)
   {
   }
 
-  /* Turn Off Leds */   
+  /* Turn Off Leds */
   BSP_LED_Off(LED3);
   BSP_LED_Off(LED4);
   BSP_LED_Off(LED5);
@@ -246,82 +246,82 @@ static void MEMS_Test(void)
 {
   float Buffer[6] = {0};
   uint8_t Xval, Yval = 0;
-  
+
   /* Demo Gyroscope */
-  if(BSP_GYRO_Init() != GYRO_OK)
+  if (BSP_GYRO_Init() != GYRO_OK)
   {
     Error_Handler();
   }
 
-  while(BSP_PB_GetState(BUTTON_USER) != GPIO_PIN_SET)
+  while (BSP_PB_GetState(BUTTON_USER) != GPIO_PIN_SET)
   {
     /* Read Gyro Angular data */
     BSP_GYRO_GetXYZ(Buffer);
-    
+
     /* Update autoreload and capture compare registers value */
     Xval = ABS((int8_t)(Buffer[0]));
     Yval = ABS((int8_t)(Buffer[1]));
-    
-    if(Xval > Yval)
+
+    if (Xval > Yval)
     {
-      if(Buffer[0] > 5000.0f)
+      if (Buffer[0] > 5000.0f)
       {
-        /*  LED5 On */   
+        /*  LED5 On */
         BSP_LED_Off(LED3);
         BSP_LED_Off(LED4);
         BSP_LED_On(LED5);
         BSP_LED_Off(LED6);
 
-        /* Insert 250ms delay */ 
+        /* Insert 250ms delay */
         HAL_Delay(250);
       }
-      
-      if(Buffer[0] < -5000.0f)
+
+      if (Buffer[0] < -5000.0f)
       {
-        /*  LED4 On */   
+        /*  LED4 On */
         BSP_LED_Off(LED3);
         BSP_LED_On(LED4);
         BSP_LED_Off(LED5);
         BSP_LED_Off(LED6);
 
-        /* Insert 250ms delay */ 
+        /* Insert 250ms delay */
         HAL_Delay(250);
       }
     }
     else
     {
-      if(Buffer[1] > 5000.0f)
+      if (Buffer[1] > 5000.0f)
       {
-        /*  LED3 On */   
+        /*  LED3 On */
         BSP_LED_On(LED3);
         BSP_LED_Off(LED4);
         BSP_LED_Off(LED5);
         BSP_LED_Off(LED6);
 
-        /* Insert 250ms delay */ 
+        /* Insert 250ms delay */
         HAL_Delay(250);
       }
-      
-      if(Buffer[1] < -5000.0f)
+
+      if (Buffer[1] < -5000.0f)
       {
-        /*  LED6 On */   
+        /*  LED6 On */
         BSP_LED_Off(LED3);
         BSP_LED_Off(LED4);
         BSP_LED_Off(LED5);
         BSP_LED_On(LED6);
 
-        /* Insert 250ms delay */ 
+        /* Insert 250ms delay */
         HAL_Delay(250);
       }
     }
   }
 
   /* Wait for User button is released */
-  while(BSP_PB_GetState(BUTTON_USER) != GPIO_PIN_RESET)
+  while (BSP_PB_GetState(BUTTON_USER) != GPIO_PIN_RESET)
   {
   }
 
-  /* Turn Off Leds */   
+  /* Turn Off Leds */
   BSP_LED_Off(LED3);
   BSP_LED_Off(LED4);
   BSP_LED_Off(LED5);
@@ -330,31 +330,31 @@ static void MEMS_Test(void)
 
 /**
 * @brief  USB Mouse cursor moving
-* @param  None 
+* @param  None
 * @retval None
 */
 static void USB_Demo(void)
 {
   uint8_t HID_Buffer[4];
-  
+
   BSP_LED_On(LED3);
   BSP_LED_Off(LED6);
-  
+
   while ((BSP_PB_GetState(BUTTON_USER) != GPIO_PIN_SET))
   {
     USB_GetPointerData_Demo(HID_Buffer);
-    
+
     /* send data though IN endpoint*/
-    if((HID_Buffer[1] != 0) || (HID_Buffer[2] != 0))
+    if ((HID_Buffer[1] != 0) || (HID_Buffer[2] != 0))
     {
       USBD_HID_SendReport(&USBD_Device, HID_Buffer, 4);
     }
   }
-  
-  /* Wait for User button is released */ 
+
+  /* Wait for User button is released */
   while (BSP_PB_GetState(BUTTON_USER) != GPIO_PIN_RESET)
-  {} 
-  /* Turn Off Leds */   
+  {}
+  /* Turn Off Leds */
   BSP_LED_Off(LED3);
   BSP_LED_Off(LED4);
   BSP_LED_Off(LED5);
@@ -366,84 +366,128 @@ static void USB_Demo(void)
   * @param  pfData : Data out pointer
   * @retval None
   */
-static void Demo_GyroReadAngRate (float* pfData)
+static void Demo_GyroReadAngRate(float *pfData)
 {
-  uint8_t tmpbuffer[6] ={0};
+  uint8_t tmpbuffer[6] = {0};
   int16_t RawData[3] = {0};
   uint8_t tmpreg = 0;
   float sensitivity = 0;
-  int i =0;
-  
-  GYRO_IO_Read(&tmpreg,L3GD20_CTRL_REG4_ADDR,1);
-  
-  GYRO_IO_Read(tmpbuffer,L3GD20_OUT_X_L_ADDR,6);
-  
-  /* check in the control register 4 the data alignment (Big Endian or Little Endian)*/
-  if(!(tmpreg & L3GD20_BLE_MSB))
+  int i = 0;
+
+  if ((L3gd20Drv.ReadID() == I_AM_L3GD20) || (L3gd20Drv.ReadID() == I_AM_L3GD20_TR))
   {
-    for(i=0; i<3; i++)
+    GYRO_IO_Read(&tmpreg, L3GD20_CTRL_REG4_ADDR, 1);
+
+    GYRO_IO_Read(tmpbuffer, L3GD20_OUT_X_L_ADDR, 6);
+
+    /* check in the control register 4 the data alignment (Big Endian or Little Endian)*/
+    if (!(tmpreg & L3GD20_BLE_MSB))
     {
-      RawData[i]=(int16_t)(((uint16_t)tmpbuffer[2*i+1] << 8) + tmpbuffer[2*i]);
+      for (i = 0; i < 3; i++)
+      {
+        RawData[i] = (int16_t)(((uint16_t)tmpbuffer[2 * i + 1] << 8) + tmpbuffer[2 * i]);
+      }
+    }
+    else
+    {
+      for (i = 0; i < 3; i++)
+      {
+        RawData[i] = (int16_t)(((uint16_t)tmpbuffer[2 * i] << 8) + tmpbuffer[2 * i + 1]);
+      }
+    }
+
+    /* Switch the sensitivity value set in the CRTL4 */
+    switch (tmpreg & L3GD20_FULLSCALE_SELECTION)
+    {
+      case L3GD20_FULLSCALE_250:
+        sensitivity = L3GD20_SENSITIVITY_250DPS;
+        break;
+
+      case L3GD20_FULLSCALE_500:
+        sensitivity = L3GD20_SENSITIVITY_500DPS;
+        break;
+
+      case L3GD20_FULLSCALE_2000:
+        sensitivity = L3GD20_SENSITIVITY_2000DPS;
+        break;
+
+      default:
+        sensitivity = L3GD20_SENSITIVITY_250DPS;
     }
   }
   else
   {
-    for(i=0; i<3; i++)
+    GYRO_IO_Read(&tmpreg, I3G4250D_CTRL_REG4_ADDR, 1);
+
+    GYRO_IO_Read(tmpbuffer, I3G4250D_OUT_X_L_ADDR, 6);
+
+    /* check in the control register 4 the data alignment (Big Endian or Little Endian)*/
+    if (!(tmpreg & I3G4250D_BLE_MSB))
     {
-      RawData[i]=(int16_t)(((uint16_t)tmpbuffer[2*i] << 8) + tmpbuffer[2*i+1]);
+      for (i = 0; i < 3; i++)
+      {
+        RawData[i] = (int16_t)(((uint16_t)tmpbuffer[2 * i + 1] << 8) + tmpbuffer[2 * i]);
+      }
+    }
+    else
+    {
+      for (i = 0; i < 3; i++)
+      {
+        RawData[i] = (int16_t)(((uint16_t)tmpbuffer[2 * i] << 8) + tmpbuffer[2 * i + 1]);
+      }
+    }
+    /* Switch the sensitivity value set in the CRTL4 */
+    switch (tmpreg & I3G4250D_FULLSCALE_SELECTION)
+    {
+      case I3G4250D_FULLSCALE_245:
+        sensitivity = I3G4250D_SENSITIVITY_245DPS;
+        break;
+
+      case I3G4250D_FULLSCALE_500:
+        sensitivity = I3G4250D_SENSITIVITY_500DPS;
+        break;
+
+      case I3G4250D_FULLSCALE_2000:
+        sensitivity = I3G4250D_SENSITIVITY_2000DPS;
+        break;
+
+      default:
+        sensitivity = I3G4250D_SENSITIVITY_245DPS;
     }
   }
-  
-  /* Switch the sensitivity value set in the CRTL4 */
-  switch(tmpreg & L3GD20_FULLSCALE_SELECTION)
-  {
-  case L3GD20_FULLSCALE_250:
-    sensitivity=L3GD20_SENSITIVITY_250DPS;
-    break;
-    
-  case L3GD20_FULLSCALE_500:
-    sensitivity=L3GD20_SENSITIVITY_500DPS;
-    break;
-    
-  case L3GD20_FULLSCALE_2000:
-    sensitivity=L3GD20_SENSITIVITY_2000DPS;
-    break;
-    
-    default:
-      sensitivity=L3GD20_SENSITIVITY_250DPS;
-  }
+
   /* divide by sensitivity */
-  for(i=0; i<3; i++)
+  for (i = 0; i < 3; i++)
   {
-    pfData[i]=(float)(RawData[i] / sensitivity);
+    pfData[i] = (float)(RawData[i] / sensitivity);
   }
 }
 
 /**
-  * @brief  USB Test : Configure the USB 
-  * @param  None 
+  * @brief  USB Test : Configure the USB
+  * @param  None
   * @retval None
   */
 static void USB_Test(void)
 {
   uint8_t HID_Buffer[4];
-  
+
   while ((BSP_PB_GetState(BUTTON_USER) != GPIO_PIN_SET))
   {
     USB_GetPointerData_Test(HID_Buffer);
-    
+
     /* send data though IN endpoint*/
-    if((HID_Buffer[1] != 0) || (HID_Buffer[2] != 0))
+    if ((HID_Buffer[1] != 0) || (HID_Buffer[2] != 0))
     {
       USBD_HID_SendReport(&USBD_Device, HID_Buffer, 4);
-      HAL_Delay (50);
+      HAL_Delay(50);
     }
   }
-  
-  /* Wait for User button is released */ 
+
+  /* Wait for User button is released */
   while (BSP_PB_GetState(BUTTON_USER) != GPIO_PIN_RESET)
-  {} 
-  /* Turn Off Leds */   
+  {}
+  /* Turn Off Leds */
   BSP_LED_Off(LED3);
   BSP_LED_Off(LED4);
   BSP_LED_Off(LED5);
@@ -456,54 +500,54 @@ static void USB_Test(void)
   * @retval Pointer to report
 */
 static void USB_GetPointerData_Test(uint8_t *pbuf)
-{ 
+{
   static int8_t x = 0;
   static int8_t y = 0;
   static int8_t Sens = 0;
   static int8_t Pas = 0;
-  
+
   if (Pas == 20)
   {
-    Pas=0;
+    Pas = 0;
     Sens++;
   }
-  
-  if(Sens == 0)
+
+  if (Sens == 0)
   {
-    x=Pas++;
-    y=0;
+    x = Pas++;
+    y = 0;
     BSP_LED_Toggle(LED5);
-  }      
-  if(Sens == 1)
+  }
+  if (Sens == 1)
   {
-    y=Pas++;
-    x=0;
+    y = Pas++;
+    x = 0;
     BSP_LED_Toggle(LED6);
-  }      
+  }
   if (Sens == 2)
   {
-    x=256-Pas++;
-    y=0;
+    x = 256 - Pas++;
+    y = 0;
     BSP_LED_Toggle(LED4);
-  }      
+  }
   if (Sens == 3)
   {
-    y=256-Pas++;
-    x=0;
+    y = 256 - Pas++;
+    x = 0;
     BSP_LED_Toggle(LED3);
-  }      
-  if (Sens == 4)
-  { 
-    Sens=0;
-    x=0;
-    y=0;
   }
-  
+  if (Sens == 4)
+  {
+    Sens = 0;
+    x = 0;
+    y = 0;
+  }
+
   pbuf[0] = 0;
   pbuf[1] = x;
   pbuf[2] = y;
   pbuf[3] = 0;
-  
+
 }
 
 /**
@@ -512,27 +556,27 @@ static void USB_GetPointerData_Test(uint8_t *pbuf)
   * @retval Pointer to report
   */
 static void USB_GetPointerData_Demo(uint8_t *pbuf)
-{ 
+{
   static float Buffer[6] = {0};
-  
+
   BSP_GYRO_Init();
-  
+
   /* Read Gyro Angular data */
-  Demo_GyroReadAngRate(Buffer); 
-  
+  Demo_GyroReadAngRate(Buffer);
+
   pbuf[0] = 0;
-  pbuf[1] = -(int8_t)(Buffer[2])/6;
-  pbuf[2] = (int8_t)(Buffer[1])/6;
+  pbuf[1] = -(int8_t)(Buffer[2]) / 15;
+  pbuf[2] = (int8_t)(Buffer[1]) / 15;
   pbuf[3] = 0;
-  
+
   BSP_LED_Toggle(LED3);
   BSP_LED_Toggle(LED6);
-  
+
 }
 
 /**
 * @brief  TS Test.
-* @param  None 
+* @param  None
 * @retval None
 */
 static void TSL_Test(void)
@@ -567,23 +611,23 @@ static void TSL_Test(void)
   }
 
   /* Init STMTouch driver */
-  TSL_user_Init(); 
+  TSL_user_Init();
 
-  while(BSP_PB_GetState(BUTTON_USER) != GPIO_PIN_SET)
+  while (BSP_PB_GetState(BUTTON_USER) != GPIO_PIN_SET)
   {
     /* Execute STMTouch Driver state machine */
     if (TSL_user_Action() == TSL_STATUS_OK)
-    {       
+    {
       ProcessSensors(); // Execute sensors related tasks
     }
   }
-  
+
   /* Wait for User button is released */
-  while(BSP_PB_GetState(BUTTON_USER) != GPIO_PIN_RESET)
+  while (BSP_PB_GetState(BUTTON_USER) != GPIO_PIN_RESET)
   {
   }
 
-  /* Turn Off Leds */   
+  /* Turn Off Leds */
   BSP_LED_Off(LED3);
   BSP_LED_Off(LED4);
   BSP_LED_Off(LED5);
@@ -634,19 +678,19 @@ static void ProcessSensors(void)
   */
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
-  if(GPIO_Pin == USER_BUTTON_PIN)
+  if (GPIO_Pin == USER_BUTTON_PIN)
   {
     ButtonPressed = 0x01;
   }
 }
 
 /**
-  * @brief  Acquisition completed callback in non blocking mode 
+  * @brief  Acquisition completed callback in non blocking mode
   * @param  htsc: pointer to a TSC_HandleTypeDef structure that contains
   *         the configuration information for the specified TSC.
   * @retval None
   */
-void HAL_TSC_ConvCpltCallback(TSC_HandleTypeDef* htsc)
+void HAL_TSC_ConvCpltCallback(TSC_HandleTypeDef *htsc)
 {
 #if TSLPRM_TSC_IODEF > 0 // Default = Input Floating
   /* Set IO default in Output PP Low to discharge all capacitors */
@@ -662,14 +706,14 @@ void HAL_TSC_ConvCpltCallback(TSC_HandleTypeDef* htsc)
   *         the configuration information for the specified TSC.
   * @retval None
   */
-void HAL_TSC_ErrorCallback(TSC_HandleTypeDef* htsc)
+void HAL_TSC_ErrorCallback(TSC_HandleTypeDef *htsc)
 {
   Error_Handler();
 }
 
 /**
   * @brief  System Clock Configuration
-  *         The system Clock is configured as follow : 
+  *         The system Clock is configured as follow :
   *            System Clock source            = PLL (HSI48)
   *            SYSCLK(Hz)                     = 48000000
   *            HCLK(Hz)                       = 48000000
@@ -686,7 +730,7 @@ static void SystemClock_Config(void)
 {
   RCC_ClkInitTypeDef RCC_ClkInitStruct;
   RCC_OscInitTypeDef RCC_OscInitStruct;
-  
+
   /* Select HSI48 Oscillator as PLL source */
   RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI48;
   RCC_OscInitStruct.HSI48State = RCC_HSI48_ON;
@@ -694,7 +738,7 @@ static void SystemClock_Config(void)
   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSI48;
   RCC_OscInitStruct.PLL.PREDIV = RCC_PREDIV_DIV2;
   RCC_OscInitStruct.PLL.PLLMUL = RCC_PLL_MUL2;
-  if (HAL_RCC_OscConfig(&RCC_OscInitStruct)!= HAL_OK)
+  if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
   {
     Error_Handler();
   }
@@ -704,7 +748,7 @@ static void SystemClock_Config(void)
   RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
-  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_1)!= HAL_OK)
+  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_1) != HAL_OK)
   {
     Error_Handler();
   }
@@ -718,7 +762,7 @@ static void SystemClock_Config(void)
 static void Error_Handler(void)
 {
   /* User may add here some code to deal with this error */
-  while(1)
+  while (1)
   {
   }
 }
@@ -732,8 +776,8 @@ static void Error_Handler(void)
   * @param  line: assert_param error line source number
   * @retval None
   */
-void assert_failed(uint8_t* file, uint32_t line)
-{ 
+void assert_failed(uint8_t *file, uint32_t line)
+{
   /* User can add his own implementation to report the file name and line number,
      ex: printf("Wrong parameters value: file %s on line %d\r\n", file, line) */
 

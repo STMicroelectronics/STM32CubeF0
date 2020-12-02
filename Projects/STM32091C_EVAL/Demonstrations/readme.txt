@@ -23,7 +23,7 @@
 @par Demo Description
 
 Demonstration firmware based on STM32Cube. This example helps you to discover
-STM32 Cortex-M devices that are plugged onto your STM32 Nucleo board.
+STM32 Cortex-M devices that are plugged onto your STM32 EVAL board.
 
 At the beginning of the main program the HAL_Init() function is called to reset
 all the peripherals, initialize the Flash interface and the systick.
