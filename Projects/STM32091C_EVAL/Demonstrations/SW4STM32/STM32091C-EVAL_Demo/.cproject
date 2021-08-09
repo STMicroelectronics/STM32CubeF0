@@ -49,7 +49,7 @@
 									<listOptionValue builtIn="false" value="../../../../../../Drivers/BSP/Components/Common"/>
 									<listOptionValue builtIn="false" value="../../../../../../Middlewares/Third_Party/FatFs/src"/>
 									<listOptionValue builtIn="false" value="../../../../../../Middlewares/Third_Party/FatFs/src/drivers"/>
-									<listOptionValue builtIn="false" value=""/>
+
 									<listOptionValue builtIn="false" value="../../../../../../Drivers/CMSIS/Include"/>
 								</option>
 								<option id="gnu.c.compiler.option.preprocessor.def.symbols.707011289" name="Defined symbols (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols" useByScannerDiscovery="false" valueType="definedSymbols">

@@ -127,7 +127,7 @@ void DMA1_Channel2_3_IRQHandler(void)
 
   if(LL_DMA_IsActiveFlag_TC2(DMA1))
   {
-    LL_DMA_ClearFlag_GI2(DMA1);
+    LL_DMA_ClearFlag_TC2(DMA1);
     /* Call function Reception complete Callback */
     DMA1_ReceiveComplete_Callback();
   }
@@ -138,7 +138,7 @@ void DMA1_Channel2_3_IRQHandler(void)
   }
   else if(LL_DMA_IsActiveFlag_TC3(DMA1))
   {
-    LL_DMA_ClearFlag_GI3(DMA1);
+    LL_DMA_ClearFlag_TC3(DMA1);
     /* Call function Transmission complete Callback */
     DMA1_TransmitComplete_Callback();
   }

@@ -169,10 +169,5 @@
 			<type>1</type>
 			<location>PARENT-7-PROJECT_LOC/Middlewares/ST/STM32_TouchSensing_Library/src/tsl_time.c</location>
 		</link>
-		<link>
-			<name />
-			<type />
-			<location />
-		</link>
 	</linkedResources>
 </projectDescription>

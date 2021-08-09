@@ -89,10 +89,5 @@
 			<type>1</type>
 			<location>PARENT-2-PROJECT_LOC/Src/stm32f0xx_it.c</location>
 		</link>
-		<link>
-			<name />
-			<type />
-			<location />
-		</link>
 	</linkedResources>
 </projectDescription>

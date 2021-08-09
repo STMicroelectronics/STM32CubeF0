@@ -127,7 +127,7 @@ void DMA1_Channel4_5_6_7_IRQHandler(void)
 {
   if(LL_DMA_IsActiveFlag_TC2(DMA1) == 1)
   {
-    LL_DMA_ClearFlag_GI2(DMA1);
+    LL_DMA_ClearFlag_TC2(DMA1);
     TransferComplete_Callback();
   }
   else if(LL_DMA_IsActiveFlag_TE2(DMA1) == 1)

@@ -36,7 +36,7 @@
 									<listOptionValue builtIn="false" value="../../../Inc"/>
 									<listOptionValue builtIn="false" value="../../../../../../../../Drivers/CMSIS/Device/ST/STM32F0xx/Include"/>
 									<listOptionValue builtIn="false" value="../../../../../../../../Drivers/STM32F0xx_HAL_Driver/Inc"/>
-									<listOptionValue builtIn="false" value=""/>
+
 									<listOptionValue builtIn="false" value="../../../../../../../../Drivers/CMSIS/Include"/>
 								</option>
 								<option id="gnu.c.compiler.option.preprocessor.def.symbols.15266200" name="Defined symbols (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols" useByScannerDiscovery="false" valueType="definedSymbols">

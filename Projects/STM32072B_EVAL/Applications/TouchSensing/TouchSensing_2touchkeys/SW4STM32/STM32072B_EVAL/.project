@@ -169,10 +169,5 @@
 			<type>1</type>
 			<location>PARENT-7-PROJECT_LOC/Drivers/BSP/STM32072B_EVAL/stm32072b_eval_lcd.c</location>
 		</link>
-		<link>
-			<name />
-			<type />
-			<location />
-		</link>
 	</linkedResources>
 </projectDescription>
