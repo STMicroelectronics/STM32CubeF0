@@ -13,7 +13,12 @@
 
 The **STM32CubeF0 MCU Package** projects are directly running on the STM32F0 series boards. You can find in each Projects/*Board name* directories a set of software projects (Applications/Demonstration/Examples).
 
-In this FW Package, the module **Middlewares/ST/STemWin** is not directly accessible. It must be downloaded from a ST server, the URL is available in a readme.txt file inside the module.
+## Some middleware libraries are unavailable in this repository
+
+In this repository, the middleware libraries listed below **along with** the projects (demos, applications, and examples) using them, are **not available** as they (the middleware libraries) are subject to some restrictive license terms requiring the user's approval via a "click thu" procedure.
+* `./Middlewares/ST/STemWin`
+
+If needed, they can be found inside the full firmware package available on our website `st.com` and downloadable from [here](https://www.st.com/content/st_com/en/products/embedded-software/mcu-mpu-embedded-software/stm32-embedded-software/stm32cube-mcu-mpu-packages/stm32cubef0.html#get-software). You will be prompted to login, or to register in case you have no account.
 
 ## Release note
 
@@ -36,6 +41,4 @@ Details about the content of this release are available in the release note [her
 
 ## Troubleshooting
 
-**Caution** : The issues and the pull-requests are **strictly limited** to submit problems or suggestions related to the software delivered in this repository.
-
-**For any other question** related to the product, the hardware performance or characteristics, the tools, the environment, you can submit it to the **ST Community** on the STM32 MCUs related [page](https://community.st.com/s/topic/0TO0X000000BSqSWAW/stm32-mcus).
+Please refer to the [CONTRIBUTING.md](CONTRIBUTING.md) guide.
