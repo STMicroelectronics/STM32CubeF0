@@ -6,13 +6,12 @@
   ******************************************************************************
   * @attention
   *
-  * <h2><center>&copy; Copyright (c) 2016 STMicroelectronics.
-  * All rights reserved.</center></h2>
+  * Copyright (c) 2016 STMicroelectronics.
+  * All rights reserved.
   *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
+  * This software is licensed under terms that can be found in the LICENSE file
+  * in the root directory of this software component.
+  * If no LICENSE file comes with this software, it is provided AS-IS.
   *
   ******************************************************************************
   */
@@ -64,9 +63,9 @@ void kMenu_Init(void) {
 }
 
 /**
-  * @brief  Function in charge to hanlde the menu selection
+  * @brief  Function in charge to handle the menu selection
   * @param  menu
-  * @param  sel : slected item
+  * @param  sel : selected item
   * @retval None
   */
 void kMenu_HandleSelection(tMenu MainMenu, uint8_t *sel)
@@ -207,7 +206,7 @@ void kMenu_HandleSelection(tMenu MainMenu, uint8_t *sel)
 }
 
 /**
-  * @brief  Function in charge to execture a menu 
+  * @brief  Function in charge to execute a menu 
   * @param  menu 
   * @retval None
   */
@@ -387,7 +386,7 @@ void kMenu_Header(char *string)
 
 
 /**
-  * @brief  Function in charge to hanlde user event and forward them to the module
+  * @brief  Function in charge to handle user event and forward them to the module
   * @param  GPIO_Pin
   * @retval None
   */
@@ -420,5 +419,3 @@ void kMenu_EventHandler(uint16_t GPIO_Pin) {
 /**
   * @}
   */
-
-/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

@@ -9,13 +9,12 @@
   ******************************************************************************
   * @attention
   *
-  * <h2><center>&copy; Copyright (c) 2016 STMicroelectronics.
-  * All rights reserved.</center></h2>
+  * Copyright (c) 2016 STMicroelectronics.
+  * All rights reserved.
   *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
+  * This software is licensed under terms that can be found in the LICENSE file
+  * in the root directory of this software component.
+  * If no LICENSE file comes with this software, it is provided AS-IS.
   *
   ******************************************************************************
   @endverbatim
@@ -33,8 +32,8 @@ Then the SystemClock_Config() function is used to configure the system clock
  
 Below you find the different items of demonstration :
 
- - 8uarts application : is using the 8 uarts available to transfert a buffer by packet.
- - file browser : aplication to browse on the SD card.
+ - 8uarts application : is using the 8 uarts available to transfer a buffer by packet.
+ - file browser : application to browse on the SD card.
  - image browser : displays the pictures present on the SD card (\USER).
  - low power : allows to enter in low power mode(stop and standby) 
               and the wakeup can be ordered by an EXTI or an alarm.
@@ -69,5 +68,5 @@ In order to make the program work, you must do the following :
  - Rebuild all files and load your image into target memory
  - Run the example
 
- * <h3><center>&copy; COPYRIGHT STMicroelectronics</center></h3>
+
  */

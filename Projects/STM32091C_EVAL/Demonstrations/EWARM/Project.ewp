@@ -280,7 +280,7 @@
         </option>
         <option>
           <name>CCRequirePrototypes</name>
-          <state>0</state>
+          <state>1</state>
         </option>
         <option>
           <name>CCMultibyteSupport</name>
@@ -1166,9 +1166,6 @@
       </file>
       <file>
         <name>$PROJ_DIR$\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_iwdg.c</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_msp_template.c</name>
       </file>
       <file>
         <name>$PROJ_DIR$\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_pcd.c</name>

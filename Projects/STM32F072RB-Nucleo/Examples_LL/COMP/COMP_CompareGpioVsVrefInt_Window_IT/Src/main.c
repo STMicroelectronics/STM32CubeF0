@@ -12,13 +12,12 @@
   ******************************************************************************
   * @attention
   *
-  * <h2><center>&copy; Copyright (c) 2016 STMicroelectronics.
-  * All rights reserved.</center></h2>
+  * Copyright (c) 2016 STMicroelectronics.
+  * All rights reserved.
   *
-  * This software component is licensed by ST under BSD 3-Clause license,
-  * the "License"; You may not use this file except in compliance with the
-  * License. You may obtain a copy of the License at:
-  *                        opensource.org/licenses/BSD-3-Clause
+  * This software is licensed under terms that can be found in the LICENSE file
+  * in the root directory of this software component.
+  * If no LICENSE file comes with this software, it is provided AS-IS.
   *
   ******************************************************************************
   */
@@ -50,12 +49,12 @@
   #define VDDA_APPLI                       ((uint32_t)3300)
   
   /* Value of comparator thresholds based on VrefInt */
-  /* (VrefInt voltage is approximatively 1.22V, refer to device datasheet     */
+  /* (VrefInt voltage is approximately 1.22V, refer to device datasheet     */
   /* for min/typ/max values).                                                 */
   /* (unit: mV).                                                              */
   #define VREFINT                          ((uint32_t)1220)
-  #define COMP_WINDOW_THRESHOLD_HIGH       (VREFINT)        /* COMP1 input plus is selected to VrefInt in this exemple */
-  #define COMP_WINDOW_THRESHOLD_LOW        (VREFINT /2)     /* COMP2 input plus is selected to 1/2 VrefInt in this exemple */
+  #define COMP_WINDOW_THRESHOLD_HIGH       (VREFINT)        /* COMP1 input plus is selected to VrefInt in this example */
+  #define COMP_WINDOW_THRESHOLD_LOW        (VREFINT /2)     /* COMP2 input plus is selected to 1/2 VrefInt in this example */
   
 /* Definitions of data related to this example */
   /* Full-scale digital value with a resolution of 12 bits (voltage range     */
@@ -569,5 +568,3 @@ void assert_failed(uint8_t *file, uint32_t line)
 /**
   * @}
   */
-
-/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

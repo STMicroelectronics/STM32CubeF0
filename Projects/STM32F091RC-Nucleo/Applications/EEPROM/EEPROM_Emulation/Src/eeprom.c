@@ -6,13 +6,12 @@
   ******************************************************************************
   * @attention
   *
-  * <h2><center>&copy; Copyright (c) 2016 STMicroelectronics.
-  * All rights reserved.</center></h2>
+  * Copyright (c) 2016 STMicroelectronics.
+  * All rights reserved.
   *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
+  * This software is licensed under terms that can be found in the LICENSE file
+  * in the root directory of this software component.
+  * If no LICENSE file comes with this software, it is provided AS-IS.
   *
   ******************************************************************************
   */ 
@@ -139,7 +138,7 @@ uint16_t CalculateCrc(EE_DATA_TYPE Data, uint16_t VirtAddress);
   *         Then if some pages are ERASING state, erase these pages.
   * @param  EraseType: Type of erase to apply on page requiring to be erased.
   *         This parameter can be one of the following values:
-  *          @arg @ref EE_FORCED_ERASE      pages to erase are erased unconditionnally
+  *          @arg @ref EE_FORCED_ERASE      pages to erase are erased unconditionally
   *          @arg @ref EE_CONDITIONAL_ERASE pages to erase are erased only if not fully erased
   * @retval EE_Status
   *           - EE_OK in case of success
@@ -259,7 +258,7 @@ EE_Status EE_Init(EE_Erase_type EraseType)
     if (pagestatus == STATE_PAGE_RECEIVE)
     {
       /* Verify that receive page is a true one, not a corrupted page state */
-      /* Check if page is not the first page of a bloc */
+      /* Check if page is not the first page of a block */
       if ((page != START_PAGE) && (page != (uint32_t)(START_PAGE + (PAGES_NUMBER / 2U))))
       {
         /* Check that previous page is valid state */
@@ -274,7 +273,7 @@ EE_Status EE_Init(EE_Erase_type EraseType)
           pagestate = STATE_CORRUPTED;
         }
       }
-      else /* The receive page is the first page of a bloc */
+      else /* The receive page is the first page of a block */
       {
         /* Check that following page is erased state */
         if (GetPageState(PAGE_ADDRESS(FOLLOWING_PAGE(page))) == STATE_PAGE_ERASED)
@@ -301,7 +300,7 @@ EE_Status EE_Init(EE_Erase_type EraseType)
           return EE_TRANSFER_ERROR;
         }
 
-        /* Memorize transfer recovery occured */
+        /* Memorize transfer recovery occurred */
         recoverytransfer = 1U;
 
         /* transfer recovery is done, then stop searching receive page */
@@ -326,7 +325,7 @@ EE_Status EE_Init(EE_Erase_type EraseType)
     if (pagestatus == STATE_PAGE_ACTIVE)
     {
       /* Verify that active page is a true one, not a corrupted page state */
-      /* Check if page is not the first page of a bloc */
+      /* Check if page is not the first page of a block */
       if ((page != START_PAGE) && (page != (uint32_t)(START_PAGE + (PAGES_NUMBER / 2U))))
       {
         /* Check that previous page is valid state */
@@ -341,7 +340,7 @@ EE_Status EE_Init(EE_Erase_type EraseType)
           pagestate = STATE_CORRUPTED;
         }
       }
-      else /* The active page is the first page of a bloc */
+      else /* The active page is the first page of a block */
       {
         /* Check that following page is erased state */
         if (GetPageState(PAGE_ADDRESS(FOLLOWING_PAGE(page))) == STATE_PAGE_ERASED)
@@ -416,7 +415,7 @@ EE_Status EE_Init(EE_Erase_type EraseType)
   /* Step 6: Finalize eeprom emulation global variables relative       */
   /*         to valid pages, and check consistency of pages sequence   */
   /*********************************************************************/
-  /* Check consistency of pages sequence: one active page, optionnally some valid pages before */
+  /* Check consistency of pages sequence: one active page, optionally some valid pages before */
   /* Update global variable uhNbWrittenElements if valid pages are found */
   page = ubCurrentActivePage;
   firstvalidpage = ubCurrentActivePage;
@@ -482,7 +481,7 @@ EE_Status EE_Init(EE_Erase_type EraseType)
   /* Step 8: Perform dummy write '0' to get rid of potential           */
   /*         instability of line value 0xFFFFFFFF consecutive to a     */
   /*         reset during write here                                   */
-  /*         Only needed if recovery transfer did not occured          */
+  /*         Only needed if recovery transfer did not occurred          */
   /*********************************************************************/
   if (recoverytransfer == 0U)
   {
@@ -508,7 +507,7 @@ EE_Status EE_Init(EE_Erase_type EraseType)
   *         variables.
   * @param  EraseType: Type of erase to apply on page requiring to be erased.
   *         This parameter can be one of the following values:
-  *          @arg @ref EE_FORCED_ERASE      pages to erase are erased unconditionnally
+  *          @arg @ref EE_FORCED_ERASE      pages to erase are erased unconditionally
   *          @arg @ref EE_CONDITIONAL_ERASE pages to erase are erased only if not fully erased
   * @retval EE_Status
   *           - EE_OK: on success
@@ -901,7 +900,7 @@ static EE_Status ReadVariable(uint16_t VirtAddress, EE_DATA_TYPE* pData)
   * @param  Data EE_DATA_TYPE data to be written
   * @retval EE_Status
   *           - EE_OK: on success, without page transfer
-  *           - EE_CLEANUP_REQUIRED: on success, with page transfer occured
+  *           - EE_CLEANUP_REQUIRED: on success, with page transfer occurred
   *           - EE_FLASH_USED: flash currently used by CPU2
   *           - EE error code: if an error occurs
   */
@@ -1259,7 +1258,7 @@ static EE_Status PagesTransfer(uint16_t VirtAddress, EE_DATA_TYPE Data, EE_Trans
   /* First element in receive page can be any one, the following elements are */
   /* ordered from the beginning. */
   /* In case of recovery, Pre-Last element in receive page could be */
-  /* corrupted if reset occured during write of this element, */
+  /* corrupted if reset occurred during write of this element, */
   /* and last element is dummy value that we have just written. */
   /* Transfer shall then resume from (uhNbWrittenElements-3) variable index */
   for (varidx = (uhNbWrittenElements >= 3U?(uhNbWrittenElements-3U+1U):1U); varidx < NB_OF_VARIABLES+1; varidx++)
@@ -1530,5 +1529,3 @@ uint16_t CalculateCrc(EE_DATA_TYPE Data, uint16_t VirtAddress)
 /**
   * @}
   */
-
-/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

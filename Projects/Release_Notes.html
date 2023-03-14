@@ -1,0 +1,3934 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Release Notes for Projects of STM32CubeF0 Firmware Package</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="../_htmresc/mini-st_2020.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  <link rel="icon" type="image/x-icon" href="../_htmresc/favicon.png" />
+</head>
+<body>
+<div class="row">
+<div class="col-sm-12 col-lg-4">
+<center>
+<h1 id="release-notes-for-projects-of-stm32cubef0-firmware-package"><strong>Release Notes for Projects of STM32CubeF0 Firmware Package</strong></h1>
+<p>Copyright © 2016 STMicroelectronics<br />
+</p>
+<a href="https://www.st.com" class="logo"><img src="../_htmresc/st_logo.png" alt="ST logo" /></a>
+</center>
+<h1 id="purpose">Purpose</h1>
+<p>The projects are a set of applicative tasks that aim to explain and provide use cases of the different products features based on the products hardware (Boards, STM32 Core(s) features, interconnections and peripherals) and built around the different firmware components. They can be directly used or adapted by the STM32CubeF0 Firmware Package users. They provide basic functionalities, show main features or demonstrate performance. They are provided with preconfigured projects for the main supported toolchains.</p>
+<p>In the STM32CubeF0 Firmware Package, the projects are organized in a sequential scheme based on the following levels:</p>
+<ul>
+<li>Boards : Hardware platform (evaluation, discovery, nucleo boards)</li>
+<li>Project Category:
+<ul>
+<li>Applications</li>
+<li>Demonstrations</li>
+<li>Examples</li>
+<li>Examples_LL</li>
+<li>Examples_MIX</li>
+<li>Templates</li>
+<li>Templates_LL</li>
+</ul></li>
+<li>Project Class</li>
+<li>Project Subclass</li>
+</ul>
+<p>The Project Class refers to the main peripherals (drivers), middleware libraries or BSP classes while the projects Subclass stands for a project specific feature within a class.</p>
+<p>The exhaustive list of projects is provided in this table: <a href="STM32CubeProjectsList.html">STM32CubeProjectsList</a>.</p>
+<p>Here is the list of references to user documents:</p>
+<ul>
+<li><a href="http://www.st.com/st-web-ui/static/active/en/resource/technical/document/user_manual/DM00119724.pdf">UM1779</a>: Getting started with STM32CubeF0 for STM32F0 Series.</li>
+<li><a href="http://www.st.com/st-web-ui/static/active/en/resource/technical/document/user_manual/DM00105256.pdf">UM1720</a>: STM32Cube USB device library</li>
+<li><a href="http://www.st.com/st-web-ui/static/active/en/resource/technical/document/user_manual/DM00108129.pdf">UM1734</a>: STM32Cube USB host library</li>
+<li><a href="http://www.st.com/st-web-ui/static/active/en/resource/technical/document/user_manual/DM00105259.pdf">UM1721</a>: Developing Applications on STM32Cube with FatFs</li>
+<li><a href="http://www.st.com/st-web-ui/static/active/en/resource/technical/document/user_manual/DM00105262.pdf">UM1722</a>: Developing Applications on STM32Cube with RTOS</li>
+<li><a href="http://www.st.com/st-web-ui/static/active/en/resource/technical/document/user_manual/DM00103685.pdf">UM1713</a>: Developing applications on STM32Cube with LwIP TCP/IP stack</li>
+<li><a href="http://www.st.com/st-web-ui/static/active/en/resource/technical/document/user_manual/DM00122017.pdf">UM1787</a>: STM32CubeF0 Nucleo demonstration firmware.</li>
+<li><a href="http://www.st.com/st-web-ui/static/active/en/resource/technical/document/user_manual/DM00134527.pdf">UM1819</a>: Demonstration firmware for STM32091C-EVAL board</li>
+</ul>
+</div>
+<div class="col-sm-12 col-lg-8">
+<h1 id="update-history">Update History</h1>
+<div class="collapse">
+<input type="checkbox" id="collapse-section11_4" checked aria-hidden="true"> <label for="collapse-section11_4" aria-hidden="true"><strong>V1.11.4 / 27-January-2023</strong></label>
+<div>
+<h1 id="maintenance-release">Maintenance release</h1>
+<h2 id="main-changes">Main Changes</h2>
+<ul>
+<li>Patch release to fix known defects and enhancements implementation.</li>
+<li>All source files: update disclaimer to add reference to the new license agreement.</li>
+<li><strong>Examples</strong>
+<ul>
+<li>Update CRC LL examples to fix incorrect bytes stream handling.</li>
+</ul></li>
+<li><strong>Applis_MW_ST_USB</strong>
+<ul>
+<li>Removal of the BCD bus stabilization delay</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section11_3"  aria-hidden="true"> <label for="collapse-section11_3" aria-hidden="true"><strong>V1.11.3 / 23-July-2021</strong></label>
+<div>
+<h1 id="maintenance-release-1">Maintenance release</h1>
+<h2 id="main-changes-1">Main Changes</h2>
+<ul>
+<li>Patch release to fix known defects and enhancements implementation.</li>
+<li><p><strong>Examples</strong></p>
+<ul>
+<li>General updates to fix compilation warnings with gcc v9.</li>
+<li>Updated examples and applications to avoid clearing DMA using global flag GIFx.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section11_2"  aria-hidden="true"> <label for="collapse-section11_2" aria-hidden="true"><strong>V1.11.2 / 06-November-2020</strong></label>
+<div>
+<h1 id="maintenance-release-2">Maintenance release</h1>
+<h2 id="main-changes-2">Main Changes</h2>
+<ul>
+<li>Patch release to fix known defects and enhancements implementation.</li>
+</ul>
+<p><strong>STM32F072B-DISCO</strong>:</p>
+<ul>
+<li><strong>Demonstrations</strong>
+<ul>
+<li>Update Demo to support new MEMS I3G4250D component.</li>
+</ul></li>
+</ul>
+<p><strong>STM32F091RC-Nucleo</strong>:</p>
+<ul>
+<li><strong>Applications</strong>
+<ul>
+<li>Update EEPROM_Emulation application in order to fix issues related to EE_Init() and EE_VerifyPageFullyErased() APIs.</li>
+</ul></li>
+</ul>
+<h2 id="contents">Contents</h2>
+<table>
+<caption>Projects NUCLEO-F091RC</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: center;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-F091RC</td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;"><strong>V1.11.2</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F091RC/Applications</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Projects STM32F072B-DISCO</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: center;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">STM32F072B-DISCO</td>
+<td style="text-align: left;"><strong>Demonstrations</strong></td>
+<td style="text-align: left;"><strong>V1.11.2</strong></td>
+<td style="text-align: center;">Projects/STM32F072B-DISCO/Demonstrations</td>
+</tr>
+</tbody>
+</table>
+<p>Note: in the tables above, project categories <strong>highlighted</strong> have changed since previous release.</p>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section11_1"  aria-hidden="true"> <label for="collapse-section11_1" aria-hidden="true"><strong>V1.11.1 / 24-July-2020</strong></label>
+<div>
+<h1 id="maintenance-release-3">Maintenance release</h1>
+<h2 id="main-changes-3">Main Changes</h2>
+<ul>
+<li>Patch release to fix known defects and enhancements implementation</li>
+</ul>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section1_11_0" aria-hidden="true"> <label for="collapse-section1_11_0" aria-hidden="true"><strong>V1.11.0 / 12-September-2019</strong></label>
+<div>
+<h1 id="maintenance-release-4">Maintenance release</h1>
+<h2 id="main-changes-4">Main Changes</h2>
+<ul>
+<li><strong>Projects</strong>
+<ul>
+<li>Update HAL I2C examples to be compliant with new I2C APIs</li>
+<li>Update HAL TIM examples to be compliant with new TIM APIs</li>
+<li>Update HAL CRC examples for <strong>STM32F030x4/x6/x8/xC</strong> and <strong>STM32F070x6/xB</strong> devices
+<ul>
+<li>Remove unwanted default polynomial attribute configuration as there is no programmable polynomial feature</li>
+</ul></li>
+<li>Update HAL SPI_FullDuplex_ComDMA example for <strong>STM32F03xx</strong>, <strong>STM32F04xx</strong> and <strong>STM32F07xx</strong> devices
+<ul>
+<li>Update HAL_SPI_MspInit() API to use DMA handle for reception instead of transmission in reception process</li>
+</ul></li>
+<li>Update USB Device projects to be compliant with USB Device <strong>V2.5.3</strong>
+<ul>
+<li>Update USB device applications by adding a UNUSED() macro in the following API on file usbd_desc.c files in order to avoid compilation warnings with EWARM 8.30
+<ul>
+<li>USBD_DFU_DeviceDescriptor()</li>
+<li>USBD_DFU_LangIDStrDescriptor()</li>
+<li>USBD_DFU_ManufacturerStrDescriptor()</li>
+<li>USBD_DFU_SerialStrDescriptor()</li>
+</ul></li>
+<li>Remove useless setting of ep0_mps in usbd_conf.c file for USB device applications</li>
+<li>Remove led toggle behavior inside systick handler API</li>
+</ul></li>
+<li>Update FreeRTOS applications to be compliant with FreeRTOS V10.0.1
+<ul>
+<li>update to use new FreeRTOSConfig.h template file</li>
+</ul></li>
+<li>Update TouchSensing applications to be compliant with new TouchSensing version
+<ul>
+<li>tsl_user.c: Add error management in tsl_user_Exec() API</li>
+</ul></li>
+</ul></li>
+</ul>
+<p><strong>STM32072B_EVAL</strong>:</p>
+<ul>
+<li><p><strong>Applications</strong></p>
+<ul>
+<li>Update for compatibility with FreeRTOS v10.0.1_20190329</li>
+<li>Update for compatibility with TouchSensing v2.2.4</li>
+<li>Update for compatibility with USB Device v2.5.3</li>
+<li>Update stm32f0xx_hal_conf.h files :
+<ul>
+<li>Change assert_failed() prototype to be compliant with MISRA C rule 11.4</li>
+<li>Add reference to HAL EXTI driver</li>
+<li>Add registers callbacks defines</li>
+</ul></li>
+</ul></li>
+<li><strong>Examples</strong>
+<ul>
+<li>Update stm32f0xx_hal_conf.h files :
+<ul>
+<li>Change assert_failed() prototype to be compliant with MISRA C rule 11.4</li>
+<li>Add reference to HAL EXTI driver</li>
+<li>Add registers callbacks defines</li>
+</ul></li>
+</ul></li>
+<li><strong>Templates</strong>
+<ul>
+<li>Add HAL EXTI driver</li>
+<li>Add LL USB driver</li>
+<li>Update stm32f0xx_hal_conf.h files :
+<ul>
+<li>Change assert_failed() prototype to be compliant with MISRA C rule 11.4</li>
+<li>Add reference to HAL EXTI driver</li>
+<li>Add registers callbacks defines</li>
+</ul></li>
+</ul></li>
+<li><strong>Templates LL</strong>
+<ul>
+<li>Update stm32_assert.h files :</li>
+<li>Change assert_failed() prototype to be compliant with MISRA C rule 11.4</li>
+</ul></li>
+</ul>
+<p><strong>STM32091C_EVAL</strong>:</p>
+<ul>
+<li><strong>Applications</strong>
+<ul>
+<li>Update for compatibility with FreeRTOS v10.0.1_20190329</li>
+<li>Update for compatibility with TouchSensing v2.2.4</li>
+<li>Update stm32f0xx_hal_conf.h files :
+<ul>
+<li>Change assert_failed() prototype to be compliant with MISRA C rule 11.4</li>
+<li>Add reference to HAL EXTI driver</li>
+<li>Add registers callbacks defines</li>
+</ul></li>
+</ul></li>
+<li><strong>Demonstrations</strong>
+<ul>
+<li>Update stm32f0xx_hal_conf.h files :
+<ul>
+<li>Change assert_failed() prototype to be compliant with MISRA C rule 11.4</li>
+<li>Add reference to HAL EXTI driver</li>
+<li>Add registers callbacks defines</li>
+</ul></li>
+</ul></li>
+<li><strong>Examples</strong>
+<ul>
+<li>Update stm32f0xx_hal_conf.h files :
+<ul>
+<li>Change assert_failed() prototype to be compliant with MISRA C rule 11.4</li>
+<li>Add reference to HAL EXTI driver</li>
+<li>Add registers callbacks defines</li>
+</ul></li>
+</ul></li>
+<li><strong>Templates</strong>
+<ul>
+<li>Add HAL EXTI driver</li>
+<li>Update stm32f0xx_hal_conf.h files :
+<ul>
+<li>Change assert_failed() prototype to be compliant with MISRA C rule 11.4</li>
+<li>Add reference to HAL EXTI driver</li>
+<li>Add registers callbacks defines</li>
+</ul></li>
+</ul></li>
+<li><strong>Templates LL</strong>
+<ul>
+<li>Change assert_failed() prototype to be compliant with MISRA C rule 11.4</li>
+</ul></li>
+</ul>
+<p><strong>STM32F0308-DISCO</strong>:</p>
+<ul>
+<li><strong>Applications</strong>
+<ul>
+<li>Update for compatibility with FreeRTOS v10.0.1_20190329</li>
+<li>Update stm32f0xx_hal_conf.h files :
+<ul>
+<li>Change assert_failed() prototype to be compliant with MISRA C rule 11.4</li>
+<li>Add reference to HAL EXTI driver</li>
+<li>Add registers callbacks defines</li>
+</ul></li>
+</ul></li>
+<li><strong>Demonstrations</strong>
+<ul>
+<li>Update stm32f0xx_hal_conf.h files :
+<ul>
+<li>Change assert_failed() prototype to be compliant with MISRA C rule 11.4</li>
+<li>Add reference to HAL EXTI driver</li>
+<li>Add registers callbacks defines</li>
+</ul></li>
+</ul></li>
+<li><strong>Examples</strong>
+<ul>
+<li>Update stm32f0xx_hal_conf.h files :
+<ul>
+<li>Change assert_failed() prototype to be compliant with MISRA C rule 11.4</li>
+<li>Add reference to HAL EXTI driver</li>
+<li>Add registers callbacks defines</li>
+</ul></li>
+</ul></li>
+<li><strong>Templates</strong>
+<ul>
+<li>Add HAL EXTI driver</li>
+<li>Update stm32f0xx_hal_conf.h files :
+<ul>
+<li>Change assert_failed() prototype to be compliant with MISRA C rule 11.4</li>
+<li>Add reference to HAL EXTI driver</li>
+<li>Add registers callbacks defines</li>
+</ul></li>
+</ul></li>
+<li><strong>Templates LL</strong>
+<ul>
+<li>Change assert_failed() prototype to be compliant with MISRA C rule 11.4</li>
+</ul></li>
+</ul>
+<p><strong>NUCLEO-F030R8</strong>:</p>
+<ul>
+<li><strong>Applications</strong>
+<ul>
+<li>Update for compatibility with FreeRTOS v10.0.1_20190329</li>
+<li>Update stm32f0xx_hal_conf.h files :
+<ul>
+<li>Change assert_failed() prototype to be compliant with MISRA C rule 11.4</li>
+<li>Add reference to HAL EXTI driver</li>
+<li>Add registers callbacks defines</li>
+</ul></li>
+</ul></li>
+<li><strong>Demonstration</strong>
+<ul>
+<li>Update stm32f0xx_hal_conf.h files :
+<ul>
+<li>Change assert_failed() prototype to be compliant with MISRA C rule 11.4</li>
+<li>Add reference to HAL EXTI driver</li>
+<li>Add registers callbacks defines</li>
+</ul></li>
+</ul></li>
+<li><strong>Examples</strong>
+<ul>
+<li>Update stm32f0xx_hal_conf.h files :
+<ul>
+<li>Change assert_failed() prototype to be compliant with MISRA C rule 11.4</li>
+<li>Add reference to HAL EXTI driver</li>
+<li>Add registers callbacks defines</li>
+</ul></li>
+</ul></li>
+<li><strong>Templates</strong>
+<ul>
+<li>Add HAL EXTI driver</li>
+<li>Add LL USB driver</li>
+<li>Update stm32f0xx_hal_conf.h files :
+<ul>
+<li>Change assert_failed() prototype to be compliant with MISRA C rule 11.4</li>
+<li>Add reference to HAL EXTI driver</li>
+<li>Add registers callbacks defines</li>
+</ul></li>
+</ul></li>
+<li><strong>Templates LL</strong>
+<ul>
+<li>Update stm32_assert.h files :
+<ul>
+<li>Change assert_failed() prototype to be compliant with MISRA C rule 11.4</li>
+</ul></li>
+</ul></li>
+</ul>
+<p><strong>NUCLEO-F031K6</strong>:</p>
+<ul>
+<li><strong>Applications</strong>
+<ul>
+<li>Update for compatibility with FreeRTOS v10.0.1_20190329</li>
+<li>Update stm32f0xx_hal_conf.h files :
+<ul>
+<li>Change assert_failed() prototype to be compliant with MISRA C rule 11.4</li>
+<li>Add reference to HAL EXTI driver</li>
+<li>Add registers callbacks defines</li>
+</ul></li>
+</ul></li>
+<li><strong>Demonstration</strong>
+<ul>
+<li>Update stm32f0xx_hal_conf.h files :
+<ul>
+<li>Change assert_failed() prototype to be compliant with MISRA C rule 11.4</li>
+<li>Add reference to HAL EXTI driver</li>
+<li>Add registers callbacks defines</li>
+</ul></li>
+</ul></li>
+<li><strong>Examples</strong>
+<ul>
+<li>Update stm32f0xx_hal_conf.h files :
+<ul>
+<li>Change assert_failed() prototype to be compliant with MISRA C rule 11.4</li>
+<li>Add reference to HAL EXTI driver</li>
+<li>Add registers callbacks defines</li>
+</ul></li>
+</ul></li>
+<li><strong>Templates</strong>
+<ul>
+<li>Add HAL EXTI driver</li>
+<li>Add LL USB driver</li>
+<li>Update stm32f0xx_hal_conf.h files :
+<ul>
+<li>Change assert_failed() prototype to be compliant with MISRA C rule 11.4</li>
+<li>Add reference to HAL EXTI driver</li>
+<li>Add registers callbacks defines</li>
+</ul></li>
+</ul></li>
+<li><strong>Templates LL</strong>
+<ul>
+<li>Update stm32_assert.h files :
+<ul>
+<li>Change assert_failed() prototype to be compliant with MISRA C rule 11.4</li>
+</ul></li>
+</ul></li>
+</ul>
+<p><strong>NUCLEO-F042K6</strong>:</p>
+<ul>
+<li><strong>Applications</strong>
+<ul>
+<li>Update for compatibility with FreeRTOS v10.0.1_20190329</li>
+<li>Update stm32f0xx_hal_conf.h files :
+<ul>
+<li>Change assert_failed() prototype to be compliant with MISRA C rule 11.4</li>
+<li>Add reference to HAL EXTI driver</li>
+<li>Add registers callbacks defines</li>
+</ul></li>
+</ul></li>
+<li><strong>Demonstration</strong>
+<ul>
+<li>Update stm32f0xx_hal_conf.h files :
+<ul>
+<li>Change assert_failed() prototype to be compliant with MISRA C rule 11.4</li>
+<li>Add reference to HAL EXTI driver</li>
+<li>Add registers callbacks defines</li>
+</ul></li>
+</ul></li>
+<li><strong>Examples</strong>
+<ul>
+<li>Update stm32f0xx_hal_conf.h files :
+<ul>
+<li>Change assert_failed() prototype to be compliant with MISRA C rule 11.4</li>
+<li>Add reference to HAL EXTI driver</li>
+<li>Add registers callbacks defines</li>
+</ul></li>
+</ul></li>
+<li><strong>Templates</strong>
+<ul>
+<li>Add HAL EXTI driver</li>
+<li>Add LL USB driver</li>
+<li>Update stm32f0xx_hal_conf.h files :
+<ul>
+<li>Change assert_failed() prototype to be compliant with MISRA C rule 11.4</li>
+<li>Add reference to HAL EXTI driver</li>
+<li>Add registers callbacks defines</li>
+</ul></li>
+</ul></li>
+<li><strong>Templates LL</strong>
+<ul>
+<li>Update stm32_assert.h files :
+<ul>
+<li>Change assert_failed() prototype to be compliant with MISRA C rule 11.4</li>
+</ul></li>
+</ul></li>
+</ul>
+<p><strong>NUCLEO-F070RB</strong>:</p>
+<ul>
+<li><strong>Applications</strong>
+<ul>
+<li>Update for compatibility with FreeRTOS v10.0.1_20190329</li>
+<li>Update for compatibility with TouchSensing v2.2.4</li>
+<li>Update for compatibility with USB Device v2.5.3</li>
+<li>Update stm32f0xx_hal_conf.h files :
+<ul>
+<li>Change assert_failed() prototype to be compliant with MISRA C rule 11.4</li>
+<li>Add reference to HAL EXTI driver</li>
+<li>Add registers callbacks defines</li>
+</ul></li>
+</ul></li>
+<li><strong>Demonstrations</strong>
+<ul>
+<li>Update stm32f0xx_hal_conf.h files :
+<ul>
+<li>Change assert_failed() prototype to be compliant with MISRA C rule 11.4</li>
+<li>Add reference to HAL EXTI driver</li>
+<li>Add registers callbacks defines</li>
+</ul></li>
+</ul></li>
+<li><strong>Examples</strong>
+<ul>
+<li>Update stm32f0xx_hal_conf.h files :
+<ul>
+<li>Change assert_failed() prototype to be compliant with MISRA C rule 11.4</li>
+<li>Add reference to HAL EXTI driver</li>
+<li>Add registers callbacks defines</li>
+</ul></li>
+</ul></li>
+<li><strong>Templates</strong>
+<ul>
+<li>Add HAL EXTI driver</li>
+<li>Add LL USB driver</li>
+<li>Update stm32f0xx_hal_conf.h files :
+<ul>
+<li>Change assert_failed() prototype to be compliant with MISRA C rule 11.4</li>
+<li>Add reference to HAL EXTI driver</li>
+<li>Add registers callbacks defines</li>
+</ul></li>
+</ul></li>
+<li><strong>Templates LL</strong>
+<ul>
+<li>Update stm32_assert.h files :
+<ul>
+<li>Change assert_failed() prototype to be compliant with MISRA C rule 11.4</li>
+</ul></li>
+</ul></li>
+</ul>
+<p><strong>STM32F072B-DISCO</strong>:</p>
+<ul>
+<li><strong>Applications</strong>
+<ul>
+<li>Update for compatibility with FreeRTOS v10.0.1_20190329</li>
+<li>Update for compatibility with TouchSensing v2.2.4</li>
+<li>Update for compatibility with USB Device v2.5.3</li>
+<li>Update stm32f0xx_hal_conf.h files :
+<ul>
+<li>Change assert_failed() prototype to be compliant with MISRA C rule 11.4</li>
+<li>Add reference to HAL EXTI driver</li>
+<li>Add registers callbacks defines</li>
+</ul></li>
+</ul></li>
+<li><strong>Demonstrations</strong>
+<ul>
+<li>Update stm32f0xx_hal_conf.h files :
+<ul>
+<li>Change assert_failed() prototype to be compliant with MISRA C rule 11.4</li>
+<li>Add reference to HAL EXTI driver</li>
+<li>Add registers callbacks defines</li>
+</ul></li>
+</ul></li>
+<li><strong>Examples</strong>
+<ul>
+<li>Update stm32f0xx_hal_conf.h files :
+<ul>
+<li>Change assert_failed() prototype to be compliant with MISRA C rule 11.4</li>
+<li>Add reference to HAL EXTI driver</li>
+<li>Add registers callbacks defines</li>
+</ul></li>
+</ul></li>
+<li><strong>Templates</strong>
+<ul>
+<li>Add HAL EXTI driver</li>
+<li>Add LL USB driver</li>
+<li>Update stm32f0xx_hal_conf.h files :
+<ul>
+<li>Change assert_failed() prototype to be compliant with MISRA C rule 11.4</li>
+<li>Add reference to HAL EXTI driver</li>
+<li>Add registers callbacks defines</li>
+</ul></li>
+</ul></li>
+<li><strong>Templates LL</strong>
+<ul>
+<li>Update stm32_assert.h files :
+<ul>
+<li>Change assert_failed() prototype to be compliant with MISRA C rule 11.4</li>
+</ul></li>
+</ul></li>
+</ul>
+<p><strong>NUCLEO-F072RB</strong>:</p>
+<ul>
+<li><strong>Applications</strong>
+<ul>
+<li>Update for compatibility with FreeRTOS v10.0.1_20190329</li>
+<li>Update stm32f0xx_hal_conf.h files :
+<ul>
+<li>Change assert_failed() prototype to be compliant with MISRA C rule 11.4</li>
+<li>Add reference to HAL EXTI driver</li>
+<li>Add registers callbacks defines</li>
+</ul></li>
+</ul></li>
+<li><strong>Demonstrations</strong>
+<ul>
+<li>Update stm32f0xx_hal_conf.h files :
+<ul>
+<li>Change assert_failed() prototype to be compliant with MISRA C rule 11.4</li>
+<li>Add reference to HAL EXTI driver</li>
+<li>Add registers callbacks defines</li>
+</ul></li>
+</ul></li>
+<li><strong>Low Layer Examples</strong>
+<ul>
+<li>Update stm32_assert.h files :
+<ul>
+<li>Change assert_failed() prototype to be compliant with MISRA C rule 11.4</li>
+</ul></li>
+</ul></li>
+<li><strong>Examples</strong>
+<ul>
+<li>Update stm32f0xx_hal_conf.h files :
+<ul>
+<li>Change assert_failed() prototype to be compliant with MISRA C rule 11.4</li>
+<li>Add reference to HAL EXTI driver</li>
+<li>Add registers callbacks defines</li>
+</ul></li>
+</ul></li>
+<li><strong>Templates</strong>
+<ul>
+<li>Add HAL EXTI driver</li>
+<li>Add LL USB driver</li>
+<li>Update stm32f0xx_hal_conf.h files :
+<ul>
+<li>Change assert_failed() prototype to be compliant with MISRA C rule 11.4</li>
+<li>Add reference to HAL EXTI driver</li>
+<li>Add registers callbacks defines</li>
+</ul></li>
+</ul></li>
+<li><strong>Templates LL</strong>
+<ul>
+<li>Update stm32_assert.h files :
+<ul>
+<li>Change assert_failed() prototype to be compliant with MISRA C rule 11.4</li>
+</ul></li>
+</ul></li>
+</ul>
+<p><strong>NUCLEO-F091RC</strong>:</p>
+<ul>
+<li><strong>Demonstrations</strong>
+<ul>
+<li>Update stm32f0xx_hal_conf.h files :
+<ul>
+<li>Change assert_failed() prototype to be compliant with MISRA C rule 11.4</li>
+<li>Add reference to HAL EXTI driver</li>
+<li>Add registers callbacks defines</li>
+</ul></li>
+</ul></li>
+<li><strong>Examples</strong>
+<ul>
+<li>Update stm32f0xx_hal_conf.h files :
+<ul>
+<li>Change assert_failed() prototype to be compliant with MISRA C rule 11.4</li>
+<li>Add reference to HAL EXTI driver</li>
+<li>Add registers callbacks defines</li>
+</ul></li>
+</ul></li>
+<li><strong>Templates</strong>
+<ul>
+<li>Add HAL EXTI driver</li>
+<li>Add LL USB driver</li>
+<li>Update stm32f0xx_hal_conf.h files :
+<ul>
+<li>Change assert_failed() prototype to be compliant with MISRA C rule 11.4</li>
+<li>Add reference to HAL EXTI driver</li>
+<li>Add registers callbacks defines</li>
+</ul></li>
+</ul></li>
+<li><strong>Templates LL</strong>
+<ul>
+<li>Update stm32_assert.h files :
+<ul>
+<li>Change assert_failed() prototype to be compliant with MISRA C rule 11.4</li>
+</ul></li>
+</ul></li>
+</ul>
+<h2 id="contents-1">Contents</h2>
+<h3 id="projects">Projects</h3>
+<table>
+<caption>Projects NUCLEO-F072RB</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: center;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-F072RB</td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F072RB/Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-F072RB</td>
+<td style="text-align: left;"><strong>Demonstrations</strong></td>
+<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F072RB/Demonstrations</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-F072RB</td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F072RB/Examples_LL</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-F072RB</td>
+<td style="text-align: left;"><strong>Low Layer Examples</strong></td>
+<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F072RB/Templates</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-F072RB</td>
+<td style="text-align: left;"><strong>Templates</strong></td>
+<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F072RB/Templates</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-F072RB</td>
+<td style="text-align: left;"><strong>Templates LL</strong></td>
+<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F072RB/Templates/Templates_LL</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Projects NUCLEO-F030R8</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: center;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-F030R8</td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F030R8/Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-F030R8</td>
+<td style="text-align: left;"><strong>Demonstrations</strong></td>
+<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F030R8/Demonstrations</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-F030R8</td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F030R8/Examples</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-F030R8</td>
+<td style="text-align: left;"><strong>Templates</strong></td>
+<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F030R8/Templates</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-F030R8</td>
+<td style="text-align: left;"><strong>Templates LL</strong></td>
+<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F030R8/Templates_LL</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Projects NUCLEO-F070RB</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: center;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-F070RB</td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F070RB/Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-F070RB</td>
+<td style="text-align: left;"><strong>Demonstrations</strong></td>
+<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F070RB/Demonstrations</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-F070RB</td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F070RB/Examples</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-F070RB</td>
+<td style="text-align: left;"><strong>Templates</strong></td>
+<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F070RB/Templates</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-F070RB</td>
+<td style="text-align: left;"><strong>Templates LL</strong></td>
+<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F070RB/Templates_LL</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Projects NUCLEO-F042K6</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: center;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-F042K6</td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F042K6/Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-F042K6</td>
+<td style="text-align: left;"><strong>Demonstrations</strong></td>
+<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F042K6/Demonstrations</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-F042K6</td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F042K6/Examples</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-F042K6</td>
+<td style="text-align: left;"><strong>Templates</strong></td>
+<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F042K6/Templates</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-F042K6</td>
+<td style="text-align: left;"><strong>Templates LL</strong></td>
+<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F042K6/Templates_LL</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Projects NUCLEO-F031K6</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: center;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-F031K6</td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F031K6/Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-F031K6</td>
+<td style="text-align: left;"><strong>Demonstrations</strong></td>
+<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F031K6/Demonstrations</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-F031K6</td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F031K6/Examples</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-F031K6</td>
+<td style="text-align: left;"><strong>Templates</strong></td>
+<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F031K6/Templates</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-F031K6</td>
+<td style="text-align: left;"><strong>Templates LL</strong></td>
+<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F031K6/Templates_LL</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Projects STM32f0308-DISCO</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: center;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">STM32f0308-DISCO</td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: center;">Projects/STM32f0308-DISCO/Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32f0308-DISCO</td>
+<td style="text-align: left;"><strong>Demonstrations</strong></td>
+<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: center;">Projects/STM32f0308-DISCO/Demonstrations</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32f0308-DISCO</td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: center;">Projects/STM32f0308-DISCO/Examples</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32f0308-DISCO</td>
+<td style="text-align: left;"><strong>Templates</strong></td>
+<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: center;">Projects/STM32f0308-DISCO/Templates</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32f0308-DISCO</td>
+<td style="text-align: left;"><strong>Templates LL</strong></td>
+<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: center;">Projects/STM32f0308-DISCO/Templates_LL</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Projects STM32F072B-DISCO</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: center;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">STM32F072B-DISCO</td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: center;">Projects/STM32F072B-DISCO/Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32F072B-DISCO</td>
+<td style="text-align: left;"><strong>Demonstrations</strong></td>
+<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: center;">Projects/STM32F072B-DISCO/Demonstrations</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32F072B-DISCO</td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: center;">Projects/STM32F072B-DISCO/Examples</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32F072B-DISCO</td>
+<td style="text-align: left;"><strong>Templates</strong></td>
+<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: center;">Projects/STM32F072B-DISCO/Templates</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32F072B-DISCO</td>
+<td style="text-align: left;"><strong>Templates LL</strong></td>
+<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: center;">Projects/STM32F072B-DISCO/Templates_LL</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Projects STM32072B-EVAL</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: center;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">STM32072B-EVAL</td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: center;">Projects/STM32072B-EVAL/Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32072B-EVAL</td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: center;">Projects/STM32072B-EVAL/Examples</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32072B-EVAL</td>
+<td style="text-align: left;"><strong>Templates</strong></td>
+<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: center;">Projects/STM32072B-EVAL/Templates</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32072B-EVAL</td>
+<td style="text-align: left;"><strong>Templates LL</strong></td>
+<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: center;">Projects/STM32072B-EVAL/Templates_LL</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Projects STM32091C_EVAL</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: center;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">STM32091C_EVAL</td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: center;">Projects/STM32091C_EVAL/Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32091C_EVAL</td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: center;">Projects/STM32091C_EVAL/Examples</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32091C_EVAL</td>
+<td style="text-align: left;"><strong>Templates</strong></td>
+<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: center;">Projects/STM32091C_EVAL/Templates</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32091C_EVAL</td>
+<td style="text-align: left;"><strong>Templates LL</strong></td>
+<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: center;">Projects/STM32091C_EVAL/Templates_LL</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32091C_EVAL</td>
+<td style="text-align: left;"><strong>Demonstrations</strong></td>
+<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: center;">Projects/STM32091C_EVAL/Demonstrations</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Projects NUCLEO-F091RC</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: center;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-F091RC</td>
+<td style="text-align: left;"><strong>Demonstrations</strong></td>
+<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F091RC/Demonstrations</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-F091RC</td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F091RC/Examples</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-F091RC</td>
+<td style="text-align: left;"><strong>Templates</strong></td>
+<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F091RC/Templates</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-F091RC</td>
+<td style="text-align: left;"><strong>Templates LL</strong></td>
+<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F091RC/Templates_LL</td>
+</tr>
+</tbody>
+</table>
+<p>Note: in the tables above, project categories <strong>highlighted</strong> have changed since previous release.</p>
+<h2 id="known-limitations">Known Limitations</h2>
+<ul>
+<li>None</li>
+</ul>
+<h2 id="development-toolchains-and-compilers">Development Toolchains and Compilers</h2>
+<ul>
+<li>IAR Embedded Workbench for ARM (EWARM) toolchain <strong>V8.22.2</strong> + ST-LINK</li>
+<li>RealView Microcontroller Development Kit (MDK-ARM) toolchain <strong>V5.26</strong> + ST-LINK</li>
+<li>System Workbench for STM32 (SW4STM32) toolchain <strong>V2.9</strong> + ST-LINK</li>
+</ul>
+<h2 id="supported-devices-and-eval-boards">Supported Devices and EVAL boards</h2>
+<ul>
+<li>All STM32F030, STM32F070, STM32F0x1, STM32F0x2 and STM32F0x8 product lines devices are supported.</li>
+<li>Discovery boards: STM32F072B-Discovery RevC (MB1076), STM32F0308-Discovery RevA (MB1134)</li>
+<li>Nucleo boards: STM32F070RB_Nucleo, STM32F072RB-Nucleo, STM32F091RC-Nucleo, STM32F030R8-Nucleo RevC (MB1136)</li>
+<li>Nucleo32 boards: STM32F031K6-Nucleo, STM32F042K6-Nucleo RevC (MB1180)</li>
+<li>Evaluation boards: STM32072B-EVAL RevB (MB1070), STM32091C-EVAL RevB (MB1169)</li>
+</ul>
+<h2 id="backward-compatibility">Backward Compatibility</h2>
+<ul>
+<li>None</li>
+</ul>
+<h2 id="dependencies">Dependencies</h2>
+<ul>
+<li>None</li>
+</ul>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section10_1" aria-hidden="true"> <label for="collapse-section10_1" aria-hidden="true"><strong>V1.10.1 / 09-May-2019</strong></label>
+<div>
+<h1 id="maintenance-release-5">Maintenance release</h1>
+<h2 id="main-changes-5">Main Changes</h2>
+<ul>
+<li>Fix known defects and several enhancements implementation.</li>
+</ul>
+<h2 id="known-limitations-1">Known Limitations</h2>
+<ul>
+<li>None</li>
+</ul>
+<h2 id="development-toolchains-and-compilers-1">Development Toolchains and Compilers</h2>
+<ul>
+<li>IAR Embedded Workbench for ARM (EWARM) toolchain V7.80.4 + ST-LINK</li>
+<li>RealView Microcontroller Development Kit (MDK-ARM) toolchain V5.23 + ST-LINK</li>
+<li>System Workbench for STM32 (SW4STM32) toolchain V2.0 + ST-LINK</li>
+</ul>
+<h2 id="supported-devices-and-eval-boards-1">Supported Devices and EVAL boards</h2>
+<ul>
+<li>All STM32F030, STM32F070, STM32F0x1, STM32F0x2 and STM32F0x8 product lines devices are supported.</li>
+<li>Discovery boards: STM32F072B-Discovery RevC (MB1076), STM32F0308-Discovery RevA (MB1134)</li>
+<li>Nucleo boards: STM32F070RB_Nucleo, STM32F072RB-Nucleo, STM32F091RC-Nucleo, STM32F030R8-Nucleo RevC (MB1136)</li>
+<li>Nucleo32 boards: STM32F031K6-Nucleo, STM32F042K6-Nucleo RevC (MB1180)</li>
+<li>Evaluation boards: STM32072B-EVAL RevB (MB1070), STM32091C-EVAL RevB (MB1169)</li>
+</ul>
+<h2 id="backward-compatibility-1">Backward Compatibility</h2>
+<ul>
+<li>None</li>
+</ul>
+<h2 id="dependencies-1">Dependencies</h2>
+<ul>
+<li>None</li>
+</ul>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section9" aria-hidden="true"> <label for="collapse-section9" aria-hidden="true"><strong>V1.10.0 / 03-April-2019</strong></label>
+<div>
+<h1 id="maintenance-release-6">Maintenance release</h1>
+<h2 id="main-changes-6">Main Changes</h2>
+<ul>
+<li><strong>Projects</strong>
+<ul>
+<li>Update CAN examples to support new HAL CAN driver.</li>
+</ul></li>
+</ul>
+<p><strong>STM32091C_EVAL</strong>:</p>
+<ul>
+<li><strong>Examples</strong>
+<ul>
+<li>Update CAN examples to be aligned to the new HAL CAN driver.</li>
+<li>Update CAN examples to set a fixed bitrate equal to 1 Mbit/s.</li>
+<li>Update stm32f0xx_hal_conf.h files to add support to HAL CAN Legacy Module.</li>
+</ul></li>
+<li><strong>Demonstrations</strong>
+<ul>
+<li>Fix issue with Netac SD card</li>
+</ul></li>
+</ul>
+<p><strong>STM32072B_EVAL</strong>:</p>
+<ul>
+<li><strong>Examples</strong>
+<ul>
+<li>Update CAN examples to be aligned to the new HAL CAN driver.</li>
+<li>Update CAN examples to set a fixed bitrate equal to 1 Mbit/s.</li>
+<li>Update stm32f0xx_hal_conf.h files to add support to HAL CAN Legacy Module.</li>
+</ul></li>
+</ul>
+<h2 id="contents-2">Contents</h2>
+<table>
+<caption>Projects STM32072B-EVAL</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: center;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">STM32072B-EVAL</td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: center;">Projects/STM32072B-EVAL/Examples</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Projects STM32091C_EVAL</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: center;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">STM32091C_EVAL</td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: center;">Projects/STM32091C_EVAL/Examples</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32091C_EVAL</td>
+<td style="text-align: left;"><strong>Demonstrations</strong></td>
+<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: center;">Projects/STM32091C_EVAL/Demonstrations</td>
+</tr>
+</tbody>
+</table>
+<p>Note: in the tables above, project categories <strong>highlighted</strong> have changed since previous release.</p>
+<h2 id="known-limitations-2">Known Limitations</h2>
+<ul>
+<li>None</li>
+</ul>
+<h2 id="development-toolchains-and-compilers-2">Development Toolchains and Compilers</h2>
+<ul>
+<li>IAR Embedded Workbench for ARM (EWARM) toolchain V7.80.4 + ST-LINK</li>
+<li>RealView Microcontroller Development Kit (MDK-ARM) toolchain V5.23 + ST-LINK</li>
+<li>System Workbench for STM32 (SW4STM32) toolchain V2.0 + ST-LINK</li>
+</ul>
+<h2 id="supported-devices-and-eval-boards-2">Supported Devices and EVAL boards</h2>
+<ul>
+<li>All STM32F030, STM32F070, STM32F0x1, STM32F0x2 and STM32F0x8 product lines devices are supported.</li>
+<li>Discovery boards: STM32F072B-Discovery RevC (MB1076), STM32F0308-Discovery RevA (MB1134)</li>
+<li>Nucleo boards: STM32F070RB_Nucleo, STM32F072RB-Nucleo, STM32F091RC-Nucleo, STM32F030R8-Nucleo RevC (MB1136)</li>
+<li>Nucleo32 boards: STM32F031K6-Nucleo, STM32F042K6-Nucleo RevC (MB1180)</li>
+<li>Evaluation boards: STM32072B-EVAL RevB (MB1070), STM32091C-EVAL RevB (MB1169)</li>
+</ul>
+<h2 id="backward-compatibility-2">Backward Compatibility</h2>
+<ul>
+<li>None</li>
+</ul>
+<h2 id="dependencies-2">Dependencies</h2>
+<ul>
+<li>None</li>
+</ul>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section8" aria-hidden="true"> <label for="collapse-section8" aria-hidden="true"><strong>V1.9.0 / 25-August-2017</strong></label>
+<div>
+<h1 id="maintenance-release-7">Maintenance release</h1>
+<h2 id="main-changes-7">Main Changes</h2>
+<ul>
+<li><strong>Projects</strong>
+<ul>
+<li>General updatesto be compliant with Linux platforms</li>
+<li>Remove support of Atollic TrueSTUDIO STM32 (TrueSTUDIO) toolchain.</li>
+<li>Align stm32f0xx_hal_conf.h with latest template defined in HAL.</li>
+<li>Change assert_failed() prototype to be compliant with MISRA C rule 11.4</li>
+<li>Remove Cortex-M3/M4 specific defines and macros in FreeRTOSConfig.h from all FreeRTOS based applications.</li>
+</ul></li>
+</ul>
+<p><strong>NUCLEO-F072RB</strong>:</p>
+<ul>
+<li><strong>Low Layer Examples</strong>
+<ul>
+<li>Remove LL_mDelay() in TIM_BreakAndDeadtime example as HAL ensure write operation of BKE and BKP bits is effective before function exit.</li>
+</ul></li>
+</ul>
+<p><strong>STM32F072B-DISCO</strong>:</p>
+<ul>
+<li><strong>Applications</strong>
+<ul>
+<li>Add a note in DFU example readme : “How to install Dfuse demo under Window 8.1”.</li>
+</ul></li>
+</ul>
+<h2 id="contents-3">Contents</h2>
+<h3 id="projects-1">Projects</h3>
+<table>
+<caption>Projects NUCLEO-F091RC</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: center;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-F091RC</td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;"><strong>V1.9.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F091RC/Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-F091RC</td>
+<td style="text-align: left;"><strong>Demonstrations</strong></td>
+<td style="text-align: left;"><strong>V1.9.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F091RC/Demonstrations</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-F091RC</td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;"><strong>V1.9.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F091RC/Examples</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-F091RC</td>
+<td style="text-align: left;"><strong>Templates</strong></td>
+<td style="text-align: left;"><strong>V1.9.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F091RC/Templates</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-F091RC</td>
+<td style="text-align: left;"><strong>Templates LL</strong></td>
+<td style="text-align: left;"><strong>V1.9.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F091RC/Templates_LL</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Projects NUCLEO-F072RB</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: center;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-F072RB</td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;"><strong>V1.9.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F072RB/Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-F072RB</td>
+<td style="text-align: left;"><strong>Demonstrations</strong></td>
+<td style="text-align: left;"><strong>V1.9.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F072RB/Demonstrations</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-F072RB</td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;"><strong>V1.9.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F072RB/Examples</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-F072RB</td>
+<td style="text-align: left;"><strong>Templates</strong></td>
+<td style="text-align: left;"><strong>V1.9.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F072RB/Templates</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-F072RB</td>
+<td style="text-align: left;"><strong>Templates LL</strong></td>
+<td style="text-align: left;"><strong>V1.9.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F072RB/Templates_LL</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Projects STM32F072B-DISCO</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: center;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">STM32F072B-DISCO</td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;"><strong>V1.9.0</strong></td>
+<td style="text-align: center;">Projects/STM32F072B-DISCO/Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32F072B-DISCO</td>
+<td style="text-align: left;"><strong>Demonstrations</strong></td>
+<td style="text-align: left;"><strong>V1.9.0</strong></td>
+<td style="text-align: center;">Projects/STM32F072B-DISCO/Demonstrations</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32F072B-DISCO</td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;"><strong>V1.9.0</strong></td>
+<td style="text-align: center;">Projects/STM32F072B-DISCO/Examples</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32F072B-DISCO</td>
+<td style="text-align: left;"><strong>Templates</strong></td>
+<td style="text-align: left;"><strong>V1.9.0</strong></td>
+<td style="text-align: center;">Projects/STM32F072B-DISCO/Templates</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32F072B-DISCO</td>
+<td style="text-align: left;"><strong>Templates LL</strong></td>
+<td style="text-align: left;"><strong>V1.9.0</strong></td>
+<td style="text-align: center;">Projects/STM32F072B-DISCO/Templates_LL</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Projects STM32072B-EVAL</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: center;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">STM32072B-EVAL</td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;"><strong>V1.9.0</strong></td>
+<td style="text-align: center;">Projects/STM32072B-EVAL/Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32072B-EVAL</td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;"><strong>V1.9.0</strong></td>
+<td style="text-align: center;">Projects/STM32072B-EVAL/Examples</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32072B-EVAL</td>
+<td style="text-align: left;"><strong>Templates</strong></td>
+<td style="text-align: left;"><strong>V1.9.0</strong></td>
+<td style="text-align: center;">Projects/STM32072B-EVAL/Templates</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32072B-EVAL</td>
+<td style="text-align: left;"><strong>Templates LL</strong></td>
+<td style="text-align: left;"><strong>V1.9.0</strong></td>
+<td style="text-align: center;">Projects/STM32072B-EVAL/Templates_LL</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Projects STM32091C_EVAL</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: center;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">STM32091C_EVAL</td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;"><strong>V1.9.0</strong></td>
+<td style="text-align: center;">Projects/STM32091C_EVAL/Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32091C_EVAL</td>
+<td style="text-align: left;"><strong>Demonstrations</strong></td>
+<td style="text-align: left;"><strong>V1.9.0</strong></td>
+<td style="text-align: center;">Projects/STM32091C_EVAL/Demonstrations</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32091C_EVAL</td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;"><strong>V1.9.0</strong></td>
+<td style="text-align: center;">Projects/STM32091C_EVAL/Examples</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32091C_EVAL</td>
+<td style="text-align: left;"><strong>Templates</strong></td>
+<td style="text-align: left;"><strong>V1.9.0</strong></td>
+<td style="text-align: center;">Projects/STM32091C_EVAL/Templates</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32091C_EVAL</td>
+<td style="text-align: left;"><strong>Templates LL</strong></td>
+<td style="text-align: left;"><strong>V1.9.0</strong></td>
+<td style="text-align: center;">Projects/STM32091C_EVAL/Templates_LL</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Projects STM32F0308-DISCO</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: center;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">STM32F0308-DISCO</td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;"><strong>V1.9.0</strong></td>
+<td style="text-align: center;">Projects/STM32F0308-DISCO/Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32F0308-DISCO</td>
+<td style="text-align: left;"><strong>Demonstrations</strong></td>
+<td style="text-align: left;"><strong>V1.9.0</strong></td>
+<td style="text-align: center;">Projects/STM32F0308-DISCO/Demonstration</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32F0308-DISCO</td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;"><strong>V1.9.0</strong></td>
+<td style="text-align: center;">Projects/STM32F0308-DISCO/Examples</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32F0308-DISCO</td>
+<td style="text-align: left;"><strong>Templates</strong></td>
+<td style="text-align: left;"><strong>V1.9.0</strong></td>
+<td style="text-align: center;">Projects/STM32F0308-DISCO/Templates</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32F0308-DISCO</td>
+<td style="text-align: left;"><strong>Templates LL</strong></td>
+<td style="text-align: left;"><strong>V1.9.0</strong></td>
+<td style="text-align: center;">Projects/STM32F0308-DISCO/Templates_LL</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Projects NUCLEO-F030R8</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: center;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-F030R8</td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;"><strong>V1.9.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F030R8/Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-F030R8</td>
+<td style="text-align: left;"><strong>Demonstrations</strong></td>
+<td style="text-align: left;"><strong>V1.9.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F030R8/Demonstration</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-F030R8</td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;"><strong>V1.9.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F030R8/Examples</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-F030R8</td>
+<td style="text-align: left;"><strong>Templates</strong></td>
+<td style="text-align: left;"><strong>V1.9.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F030R8/Templates</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-F030R8</td>
+<td style="text-align: left;"><strong>Templates LL</strong></td>
+<td style="text-align: left;"><strong>V1.9.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F030R8/Templates_LL</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Projects NUCLEO-F031K6</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: center;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-F031K6</td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;"><strong>V1.9.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F031K6/Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-F031K6</td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;"><strong>V1.9.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F031K6/Examples</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-F031K6</td>
+<td style="text-align: left;"><strong>Templates LL</strong></td>
+<td style="text-align: left;"><strong>V1.9.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F031K6/Templates_LL</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Projects NUCLEO-F042K6</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: center;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-F042K6</td>
+<td style="text-align: left;"><strong>Demonstrations</strong></td>
+<td style="text-align: left;"><strong>V1.9.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F042K6/Demonstrations</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-F042K6</td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;"><strong>V1.9.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F042K6/Examples</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-F042K6</td>
+<td style="text-align: left;"><strong>Templates</strong></td>
+<td style="text-align: left;"><strong>V1.9.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F042K6/Templates</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-F042K6</td>
+<td style="text-align: left;"><strong>Templates LL</strong></td>
+<td style="text-align: left;"><strong>V1.9.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F042K6/Templates_LL</td>
+</tr>
+</tbody>
+</table>
+<p>Note: in the tables above, project categories <strong>highlighted</strong> have changed since previous release.</p>
+<h2 id="known-limitations-3">Known Limitations</h2>
+<ul>
+<li>None</li>
+</ul>
+<h2 id="development-toolchains-and-compilers-3">Development Toolchains and Compilers</h2>
+<ul>
+<li>IAR Embedded Workbench for ARM (EWARM) toolchain V7.80.4 + ST-LINK</li>
+<li>RealView Microcontroller Development Kit (MDK-ARM) toolchain V5.23 + ST-LINK</li>
+<li>System Workbench for STM32 (SW4STM32) toolchain V2.0 + ST-LINK</li>
+</ul>
+<h2 id="supported-devices-and-eval-boards-3">Supported Devices and EVAL boards</h2>
+<ul>
+<li>All STM32F030, STM32F070, STM32F0x1, STM32F0x2 and STM32F0x8 product lines devices are supported.</li>
+<li>Discovery boards: STM32F072B-Discovery RevC (MB1076), STM32F0308-Discovery RevA (MB1134)</li>
+<li>Nucleo boards: STM32F070RB_Nucleo, STM32F072RB-Nucleo, STM32F091RC-Nucleo, STM32F030R8-Nucleo RevC (MB1136)</li>
+<li>Nucleo32 boards: STM32F031K6-Nucleo, STM32F042K6-Nucleo RevC (MB1180)</li>
+<li>Evaluation boards: STM32072B-EVAL RevB (MB1070), STM32091C-EVAL RevB (MB1169)</li>
+</ul>
+<h2 id="backward-compatibility-3">Backward Compatibility</h2>
+<ul>
+<li>None</li>
+</ul>
+<h2 id="dependencies-3">Dependencies</h2>
+<ul>
+<li>None</li>
+</ul>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section7" aria-hidden="true"> <label for="collapse-section7" aria-hidden="true"><strong>V1.8.0 / 07-April-2017</strong></label>
+<div>
+<h1 id="maintenance-release-8">Maintenance release</h1>
+<h2 id="main-changes-8">Main Changes</h2>
+<ul>
+<li><strong>Projects</strong>
+<ul>
+<li>All projects updated for compliance with MISRA rules :
+<ul>
+<li>MISRA C 2004 rule 10.6 (‘U’ suffix applied to all constants of ‘unsigned’ type).</li>
+</ul></li>
+<li><p><strong>Applications</strong></p>
+<ul>
+<li>Update FreeRTOS_ThreadCreation example to be aligned with latest reference code.</li>
+</ul></li>
+<li><p><strong>Examples</strong></p>
+<ul>
+<li>Update HAL_TimeBase_RTC_xxx examples to correct RTC_ASYNCH_PREDIV and RTC_SYNCH_PREDIV definition when LSI configured as RTC clock source.</li>
+<li>Update TIM_DMA, TIM_PWMOutput, SPI_FullDuplex_ComDMA, SPI_FullDuplex_ComIT, UART_TwoBoards_ComIT examples to be aligned with latest reference code.</li>
+<li>Update UART_TwoBoards_ComIT, TIM_PWMOutput, TIM_DMA examples to be aligned with latest reference code.</li>
+<li>Update ADC_DMA_Transfer, TIM_DMA, TIM_PWMOutput, TIM_ComplementarySignals, SPI_FullDuplex_ComDMA, SPI_FullDuplex_ComIT, UART_TwoBoards_ComIT, CRC_Example, UART_TwoBoards_ComIT, UART_TwoBoards_ComPolling examples to be aligned with latest reference code.</li>
+</ul></li>
+</ul></li>
+</ul>
+<h2 id="known-limitations-4">Known Limitations</h2>
+<ul>
+<li>None</li>
+</ul>
+<h2 id="development-toolchains-and-compilers-4">Development Toolchains and Compilers</h2>
+<ul>
+<li>IAR Embedded Workbench for ARM (EWARM) toolchain V7.80.4 + ST-LINK</li>
+<li>RealView Microcontroller Development Kit (MDK-ARM) toolchain V5.23 + ST-LINK</li>
+<li>Atollic TrueSTUDIO STM32 (TrueSTUDIO) toolchain V5.4.2 + ST-LINK</li>
+<li>System Workbench for STM32 (SW4STM32) toolchain V1.13.1 + ST-LINK</li>
+</ul>
+<h2 id="supported-devices-and-eval-boards-4">Supported Devices and EVAL boards</h2>
+<ul>
+<li>All STM32F030, STM32F070, STM32F0x1, STM32F0x2 and STM32F0x8 product lines devices are supported.</li>
+<li>Discovery boards: STM32F072B-Discovery RevC (MB1076), STM32F0308-Discovery RevA (MB1134)</li>
+<li>Nucleo boards: STM32F070RB_Nucleo, STM32F072RB-Nucleo, STM32F091RC-Nucleo, STM32F030R8-Nucleo RevC (MB1136)</li>
+<li>Nucleo32 boards: STM32F031K6-Nucleo, STM32F042K6-Nucleo RevC (MB1180)</li>
+<li>Evaluation boards: STM32072B-EVAL RevB (MB1070), STM32091C-EVAL RevB (MB1169)</li>
+</ul>
+<h2 id="backward-compatibility-4">Backward Compatibility</h2>
+<ul>
+<li>None</li>
+</ul>
+<h2 id="dependencies-4">Dependencies</h2>
+<ul>
+<li>None</li>
+</ul>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section68" aria-hidden="true"> <label for="collapse-section68" aria-hidden="true"><strong>V1.7.0 / 04-November-2016</strong></label>
+<div>
+<h1 id="maintenance-release-9">Maintenance release</h1>
+<h2 id="main-changes-9">Main Changes</h2>
+<ul>
+<li><strong>Projects</strong>
+<ul>
+<li>All projects updated following changes in latest version of HAL and Middlewares.</li>
+<li>Added new projects HAL_TimBase to illustrate how to customize the HAL time base driver :
+<ul>
+<li>HAL_TimeBase_RTC_ALARM</li>
+<li>HAL_TimeBase_RTC_WKUP</li>
+<li>HAL_TimeBase_TIM (modified and renamed previous HAL_TimeBase)</li>
+</ul></li>
+<li>Added new projects IWDG :
+<ul>
+<li>IWDG_Reset : to illustrate IWDG reset in case of software fault</li>
+<li>IWDG_WindowMode : to illustrate window mode management</li>
+</ul></li>
+<li>Added new projects LL_Template to provide a reference project through the LL API that can be used to build any firmware application</li>
+</ul></li>
+</ul>
+<p><strong>STM32072B_EVAL</strong>:</p>
+<ul>
+<li><p><strong>Applications</strong></p>
+<ul>
+<li>USB : Added suffix “U” to FLASH_PAGE_SIZE in usbd_conf.h</li>
+<li>Change in HAL API for TIM : add AutoReloadPreload capability in TIM handler. Impacts in USB Device example and in all FreeRTOS examples</li>
+<li>Updated FreeRTOS examples to call TIM HW function as time base source instead of Systick ; changes in following examples :
+<ul>
+<li>FreeRTOS Low Power</li>
+<li>FreeRTOS Mutexes</li>
+<li>FreeRTOS_Queues</li>
+<li>FreeRTOS Semaphore</li>
+<li>FreeRTOS Thread Creation</li>
+<li>FreeRTOS Timers</li>
+</ul></li>
+</ul></li>
+<li><strong>Examples</strong>
+<ul>
+<li>Change of HAL API for TIM : add AutoReloadPreload capability in TIM handler. Impacts in ADC, DAC, IWDG and TIM examples.</li>
+<li>Updated DMA_FLASHToRAM example to call HAL_DMA_RegisterCallback() function</li>
+<li>Updated WWDG examples to be in line with latest updates done on HAL WWDG drivers
+<ul>
+<li>Remove the HAL_WWDG_Start and update the HAL_WWDG_Refresh functions in the main.c file</li>
+<li>Remove HAL_WWDG_MspDeInit function from stm32f4xx_hal_msp.c file</li>
+</ul></li>
+<li>Change of HAL API for IWDG : Removal of HAL_IWDG_Start function in the main.c of IWDG example.</li>
+<li>Updated CAN baudrate in CAN_Networking example</li>
+<li>Updated I2C examples to manage error case during data transfer (I2C_TwoBoards_AdvComIT, I2C_TwoBoards_ComDMA, I2C_TwoBoards_ComIT, I2C_TwoBoards_ComPolling)</li>
+<li>Change of HAL API for CEC ; refer to release note of STM32F0xx HAL Drivers for more details.</li>
+<li>Moved CEC demo in CEC examples repository</li>
+</ul></li>
+</ul>
+<p><strong>STM32091C_EVAL</strong>:</p>
+<ul>
+<li><p><strong>Applications</strong></p>
+<ul>
+<li>Change in HAL API for TIM : add AutoReloadPreload capability in TIM handler. Impacts in USB Device example and in all FreeRTOS examples.</li>
+<li>Updated FreeRTOS examples to call TIM HW function as time base source instead of Systick ; changes in examples :
+<ul>
+<li>FreeRTOS Low Power</li>
+<li>FreeRTOS Mutexes</li>
+<li>FreeRTOS_Queues</li>
+<li>FreeRTOS Semaphore</li>
+<li>FreeRTOS Thread Creation</li>
+<li>FreeRTOS Timers</li>
+</ul></li>
+<li>Updated STemWin version : STemWin532 “build 20160205”</li>
+</ul></li>
+<li><strong>Examples</strong>
+<ul>
+<li>Change of HAL API for TIM : add AutoReloadPreload capability in TIM handler. Impacts in ADC, DAC, IWDG and TIM examples.</li>
+<li>Updated DMA_FLASHToRAM example to call HAL_DMA_RegisterCallback() function</li>
+<li>Updated WWDG examples to be in line with latest updates done on HAL WWDG drivers
+<ul>
+<li>Remove the HAL_WWDG_Start and update the HAL_WWDG_Refresh functions in the main.c file</li>
+<li>Remove HAL_WWDG_MspDeInit function from stm32f4xx_hal_msp.c file</li>
+</ul></li>
+<li>Change of HAL API for IWDG : Removal of HAL_IWDG_Start function in the main.c of IWDG example.</li>
+<li>Updated CAN baudrate in CAN_Networking example</li>
+<li>Updated I2C examples to manage error case during data transfer (I2C_TwoBoards_AdvComIT, I2C_TwoBoards_ComDMA, I2C_TwoBoards_ComIT, I2C_TwoBoards_ComPolling)</li>
+<li>Update of HAL_TimeBase_TIM example to use TIM HW as time base source instead of Systick</li>
+<li>Add 2 new examples HAL_TimeBase_RTC_ALARM and HAL_TimeBase_RTC_WKUP</li>
+<li>Change of HAL API for CEC ; refer to release note of STM32F0xx HAL Drivers for more details.</li>
+<li>Moved CEC demo in CEC examples repository</li>
+</ul></li>
+</ul>
+<p><strong>STM32F0308-Discovery</strong>:</p>
+<ul>
+<li><p><strong>Applications</strong> Change of HAL API for TIM : add AutoReloadPreload capability in TIM handler. Impacts in FreeRTOS examples.</p></li>
+<li><strong>Examples</strong>
+<ul>
+<li>Change of HAL API for TIM : add AutoReloadPreload capability in TIM handler. Impacts in ADC, DAC, IWDG and TIM examples.</li>
+<li>Updated DMA_FLASHToRAM example to call HAL_DMA_RegisterCallback() function</li>
+<li>Updated WWDG examples to be in line with latest updates done on HAL WWDG drivers
+<ul>
+<li>Remove the HAL_WWDG_Start and update the HAL_WWDG_Refresh functions in the main.c file</li>
+<li>Remove HAL_WWDG_MspDeInit function from stm32f4xx_hal_msp.c file</li>
+</ul></li>
+<li>Change of HAL API for IWDG : Removal of HAL_IWDG_Start function in the main.c of IWDG example.</li>
+<li>Updated I2C examples to manage error case during data transfer (I2C_TwoBoards_AdvComIT, I2C_TwoBoards_ComDMA, I2C_TwoBoards_ComIT, I2C_TwoBoards_ComPolling)</li>
+</ul></li>
+</ul>
+<p><strong>STM32F030R8-Nucleo</strong>:</p>
+<ul>
+<li><strong>Examples</strong>
+<ul>
+<li>Updated DMA_FLASHToRAM example to call HAL_DMA_RegisterCallback() function</li>
+<li>Updated WWDG examples to be in line with latest updates done on HAL WWDG drivers
+<ul>
+<li>Remove the HAL_WWDG_Start and update the HAL_WWDG_Refresh functions in the main.c file</li>
+<li>Remove HAL_WWDG_MspDeInit function from stm32f4xx_hal_msp.c file</li>
+</ul></li>
+<li>Change of HAL API for IWDG : Removal of HAL_IWDG_Start function in the main.c of IWDG example.</li>
+<li>Updated I2C examples to manage error case during data transfer (I2C_TwoBoards_AdvComIT, I2C_TwoBoards_ComDMA, I2C_TwoBoards_ComIT, I2C_TwoBoards_ComPolling)</li>
+<li>V1.6.0 / 27-May-2016</li>
+</ul></li>
+<li><p><strong>Applications</strong></p>
+<ul>
+<li>Change of HAL API for TIM : add AutoReloadPreload capability in TIM handler. Impacts in FreeRTOS examples.</li>
+</ul></li>
+</ul>
+<p><strong>STM32F070RB-Nucleo</strong>:</p>
+<ul>
+<li><strong>Examples</strong>
+<ul>
+<li>Change of HAL API for TIM : add AutoReloadPreload capability in TIM handler. Impacts in IWDG and TIM examples.</li>
+<li>Updated DMA_FLASHToRAM example to call HAL_DMA_RegisterCallback() function</li>
+<li>Updated WWDG examples to be in line with latest updates done on HAL WWDG drivers
+<ul>
+<li>Remove the HAL_WWDG_Start and update the HAL_WWDG_Refresh functions in the main.c file</li>
+<li>Remove HAL_WWDG_MspDeInit function from stm32f4xx_hal_msp.c file</li>
+</ul></li>
+<li>Change of HAL API for IWDG : Removal of HAL_IWDG_Start function in the main.c of IWDG example.</li>
+<li>Updated I2C examples to manage error case during data transfer (I2C_TwoBoards_AdvComIT, I2C_TwoBoards_ComDMA, I2C_TwoBoards_ComIT, I2C_TwoBoards_ComPolling)</li>
+</ul></li>
+<li><p><strong>Templates</strong></p>
+<ul>
+<li>Updated project template to consider all services embedded on the board : CAN, CEC, COMP, DAC, IRDA, SMARTCARD, TSC Module</li>
+</ul></li>
+</ul>
+<p><strong>STM32F072RB-Nucleo</strong>:</p>
+<ul>
+<li><p><strong>Applications</strong></p></li>
+<li><p>Change of HAL API for TIM : add AutoReloadPreload capability in TIM handler. Impacts in FreeRTOS examples.</p></li>
+</ul>
+<p><strong>STM32F091RC-Nucleo</strong>:</p>
+<ul>
+<li><strong>Examples</strong>
+<ul>
+<li>Change of HAL API for TIM : add AutoReloadPreload capability in TIM handler. Impacts in ADC, DAC, IWDG and TIM examples.</li>
+<li>Updated DMA_FLASHToRAM example to call HAL_DMA_RegisterCallback() function</li>
+<li>Updated WWDG examples to be in line with latest updates done on HAL WWDG drivers
+<ul>
+<li>Remove the HAL_WWDG_Start and update the HAL_WWDG_Refresh functions in the main.c file</li>
+<li>Remove HAL_WWDG_MspDeInit function from stm32f4xx_hal_msp.c file</li>
+</ul></li>
+<li>Change of HAL API for IWDG : Removal of HAL_IWDG_Start function in the main.c of IWDG example.</li>
+<li>Update of HAL_TimeBase_TIM example to use TIM HW as time base source instead of Systick</li>
+<li>Add 2 new examples HAL_TimeBase_RTC_ALARM and HAL_TimeBase_RTC_WKUP</li>
+<li>Updated I2C examples to manage error case during data transfer (I2C_TwoBoards_AdvComIT, I2C_TwoBoards_ComDMA, I2C_TwoBoards_ComIT, I2C_TwoBoards_ComPolling)</li>
+</ul></li>
+<li><p><strong>Applications</strong></p>
+<ul>
+<li>Change of HAL API for TIM : add AutoReloadPreload capability in TIM handler. Impacts in FreeRTOS examples.</li>
+</ul></li>
+</ul>
+<h2 id="known-limitations-5">Known Limitations</h2>
+<ul>
+<li>None</li>
+</ul>
+<h2 id="development-toolchains-and-compilers-5">Development Toolchains and Compilers</h2>
+<ul>
+<li>IAR Embedded Workbench for ARM (EWARM) toolchain V7.60.1 + ST-LINK</li>
+<li>RealView Microcontroller Development Kit (MDK-ARM) toolchain V5.17 + ST-LINK</li>
+<li>Atollic TrueSTUDIO STM32 (TrueSTUDIO) toolchain V5.4.2 + ST-LINK</li>
+<li>System Workbench for STM32 (SW4STM32) toolchain V1.8.0 + ST-LINK</li>
+</ul>
+<h2 id="supported-devices-and-eval-boards-5">Supported Devices and EVAL boards</h2>
+<ul>
+<li>All STM32F030, STM32F070, STM32F0x1, STM32F0x2 and STM32F0x8 product lines devices are supported.</li>
+<li>Discovery boards: STM32F072B-Discovery RevC (MB1076), STM32F0308-Discovery RevA (MB1134)</li>
+<li>Nucleo boards: STM32F070RB_Nucleo, STM32F072RB-Nucleo, STM32F091RC-Nucleo, STM32F030R8-Nucleo RevC (MB1136)</li>
+<li>Nucleo32 boards: STM32F031K6-Nucleo, STM32F042K6-Nucleo RevC (MB1180)</li>
+<li>Evaluation boards: STM32072B-EVAL RevB (MB1070), STM32091C-EVAL RevB (MB1169)</li>
+</ul>
+<h2 id="backward-compatibility-5">Backward Compatibility</h2>
+<ul>
+<li>None</li>
+</ul>
+<h2 id="dependencies-5">Dependencies</h2>
+<ul>
+<li>None</li>
+</ul>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section5" aria-hidden="true"> <label for="collapse-section5" aria-hidden="true"><strong>V1.6.0 / 27-May-2016</strong></label>
+<div>
+<h1 id="maintenance-release-10">Maintenance release</h1>
+<h2 id="main-changes-10">Main Changes</h2>
+<ul>
+<li><strong>First official release introducing the STM32Cube LL (Low Layer) APIs for the STM32F0xx series:</strong>
+<ul>
+<li>Low Layer drivers APIs allow performance and memory footprint optimization, with register access level programming.</li>
+<li>Examples available on the STM32F072RB-Nucleo Board are provided in order to describe how to use the Low Level drivers.</li>
+</ul></li>
+<li><strong>Projects</strong></li>
+<li>All projects updated following changes in latest version of HAL and Middlewares.</li>
+<li>Added new projects I2C: to introduce I2C repeated start feature.
+<ul>
+<li>I2C_TwoBoards_RestartAdvComIT</li>
+<li>I2C_TwoBoards_RestartComIT</li>
+</ul></li>
+<li>Added new projects LL + MIX
+<ul>
+<li>LL examples: ADC, COMP, CRC, CRS, DAC, DMA, EXTI, GPIO, I2C, IWDG, PWR, RCC, RTC, SPI, TIM, USART, WWDG</li>
+<li>HAL/LL examples: ADC, CRC, DMA, I2C, PWR, SPI, TIM, UART</li>
+</ul></li>
+</ul>
+<p><strong>STM32072B_EVAL</strong>:</p>
+<ul>
+<li><p><strong>Applications</strong></p>
+<ul>
+<li>Updated system_stm32f0xx.c files:
+<ul>
+<li>Added APBPrescTable definition.</li>
+</ul></li>
+<li>Updated HEAP size for FreeRTOS applications (updates in FreeRTOSConfig.h).</li>
+<li>Updated HEAP size for USB_Device/MSC_Standalone application.</li>
+</ul></li>
+<li><p><strong>Examples</strong></p>
+<ul>
+<li>Updated system_stm32f0xx.c files:
+<ul>
+<li>Added APBPrescTable definition.</li>
+</ul></li>
+<li>Updated RCC_CRS_Synchronization_IT example to use HAL_RCCEx_CRS_IRQHandler().</li>
+<li>Updated I2C examples after I2C driver rework:
+<ul>
+<li>I2C_EEPROM</li>
+<li>I2C_TwoBoards_ComDMA</li>
+</ul></li>
+<li>Updated BSP example to fix issue with 128MB SD card.</li>
+</ul></li>
+<li><p><strong>Templates</strong></p>
+<ul>
+<li>Updated system_stm32f0xx.c files:
+<ul>
+<li>Added APBPrescTable definition.</li>
+</ul></li>
+<li>Updated stm32f0xx_hal_conf.h files:
+<ul>
+<li>Updated FW projects compliance with MISRA C 2004 rule 10.6 (‘U’ suffix applied to all constants of ‘unsigned’ type).</li>
+</ul></li>
+</ul></li>
+</ul>
+<p><strong>STM32091C_EVAL</strong>:</p>
+<ul>
+<li><p><strong>Demonstrations</strong></p>
+<ul>
+<li>Updated system_stm32f0xx.c files:
+<ul>
+<li>Added APBPrescTable definition.</li>
+</ul></li>
+<li>Updated Demonstration to fix issue with 32GB SD card.</li>
+</ul></li>
+<li><p><strong>Examples</strong></p>
+<ul>
+<li>Updated system_stm32f0xx.c files:
+<ul>
+<li>Added APBPrescTable definition.</li>
+</ul></li>
+<li>Updated RCC_CRS_Synchronization_IT example to use HAL_RCCEx_CRS_IRQHandler().</li>
+<li>Updated I2C examples after I2C driver rework:
+<ul>
+<li>I2C_EEPROM</li>
+<li>I2C_TwoBoards_ComDMA</li>
+</ul></li>
+<li>Updated BSP example to fix issue with 128MB SD card.</li>
+</ul></li>
+<li><p><strong>Templates</strong></p>
+<ul>
+<li>Updated system_stm32f0xx.c files:
+<ul>
+<li>Added APBPrescTable definition.</li>
+</ul></li>
+<li>Updated stm32f0xx_hal_conf.h files:
+<ul>
+<li>Updated FW projects compliance with MISRA C 2004 rule 10.6 (‘U’ suffix applied to all constants of ‘unsigned’ type).</li>
+</ul></li>
+</ul></li>
+</ul>
+<p><strong>STM32F0308-DISCO</strong>:</p>
+<ul>
+<li><p><strong>Demonstrations</strong></p>
+<ul>
+<li>Updated system_stm32f0xx.c files:
+<ul>
+<li>Added APBPrescTable definition.</li>
+</ul></li>
+</ul></li>
+<li><p><strong>Examples</strong></p>
+<ul>
+<li>Updated system_stm32f0xx.c files:
+<ul>
+<li>Added APBPrescTable definition.</li>
+</ul></li>
+<li>Updated I2C examples after I2C driver rework:
+<ul>
+<li>I2C_TwoBoards_AdvComIT</li>
+<li>I2C_TwoBoards_ComDMA</li>
+<li>I2C_TwoBoards_ComIT</li>
+<li>I2C_TwoBoards_ComPolling</li>
+</ul></li>
+</ul></li>
+<li><p><strong>Templates</strong></p>
+<ul>
+<li>Updated system_stm32f0xx.c files:
+<ul>
+<li>Added APBPrescTable definition.</li>
+</ul></li>
+<li>Updated stm32f0xx_hal_conf.h files:
+<ul>
+<li>Updated FW projects compliance with MISRA C 2004 rule 10.6 (‘U’ suffix applied to all constants of ‘unsigned’ type).</li>
+</ul></li>
+</ul></li>
+</ul>
+<p><strong>NUCLEO-F030R8</strong>:</p>
+<ul>
+<li><p><strong>Applications</strong></p>
+<ul>
+<li>Updated system_stm32f0xx.c files:
+<ul>
+<li>Added APBPrescTable definition.</li>
+</ul></li>
+<li>Updated HEAP size for FreeRTOS applications (updates in FreeRTOSConfig.h).</li>
+</ul></li>
+<li><p><strong>Demonstrations</strong></p>
+<ul>
+<li>Updated system_stm32f0xx.c files:
+<ul>
+<li>Added APBPrescTable definition.</li>
+</ul></li>
+</ul></li>
+<li><p><strong>Examples</strong></p>
+<ul>
+<li>Updated system_stm32f0xx.c files:
+<ul>
+<li>Added APBPrescTable definition.</li>
+</ul></li>
+<li>Updated I2C examples after I2C driver rework:
+<ul>
+<li>I2C_TwoBoards_AdvComIT</li>
+<li>I2C_TwoBoards_ComDMA</li>
+<li>I2C_TwoBoards_ComIT</li>
+<li>I2C_TwoBoards_ComPolling</li>
+</ul></li>
+</ul></li>
+<li><p><strong>Templates</strong></p>
+<ul>
+<li>Updated system_stm32f0xx.c files:
+<ul>
+<li>Added APBPrescTable definition.</li>
+</ul></li>
+<li>Updated stm32f0xx_hal_conf.h files:
+<ul>
+<li>Updated FW projects compliance with MISRA C 2004 rule 10.6 (‘U’ suffix applied to all constants of ‘unsigned’ type).</li>
+</ul></li>
+</ul></li>
+</ul>
+<p><strong>NUCLEO-F070RB</strong>:</p>
+<ul>
+<li><p><strong>Applications</strong></p>
+<ul>
+<li>Updated system_stm32f0xx.c files:
+<ul>
+<li>Added APBPrescTable definition.</li>
+</ul></li>
+<li>Updated HEAP size for FreeRTOS applications (updates in FreeRTOSConfig.h).</li>
+</ul></li>
+<li><p><strong>Demonstrations</strong></p>
+<ul>
+<li>Updated system_stm32f0xx.c files:
+<ul>
+<li>Added APBPrescTable definition.</li>
+</ul></li>
+</ul></li>
+<li><p><strong>Examples</strong></p>
+<ul>
+<li>Updated system_stm32f0xx.c files:
+<ul>
+<li>Added APBPrescTable definition.</li>
+</ul></li>
+<li>Updated I2C examples after I2C driver rework:
+<ul>
+<li>I2C_TwoBoards_AdvComIT</li>
+<li>I2C_TwoBoards_ComDMA</li>
+<li>I2C_TwoBoards_ComIT</li>
+<li>I2C_TwoBoards_ComPolling</li>
+</ul></li>
+</ul></li>
+<li><p><strong>Templates</strong></p>
+<ul>
+<li>Updated system_stm32f0xx.c files:
+<ul>
+<li>Added APBPrescTable definition.</li>
+</ul></li>
+<li>Updated stm32f0xx_hal_conf.h files:
+<ul>
+<li>Updated FW projects compliance with MISRA C 2004 rule 10.6 (‘U’ suffix applied to all constants of ‘unsigned’ type).</li>
+</ul></li>
+</ul></li>
+</ul>
+<p><strong>NUCLEO-F072RB</strong>:</p>
+<ul>
+<li><p><strong>Applications</strong></p>
+<ul>
+<li>Updated system_stm32f0xx.c files:
+<ul>
+<li>Added APBPrescTable definition.</li>
+</ul></li>
+<li>Updated HEAP size for FreeRTOS applications (updates in FreeRTOSConfig.h).</li>
+</ul></li>
+<li><p><strong>Demonstrations</strong></p>
+<ul>
+<li>Updated system_stm32f0xx.c files:
+<ul>
+<li>Added APBPrescTable definition.</li>
+</ul></li>
+</ul></li>
+<li><p><strong>Examples</strong></p>
+<ul>
+<li>Updated system_stm32f0xx.c files:
+<ul>
+<li>Added APBPrescTable definition.</li>
+</ul></li>
+<li>Updated I2C examples after I2C driver rework:
+<ul>
+<li>I2C_TwoBoards_AdvComIT</li>
+<li>I2C_TwoBoards_ComDMA</li>
+<li>I2C_TwoBoards_ComIT</li>
+<li>I2C_TwoBoards_ComPolling</li>
+</ul></li>
+</ul></li>
+<li><p><strong>Templates</strong></p>
+<ul>
+<li>Updated system_stm32f0xx.c files:
+<ul>
+<li>Added APBPrescTable definition.</li>
+</ul></li>
+<li>Updated stm32f0xx_hal_conf.h files:
+<ul>
+<li>Updated FW projects compliance with MISRA C 2004 rule 10.6 (‘U’ suffix applied to all constants of ‘unsigned’ type).</li>
+</ul></li>
+</ul></li>
+</ul>
+<p><strong>STM32F072B-DISCO</strong>:</p>
+<ul>
+<li><p><strong>Applications</strong></p>
+<ul>
+<li>Updated system_stm32f0xx.c files:
+<ul>
+<li>Added APBPrescTable definition.</li>
+</ul></li>
+<li>Updated HEAP size for FreeRTOS applications (updates in FreeRTOSConfig.h).</li>
+</ul></li>
+<li><p><strong>Demonstrations</strong></p>
+<ul>
+<li>Updated system_stm32f0xx.c files:
+<ul>
+<li>Added APBPrescTable definition.</li>
+</ul></li>
+</ul></li>
+<li><p><strong>Examples</strong></p>
+<ul>
+<li>Updated system_stm32f0xx.c files:
+<ul>
+<li>Added APBPrescTable definition.</li>
+</ul></li>
+<li>Updated I2C examples after I2C driver rework:
+<ul>
+<li>I2C_TwoBoards_AdvComIT</li>
+<li>I2C_TwoBoards_ComDMA</li>
+<li>I2C_TwoBoards_ComIT</li>
+<li>I2C_TwoBoards_ComPolling</li>
+</ul></li>
+</ul></li>
+<li><p><strong>Templates</strong></p>
+<ul>
+<li>Updated system_stm32f0xx.c files:
+<ul>
+<li>Added APBPrescTable definition.</li>
+</ul></li>
+<li>Updated stm32f0xx_hal_conf.h files:
+<ul>
+<li>Updated FW projects compliance with MISRA C 2004 rule 10.6 (‘U’ suffix applied to all constants of ‘unsigned’ type).</li>
+</ul></li>
+</ul></li>
+</ul>
+<p><strong>NUCLEO-F091RC</strong>:</p>
+<ul>
+<li><p><strong>Applications</strong></p>
+<ul>
+<li>Updated system_stm32f0xx.c files:
+<ul>
+<li>Added APBPrescTable definition.</li>
+</ul></li>
+<li>Updated HEAP size for FreeRTOS applications (updates in FreeRTOSConfig.h).</li>
+</ul></li>
+<li><p><strong>Demonstrations</strong></p>
+<ul>
+<li>Updated system_stm32f0xx.c files:
+<ul>
+<li>Added APBPrescTable definition.</li>
+</ul></li>
+</ul></li>
+<li><p><strong>Examples</strong></p>
+<ul>
+<li>Updated system_stm32f0xx.c files:
+<ul>
+<li>Added APBPrescTable definition.</li>
+</ul></li>
+<li>Updated I2C examples after I2C driver rework:
+<ul>
+<li>I2C_TwoBoards_AdvComIT</li>
+<li>I2C_TwoBoards_ComDMA</li>
+<li>I2C_TwoBoards_ComIT</li>
+<li>I2C_TwoBoards_ComPolling</li>
+</ul></li>
+</ul></li>
+<li><p><strong>Templates</strong></p>
+<ul>
+<li>Updated system_stm32f0xx.c files:
+<ul>
+<li>Added APBPrescTable definition.</li>
+</ul></li>
+<li>Updated stm32f0xx_hal_conf.h files:
+<ul>
+<li>Updated FW projects compliance with MISRA C 2004 rule 10.6 (‘U’ suffix applied to all constants of ‘unsigned’ type).</li>
+</ul></li>
+</ul></li>
+</ul>
+<h2 id="known-limitations-6">Known Limitations</h2>
+<ul>
+<li>None</li>
+</ul>
+<h2 id="development-toolchains-and-compilers-6">Development Toolchains and Compilers</h2>
+<ul>
+<li>IAR Embedded Workbench for ARM (EWARM) toolchain V7.50.1 + ST-LINK</li>
+<li>RealView Microcontroller Development Kit (MDK-ARM) toolchain V5.17 + ST-LINK</li>
+<li>Atollic TrueSTUDIO STM32 (TrueSTUDIO) toolchain V5.4.2 + ST-LINK</li>
+<li>System Workbench for STM32 (SW4STM32) toolchain V1.8.0 + ST-LINK</li>
+</ul>
+<h2 id="supported-devices-and-eval-boards-6">Supported Devices and EVAL boards</h2>
+<ul>
+<li>All STM32F030, STM32F070, STM32F0x1, STM32F0x2 and STM32F0x8 product lines devices are supported.</li>
+<li>Discovery boards: STM32F072B-Discovery RevC (MB1076), STM32F0308-Discovery RevA (MB1134)</li>
+<li>Nucleo boards: STM32F070RB_Nucleo, STM32F072RB-Nucleo, STM32F091RC-Nucleo, STM32F030R8-Nucleo RevC (MB1136)</li>
+<li>Nucleo32 boards: STM32F031K6-Nucleo, STM32F042K6-Nucleo RevC (MB1180)</li>
+<li>Evaluation boards: STM32072B-EVAL RevB (MB1070), STM32091C-EVAL RevB (MB1169)</li>
+</ul>
+<h2 id="backward-compatibility-6">Backward Compatibility</h2>
+<ul>
+<li>None</li>
+</ul>
+<h2 id="dependencies-6">Dependencies</h2>
+<ul>
+<li>None</li>
+</ul>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section4" aria-hidden="true"> <label for="collapse-section4" aria-hidden="true"><strong>V1.5.0 / 29-January-2016</strong></label>
+<div>
+<h1 id="maintenance-release-11">Maintenance release</h1>
+<h2 id="main-changes-11">Main Changes</h2>
+<ul>
+<li><p><strong>Add support of System Workbench for STM32 (SW4STM32) toolchain.</strong></p></li>
+<li><strong>Projects</strong>
+<ul>
+<li>All projects updated following changes in latest version of HAL and Middlewares.</li>
+<li>Provided extended set of projects on board STM32F0xx_Nucleo_32.</li>
+<li>Added new projects CRC:
+<ul>
+<li>CRC_Bytes_Stream_7bit_CRC: to illustrate the usage Input/Output options CRC calculation.</li>
+<li>CRC_Data_Reversing_16bit_CRC: to illustrate input/output data reversal features.</li>
+</ul></li>
+<li>Added new project TouchSensing:
+<ul>
+<li>TouchSensing_Linear_IT: using the STMTouch driver with 1 linear sensor in Interrupt mode.</li>
+</ul></li>
+<li>Added new projects using In-Application Programming (IAP) through USART (refer to <a href="http://www.st.com/st-web-ui/static/active/en/resource/technical/document/user_manual/DM00050074.pdf">AN4065</a> for further details) :
+<ul>
+<li>IAP_Main</li>
+<li>IAP_Binary_Template</li>
+</ul></li>
+</ul></li>
+</ul>
+<p><strong>STM32072B_EVAL</strong>:</p>
+<ul>
+<li><p><strong>Applications</strong></p>
+<ul>
+<li>Updated GPIO Output Speed literals naming to ensure HAL full compatibility.</li>
+<li>Updated system_stm32f0xx.c files:
+<ul>
+<li>Removed __IO or __I on constant table declaration.</li>
+<li>Added HSI48_VALUE definition.</li>
+</ul></li>
+<li>Updated stm32f0xx_hal_conf.h files:
+<ul>
+<li>Set HSE_STARTUP_TIMEOUT value to 100ms instead of 5000ms</li>
+</ul></li>
+<li>Updated “Liberty” License with the new license “Ultimate Liberty”.</li>
+</ul></li>
+<li><strong>Examples</strong>
+<ul>
+<li>Updated GPIO Output Speed literals naming to ensure HAL full compatibility.</li>
+<li>Update BSP example for compatibility and alignment with latest BSP Drivers (new SD over SPI services).</li>
+<li>Updated FLASH_WriteProtection examples with new FLASH APIs.</li>
+<li>Updated TIM examples: Corrected calculation of uint32_t in TIM_InputCapture example.</li>
+<li>Update SystemClockConfig() for examples.</li>
+<li>Updated CAN_Networking example settings.</li>
+<li>Updated ADC_LowPower example settings.</li>
+<li>Updated TSC_BasicAcquisition_Interrupt/TSC_BasicAcquisition_Polling examples after integration of IO default state management.</li>
+<li>Updated system_stm32f0xx.c files:
+<ul>
+<li>Removed __IO or __I on constant table declaration.</li>
+<li>Added HSI48_VALUE definition.</li>
+</ul></li>
+<li>Updated stm32f0xx_hal_conf.h files:
+<ul>
+<li>Set HSE_STARTUP_TIMEOUT value to 100ms instead of 5000ms</li>
+</ul></li>
+<li>Updated “Liberty” License with the new license “Ultimate Liberty”.</li>
+</ul></li>
+<li><p><strong>Templates</strong></p>
+<ul>
+<li>Updated GPIO Output Speed literals naming to ensure HAL full compatibility.</li>
+<li>Updated system_stm32f0xx.c files:
+<ul>
+<li>Removed __IO or __I on constant table declaration.</li>
+<li>Added HSI48_VALUE definition.</li>
+</ul></li>
+<li>Updated stm32f0xx_hal_conf.h files:
+<ul>
+<li>Set HSE_STARTUP_TIMEOUT value to 100ms instead of 5000ms</li>
+</ul></li>
+<li>Updated stm32f0xx_hal_msp.c files:
+<ul>
+<li>Removed reference to MicroXplorer.</li>
+</ul></li>
+<li>Updated “Liberty” License with the new license “Ultimate Liberty”.</li>
+</ul></li>
+</ul>
+<p><strong>STM32091C_EVAL</strong>:</p>
+<ul>
+<li><p><strong>Applications</strong></p>
+<ul>
+<li>Updated GPIO Output Speed literals naming to ensure HAL full compatibility.</li>
+<li>Updated system_stm32f0xx.c files:
+<ul>
+<li>Removed __IO or __I on constant table declaration.</li>
+<li>Added HSI48_VALUE definition.</li>
+</ul></li>
+<li>Updated stm32f0xx_hal_conf.h files:
+<ul>
+<li>Set HSE_STARTUP_TIMEOUT value to 100ms instead of 5000ms</li>
+</ul></li>
+<li>Updated “Liberty” License with the new license “Ultimate Liberty”.</li>
+</ul></li>
+<li><strong>Demonstrations</strong>
+<ul>
+<li>Updated GPIO Output Speed literals naming to ensure HAL full compatibility.</li>
+<li>Update for compatibility and alignment with latest BSP Drivers (new SD over SPI services).</li>
+<li>Updated system_stm32f0xx.c files:
+<ul>
+<li>Removed __IO or __I on constant table declaration.</li>
+<li>Added HSI48_VALUE definition.</li>
+</ul></li>
+<li>Updated stm32f0xx_hal_conf.h files:
+<ul>
+<li>Set HSE_STARTUP_TIMEOUT value to 100ms instead of 5000ms</li>
+</ul></li>
+<li>Updated “Liberty” License with the new license “Ultimate Liberty”.</li>
+</ul></li>
+<li><strong>Examples</strong>
+<ul>
+<li>Updated GPIO Output Speed literals naming to ensure HAL full compatibility.</li>
+<li>Update BSP example for compatibility and alignment with latest BSP Drivers (new SD over SPI services).</li>
+<li>Updated FLASH_WriteProtection examples with new FLASH APIs.</li>
+<li>Updated TIM examples: Corrected calculation of uint32_t in TIM_InputCapture example.</li>
+<li>Update SystemClockConfig() for examples.</li>
+<li>Updated CAN_Networking example settings.</li>
+<li>Updated ADC_LowPower example settings.</li>
+<li>Updated TSC_BasicAcquisition_Interrupt/TSC_BasicAcquisition_Polling examples after integration of IO default state management.</li>
+<li>Updated system_stm32f0xx.c files:
+<ul>
+<li>Removed __IO or __I on constant table declaration.</li>
+<li>Added HSI48_VALUE definition.</li>
+</ul></li>
+<li>Updated stm32f0xx_hal_conf.h files:
+<ul>
+<li>Set HSE_STARTUP_TIMEOUT value to 100ms instead of 5000ms</li>
+</ul></li>
+<li>Updated “Liberty” License with the new license “Ultimate Liberty”.</li>
+</ul></li>
+<li><p><strong>Templates</strong></p>
+<ul>
+<li>Updated GPIO Output Speed literals naming to ensure HAL full compatibility.</li>
+<li>Updated system_stm32f0xx.c files:
+<ul>
+<li>Removed __IO or __I on constant table declaration.</li>
+<li>Added HSI48_VALUE definition.</li>
+</ul></li>
+<li>Updated stm32f0xx_hal_conf.h files:
+<ul>
+<li>Set HSE_STARTUP_TIMEOUT value to 100ms instead of 5000ms</li>
+</ul></li>
+<li>Updated stm32f0xx_hal_msp.c files:
+<ul>
+<li>Removed reference to MicroXplorer.</li>
+</ul></li>
+<li>Updated “Liberty” License with the new license “Ultimate Liberty”</li>
+</ul></li>
+</ul>
+<p><strong>STM32F0308-DISCO</strong>:</p>
+<ul>
+<li><p><strong>Applications</strong></p>
+<ul>
+<li>Updated GPIO Output Speed literals naming to ensure HAL full compatibility.</li>
+<li>Updated system_stm32f0xx.c files:
+<ul>
+<li>Removed __IO or __I on constant table declaration.</li>
+<li>Added HSI48_VALUE definition.</li>
+</ul></li>
+<li>Updated stm32f0xx_hal_conf.h files:
+<ul>
+<li>Set HSE_STARTUP_TIMEOUT value to 100ms instead of 5000ms</li>
+</ul></li>
+<li>Updated “Liberty” License with the new license “Ultimate Liberty”.</li>
+</ul></li>
+<li><strong>Demonstrations</strong>
+<ul>
+<li>Updated GPIO Output Speed literals naming to ensure HAL full compatibility.</li>
+<li>Update for compatibility and alignment with latest BSP Drivers (new SD over SPI services).</li>
+<li>Updated system_stm32f0xx.c files:
+<ul>
+<li>Removed __IO or __I on constant table declaration.</li>
+<li>Added HSI48_VALUE definition.</li>
+</ul></li>
+<li>Updated stm32f0xx_hal_conf.h files:
+<ul>
+<li>Set HSE_STARTUP_TIMEOUT value to 100ms instead of 5000ms</li>
+</ul></li>
+<li>Updated “Liberty” License with the new license “Ultimate Liberty”.</li>
+</ul></li>
+<li><strong>Examples</strong>
+<ul>
+<li>Updated GPIO Output Speed literals naming to ensure HAL full compatibility.</li>
+<li>Update BSP example for compatibility and alignment with latest BSP Drivers (new SD over SPI services).</li>
+<li>Updated FLASH_WriteProtection examples with new FLASH APIs.</li>
+<li>Updated TIM examples: Corrected calculation of uint32_t in TIM_InputCapture example.</li>
+<li>Update SystemClockConfig() for examples.</li>
+<li>Updated CAN_Networking example settings.</li>
+<li>Updated ADC_LowPower example settings.</li>
+<li>Updated TSC_BasicAcquisition_Interrupt/TSC_BasicAcquisition_Polling examples after integration of IO default state management.</li>
+<li>Updated system_stm32f0xx.c files:
+<ul>
+<li>Removed __IO or __I on constant table declaration.</li>
+<li>Added HSI48_VALUE definition.</li>
+</ul></li>
+<li>Updated stm32f0xx_hal_conf.h files:
+<ul>
+<li>Set HSE_STARTUP_TIMEOUT value to 100ms instead of 5000ms</li>
+</ul></li>
+<li>Updated “Liberty” License with the new license “Ultimate Liberty”.</li>
+</ul></li>
+<li><p><strong>Templates</strong></p>
+<ul>
+<li>Updated GPIO Output Speed literals naming to ensure HAL full compatibility.</li>
+<li>Updated system_stm32f0xx.c files:
+<ul>
+<li>Removed __IO or __I on constant table declaration.</li>
+<li>Added HSI48_VALUE definition.</li>
+</ul></li>
+<li>Updated stm32f0xx_hal_conf.h files:
+<ul>
+<li>Set HSE_STARTUP_TIMEOUT value to 100ms instead of 5000ms</li>
+</ul></li>
+<li>Updated stm32f0xx_hal_msp.c files:
+<ul>
+<li>Removed reference to MicroXplorer.</li>
+</ul></li>
+<li>Updated “Liberty” License with the new license “Ultimate Liberty”</li>
+</ul></li>
+</ul>
+<p><strong>NUCLEO-F030R8</strong>:</p>
+<ul>
+<li><p><strong>Applications</strong></p>
+<ul>
+<li>Updated GPIO Output Speed literals naming to ensure HAL full compatibility.</li>
+<li>Updated system_stm32f0xx.c files:
+<ul>
+<li>Removed __IO or __I on constant table declaration.</li>
+<li>Added HSI48_VALUE definition.</li>
+</ul></li>
+<li>Updated stm32f0xx_hal_conf.h files:
+<ul>
+<li>Set HSE_STARTUP_TIMEOUT value to 100ms instead of 5000ms</li>
+</ul></li>
+<li>Updated “Liberty” License with the new license “Ultimate Liberty”.</li>
+</ul></li>
+<li><p><strong>Demonstrations</strong></p>
+<ul>
+<li>Update for compatibility and alignment with latest STM32F0xx-Nucleo and Adafruit Shield BSP Drivers.</li>
+<li>Updated GPIO Output Speed literals naming to ensure HAL full compatibility.</li>
+<li>Updated system_stm32f0xx.c files:
+<ul>
+<li>Removed __IO or __I on constant table declaration.</li>
+<li>Added HSI48_VALUE definition.</li>
+</ul></li>
+<li>Updated stm32f0xx_hal_conf.h files:
+<ul>
+<li>Set HSE_STARTUP_TIMEOUT value to 100ms instead of 5000ms</li>
+</ul></li>
+<li>Updated “Liberty” License with the new license “Ultimate Liberty”.</li>
+</ul></li>
+<li><strong>Examples</strong>
+<ul>
+<li>Updated GPIO Output Speed literals naming to ensure HAL full compatibility.</li>
+<li>Updated FLASH_WriteProtection examples with new FLASH APIs.</li>
+<li>Updated TIM examples: Corrected calculation of uint32_t in TIM_InputCapture example.</li>
+<li>Updated/aligned UART_TwoBoards_ComDMA examples (UART IRQ needs now to be enabled).</li>
+<li>Updated system_stm32f0xx.c files:
+<ul>
+<li>Removed __IO or __I on constant table declaration.</li>
+<li>Added HSI48_VALUE definition.</li>
+</ul></li>
+<li>Updated stm32f0xx_hal_conf.h files:
+<ul>
+<li>Set HSE_STARTUP_TIMEOUT value to 100ms instead of 5000ms</li>
+</ul></li>
+<li>Updated “Liberty” License with the new license “Ultimate Liberty”.</li>
+</ul></li>
+<li><p><strong>Templates</strong></p>
+<ul>
+<li>Updated GPIO Output Speed literals naming to ensure HAL full compatibility.</li>
+<li>Updated system_stm32f0xx.c files:
+<ul>
+<li>Removed __IO or __I on constant table declaration.</li>
+<li>Added HSI48_VALUE definition.</li>
+</ul></li>
+<li>Updated stm32f0xx_hal_conf.h files:
+<ul>
+<li>Set HSE_STARTUP_TIMEOUT value to 100ms instead of 5000ms</li>
+</ul></li>
+<li>Updated stm32f0xx_hal_msp.c files:
+<ul>
+<li>Removed reference to MicroXplorer.</li>
+</ul></li>
+<li>Updated “Liberty” License with the new license “Ultimate Liberty”</li>
+</ul></li>
+</ul>
+<p><strong>NUCLEO-F070RB</strong>:</p>
+<ul>
+<li><p><strong>Applications</strong></p>
+<ul>
+<li>Updated GPIO Output Speed literals naming to ensure HAL full compatibility.</li>
+<li>Updated system_stm32f0xx.c files:
+<ul>
+<li>Removed __IO or __I on constant table declaration.</li>
+<li>Added HSI48_VALUE definition.</li>
+</ul></li>
+<li>Updated stm32f0xx_hal_conf.h files:
+<ul>
+<li>Set HSE_STARTUP_TIMEOUT value to 100ms instead of 5000ms</li>
+</ul></li>
+<li>Updated “Liberty” License with the new license “Ultimate Liberty”.</li>
+</ul></li>
+<li><p><strong>Demonstrations</strong></p>
+<ul>
+<li>Update for compatibility and alignment with latest STM32F0xx-Nucleo and Adafruit Shield BSP Drivers.</li>
+<li>Updated GPIO Output Speed literals naming to ensure HAL full compatibility.</li>
+<li>Updated system_stm32f0xx.c files:
+<ul>
+<li>Removed __IO or __I on constant table declaration.</li>
+<li>Added HSI48_VALUE definition.</li>
+</ul></li>
+<li>Updated stm32f0xx_hal_conf.h files:
+<ul>
+<li>Set HSE_STARTUP_TIMEOUT value to 100ms instead of 5000ms</li>
+</ul></li>
+<li>Updated “Liberty” License with the new license “Ultimate Liberty”.</li>
+</ul></li>
+<li><strong>Examples</strong>
+<ul>
+<li>Updated GPIO Output Speed literals naming to ensure HAL full compatibility.</li>
+<li>Updated FLASH_WriteProtection examples with new FLASH APIs.</li>
+<li>Updated TIM examples: Corrected calculation of uint32_t in TIM_InputCapture example.</li>
+<li>Updated/aligned UART_TwoBoards_ComDMA examples (UART IRQ needs now to be enabled).</li>
+<li>Updated system_stm32f0xx.c files:
+<ul>
+<li>Removed __IO or __I on constant table declaration.</li>
+<li>Added HSI48_VALUE definition.</li>
+</ul></li>
+<li>Updated stm32f0xx_hal_conf.h files:
+<ul>
+<li>Set HSE_STARTUP_TIMEOUT value to 100ms instead of 5000ms</li>
+</ul></li>
+<li>Updated “Liberty” License with the new license “Ultimate Liberty”.</li>
+</ul></li>
+<li><p><strong>Templates</strong></p>
+<ul>
+<li>Updated GPIO Output Speed literals naming to ensure HAL full compatibility.</li>
+<li>Updated system_stm32f0xx.c files:
+<ul>
+<li>Removed __IO or __I on constant table declaration.</li>
+<li>Added HSI48_VALUE definition.</li>
+</ul></li>
+<li>Updated stm32f0xx_hal_conf.h files:
+<ul>
+<li>Set HSE_STARTUP_TIMEOUT value to 100ms instead of 5000ms</li>
+</ul></li>
+<li>Updated stm32f0xx_hal_msp.c files:
+<ul>
+<li>Removed reference to MicroXplorer.</li>
+</ul></li>
+<li>Updated “Liberty” License with the new license “Ultimate Liberty”</li>
+</ul></li>
+</ul>
+<p><strong>STM32F072B-DISCO</strong>:</p>
+<ul>
+<li><p><strong>Applications</strong></p>
+<ul>
+<li>Updated GPIO Output Speed literals naming to ensure HAL full compatibility.</li>
+<li>Added TouchSensing/TouchSensing_Linear_IT application, using the STMTouch driver with 1 linear sensor in Interrupt mode.</li>
+<li>Corrected EXTI line used in USB_Device/HID_Standalone project.</li>
+<li>Updated system_stm32f0xx.c files:
+<ul>
+<li>Removed __IO or __I on constant table declaration.</li>
+<li>Added HSI48_VALUE definition.</li>
+</ul></li>
+<li>Updated stm32f0xx_hal_conf.h files:
+<ul>
+<li>Set HSE_STARTUP_TIMEOUT value to 100ms instead of 5000ms</li>
+</ul></li>
+<li>Updated “Liberty” License with the new license “Ultimate Liberty”.</li>
+</ul></li>
+<li><p><strong>Demonstrations</strong></p>
+<ul>
+<li>Updated GPIO Output Speed literals naming to ensure HAL full compatibility.</li>
+<li>Updated system_stm32f0xx.c files:
+<ul>
+<li>Removed __IO or __I on constant table declaration.</li>
+<li>Added HSI48_VALUE definition.</li>
+</ul></li>
+<li>Updated stm32f0xx_hal_conf.h files:
+<ul>
+<li>Set HSE_STARTUP_TIMEOUT value to 100ms instead of 5000ms</li>
+</ul></li>
+<li>Updated “Liberty” License with the new license “Ultimate Liberty”.</li>
+</ul></li>
+<li><p><strong>Examples</strong></p>
+<ul>
+<li>Updated GPIO Output Speed literals naming to ensure HAL full compatibility.</li>
+<li>Updated FLASH_WriteProtection examples with new FLASH APIs.</li>
+<li>Updated TIM examples: Corrected calculation of uint32_t in TIM_InputCapture example.</li>
+<li>Update SystemClockConfig() for examples.</li>
+<li>Updated/aligned UART_TwoBoards_ComDMA examples (UART IRQ needs now to be enabled).</li>
+<li>Updated TSC_BasicAcquisition_Interrupt/TSC_BasicAcquisition_Polling examples after integration</li>
+<li>of IO default state management.</li>
+<li>Added CRC/CRC_Data_Reversing_16bit_CRC example to illustrate input/output data reversal features.</li>
+<li>Added CRC/CRC_Bytes_Stream_7bit_CRC example to illustrate the usage Input/Output options CRC calculation.</li>
+<li>Updated system_stm32f0xx.c files:
+<ul>
+<li>Removed __IO or __I on constant table declaration.</li>
+<li>Added HSI48_VALUE definition.</li>
+</ul></li>
+<li>Updated stm32f0xx_hal_conf.h files:
+<ul>
+<li>Set HSE_STARTUP_TIMEOUT value to 100ms instead of 5000ms</li>
+</ul></li>
+<li>Updated “Liberty” License with the new license “Ultimate Liberty”.</li>
+</ul></li>
+<li><p><strong>Templates</strong></p>
+<ul>
+<li>Updated GPIO Output Speed literals naming to ensure HAL full compatibility.</li>
+<li>Updated system_stm32f0xx.c files:
+<ul>
+<li>Removed __IO or __I on constant table declaration.</li>
+<li>Added HSI48_VALUE definition.</li>
+</ul></li>
+<li>Updated stm32f0xx_hal_conf.h files:
+<ul>
+<li>Set HSE_STARTUP_TIMEOUT value to 100ms instead of 5000ms</li>
+</ul></li>
+<li>Updated stm32f0xx_hal_msp.c files:
+<ul>
+<li>Removed reference to MicroXplorer.</li>
+</ul></li>
+<li>Updated “Liberty” License with the new license “Ultimate Liberty”</li>
+</ul></li>
+</ul>
+<p><strong>NUCLEO-F072RB</strong>:</p>
+<ul>
+<li><p><strong>Applications</strong></p>
+<ul>
+<li>Updated GPIO Output Speed literals naming to ensure HAL full compatibility.</li>
+<li>Updated system_stm32f0xx.c files:
+<ul>
+<li>Removed __IO or __I on constant table declaration.</li>
+<li>Added HSI48_VALUE definition.</li>
+</ul></li>
+<li>Updated stm32f0xx_hal_conf.h files:
+<ul>
+<li>Set HSE_STARTUP_TIMEOUT value to 100ms instead of 5000ms</li>
+</ul></li>
+<li>Updated “Liberty” License with the new license “Ultimate Liberty”.</li>
+</ul></li>
+<li><p><strong>Demonstrations</strong></p>
+<ul>
+<li>Update for compatibility and alignment with latest STM32F0xx-Nucleo and Adafruit Shield BSP Drivers.</li>
+<li>Updated GPIO Output Speed literals naming to ensure HAL full compatibility.</li>
+<li>Updated system_stm32f0xx.c files:
+<ul>
+<li>Removed __IO or __I on constant table declaration.</li>
+<li>Added HSI48_VALUE definition.</li>
+</ul></li>
+<li>Updated stm32f0xx_hal_conf.h files:
+<ul>
+<li>Set HSE_STARTUP_TIMEOUT value to 100ms instead of 5000ms</li>
+</ul></li>
+<li>Updated “Liberty” License with the new license “Ultimate Liberty”.</li>
+</ul></li>
+<li><p><strong>Examples</strong></p>
+<ul>
+<li>Updated GPIO Output Speed literals naming to ensure HAL full compatibility.</li>
+<li>Updated FLASH_WriteProtection examples with new FLASH APIs.</li>
+<li>Updated TIM examples: Corrected calculation of uint32_t in TIM_InputCapture example.</li>
+<li>Update SystemClockConfig() for STM32F0xx-Nucleo examples.</li>
+<li>Updated/aligned UART_TwoBoards_ComDMA examples (UART IRQ needs now to be enabled).</li>
+<li>Updated ADC/ADC_AnalogWatchdog example.</li>
+<li>Added CRC/CRC_Data_Reversing_16bit_CRC example to illustrate input/output data reversal features.</li>
+<li>Added CRC/CRC_Bytes_Stream_7bit_CRC example to illustrate the usage Input/Output options CRC calculation.</li>
+<li>Updated system_stm32f0xx.c files:
+<ul>
+<li>Removed __IO or __I on constant table declaration.</li>
+<li>Added HSI48_VALUE definition.</li>
+</ul></li>
+<li>Updated stm32f0xx_hal_conf.h files:
+<ul>
+<li>Set HSE_STARTUP_TIMEOUT value to 100ms instead of 5000ms</li>
+</ul></li>
+<li>Updated “Liberty” License with the new license “Ultimate Liberty”.</li>
+</ul></li>
+<li><p><strong>Templates</strong></p>
+<ul>
+<li>Updated GPIO Output Speed literals naming to ensure HAL full compatibility.</li>
+<li>Updated system_stm32f0xx.c files:
+<ul>
+<li>Removed __IO or __I on constant table declaration.</li>
+<li>Added HSI48_VALUE definition.</li>
+</ul></li>
+<li>Updated stm32f0xx_hal_conf.h files:
+<ul>
+<li>Set HSE_STARTUP_TIMEOUT value to 100ms instead of 5000ms</li>
+</ul></li>
+<li>Updated stm32f0xx_hal_msp.c files:
+<ul>
+<li>Removed reference to MicroXplorer.</li>
+</ul></li>
+<li>Updated “Liberty” License with the new license “Ultimate Liberty”</li>
+</ul></li>
+</ul>
+<p><strong>NUCLEO-F091RC</strong>:</p>
+<ul>
+<li><p><strong>Applications</strong></p>
+<ul>
+<li>Updated GPIO Output Speed literals naming to ensure HAL full compatibility.</li>
+<li>Updated FatFS_uSD application: increased size of heap/stack for proper execution.</li>
+<li>Updated system_stm32f0xx.c files:
+<ul>
+<li>Removed __IO or __I on constant table declaration.</li>
+<li>Added HSI48_VALUE definition.</li>
+</ul></li>
+<li>Updated stm32f0xx_hal_conf.h files:
+<ul>
+<li>Set HSE_STARTUP_TIMEOUT value to 100ms instead of 5000ms</li>
+</ul></li>
+<li>Updated “Liberty” License with the new license “Ultimate Liberty”.</li>
+</ul></li>
+<li><p><strong>Demonstrations</strong></p>
+<ul>
+<li>Update for compatibility and alignment with latest STM32F0xx-Nucleo and Adafruit Shield BSP Drivers.</li>
+<li>Updated GPIO Output Speed literals naming to ensure HAL full compatibility.</li>
+<li>Updated system_stm32f0xx.c files:
+<ul>
+<li>Removed __IO or __I on constant table declaration.</li>
+<li>Added HSI48_VALUE definition.</li>
+</ul></li>
+<li>Updated stm32f0xx_hal_conf.h files:
+<ul>
+<li>Set HSE_STARTUP_TIMEOUT value to 100ms instead of 5000ms</li>
+</ul></li>
+<li>Updated “Liberty” License with the new license “Ultimate Liberty”.</li>
+</ul></li>
+<li><strong>Examples</strong>
+<ul>
+<li>Add support of System Workbench for STM32 (SW4STM32) toolchain.</li>
+<li>Updated GPIO Output Speed literals naming to ensure HAL full compatibility.</li>
+<li>Updated FLASH_WriteProtection examples with new FLASH APIs.</li>
+<li>Updated TIM examples: Corrected calculation of uint32_t in TIM_InputCapture example.</li>
+<li>Update SystemClockConfig() for STM32F0xx-Nucleo examples.</li>
+<li>Updated/aligned UART_TwoBoards_ComDMA examples (UART IRQ needs now to be enabled).</li>
+<li>Updated ADC/ADC_AnalogWatchdog example.</li>
+<li>Added CRC/CRC_Data_Reversing_16bit_CRC example to illustrate input/output data reversal features.</li>
+<li>Added CRC/CRC_Bytes_Stream_7bit_CRC example to illustrate the usage Input/Output options CRC calculation.</li>
+<li>Updated system_stm32f0xx.c files:
+<ul>
+<li>Removed __IO or __I on constant table declaration.</li>
+<li>Added HSI48_VALUE definition.</li>
+</ul></li>
+<li>Updated stm32f0xx_hal_conf.h files:
+<ul>
+<li>Set HSE_STARTUP_TIMEOUT value to 100ms instead of 5000ms</li>
+</ul></li>
+<li>Updated “Liberty” License with the new license “Ultimate Liberty”.</li>
+</ul></li>
+<li><p><strong>Templates</strong></p>
+<ul>
+<li>Updated GPIO Output Speed literals naming to ensure HAL full compatibility.</li>
+<li>Updated system_stm32f0xx.c files:
+<ul>
+<li>Removed __IO or __I on constant table declaration.</li>
+<li>Added HSI48_VALUE definition.</li>
+</ul></li>
+<li>Updated stm32f0xx_hal_conf.h files:
+<ul>
+<li>Set HSE_STARTUP_TIMEOUT value to 100ms instead of 5000ms</li>
+</ul></li>
+<li>Updated stm32f0xx_hal_msp.c files:
+<ul>
+<li>Removed reference to MicroXplorer.</li>
+</ul></li>
+<li>Updated “Liberty” License with the new license “Ultimate Liberty”</li>
+</ul></li>
+</ul>
+<h2 id="known-limitations-7">Known Limitations</h2>
+<ul>
+<li>None</li>
+</ul>
+<h2 id="development-toolchains-and-compilers-7">Development Toolchains and Compilers</h2>
+<ul>
+<li>IAR Embedded Workbench for ARM (EWARM) toolchain V7.40.7 + ST-LINK</li>
+<li>RealView Microcontroller Development Kit (MDK-ARM) toolchain V5.17 + ST-LINK</li>
+<li>Atollic TrueSTUDIO STM32 (TrueSTUDIO) toolchain V5.3.1 + ST-LINK</li>
+<li>System Workbench for STM32 (SW4STM32) toolchain V1.6.0 + ST-LINK</li>
+</ul>
+<h2 id="supported-devices-and-eval-boards-7">Supported Devices and EVAL boards</h2>
+<ul>
+<li>All STM32F030, STM32F070, STM32F0x1, STM32F0x2 and STM32F0x8 product lines devices are supported.</li>
+<li>Discovery boards: STM32F072B-Discovery RevC (MB1076), STM32F0308-Discovery RevA (MB1134)</li>
+<li>Nucleo boards: STM32F070RB_Nucleo, STM32F072RB-Nucleo, STM32F091RC-Nucleo, STM32F030R8-Nucleo RevC (MB1136)</li>
+<li>Nucleo32 boards: STM32F031K6-Nucleo, STM32F042K6-Nucleo RevC (MB1180)</li>
+<li>Evaluation boards: STM32072B-EVAL RevB (MB1070), STM32091C-EVAL RevB (MB1169)</li>
+</ul>
+<h2 id="backward-compatibility-7">Backward Compatibility</h2>
+<ul>
+<li>None</li>
+</ul>
+<h2 id="dependencies-7">Dependencies</h2>
+<ul>
+<li>None</li>
+</ul>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section3" aria-hidden="true"> <label for="collapse-section3" aria-hidden="true"><strong>V1.4.0 / 11-September-2015</strong></label>
+<div>
+<h1 id="maintenance-release-12">Maintenance release</h1>
+<h2 id="main-changes-12">Main Changes</h2>
+<ul>
+<li><strong>Adding support of 2 new Nucleo 32 boards.</strong>
+<ul>
+<li>STM32F031K6-Nucleo</li>
+<li>STM32F042K6-Nucleo</li>
+</ul></li>
+<li>A template project is added to easily start any development on those 2 boards.</li>
+<li>Basic examples (GPIO_IOToggle) are provided to easily start new development on these boards.</li>
+<li>A demonstration using the Gravitech 7segments 4digits shield is added to provide sample code on how to display a counter on this shield.</li>
+</ul>
+<h2 id="known-limitations-8">Known Limitations</h2>
+<ul>
+<li>None</li>
+</ul>
+<h2 id="development-toolchains-and-compilers-8">Development Toolchains and Compilers</h2>
+<ul>
+<li>IAR Embedded Workbench for ARM (EWARM) toolchain V7.40 + ST-LINK
+<ul>
+<li>A software patch is needed to use STM32F070x6/xB, STM32F030xC devices.</li>
+<li>If you haven’t this patch installed, you can install it from the following folder "Utilities_SoftwareSTM32F030xC_STM32F070xB_STM32F070x6_Support.zip"</li>
+</ul></li>
+<li>RealView Microcontroller Development Kit (MDK-ARM) toolchain V5.14 + ST-LINK
+<ul>
+<li>A software pack is needed to use STM32F070x6/xB, STM32F030xC devices.</li>
+<li>If you haven’t this patch installed, you can install it from the following folder "Utilities_Software-ARM-ARM STM32F030xC_STM32F070xB_STM32F070x6_Support.zip"</li>
+</ul></li>
+<li>Atollic TrueSTUDIO STM32 (TrueSTUDIO) toolchain V5.1.1 + ST-LINK</li>
+</ul>
+<h2 id="supported-devices-and-eval-boards-8">Supported Devices and EVAL boards</h2>
+<p>All STM32F030, STM32F070, STM32F0x1, STM32F0x2 and STM32F0x8 product lines devices are supported. - STM32F072B-Discovery Board RevB (MB1076) and STM32F0308-Discovery Board RevA (MB1134) - STM32F070RB_Nucleo, STM32F072RB-Nucleo, STM32F091RC-Nucleo and STM32F030R8-Nucleo Board RevC (MB1136) - STM32F031K6-Nucleo and STM32F042K6-Nucleo Board RevC (MB1180) - STM32072B-EVAL Board RevA (MB1070) - STM32091C-EVAL Board RevB (MB1169) - STM32 ST-LINK utility V3.4.0 or later.</p>
+<h2 id="backward-compatibility-8">Backward Compatibility</h2>
+<ul>
+<li>None</li>
+</ul>
+<h2 id="dependencies-8">Dependencies</h2>
+<ul>
+<li>None</li>
+</ul>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section1" aria-hidden="true"> <label for="collapse-section1" aria-hidden="true"><strong>V1.3.0 / 26-June-2015</strong></label>
+<div>
+<h1 id="maintenance-release-13">Maintenance release</h1>
+<h2 id="main-changes-13">Main Changes</h2>
+<ul>
+<li><strong>All projects updated following changes in latest version of HAL and Middlewares.</strong></li>
+<li><p><strong>Fix known defects and several enhancements implementation.</strong></p></li>
+<li><strong>Projects</strong></li>
+<li>Adding new projects to introduce the FreeRTOS V8.2.1</li>
+<li>FreeRTOS_SignalFromISR (thread signaling from an interrupt)</li>
+<li>FreeRTOS_Signal (thread signaling)</li>
+<li>FreeRTOS_Mail (mail queues)</li>
+<li>Adding new project to emulate EEPROM on internal Flash
+<ul>
+<li>EEPROM_Emulation</li>
+</ul></li>
+<li>Complete HAL API alignment (renaming)</li>
+<li><p>Upgrade to use FatFs R0.11.</p></li>
+</ul>
+<p><strong>NUCLEO-F072RB</strong>:</p>
+<ul>
+<li><strong>Examples</strong>
+<ul>
+<li>Update ADC/DMA/PWR examples projects.</li>
+</ul></li>
+</ul>
+<p><strong>STM32F0308-DISCO</strong>:</p>
+<ul>
+<li><strong>Examples</strong></li>
+<li>Update DMA/PWR examples projects.</li>
+</ul>
+<p><strong>STM32091C_EVAL</strong>:</p>
+<ul>
+<li><strong>Examples</strong>
+<ul>
+<li>Update DMA/PWR examples projects.</li>
+</ul></li>
+<li><p><strong>Applications</strong></p>
+<ul>
+<li>Adapt projects to use STemwin V5.28 “ST modified 20150415“ (Changed lib name from 526 to 528).</li>
+<li>Adapt existing projects to use FreeRTOS V8.2.1.</li>
+<li>Adding new projects to introduce the FreeRTOS V8.2.1
+<ul>
+<li>FreeRTOS_SignalFromISR (thread signaling from an interrupt)</li>
+<li>FreeRTOS_Signal (thread signaling)</li>
+<li>FreeRTOS_Mail (mail queues)</li>
+</ul></li>
+</ul></li>
+</ul>
+<p><strong>NUCLEO-F030R8</strong>:</p>
+<ul>
+<li><strong>Examples</strong>
+<ul>
+<li>Update PWR examples projects.</li>
+</ul></li>
+</ul>
+<p><strong>STM32072B_EVAL</strong>:</p>
+<ul>
+<li><strong>Examples</strong>
+<ul>
+<li>Update DMA/ADC examples projects.</li>
+</ul></li>
+</ul>
+<h2 id="known-limitations-9">Known Limitations</h2>
+<ul>
+<li>None</li>
+</ul>
+<h2 id="development-toolchains-and-compilers-9">Development Toolchains and Compilers</h2>
+<ul>
+<li>IAR Embedded Workbench for ARM (EWARM) toolchain V7.40 + ST-LINK
+<ul>
+<li>A software patch is needed to use STM32F070x6/xB, STM32F030xC devices. If you haven’t this patch installed, you can install it from the following folder **Utilities_SoftwareSTM32F030xC_STM32F070xB_STM32F070x6_Support.zip**</li>
+</ul></li>
+<li>RealView Microcontroller Development Kit (MDK-ARM) toolchain V5.14 + ST-LINK
+<ul>
+<li>A software pack is needed to use STM32F070x6/xB, STM32F030xC devices. If you haven’t this patch installed, you can install it from the following folder **Utilities_Software-ARM-ARM STM32F030xC_STM32F070xB_STM32F070x6_Support.zip**</li>
+</ul></li>
+<li>Atollic TrueSTUDIO STM32 (TrueSTUDIO) toolchain V5.1.1 + ST-LINK</li>
+</ul>
+<h2 id="supported-devices-and-eval-boards-9">Supported Devices and EVAL boards</h2>
+<ul>
+<li>All STM32F030, STM32F70, STM32F0x1, STM32F0x2 and STM32F0x8 product lines devices are supported.</li>
+<li>STM32F072B-Discovery Board RevB (MB1076) and STM32F0308-Discovery Board RevA (MB1134)</li>
+<li>STM32F070RB_Nucleo, STM32F072RB-Nucleo, STM32F091RC-Nucleo and STM32F030R8-Nucleo Board RevC (MB1136)</li>
+<li>STM32072B-EVAL Board RevA (MB1070)</li>
+<li>STM32091C-EVAL Board RevB (MB1169)</li>
+<li>STM32 ST-LINK utility V3.4.0 or later.</li>
+</ul>
+<h2 id="backward-compatibility-9">Backward Compatibility</h2>
+<ul>
+<li>None</li>
+</ul>
+<h2 id="dependencies-9">Dependencies</h2>
+<ul>
+<li>None</li>
+</ul>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section0" aria-hidden="true"> <label for="collapse-section0" aria-hidden="true"><strong>V1.2.1 / 09-January-2015</strong></label>
+<div>
+<h1 id="maintenance-release-14">Maintenance release</h1>
+<h2 id="main-changes-14">Main Changes</h2>
+<ul>
+<li>Patch release for <strong>STM32F0xx</strong> Value line devices.</li>
+</ul>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section100" aria-hidden="true"> <label for="collapse-section100" aria-hidden="true"><strong>V1.2.0 / 05-December-2014</strong></label>
+<div>
+<h1 id="maintenance-release-15">Maintenance release</h1>
+<h2 id="main-changes-15">Main Changes</h2>
+<ul>
+<li>First official release for new F0 devices <strong>STM32F030xC, STM32F070x6/xB.</strong></li>
+<li>Full set of examples/application/demo running for device <strong>STM32F070xB on STM32F070RB-Nucleo board</strong></li>
+</ul>
+<p><strong>STM32072B_EVAL</strong>:</p>
+<ul>
+<li><strong>Application</strong>
+<ul>
+<li>Update for compatibility with:
+<ul>
+<li>FatFS R0.10b_STM32Cube_20141120</li>
+<li>USB_device V2.3.0</li>
+<li>FreeRTOS V8.1.2_20141204</li>
+</ul></li>
+</ul></li>
+<li><strong>Examples</strong>
+<ul>
+<li>Minor correction (compilation warning with HAL_SPI)</li>
+</ul></li>
+</ul>
+<p><strong>STM32091C_EVAL</strong>:</p>
+<ul>
+<li><strong>Applications</strong>
+<ul>
+<li>Update for compatibility with:
+<ul>
+<li>FatFS R0.10b_STM32Cube_20141120</li>
+<li>USB_device V2.3.0</li>
+<li>FreeRTOS V8.1.2_20141204</li>
+</ul></li>
+<li>STemWin STemWinLibrary526_20141020_CM0</li>
+</ul></li>
+<li><strong>Demonstrations</strong>
+<ul>
+<li>Update for compatibility with:
+<ul>
+<li>FatFS R0.10b_STM32Cube_20141104</li>
+</ul></li>
+<li>Minor correction (compilation warning)</li>
+</ul></li>
+<li><strong>Examples</strong>
+<ul>
+<li>Minor correction (compilation warnings)</li>
+</ul></li>
+<li><strong>Templates</strong>
+<ul>
+<li>Minor correction (compilation warnings)</li>
+</ul></li>
+</ul>
+<p><strong>STM32F0308-DISCO</strong>:</p>
+<ul>
+<li><strong>Applications</strong>
+<ul>
+<li>Update for compatibility with:
+<ul>
+<li>FreeRTOS V8.1.2_20141204</li>
+</ul></li>
+</ul></li>
+<li><strong>Demonstrations</strong>
+<ul>
+<li>Minor correction (compilation warning with HAL_SPI)</li>
+</ul></li>
+<li><strong>Templates</strong>
+<ul>
+<li>Minor correction (compilation warning with HAL_SPI)</li>
+</ul></li>
+</ul>
+<p><strong>NUCLEO-F030R8</strong>:</p>
+<ul>
+<li><strong>Applications</strong>
+<ul>
+<li>Update for compatibility with FreeRTOS V8.1.2_20141204</li>
+</ul></li>
+<li><strong>Demonstrations</strong>
+<ul>
+<li>Update for compatibility with FatFS R0.10b_STM32Cube_20141104</li>
+<li>Minor correction for compilation warning with HAL_SPI</li>
+</ul></li>
+<li><strong>Examples</strong>
+<ul>
+<li>Minor correction (compilation warning with HAL_SPI)</li>
+</ul></li>
+<li><strong>Templates</strong>
+<ul>
+<li>Minor correction (compilation warning with HAL_SPI)</li>
+</ul></li>
+</ul>
+<p><strong>STM32F072B-DISCO</strong>:</p>
+<ul>
+<li><strong>Applications</strong>
+<ul>
+<li>Update for compatibility with:
+<ul>
+<li>FatFS R0.10b_STM32Cube_20141120</li>
+<li>USB_device V2.3.0</li>
+<li>FreeRTOS V8.1.2_20141204</li>
+</ul></li>
+</ul></li>
+<li><strong>Demonstrations</strong>
+<ul>
+<li>Update for compatibility with:
+<ul>
+<li>USB_device V2.3.0</li>
+</ul></li>
+<li>Minor correction for compilation warning with HAL_SPI</li>
+</ul></li>
+</ul>
+<p><strong>NUCLEO-F072RB</strong>:</p>
+<ul>
+<li><strong>Applications</strong>
+<ul>
+<li>Update for compatibility with:
+<ul>
+<li>FreeRTOS V8.1.2_20141204</li>
+</ul></li>
+</ul></li>
+<li><strong>Demonstrations</strong>
+<ul>
+<li>Update for compatibility with:
+<ul>
+<li>FatFS R0.10b_STM32Cube_20141104</li>
+</ul></li>
+<li>Minor correction for compilation warning with HAL_SPI</li>
+</ul></li>
+<li><strong>Examples</strong>
+<ul>
+<li>Minor correction (compilation warning with HAL_SPI)</li>
+</ul></li>
+<li><strong>Templates</strong>
+<ul>
+<li>Minor correction (compilation warning with HAL_SPI)</li>
+</ul></li>
+</ul>
+<p><strong>NUCLEO-F091RC</strong>:</p>
+<ul>
+<li><strong>Applications</strong>
+<ul>
+<li>Update for compatibility with:
+<ul>
+<li>FreeRTOS V8.1.2_20141204</li>
+</ul></li>
+</ul></li>
+<li><strong>Demonstrations</strong>
+<ul>
+<li>Update for compatibility with:
+<ul>
+<li>FatFS R0.10b_STM32Cube_20141104</li>
+</ul></li>
+<li>Minor correction for compilation warning with HAL_SPI</li>
+</ul></li>
+<li><strong>Examples</strong>
+<ul>
+<li>Minor correction (compilation warning with HAL_SPI)</li>
+</ul></li>
+<li><strong>Templates</strong>
+<ul>
+<li>Minor correction (compilation warning with HAL_SPI)</li>
+</ul></li>
+</ul>
+<h2 id="contents-4">Contents</h2>
+<h3 id="projects-2">Projects</h3>
+<table>
+<caption>Projects STM32072B-EVAL</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: center;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">STM32072B-EVAL</td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;"><strong>V1.2.0</strong></td>
+<td style="text-align: center;">Projects/STM32091C_EVAL/Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32072B-EVAL</td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;"><strong>V1.2.0</strong></td>
+<td style="text-align: center;">Projects/STM32072B-EVAL/Examples</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Projects STM32091C_EVAL</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: center;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">STM32091C_EVAL</td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;"><strong>V1.2.0</strong></td>
+<td style="text-align: center;">Projects/STM32091C_EVAL/Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32091C_EVAL</td>
+<td style="text-align: left;"><strong>Demonstrations</strong></td>
+<td style="text-align: left;"><strong>V1.2.0</strong></td>
+<td style="text-align: center;">Projects/STM32091C_EVAL/Demonstrations</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32091C_EVAL</td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;"><strong>V1.2.0</strong></td>
+<td style="text-align: center;">Projects/STM32091C_EVAL/Examples</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32091C_EVAL</td>
+<td style="text-align: left;"><strong>Templates</strong></td>
+<td style="text-align: left;"><strong>V1.2.0</strong></td>
+<td style="text-align: center;">Projects/STM32091C_EVAL/Templates</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Projects STM32F0308-DISCO</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: center;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">STM32F0308-DISCO</td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;"><strong>V1.2.0</strong></td>
+<td style="text-align: center;">Projects/STM32F0308-DISCO/Examples</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32F0308-DISCO</td>
+<td style="text-align: left;"><strong>Demonstrations</strong></td>
+<td style="text-align: left;"><strong>V1.2.0</strong></td>
+<td style="text-align: center;">Projects/STM32F0308-DISCO/Demonstrations</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32F0308-DISCO</td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;"><strong>V1.2.0</strong></td>
+<td style="text-align: center;">Projects/STM32F0308-DISCO/Examples</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32F0308-DISCO</td>
+<td style="text-align: left;"><strong>Templates</strong></td>
+<td style="text-align: left;"><strong>V1.2.0</strong></td>
+<td style="text-align: center;">Projects/STM32F0308-DISCO/Templates</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Projects STM32F072B-DISCO</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: center;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">STM32F072B-DISCO</td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;"><strong>V1.2.0</strong></td>
+<td style="text-align: center;">Projects/STM32F072B-DISCO/Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32F072B-DISCO</td>
+<td style="text-align: left;"><strong>Demonstrations</strong></td>
+<td style="text-align: left;"><strong>V1.2.0</strong></td>
+<td style="text-align: center;">Projects/STM32F072B-DISCO/Demonstrations</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Projects NUCLEO-F072RB</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: center;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-F072RB</td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;"><strong>V1.2.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F072RB/Examples</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-F072RB</td>
+<td style="text-align: left;"><strong>Demonstrations</strong></td>
+<td style="text-align: left;"><strong>V1.2.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F072RB/Demonstrations</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-F072RB</td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;"><strong>V1.2.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F072RB/Examples</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-F072RB</td>
+<td style="text-align: left;"><strong>Templates</strong></td>
+<td style="text-align: left;"><strong>V1.2.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F072RB/Templates</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Projects NUCLEO-F091RC</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: center;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-F091RC</td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;"><strong>V1.2.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F091RC/Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-F091RC</td>
+<td style="text-align: left;"><strong>Demonstrations</strong></td>
+<td style="text-align: left;"><strong>V1.2.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F091RC/Demonstrations</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-F091RC</td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;"><strong>V1.2.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F091RC/Examples</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-F091RC</td>
+<td style="text-align: left;"><strong>Templates</strong></td>
+<td style="text-align: left;"><strong>V1.2.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F091RC/Templates</td>
+</tr>
+</tbody>
+</table>
+<p>Note: in the tables above, project categories <strong>highlighted</strong> have changed since previous release.</p>
+<h2 id="known-limitations-10">Known Limitations</h2>
+<ul>
+<li>None</li>
+</ul>
+<h2 id="development-toolchains-and-compilers-10">Development Toolchains and Compilers</h2>
+<ul>
+<li>IAR Embedded Workbench for ARM (EWARM) toolchain V7.10 + ST-LINK
+<ul>
+<li>A software patch is needed to use STM32F070x6/xB, STM32F030xC devices with V7.10. If you haven’t this patch installed, you can install it from the following folder <strong>UtilitiesSTM32F030xC_STM32F070xB_STM32F070x6_Support.zip</strong></li>
+</ul></li>
+<li>RealView Microcontroller Development Kit (MDK-ARM) toolchain V5.10 + ST-LINK
+<ul>
+<li>A new software pack is needed to use STM32F070x6/xB, STM32F030xC devices with MDK-ARM toolchain V5.10. If you haven’t this patch installed, you can install it from the following folder <strong>Utilities-ARM-ARM STM32F030xC_STM32F070xB_STM32F070x6_Support.zip</strong></li>
+</ul></li>
+<li>Atollic TrueSTUDIO STM32 (TrueSTUDIO) toolchain V5.1.1 + ST-LINK</li>
+</ul>
+<h2 id="supported-devices-and-eval-boards-10">Supported Devices and EVAL boards</h2>
+<ul>
+<li>All STM32F030, STM32F70, STM32F0x1, STM32F0x2 and STM32F0x8 product lines devices are supported</li>
+<li>STM32F072B-Discovery Board RevB (MB1076) and STM32F0308-Discovery Board RevA (MB1134)</li>
+<li><strong>STM32F070RB-Nucleo</strong>, STM32F072RB-Nucleo, STM32F091RC-Nucleo and STM32F030R8-Nucleo Board RevC (MB1136)</li>
+<li>STM32072B-EVAL Board RevA (MB1070)</li>
+<li>STM32091C-EVAL Board RevB (MB1169)</li>
+<li>STM32 ST-LINK utility V3.4.0 or later.</li>
+</ul>
+<h2 id="backward-compatibility-10">Backward Compatibility</h2>
+<ul>
+<li>None</li>
+</ul>
+<h2 id="dependencies-10">Dependencies</h2>
+<ul>
+<li>None</li>
+</ul>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section1000" aria-hidden="true"> <label for="collapse-section1000" aria-hidden="true"><strong>V1.1.0 / 03-October-2014</strong></label>
+<div>
+<h1 id="maintenance-release-16">Maintenance release</h1>
+<h2 id="main-changes-16">Main Changes</h2>
+<p><strong>STM32091C_EVAL</strong>:</p>
+<ul>
+<li>First official release for device <strong>STM32F091xC</strong></li>
+<li>Minor correction (compilation warnings)</li>
+<li>Applications porting on IAR, KEIL, TRUE STUDIO</li>
+</ul>
+<p><strong>NUCLEO-F091RC</strong>:</p>
+<ul>
+<li>First official release for device <strong>STM32F091xC</strong></li>
+<li>Minor correction (compilation warnings)</li>
+<li>Applications porting on IAR, KEIL, TRUE STUDIO</li>
+</ul>
+<p><strong>NUCLEO-F072RB</strong>:</p>
+<ul>
+<li>CORTEX examples
+<ul>
+<li>CORTEXM_ModePrivilege replace by CORTEXM_ProcessStack</li>
+</ul></li>
+<li>PWR examples
+<ul>
+<li>PWR_PVD example update</li>
+</ul></li>
+</ul>
+<p><strong>NUCLEO-F030R8</strong>:</p>
+<ul>
+<li>CORTEX examples
+<ul>
+<li>CORTEXM_ModePrivilege replace by CORTEXM_ProcessStack</li>
+</ul></li>
+</ul>
+<p><strong>STM32F0308-DISCO</strong>:</p>
+<ul>
+<li>CORTEX example
+<ul>
+<li>CORTEXM_ModePrivilege replaced by CORTEXM_ProcessStack</li>
+</ul></li>
+</ul>
+<h2 id="contents-5">Contents</h2>
+<h3 id="projects-3">Projects</h3>
+<table>
+<caption>Projects STM32091C_EVAL</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: center;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">STM32091C_EVAL</td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;"><strong>V1.1.0</strong></td>
+<td style="text-align: center;">Projects/STM32091C_EVAL/Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32091C_EVAL</td>
+<td style="text-align: left;"><strong>Demonstrations</strong></td>
+<td style="text-align: left;"><strong>V1.1.0</strong></td>
+<td style="text-align: center;">Projects/STM32091C_EVAL/Demonstrations</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32091C_EVAL</td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;"><strong>V1.1.0</strong></td>
+<td style="text-align: center;">Projects/STM32091C_EVAL/Examples</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32091C_EVAL</td>
+<td style="text-align: left;"><strong>Templates</strong></td>
+<td style="text-align: left;"><strong>V1.1.0</strong></td>
+<td style="text-align: center;">Projects/STM32091C_EVAL/Templates</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Projects NUCLEO-F091RC</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: center;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-F091RC</td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;"><strong>V1.1.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F091RC/Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-F091RC</td>
+<td style="text-align: left;"><strong>Demonstrations</strong></td>
+<td style="text-align: left;"><strong>V1.1.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F091RC/Demonstrations</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-F091RC</td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;"><strong>V1.1.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F091RC/Examples</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-F091RC</td>
+<td style="text-align: left;"><strong>Templates</strong></td>
+<td style="text-align: left;"><strong>V1.1.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F091RC/Templates</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Projects NUCLEO-F072RB</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: center;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-F072RB</td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;"><strong>V1.1.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F072RB/Examples</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Projects NUCLEO-F030R8</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: center;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-F030R8</td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;"><strong>V1.1.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F030R8/Examples</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Projects STM32F0308-DISCO</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: center;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">STM32F0308-DISCO</td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;"><strong>V1.1.0</strong></td>
+<td style="text-align: center;">Projects/STM32F0308-DISCO/Examples</td>
+</tr>
+</tbody>
+</table>
+<p>Note: in the tables above, project categories highlighted have changed since previous release.</p>
+<h2 id="known-limitations-11">Known Limitations</h2>
+<ul>
+<li>None</li>
+</ul>
+<h2 id="development-toolchains-and-compilers-11">Development Toolchains and Compilers</h2>
+<ul>
+<li>IAR Embedded Workbench for ARM (EWARM) toolchain V7.10 + ST-LINK</li>
+<li>RealView Microcontroller Development Kit (MDK-ARM) toolchain V5.10 + ST-LINK</li>
+<li>Atollic TrueSTUDIO STM32 (TrueSTUDIO) toolchain V5.1.1 + ST-LINK</li>
+</ul>
+<h2 id="supported-devices-and-eval-boards-11">Supported Devices and EVAL boards</h2>
+<ul>
+<li>All STM32F030, STM32F0x1, STM32F0x2 and STM32F0x8 product lines devices are supported</li>
+<li>STM32F072B-Discovery Board RevB (MB1076) and STM32F0308-Discovery Board RevA (MB1134)</li>
+<li>STM32F072RB-Nucleo, STM32F091RC-Nucleo and STM32F030R8-Nucleo Board RevC (MB1136)</li>
+<li>STM32072B-EVAL Board RevA (MB1070)</li>
+<li>STM32091C-EVAL Board RevA (MB1169)</li>
+<li>Latest STM32 ST-LINK utility has to be used.</li>
+</ul>
+<h2 id="backward-compatibility-11">Backward Compatibility</h2>
+<ul>
+<li>None</li>
+</ul>
+<h2 id="dependencies-11">Dependencies</h2>
+<ul>
+<li>None</li>
+</ul>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section0000" aria-hidden="true"> <label for="collapse-section0000" aria-hidden="true"><strong>V1.0.0 / 18-June-2014</strong></label>
+<div>
+<h1 id="maintenance-release-17">Maintenance release</h1>
+<h2 id="main-changes-17">Main Changes</h2>
+<ul>
+<li><strong>First official release of STM32CubeF0 (STM32Cube for STM32F0 Series)</strong></li>
+</ul>
+<p><strong>NUCLEO-F072RB</strong>: First official release</p>
+<p><strong>NUCLEO-F030R8</strong>: First official release</p>
+<p><strong>STM32f0308-DISCO</strong>: First official release</p>
+<p><strong>STM32F072B-DISCO</strong>: First official release</p>
+<p><strong>STM32F072B-EVAL</strong>: First official release</p>
+<h2 id="contents-6">Contents</h2>
+<h3 id="projects-4">Projects</h3>
+<table>
+<caption>Projects NUCLEO-F072RB</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: center;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-F072RB</td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;"><strong>V1.0.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F072RB/Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-F072RB</td>
+<td style="text-align: left;"><strong>Demonstrations</strong></td>
+<td style="text-align: left;"><strong>V1.0.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F072RB/Demonstrations</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-F072RB</td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;"><strong>V1.0.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F072RB/Examples</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-F072RB</td>
+<td style="text-align: left;"><strong>Templates</strong></td>
+<td style="text-align: left;"><strong>V1.0.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F072RB/Templates</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Projects NUCLEO-F030R8</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: center;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-F030R8</td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;"><strong>V1.0.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F030R8/Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-F030R8</td>
+<td style="text-align: left;"><strong>Demonstrations</strong></td>
+<td style="text-align: left;"><strong>V1.0.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F030R8/Demonstrations</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-F030R8</td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;"><strong>V1.0.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F030R8/Examples</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-F030R8</td>
+<td style="text-align: left;"><strong>Templates</strong></td>
+<td style="text-align: left;"><strong>V1.0.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F030R8/Templates</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Projects STM32f0308-DISCO</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: center;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">STM32f0308-DISCO</td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;"><strong>V1.0.0</strong></td>
+<td style="text-align: center;">Projects/STM32f0308-DISCO/Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32f0308-DISCO</td>
+<td style="text-align: left;"><strong>Demonstrations</strong></td>
+<td style="text-align: left;"><strong>V1.0.0</strong></td>
+<td style="text-align: center;">Projects/STM32f0308-DISCO/Demonstrations</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32f0308-DISCO</td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;"><strong>V1.0.0</strong></td>
+<td style="text-align: center;">Projects/STM32f0308-DISCO/Examples</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32f0308-DISCO</td>
+<td style="text-align: left;"><strong>Templates</strong></td>
+<td style="text-align: left;"><strong>V1.0.0</strong></td>
+<td style="text-align: center;">Projects/STM32f0308-DISCO/Templates</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Projects STM32F072B-DISCO</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: center;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">STM32F072B-DISCO</td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;"><strong>V1.0.0</strong></td>
+<td style="text-align: center;">Projects/STM32F072B-DISCO/Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32F072B-DISCO</td>
+<td style="text-align: left;"><strong>Demonstrations</strong></td>
+<td style="text-align: left;"><strong>V1.0.0</strong></td>
+<td style="text-align: center;">Projects/STM32F072B-DISCO/Demonstrations</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32F072B-DISCO</td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;"><strong>V1.0.0</strong></td>
+<td style="text-align: center;">Projects/STM32F072B-DISCO/Examples</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32F072B-DISCO</td>
+<td style="text-align: left;"><strong>Templates</strong></td>
+<td style="text-align: left;"><strong>V1.0.0</strong></td>
+<td style="text-align: center;">Projects/STM32F072B-DISCO/Templates</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Projects STM32F072B-EVAL</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: center;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">STM32F072B-EVAL</td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;"><strong>V1.0.0</strong></td>
+<td style="text-align: center;">Projects/STM32F072B-EVAL/Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32F072B-EVAL</td>
+<td style="text-align: left;"><strong>Demonstrations</strong></td>
+<td style="text-align: left;"><strong>V1.0.0</strong></td>
+<td style="text-align: center;">Projects/STM32F072B-EVAL/Demonstrations</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32F072B-EVAL</td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;"><strong>V1.0.0</strong></td>
+<td style="text-align: center;">Projects/STM32F072B-EVAL/Examples</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32F072B-EVAL</td>
+<td style="text-align: left;"><strong>Templates</strong></td>
+<td style="text-align: left;"><strong>V1.0.0</strong></td>
+<td style="text-align: center;">Projects/STM32F072B-EVAL/Templates</td>
+</tr>
+</tbody>
+</table>
+<p>Note: in the tables above, project categories <strong>highlighted</strong> have changed since previous release.</p>
+<h2 id="known-limitations-12">Known Limitations</h2>
+<ul>
+<li>None</li>
+</ul>
+<h2 id="development-toolchains-and-compilers-12">Development Toolchains and Compilers</h2>
+<ul>
+<li>IAR Embedded Workbench for ARM (EWARM) toolchain V7.10 + ST-LINK</li>
+<li>RealView Microcontroller Development Kit (MDK-ARM) toolchain V5.10 + ST-LINK</li>
+<li>Atollic TrueSTUDIO STM32 (TrueSTUDIO) toolchain V5.0.0 + ST-LINK</li>
+</ul>
+<h2 id="supported-devices-and-eval-boards-12">Supported Devices and EVAL boards</h2>
+<ul>
+<li>All STM32F030, STM32F0x1, STM32F0x2 and STM32F0x8 product lines devices are supported</li>
+<li>STM32F072B-Discovery Board RevB (MB1076) and STM32F0308-Discovery Board RevA (MB1134)</li>
+<li>STM32F072RB-Nucleo and STM32F030R8-Nucleo Board RevC (MB1136)</li>
+<li>STM32072B-EVAL Board RevA (MB1070)</li>
+</ul>
+<h2 id="backward-compatibility-12">Backward Compatibility</h2>
+<ul>
+<li>None</li>
+</ul>
+<h2 id="dependencies-12">Dependencies</h2>
+<ul>
+<li>None</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<footer class="sticky">
+<p>For complete documentation on <mark>STM32 Microcontrollers</mark> , visit: <span style="font-color: blue;"><a href="http://www.st.com/STM32">www.st.com</a></span></p>
+<p>This release note uses up to date web standards and, for this reason, should not be opened with Internet Explorer but preferably with popular browsers such as Google Chrome, Mozilla Firefox, Opera or Microsoft Edge.</p>
+</footer>
+</body>
+</html>

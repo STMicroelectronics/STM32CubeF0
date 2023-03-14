@@ -6,13 +6,12 @@
   ******************************************************************************
   * @attention
   *
-  * <h2><center>&copy; Copyright (c) 2016 STMicroelectronics.
-  * All rights reserved.</center></h2>
+  * Copyright (c) 2016 STMicroelectronics.
+  * All rights reserved.
   *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
+  * This software is licensed under terms that can be found in the LICENSE file
+  * in the root directory of this software component.
+  * If no LICENSE file comes with this software, it is provided AS-IS.
   *
   ******************************************************************************
   */
@@ -54,7 +53,7 @@ enum
   __DISABLE,
 }; 
 
-/* Define to size the Data transfert */
+/* Define to size the Data transfer */
 #define PACKET_SIZE   18
 #define BUFFER_SIZE   180
 #define NB_PACKET     (BUFFER_SIZE / PACKET_SIZE)
@@ -112,7 +111,7 @@ const K_ModuleItem_Typedef Module8Uart =
 /**
   * @brief  setup the HW/Memory for the 8 uart application 
   * @param  None.
-  * @note   set the memeory + Hw initialisation.  
+  * @note   set the memory + Hw initialisation.  
   * @retval None.
   */
 KMODULE_RETURN _HuitUartConfig(void)
@@ -189,7 +188,7 @@ KMODULE_RETURN _HuitUartConfig(void)
 /**
   * @brief  unsetup the HW for the 8 uart application 
   * @param  None.
-  * @note   reset the memeory + Hw initialisation.  
+  * @note   reset the memory + Hw initialisation.  
   * @retval None.
   */
 KMODULE_RETURN _HuitUartUnConfig(void)
@@ -257,7 +256,7 @@ void HuitUartDemo(void)
   /* Test Loop */
   do 
   {  
-    /* initialize the global variable to handle the data transfert */
+    /* initialize the global variable to handle the data transfer */
     TransferComplete = 0;
     uart_tx_transfert = 0;
     for(index =0; index <USART__INDEX_MAX; index++)
@@ -287,7 +286,7 @@ void HuitUartDemo(void)
       while(1);
     }
     
-    /* Loop tranfert handling, when a data has been transfert start the next transfert */ 
+    /* Loop tranfert handling, when a data has been transferred start the next transfer */ 
     do 
     {
       /* Handle the user ky press to exit application */
@@ -296,7 +295,7 @@ void HuitUartDemo(void)
         return;
       }
      
-      /* check uart_tx_transfert bit field to know wich tranfert must be restart */
+      /* check uart_tx_transfert bit field to know which tranfert must be restart */
       for(index = 0; index < USART__INDEX_MAX; index++)
       {  
         HAL_NVIC_DisableIRQ(USART3_8_IRQn);
@@ -516,14 +515,14 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *UartHandle)
   
   if(UartTransfertState[index].rx_counter == 0)
   {  
-    /* this uart is now avaible to send data, set the bit to begin data transfer for this uartx */
+    /* this uart is now available to send data, set the bit to begin data transfer for this uartx */
     uart_tx_transfert|= (1 << index);
   }
 
   /* Increment the reception counter */
   UartTransfertState[index].rx_counter++;
 
-  /* Chekc if all packet are already received */
+  /* Check if all packet are already received */
   if(UartTransfertState[index].rx_counter < NB_PACKET)
   {
     /* prepare the next packet reception */
@@ -543,7 +542,7 @@ void HAL_UART_TxCpltCallback(UART_HandleTypeDef *UartHandle)
   uint8_t index = GetUartIndex(UartHandle);
   /* Increment the numbre of packet sent */ 
   UartTransfertState[index].tx_counter++;
-  /* set the bit for the next transfert */
+  /* set the bit for the next transfer */
   uart_tx_transfert|= (1 << index);
 }
 
@@ -963,6 +962,3 @@ static void IRQ_Managment(int32_t mode, int32_t IrqName)
 /**
   * @}
   */
-
-/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
-

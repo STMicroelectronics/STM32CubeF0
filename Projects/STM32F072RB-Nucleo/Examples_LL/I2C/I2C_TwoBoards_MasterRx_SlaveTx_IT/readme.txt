@@ -9,13 +9,12 @@
   ******************************************************************************
   * @attention
   *
-  * <h2><center>&copy; Copyright (c) 2016 STMicroelectronics.
-  * All rights reserved.</center></h2>
+  * Copyright (c) 2016 STMicroelectronics.
+  * All rights reserved.
   *
-  * This software component is licensed by ST under BSD 3-Clause license,
-  * the "License"; You may not use this file except in compliance with the
-  * License. You may obtain a copy of the License at:
-  *                        opensource.org/licenses/BSD-3-Clause
+  * This software is licensed under terms that can be found in the LICENSE file
+  * in the root directory of this software component.
+  * If no LICENSE file comes with this software, it is provided AS-IS.
   *
   ******************************************************************************
   @endverbatim
@@ -48,7 +47,7 @@ SDA Pin: PB.7 (CN7, pin 21)
   |        USER       GND|_____________________|GND         USER      |
   |___STM32F0xx-Nucleo___|                     |___STM32F0xx-Nucleo___|
 
-The project is splitted in two parts the Master Board and the Slave Board
+The project is split in two parts the Master Board and the Slave Board
 - Master Board
   I2C1 Peripheral is configured in Master mode with EXTI (Fast Mode @400kHz).
 And GPIO associated to User push-button is linked with EXTI. 
@@ -117,5 +116,5 @@ In order to make the program work, you must do the following :
     o Uncomment "#define SLAVE_BOARD" and load the project in Slave Board
  - Run the example
 
- * <h3><center>&copy; COPYRIGHT STMicroelectronics</center></h3>
+
  */

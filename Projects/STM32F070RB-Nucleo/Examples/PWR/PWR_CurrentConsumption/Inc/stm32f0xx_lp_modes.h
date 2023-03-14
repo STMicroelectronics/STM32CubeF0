@@ -6,13 +6,12 @@
   ******************************************************************************
   * @attention
   *
-  * <h2><center>&copy; Copyright (c) 2016 STMicroelectronics.
-  * All rights reserved.</center></h2>
+  * Copyright (c) 2016 STMicroelectronics.
+  * All rights reserved.
   *
-  * This software component is licensed by ST under BSD 3-Clause license,
-  * the "License"; You may not use this file except in compliance with the
-  * License. You may obtain a copy of the License at:
-  *                        opensource.org/licenses/BSD-3-Clause
+  * This software is licensed under terms that can be found in the LICENSE file
+  * in the root directory of this software component.
+  * If no LICENSE file comes with this software, it is provided AS-IS.
   *
   ******************************************************************************
   */
@@ -29,7 +28,7 @@
 
 #if !defined (SLEEP_MODE) && !defined (STANDBY_MODE)&& !defined (STOP_MODE)
   /* Uncomment the corresponding line to select the STM32F0xx Low Power mode
-   you want to mesure  */
+   you want to measure  */
 /* #define SLEEP_MODE */
 #define STOP_MODE
 /* #define STANDBY_MODE */
@@ -47,5 +46,3 @@ void StopMode_Measure(void);
 void StandbyMode_Measure(void);
 
 #endif /* __STM32F0xx_LP_MODES_H */
-
-/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

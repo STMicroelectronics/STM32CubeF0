@@ -9,13 +9,12 @@
   ******************************************************************************
   * @attention
   *
-  * <h2><center>&copy; Copyright (c) 2016 STMicroelectronics.
-  * All rights reserved.</center></h2>
+  * Copyright (c) 2016 STMicroelectronics.
+  * All rights reserved.
   *
-  * This software component is licensed by ST under BSD 3-Clause license,
-  * the "License"; You may not use this file except in compliance with the
-  * License. You may obtain a copy of the License at:
-  *                        opensource.org/licenses/BSD-3-Clause
+  * This software is licensed under terms that can be found in the LICENSE file
+  * in the root directory of this software component.
+  * If no LICENSE file comes with this software, it is provided AS-IS.
   *
   ******************************************************************************
   */
@@ -60,7 +59,7 @@ uint32_t TransferComplete = FALSE;
 uint8_t aTxBuffer[BUFFER_SIZE] = "UART1->UART2->UART3->UART4->UART5->UART6->UART7->UART8->UART1->UART2->UART3->UART4->UART5->UART6->UART7->UART8->UART1->UART2->UART3->UART4->UART5->UART6->UART7->UART8->UART1->UART";
 /* Buffer used for reception */
 uint8_t aRxBuffer[USART__INDEX_MAX][BUFFER_SIZE];
-/* counter for transfert loop */
+/* counter for transfer loop */
 uint32_t count = 0;
 /* Rx Tx transfer status for all the UART */
 DEMO_UART_TransfertSate UartTransfertState[USART__INDEX_MAX];
@@ -143,10 +142,10 @@ int main(void)
   
   do {
     
-    /* counter for the number of transfert complete */
+    /* counter for the number of transfer complete */
     count++;
     
-    /* initialize the global variable to handle the data transfert */
+    /* initialize the global variable to handle the data transfer */
     TransferComplete = FALSE;
     uart_tx_transfert = 0;
     memset(aRxBuffer, 0x0, BUFFER_SIZE * USART__INDEX_MAX);
@@ -168,13 +167,13 @@ int main(void)
     }
     UartTransfertState[USART1_INDEX].tx_counter++;
     
-    /* Loop tranfert handling, when a data has been transfert start the next transfert */ 
+    /* Loop tranfert handling, when a data has been transferred start the next transfer */ 
     do 
     {
       /* Delay can be added for the demo : to let time to see counter incrementation on the live watch */
       /*HAL_Delay(200);  */
 
-      /* check uart_tx_transfert bit field to know wich tranfert must be restart */
+      /* check uart_tx_transfert bit field to know which tranfert must be restart */
       for(index = 0; index < USART__INDEX_MAX; index++)
       {
         if((uart_tx_transfert & (1 << index)) != 0 )
@@ -232,7 +231,7 @@ int main(void)
   * @brief  Tx Transfer completed callback
   * @param  UartHandle: UART handle. 
   * @note   This callback is called by uart driver to forward application 
-            the Tx transfert complete information. 
+            the Tx transferred complete information. 
   * @retval None
   */
 void HAL_UART_TxCpltCallback(UART_HandleTypeDef *UartHandle)
@@ -245,7 +244,7 @@ void HAL_UART_TxCpltCallback(UART_HandleTypeDef *UartHandle)
   * @brief  Rx Transfer completed callback
   * @param  UartHandle: UART handle
   * @note   This callback is called by uart driver to forward application 
-            the Rx transfert complete information. 
+            the Rx transferred complete information. 
   * @retval None
   */
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *UartHandle)
@@ -254,7 +253,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *UartHandle)
 
   index = GetUartIndex(UartHandle);
   
-  /* This uart is now avaible to send data, set the bit field to allow the main function to perform data transfer */
+  /* This uart is now available to send data, set the bit field to allow the main function to perform data transfer */
   uart_tx_transfert|= (1 << index);
   /* Increment the reception counter */
   UartTransfertState[index].rx_counter++;
@@ -432,5 +431,3 @@ void assert_failed(uint8_t* file, uint32_t line)
 /**
   * @}
   */
-
-/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

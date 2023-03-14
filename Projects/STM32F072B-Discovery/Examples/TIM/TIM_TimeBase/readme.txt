@@ -9,13 +9,12 @@
   ******************************************************************************
   * @attention
   *
-  * <h2><center>&copy; Copyright (c) 2016 STMicroelectronics.
-  * All rights reserved.</center></h2>
+  * Copyright (c) 2016 STMicroelectronics.
+  * All rights reserved.
   *
-  * This software component is licensed by ST under BSD 3-Clause license,
-  * the "License"; You may not use this file except in compliance with the
-  * License. You may obtain a copy of the License at:
-  *                        opensource.org/licenses/BSD-3-Clause
+  * This software is licensed under terms that can be found in the LICENSE file
+  * in the root directory of this software component.
+  * If no LICENSE file comes with this software, it is provided AS-IS.
   *
   ******************************************************************************
   @endverbatim
@@ -40,7 +39,7 @@ The TIM2 ARR register value is equal to 10000 - 1,
 Update rate = TIM2 counter clock / (Period + 1) = 1 Hz,
 So the TIM2 generates an interrupt each 1 s
 
-When the counter value reaches the auto-reload register value, the TIM upadate 
+When the counter value reaches the auto-reload register value, the TIM update 
 interrupt is generated and, in the handler routine, PC.09 is toggled with the 
 following frequency: 
 
@@ -88,5 +87,5 @@ In order to make the program work, you must do the following :
  - Rebuild all files and load your image into target memory
  - Run the example
 
- * <h3><center>&copy; COPYRIGHT STMicroelectronics</center></h3>
+
  */
