@@ -6,3 +6,27 @@
 	path = Drivers/STM32F0xx_HAL_Driver
 	url = https://github.com/STMicroelectronics/stm32f0xx_hal_driver.git
 	branch = master
+[submodule "Drivers/BSP/STM32F0xx_Nucleo_32"]
+	path = Drivers/BSP/STM32F0xx_Nucleo_32
+	url = https://github.com/STMicroelectronics/stm32f0xx-nucleo-32-bsp.git
+	branch = main
+[submodule "Drivers/BSP/STM32F0xx-Nucleo"]
+	path = Drivers/BSP/STM32F0xx-Nucleo
+	url = https://github.com/STMicroelectronics/stm32f0xx-nucleo-bsp.git
+	branch = main
+[submodule "Drivers/BSP/STM32091C_EVAL"]
+	path = Drivers/BSP/STM32091C_EVAL
+	url = https://github.com/STMicroelectronics/stm32091c-eval-bsp.git
+	branch = main
+[submodule "Drivers/BSP/STM32072B_EVAL"]
+	path = Drivers/BSP/STM32072B_EVAL
+	url = https://github.com/STMicroelectronics/stm32072b-eval-bsp.git
+	branch = main
+[submodule "Drivers/BSP/STM32F072B-Discovery"]
+	path = Drivers/BSP/STM32F072B-Discovery
+	url = https://github.com/STMicroelectronics/32f072bdiscovery-bsp.git
+	branch = main
+[submodule "Drivers/BSP/STM32F0308-Discovery"]
+	path = Drivers/BSP/STM32F0308-Discovery
+	url = https://github.com/STMicroelectronics/32f0308discovery-bsp.git
+	branch = main
