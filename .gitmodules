@@ -30,3 +30,31 @@
 	path = Drivers/BSP/STM32F0308-Discovery
 	url = https://github.com/STMicroelectronics/32f0308discovery-bsp.git
 	branch = main
+[submodule "Drivers/BSP/Components/Common"]
+	path = Drivers/BSP/Components/Common
+	url = https://github.com/STMicroelectronics/stm32-bsp-common
+	branch = main
+[submodule "Drivers/BSP/Components/hx8347d"]
+	path = Drivers/BSP/Components/hx8347d
+	url = https://github.com/STMicroelectronics/stm32-hx8347d
+	branch = main
+[submodule "Drivers/BSP/Components/l3gd20"]
+	path = Drivers/BSP/Components/l3gd20
+	url = https://github.com/STMicroelectronics/stm32-l3gd20
+	branch = main
+[submodule "Drivers/BSP/Components/spfd5408"]
+	path = Drivers/BSP/Components/spfd5408
+	url = https://github.com/STMicroelectronics/stm32-spfd5408
+	branch = main
+[submodule "Drivers/BSP/Components/st7735"]
+	path = Drivers/BSP/Components/st7735
+	url = https://github.com/STMicroelectronics/stm32-st7735
+	branch = main
+[submodule "Drivers/BSP/Components/stlm75"]
+	path = Drivers/BSP/Components/stlm75
+	url = https://github.com/STMicroelectronics/stm32-stlm75
+	branch = main
+[submodule "Drivers/BSP/Components/i3g4250d"]
+	path = Drivers/BSP/Components/i3g4250d
+	url = https://github.com/STMicroelectronics/stm32-i3g4250d
+	branch = main
