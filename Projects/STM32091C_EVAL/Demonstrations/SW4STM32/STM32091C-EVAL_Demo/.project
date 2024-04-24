@@ -336,11 +336,6 @@
 			<locationURI>PARENT-5-PROJECT_LOC/Drivers/BSP/STM32091C_EVAL/stm32091c_eval.c</locationURI>
 		</link>
 		<link>
-			<name>Drivers/BSP/STM3209IC_EVAL/stm32091c_eval_cec.c</name>
-			<type>1</type>
-			<locationURI>PARENT-5-PROJECT_LOC/Drivers/BSP/STM32091C_EVAL/stm32091c_eval_cec.c</locationURI>
-		</link>
-		<link>
 			<name>Drivers/BSP/STM3209IC_EVAL/stm32091c_eval_eeprom.c</name>
 			<type>1</type>
 			<locationURI>PARENT-5-PROJECT_LOC/Drivers/BSP/STM32091C_EVAL/stm32091c_eval_eeprom.c</locationURI>

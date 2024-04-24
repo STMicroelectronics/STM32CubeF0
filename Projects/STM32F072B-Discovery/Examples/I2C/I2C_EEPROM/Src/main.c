@@ -41,7 +41,7 @@
    on accurate values, they just guarantee that the application will not remain
    stuck if the I2C communication is corrupted.
    You may modify these timeout values depending on CPU frequency and application
-   conditions (interrupts routines ...). */   
+   conditions (interrupts routines ...). */
 #define I2C_XFER_TIMEOUT_MAX    300
 /* Maximum number of trials for HAL_I2C_IsDeviceReady() function */
 #define EEPROM_MAX_TRIALS       300
@@ -77,10 +77,10 @@ int main(void)
 {
   /* STM32F0xx HAL library initialization:
        - Configure the Flash prefetch
-       - Systick timer is configured by default as source of time base, but user 
-         can eventually implement his proper time base source (a general purpose 
-         timer for example or other time source), keeping in mind that Time base 
-         duration should be kept 1ms since PPP_TIMEOUT_VALUEs are defined and 
+       - Systick timer is configured by default as source of time base, but user
+         can eventually implement his proper time base source (a general purpose
+         timer for example or other time source), keeping in mind that Time base
+         duration should be kept 1ms since PPP_TIMEOUT_VALUEs are defined and
          handled in milliseconds basis.
        - Low Level Initialization
      */
@@ -128,18 +128,18 @@ int main(void)
     }
 
     /* Wait for the end of the transfer */
-    /*  Before starting a new communication transfer, you need to check the current   
+    /*  Before starting a new communication transfer, you need to check the current
       state of the peripheral; if it’s busy you need to wait for the end of current
       transfer before starting a new one.
-      For simplicity reasons, this example is just waiting till the end of the 
+      For simplicity reasons, this example is just waiting till the end of the
       transfer, but application may perform other tasks while transfer operation
-      is ongoing. */  
+      is ongoing. */
     while (HAL_I2C_GetState(&I2cHandle) != HAL_I2C_STATE_READY)
     {
     }
 
     /* Check if the EEPROM is ready for a new operation */
-    while (HAL_I2C_IsDeviceReady(&I2cHandle, EEPROM_ADDRESS, EEPROM_MAX_TRIALS, I2C_XFER_TIMEOUT_MAX) == HAL_TIMEOUT);
+    while (HAL_I2C_IsDeviceReady(&I2cHandle, EEPROM_ADDRESS, EEPROM_MAX_TRIALS, I2C_XFER_TIMEOUT_MAX) != HAL_OK);
 
     /* Wait for the end of the transfer */
     while (HAL_I2C_GetState(&I2cHandle) != HAL_I2C_STATE_READY)
@@ -178,7 +178,7 @@ int main(void)
 
 /**
   * @brief  System Clock Configuration
-  *         The system Clock is configured as follow : 
+  *         The system Clock is configured as follow :
   *            System Clock source            = PLL (HSI48)
   *            SYSCLK(Hz)                     = 48000000
   *            HCLK(Hz)                       = 48000000
@@ -195,7 +195,7 @@ void SystemClock_Config(void)
 {
   RCC_ClkInitTypeDef RCC_ClkInitStruct;
   RCC_OscInitTypeDef RCC_OscInitStruct;
-  
+
   /* Select HSI48 Oscillator as PLL source */
   RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI48;
   RCC_OscInitStruct.HSI48State = RCC_HSI48_ON;
@@ -206,7 +206,7 @@ void SystemClock_Config(void)
   if (HAL_RCC_OscConfig(&RCC_OscInitStruct)!= HAL_OK)
   {
     /* Initialization Error */
-    while(1); 
+    while(1);
   }
 
   /* Select PLL as system clock source and configure the HCLK and PCLK1 clocks dividers */
@@ -217,7 +217,7 @@ void SystemClock_Config(void)
   if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_1)!= HAL_OK)
   {
     /* Initialization Error */
-    while(1); 
+    while(1);
   }
 }
 
@@ -257,7 +257,7 @@ void HAL_I2C_MemRxCpltCallback(I2C_HandleTypeDef *I2cHandle)
 void HAL_I2C_ErrorCallback(I2C_HandleTypeDef *I2cHandle)
 {
   /* Turn LED3 on: Transfer error in reception/transmission process */
-  BSP_LED_On(LED3); 
+  BSP_LED_On(LED3);
 }
 
 /**

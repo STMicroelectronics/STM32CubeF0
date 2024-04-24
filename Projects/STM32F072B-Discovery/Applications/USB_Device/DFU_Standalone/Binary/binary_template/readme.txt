@@ -24,7 +24,7 @@
 This directory contains a set of sources files that build the application to be
 loaded into Flash memory using device firmware upgrade (DFU).
 
-To build such application, some special configuration has to be preformed: 
+To build such application, some special configuration has to be performed: 
 1. Set the program load address at 0x08007000, using your toolchain linker file
 2. Relocate the vector table at address 0x08007000. To perform this operation,copy the vector
 table from the Flash (mapped at the base of the application load address 0x08007000) to the base 

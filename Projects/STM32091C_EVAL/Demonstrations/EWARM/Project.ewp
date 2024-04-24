@@ -1080,12 +1080,6 @@
           <name>$PROJ_DIR$\..\..\..\..\Drivers\BSP\STM32091C_EVAL\stm32091c_eval.c</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\..\..\Drivers\BSP\STM32091C_EVAL\stm32091c_eval_cec.c</name>
-          <excluded>
-            <configuration>STM32091C-EVAL_Demo</configuration>
-          </excluded>
-        </file>
-        <file>
           <name>$PROJ_DIR$\..\..\..\..\Drivers\BSP\STM32091C_EVAL\stm32091c_eval_eeprom.c</name>
         </file>
         <file>

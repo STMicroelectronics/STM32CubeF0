@@ -181,7 +181,7 @@ void kDemo_Initialization(void)
   /* control the resources */
   if(kModule_CheckRessource() != KMODULE_OK)
   {
-    kWindow_Error("ressource file\nmissing\nplease update\nsd card content\n");
+    kWindow_Error("resource file\nmissing\nplease update\nsd card content\n");
     while(1); 
   }
 }

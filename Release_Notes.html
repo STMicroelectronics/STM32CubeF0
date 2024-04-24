@@ -23,7 +23,7 @@
 <h1 id="release-notes-for-stm32cubef0-firmware-package"><strong>Release Notes for STM32CubeF0 Firmware Package</strong></h1>
 <p>Copyright © 2016 STMicroelectronics<br />
 </p>
-<a href="https://www.st.com" class="logo"><img src="_htmresc/st_logo.png" alt="ST logo" /></a>
+<a href="https://www.st.com" class="logo"><img src="_htmresc/st_logo_2020.png" alt="ST logo" /></a>
 </center>
 <h1 id="purpose">Purpose</h1>
 <p><strong>STMCube is an STMicroelectronics original initiative to ease developers life by reducing development efforts, time and cost</strong>. STM32Cube covers STM32 portfolio.</p>
@@ -34,7 +34,7 @@
 <li><strong>The STM32Cube HAL, an STM32 abstraction layer embedded software, ensuring maximized portability across STM32 portfolio</strong></li>
 <li><strong>A consistent set of middleware components such as RTOS, USB, TCP/IP, Graphics, FatFS</strong></li>
 <li><p><strong>All embedded software utilities come with a full set of examples.</strong></p></li>
-<li><p>The STM32Cube firmware solution offers a straightforward API with a modular architecture, making it simple to fine tune custom applications and scalable to fit most requirements <img src="_htmresc/STM32Cube.bmp" alt="STM32Cube architecture" /></p></li>
+<li><p>The STM32Cube firmware solution offers a straightforward API with a modular architecture, making it simple to fine tune custom applications and scalable to fit most requirements <img src="_htmresc/STM32Cube_2020.bmp" alt="STM32Cube architecture" /></p></li>
 </ul>
 <p>The <strong>HAL (Hardware Abstraction Layer)</strong> drivers provided within this package <strong>supports</strong> the following <strong>STM32F030x4/x6/x8/xC, STM32F031x4/x6, STM32F051x4/x6/x8, STM32F070x6/xB, STM32F071x8/xB, STM32F042x4/x6, STM32F072x8/xB, STM32F091xC, STM32F038xx, STM32F048xx, STM32F058xx, STM32F078xx and STM32F098xx devices.</strong></p>
 <ul>
@@ -56,10 +56,193 @@
 <div class="col-sm-12 col-lg-8">
 <h1 id="update-history">Update History</h1>
 <div class="collapse">
-<input type="checkbox" id="collapse-section11_4" checked aria-hidden="true"> <label for="collapse-section11_4" aria-hidden="true"><strong>V1.11.4 / 27-January-2023</strong></label>
+<input type="checkbox" id="collapse-section11_5" checked aria-hidden="true"> <label for="collapse-section11_5" aria-hidden="true"><strong>V1.11.5 / 29-March-2024</strong></label>
 <div>
 <h1 id="maintenance-release">Maintenance release</h1>
 <h2 id="main-changes">Main Changes</h2>
+<ul>
+<li><p>Patch release to fix known defects and enhancements implementation.</p></li>
+<li><strong>HAL</strong> updates
+<ul>
+<li><strong>HAL Generic</strong> update
+<ul>
+<li>Add missing call to UNUSED() macro to avoid compilation warnings related to the unused arguments for the following HAL drivers: <strong>CORTEX, RCC</strong></li>
+<li>HAL code quality enhancement for MISRA-C Rule-8.13 by adding const qualifiers.</li>
+</ul></li>
+<li><strong>HAL GPIO</strong>
+<ul>
+<li>Replace GPIO_Pin_x with GPIO_PIN_x to be compliant with macros definition</li>
+</ul></li>
+<li><strong>LL/HAL RTC_BKP</strong>
+<ul>
+<li>Remove macro __HAL_RTC_TAMPER_GET_IT() as it is redundant with macro __HAL_RTC_TAMPER_GET_FLAG() and create an alias into the hal_legacy.h file</li>
+<li>Correct misleading note about shadow registers</li>
+</ul></li>
+<li><strong>LL/HAL ADC</strong>
+<ul>
+<li>In function LL_ADC_DeInit(), remove useless action of conversion trigger change. Moreover, this action was not compliant with ADC enable state (cf reference manual).</li>
+<li>Update description of LL_ADC_REG_ReadConversionData32()</li>
+</ul></li>
+<li><strong>LL/HAL I2C</strong> update
+<ul>
+<li>Update HAL I2C driver to prefetch data before starting the transmission: implementation of errata sheet workaround I2C2-190208 : Transmission stalled after first byte</li>
+<li>Update HAL I2C driver to disable all interrupts after end of transaction.</li>
+<li>Update HAL_I2C_Init API to clear ADD10 bit in 7 bit addressing mode.</li>
+<li>Update HAL_I2C_Mem_Write_IT API to initialize XferSize at 0.</li>
+<li>Update I2C_Slave_ISR_IT, I2C_Slave_ISR_DMA and I2C_ITSlaveCplt to prevent the call of HAL_I2C_ListenCpltCallback twice.</li>
+<li>Update I2C_WaitOnRXNEFlagUntilTimeout to check I2C_FLAG_AF independently from I2C_FLAG_RXNE.</li>
+<li>In function HAL_I2C_IsDeviceReady, remove the unusable code.</li>
+<li>Update I2C_WaitOnFlagUntilTimeout to handle error case.</li>
+<li>Update HAL_I2C_Slave_Transmit to check if the received NACK is the good one.</li>
+<li>Update the HAL I2C driver to implement the errata workaround "Last-received byte loss in reload mode"</li>
+<li>Update LL_I2C_HandleTranfer function to prevent undefined behavior of volatile usage before updating the CR2 register.</li>
+</ul></li>
+<li><strong>HAL SMBUS</strong>
+<ul>
+<li>Update HAL SMBUS driver to prefetch data before starting the transmission: implementation of errata sheet workaround I2C2-190208 : Transmission stalled after first byte</li>
+<li>Update SMBUS_ITErrorHandler to flash TXDR just in case of error</li>
+</ul></li>
+<li><strong>HAL UART</strong>
+<ul>
+<li>Update initialisation sequence for TXINV, RXINV and TXRXSWAP settings</li>
+<li>Fix check on UART Rx state in HAL_UART_RegisterRxEventCallback() and HAL_UART_UnRegisterRxEventCallback() to allow user Rx Event Callback registration when a transmission is ongoing</li>
+<li>Prevent RTOF flag from being cleared by a transmit process in polling mode.</li>
+</ul></li>
+<li><strong>HAL SPI</strong>
+<ul>
+<li>Update HAL_SPI_TransmitReceive API to set the bit CRCNEXT in case of one byte transaction.</li>
+<li>Update IT API to enable interrupts after process unlock.</li>
+</ul></li>
+<li><strong>HAL I2S</strong>
+<ul>
+<li>Update HAL I2S driver to fix misplaced __HAL_LOCK and remove ‘go to’ instruction</li>
+</ul></li>
+<li><strong>LL/HAL TIM</strong>
+<ul>
+<li>Remove multiple volatile reads or writes in interrupt handler for better performance</li>
+<li>HAL TIM driver’s operational behavior improvement</li>
+<li>Improved period configuration parameter check</li>
+<li>Update interrupt flag is cleared when the update event is generated by software</li>
+<li>Remove unnecessary change of MOE bitfield in LL_TIM_BDTR_Init()</li>
+<li>LL_TIM UM generation fix</li>
+<li>User manual quality improvement</li>
+<li>MISRA warning fix</li>
+<li>Add LL_TIM_CC_IsEnabledPreload() function</li>
+<li>Add system break interrupt handling in IRQ handler</li>
+<li>Make APIs HAL_TIMEx_OCN_Stop_IT() and HAL_TIMEx_PWMN_Stop_IT() more generic</li>
+<li>Assert check for the right channels</li>
+<li>Improve CH4N support handling</li>
+</ul></li>
+<li><strong>LL UTILS</strong>
+<ul>
+<li>Fix ‘Ticks’ parameter’s description of LL_InitTick() function.</li>
+</ul></li>
+<li><strong>HAL CAN</strong>
+<ul>
+<li>Remove mention of ‘open-drain’ from the pin configuration paragraph in the ‘How to use’ section</li>
+<li>Put __CAN_HandleTypeDef definition under a compilation condition to avoid MISRAC2012-Rule-2.4 violation<br />
+</li>
+</ul></li>
+</ul></li>
+<li><strong>Project</strong> updates
+<ul>
+<li><strong>Examples</strong>
+<ul>
+<li>Update STM32F030R8-Nucleo Demo configuration to fix flashing error.</li>
+<li>Update “I2C_EEPROM” example to be aligned with HAL_I2C_IsDeviceReady() API returned value: HAL_I2C_IsDeviceReady() API is no more returning HAL_TIMEOUT.</li>
+</ul></li>
+<li><strong>Demonstrations</strong>
+<ul>
+<li>Remove the useless file reference "“stm32091c_eval_cec.c”" from STM32091C_EVAL demonstrations.</li>
+</ul></li>
+</ul></li>
+<li><strong>BSP</strong> updates
+<ul>
+<li>I3G4250D Component: Update disclaimer to add reference to the new license agreement.</li>
+</ul></li>
+</ul>
+<table>
+<caption><strong>Projects</strong></caption>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: left;">Release notes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Projects</td>
+<td style="text-align: left;">see Projects Release note for details</td>
+<td style="text-align: left;"><a href="Projects/Release_Notes.html">release notes</a></td>
+</tr>
+</tbody>
+</table>
+<p><br />
+</p>
+<h2 id="components">Components</h2>
+<p>Note: in the tables below, components in <span style="font-weight: bold;">bold</span> have changed since previous release</p>
+<table>
+<caption><strong>Drivers</strong></caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: center;">Version</th>
+<th style="text-align: center;">Release note</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>STM32F0xx HAL</strong></td>
+<td style="text-align: center;"><strong>V1.7.8</strong></td>
+<td style="text-align: center;"><a href="Drivers/STM32F0xx_HAL_Driver/Release_Notes.html">release notes</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>BSP Components i3g4250d</strong></td>
+<td style="text-align: center;"><strong>V1.0.1</strong></td>
+<td style="text-align: center;"><a href="Drivers/BSP/Components/i3g4250d/Release_Notes.html">release notes</a></td>
+</tr>
+</tbody>
+</table>
+<p><br />
+</p>
+<h2 id="known-limitations">Known Limitations</h2>
+<ul>
+<li>None</li>
+</ul>
+<h2 id="development-toolchains-and-compilers">Development Toolchains and Compilers</h2>
+<ul>
+<li>IAR Embedded Workbench for ARM (EWARM) toolchain <strong>V8.50.9</strong>+ ST-Link</li>
+<li>RealView Microcontroller Development Kit (MDK-ARM) toolchain <strong>V5.38</strong> (or upper) + ST-LINK, pack available here:
+<ul>
+<li><a href="https://www.keil.com/dd2/Pack/">www.keil.com/dd2/Pack/</a> (Section : STMicroelectronics STM32F0 Series Device Support)</li>
+<li>Only template projects are migrated to Arm Compiler 6 with MDK-ARM 5.31 (“AC-like Warnings” mode).</li>
+</ul></li>
+<li>System Workbench for STM32 (SW4STM32) (7-2018-q2-update) toolchain <strong>V2.9.0</strong> + ST-Link</li>
+</ul>
+<h2 id="supported-devices-and-eval-boards">Supported Devices and EVAL boards</h2>
+<ul>
+<li>All STM32F030, STM32F070, STM32F0x1, STM32F0x2 and STM32F0x8 product lines devices are supported.</li>
+<li>Discovery boards: STM32F072B-Discovery RevC (MB1076), STM32F0308-Discovery RevA (MB1134)</li>
+<li>Nucleo boards: STM32F070RB_Nucleo, STM32F072RB-Nucleo, STM32F091RC-Nucleo, STM32F030R8-Nucleo RevC (MB1136)</li>
+<li>Nucleo32 boards: STM32F031K6-Nucleo, STM32F042K6-Nucleo RevC (MB1180)</li>
+<li>Evaluation boards: STM32072B-EVAL RevB (MB1070), STM32091C-EVAL RevB (MB1169)</li>
+</ul>
+<h2 id="backward-compatibility">Backward Compatibility</h2>
+<ul>
+<li>None</li>
+</ul>
+<h2 id="dependencies">Dependencies</h2>
+<ul>
+<li>None</li>
+</ul>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section11_4" aria-hidden="true"> <label for="collapse-section11_4" aria-hidden="true"><strong>V1.11.4 / 27-January-2023</strong></label>
+<div>
+<h1 id="maintenance-release-1">Maintenance release</h1>
+<h2 id="main-changes-1">Main Changes</h2>
 <ul>
 <li>Patch release to fix known defects and enhancements implementation.</li>
 <li>All source files: update disclaimer to add reference to the new license agreement.<br />
@@ -225,7 +408,7 @@
 </table>
 <p><br />
 </p>
-<h2 id="components">Components</h2>
+<h2 id="components-1">Components</h2>
 <p>Note: in the tables below, components in <span style="font-weight: bold;">bold</span> have changed since previous release</p>
 <table>
 <caption><strong>Drivers</strong></caption>
@@ -313,11 +496,11 @@
 </table>
 <p><br />
 </p>
-<h2 id="known-limitations">Known Limitations</h2>
+<h2 id="known-limitations-1">Known Limitations</h2>
 <ul>
 <li>None</li>
 </ul>
-<h2 id="development-toolchains-and-compilers">Development Toolchains and Compilers</h2>
+<h2 id="development-toolchains-and-compilers-1">Development Toolchains and Compilers</h2>
 <ul>
 <li>IAR Embedded Workbench for ARM (EWARM) toolchain <strong>V8.40.2</strong>+ ST-Link</li>
 <li>RealView Microcontroller Development Kit (MDK-ARM) toolchain V5.31 (or upper) + ST-LINK, pack available here:
@@ -327,7 +510,7 @@
 </ul></li>
 <li>System Workbench for STM32 (SW4STM32) (7-2018-q2-update) toolchain <strong>V2.9.0</strong> + ST-Link</li>
 </ul>
-<h2 id="supported-devices-and-eval-boards">Supported Devices and EVAL boards</h2>
+<h2 id="supported-devices-and-eval-boards-1">Supported Devices and EVAL boards</h2>
 <ul>
 <li>All STM32F030, STM32F070, STM32F0x1, STM32F0x2 and STM32F0x8 product lines devices are supported.</li>
 <li>Discovery boards: STM32F072B-Discovery RevC (MB1076), STM32F0308-Discovery RevA (MB1134)</li>
@@ -335,11 +518,11 @@
 <li>Nucleo32 boards: STM32F031K6-Nucleo, STM32F042K6-Nucleo RevC (MB1180)</li>
 <li>Evaluation boards: STM32072B-EVAL RevB (MB1070), STM32091C-EVAL RevB (MB1169)</li>
 </ul>
-<h2 id="backward-compatibility">Backward Compatibility</h2>
+<h2 id="backward-compatibility-1">Backward Compatibility</h2>
 <ul>
 <li>None</li>
 </ul>
-<h2 id="dependencies">Dependencies</h2>
+<h2 id="dependencies-1">Dependencies</h2>
 <ul>
 <li>None</li>
 </ul>
@@ -348,8 +531,8 @@
 <div class="collapse">
 <input type="checkbox" id="collapse-section11_3"  aria-hidden="true"> <label for="collapse-section11_3" aria-hidden="true"><strong>V1.11.3 / 23-July-2021</strong></label>
 <div>
-<h1 id="maintenance-release-1">Maintenance release</h1>
-<h2 id="main-changes-1">Main Changes</h2>
+<h1 id="maintenance-release-2">Maintenance release</h1>
+<h2 id="main-changes-2">Main Changes</h2>
 <ul>
 <li><p>Patch release to fix known defects and enhancements implementation.</p></li>
 <li><strong>CMSIS</strong> updates
@@ -583,8 +766,8 @@
 <div class="collapse">
 <input type="checkbox" id="collapse-section11_2"  aria-hidden="true"> <label for="collapse-section11_2" aria-hidden="true"><strong>V1.11.2 / 06-November-2020</strong></label>
 <div>
-<h1 id="maintenance-release-2">Maintenance release</h1>
-<h2 id="main-changes-2">Main Changes</h2>
+<h1 id="maintenance-release-3">Maintenance release</h1>
+<h2 id="main-changes-3">Main Changes</h2>
 <ul>
 <li>Patch release to fix known defects and enhancements implementation.</li>
 <li>Remove “register” keyword to be compliant with new C++ rules:
@@ -855,8 +1038,8 @@
 <div class="collapse">
 <input type="checkbox" id="collapse-section11_1"  aria-hidden="true"> <label for="collapse-section11_1" aria-hidden="true"><strong>V1.11.1 / 24-July-2020</strong></label>
 <div>
-<h1 id="maintenance-release-3">Maintenance release</h1>
-<h2 id="main-changes-3">Main Changes</h2>
+<h1 id="maintenance-release-4">Maintenance release</h1>
+<h2 id="main-changes-4">Main Changes</h2>
 <ul>
 <li><p>Patch release to fix known defects and enhancements implementation</p></li>
 <li><strong>HAL</strong>
@@ -916,8 +1099,8 @@
 <div class="collapse">
 <input type="checkbox" id="collapse-section1_11_0" aria-hidden="true"> <label for="collapse-section1_11_0" aria-hidden="true"><strong>V1.11.0 / 12-September-2019</strong></label>
 <div>
-<h1 id="maintenance-release-4">Maintenance release</h1>
-<h2 id="main-changes-4">Main Changes</h2>
+<h1 id="maintenance-release-5">Maintenance release</h1>
+<h2 id="main-changes-5">Main Changes</h2>
 <ul>
 <li>General updates to fix known defects and enhancements implementation</li>
 <li>Add support of HAL callback registration feature</li>
@@ -1240,17 +1423,17 @@
 </tbody>
 </table></li>
 </ul>
-<h2 id="known-limitations-1">Known Limitations</h2>
+<h2 id="known-limitations-2">Known Limitations</h2>
 <ul>
 <li>None</li>
 </ul>
-<h2 id="development-toolchains-and-compilers-1">Development Toolchains and Compilers</h2>
+<h2 id="development-toolchains-and-compilers-2">Development Toolchains and Compilers</h2>
 <ul>
 <li>IAR Embedded Workbench for ARM (EWARM) toolchain <strong>V8.22.2</strong> + ST-LINK</li>
 <li>RealView Microcontroller Development Kit (MDK-ARM) toolchain <strong>V5.26</strong> + ST-LINK</li>
 <li>System Workbench for STM32 (SW4STM32) toolchain <strong>V2.9</strong> + ST-LINK</li>
 </ul>
-<h2 id="supported-devices-and-eval-boards-1">Supported Devices and EVAL boards</h2>
+<h2 id="supported-devices-and-eval-boards-2">Supported Devices and EVAL boards</h2>
 <ul>
 <li>All STM32F030, STM32F070, STM32F0x1, STM32F0x2 and STM32F0x8 product lines devices are supported.</li>
 <li>Discovery boards: STM32F072B-Discovery RevC (MB1076), STM32F0308-Discovery RevA (MB1134)</li>
@@ -1258,11 +1441,11 @@
 <li>Nucleo32 boards: STM32F031K6-Nucleo, STM32F042K6-Nucleo RevC (MB1180)</li>
 <li>Evaluation boards: STM32072B-EVAL RevB (MB1070), STM32091C-EVAL RevB (MB1169)</li>
 </ul>
-<h2 id="backward-compatibility-1">Backward Compatibility</h2>
+<h2 id="backward-compatibility-2">Backward Compatibility</h2>
 <ul>
 <li>None</li>
 </ul>
-<h2 id="dependencies-1">Dependencies</h2>
+<h2 id="dependencies-2">Dependencies</h2>
 <ul>
 <li>None</li>
 </ul>
@@ -1271,8 +1454,8 @@
 <div class="collapse">
 <input type="checkbox" id="collapse-section10_1" aria-hidden="true"> <label for="collapse-section10_1" aria-hidden="true"><strong>V1.10.1 / 09-May-2019</strong></label>
 <div>
-<h1 id="maintenance-release-5">Maintenance release</h1>
-<h2 id="main-changes-5">Main Changes</h2>
+<h1 id="maintenance-release-6">Maintenance release</h1>
+<h2 id="main-changes-6">Main Changes</h2>
 <ul>
 <li><p>Fix known defects and several enhancements implementation.</p></li>
 <li><strong>HAL</strong>
@@ -1523,17 +1706,17 @@
 </tbody>
 </table></li>
 </ul>
-<h2 id="known-limitations-2">Known Limitations</h2>
+<h2 id="known-limitations-3">Known Limitations</h2>
 <ul>
 <li>None</li>
 </ul>
-<h2 id="development-toolchains-and-compilers-2">Development Toolchains and Compilers</h2>
+<h2 id="development-toolchains-and-compilers-3">Development Toolchains and Compilers</h2>
 <ul>
 <li>IAR Embedded Workbench for ARM (EWARM) toolchain V7.80.4 + ST-LINK</li>
 <li>RealView Microcontroller Development Kit (MDK-ARM) toolchain V5.23 + ST-LINK</li>
 <li>System Workbench for STM32 (SW4STM32) toolchain V2.0 + ST-LINK</li>
 </ul>
-<h2 id="supported-devices-and-eval-boards-2">Supported Devices and EVAL boards</h2>
+<h2 id="supported-devices-and-eval-boards-3">Supported Devices and EVAL boards</h2>
 <ul>
 <li>All STM32F030, STM32F070, STM32F0x1, STM32F0x2 and STM32F0x8 product lines devices are supported.</li>
 <li>Discovery boards: STM32F072B-Discovery RevC (MB1076), STM32F0308-Discovery RevA (MB1134)</li>
@@ -1541,11 +1724,11 @@
 <li>Nucleo32 boards: STM32F031K6-Nucleo, STM32F042K6-Nucleo RevC (MB1180)</li>
 <li>Evaluation boards: STM32072B-EVAL RevB (MB1070), STM32091C-EVAL RevB (MB1169)</li>
 </ul>
-<h2 id="backward-compatibility-2">Backward Compatibility</h2>
+<h2 id="backward-compatibility-3">Backward Compatibility</h2>
 <ul>
 <li>None</li>
 </ul>
-<h2 id="dependencies-2">Dependencies</h2>
+<h2 id="dependencies-3">Dependencies</h2>
 <ul>
 <li>None</li>
 </ul>
@@ -1554,8 +1737,8 @@
 <div class="collapse">
 <input type="checkbox" id="collapse-section9" aria-hidden="true"> <label for="collapse-section9" aria-hidden="true"><strong>V1.10.0 / 03-April-2019</strong></label>
 <div>
-<h1 id="maintenance-release-6">Maintenance release</h1>
-<h2 id="main-changes-6">Main Changes</h2>
+<h1 id="maintenance-release-7">Maintenance release</h1>
+<h2 id="main-changes-7">Main Changes</h2>
 <ul>
 <li><p>Demonstrations binaries are no more delivered within the STM32CubeF0 MCU package. They are available for download, in addition to their required media files if any, in a standalone package accessible through each hardware board official webpage. Please refer to the corresponding demonstration binary readme.txt to get webpage for each board.</p></li>
 <li><strong>The following changes done on the HAL drivers require an update on the application code based on older HAL versions</strong>
@@ -1820,17 +2003,17 @@
 </tbody>
 </table></li>
 </ul>
-<h2 id="known-limitations-3">Known Limitations</h2>
+<h2 id="known-limitations-4">Known Limitations</h2>
 <ul>
 <li>None</li>
 </ul>
-<h2 id="development-toolchains-and-compilers-3">Development Toolchains and Compilers</h2>
+<h2 id="development-toolchains-and-compilers-4">Development Toolchains and Compilers</h2>
 <ul>
 <li>IAR Embedded Workbench for ARM (EWARM) toolchain V7.80.4 + ST-LINK</li>
 <li>RealView Microcontroller Development Kit (MDK-ARM) toolchain V5.23 + ST-LINK</li>
 <li>System Workbench for STM32 (SW4STM32) toolchain V2.0 + ST-LINK</li>
 </ul>
-<h2 id="supported-devices-and-eval-boards-3">Supported Devices and EVAL boards</h2>
+<h2 id="supported-devices-and-eval-boards-4">Supported Devices and EVAL boards</h2>
 <ul>
 <li>All STM32F030, STM32F070, STM32F0x1, STM32F0x2 and STM32F0x8 product lines devices are supported.</li>
 <li>Discovery boards: STM32F072B-Discovery RevC (MB1076), STM32F0308-Discovery RevA (MB1134)</li>
@@ -1838,11 +2021,11 @@
 <li>Nucleo32 boards: STM32F031K6-Nucleo, STM32F042K6-Nucleo RevC (MB1180)</li>
 <li>Evaluation boards: STM32072B-EVAL RevB (MB1070), STM32091C-EVAL RevB (MB1169)</li>
 </ul>
-<h2 id="backward-compatibility-3">Backward Compatibility</h2>
+<h2 id="backward-compatibility-4">Backward Compatibility</h2>
 <ul>
 <li>None</li>
 </ul>
-<h2 id="dependencies-3">Dependencies</h2>
+<h2 id="dependencies-4">Dependencies</h2>
 <ul>
 <li>None</li>
 </ul>
@@ -1851,8 +2034,8 @@
 <div class="collapse">
 <input type="checkbox" id="collapse-section8" aria-hidden="true"> <label for="collapse-section8" aria-hidden="true"><strong>V1.9.0 / 25-August-2017</strong></label>
 <div>
-<h1 id="maintenance-release-7">Maintenance release</h1>
-<h2 id="main-changes-7">Main Changes</h2>
+<h1 id="maintenance-release-8">Maintenance release</h1>
+<h2 id="main-changes-8">Main Changes</h2>
 <ul>
 <li><strong>Drivers</strong>
 <ul>
@@ -2113,17 +2296,17 @@
 </tbody>
 </table></li>
 </ul>
-<h2 id="known-limitations-4">Known Limitations</h2>
+<h2 id="known-limitations-5">Known Limitations</h2>
 <ul>
 <li>None</li>
 </ul>
-<h2 id="development-toolchains-and-compilers-4">Development Toolchains and Compilers</h2>
+<h2 id="development-toolchains-and-compilers-5">Development Toolchains and Compilers</h2>
 <ul>
 <li>IAR Embedded Workbench for ARM (EWARM) toolchain V7.80.4 + ST-LINK</li>
 <li>RealView Microcontroller Development Kit (MDK-ARM) toolchain V5.23 + ST-LINK</li>
 <li>System Workbench for STM32 (SW4STM32) toolchain V2.0 + ST-LINK</li>
 </ul>
-<h2 id="supported-devices-and-eval-boards-4">Supported Devices and EVAL boards</h2>
+<h2 id="supported-devices-and-eval-boards-5">Supported Devices and EVAL boards</h2>
 <ul>
 <li>All STM32F030, STM32F070, STM32F0x1, STM32F0x2 and STM32F0x8 product lines devices are supported.</li>
 <li>Discovery boards: STM32F072B-Discovery RevC (MB1076), STM32F0308-Discovery RevA (MB1134)</li>
@@ -2131,11 +2314,11 @@
 <li>Nucleo32 boards: STM32F031K6-Nucleo, STM32F042K6-Nucleo RevC (MB1180)</li>
 <li>Evaluation boards: STM32072B-EVAL RevB (MB1070), STM32091C-EVAL RevB (MB1169)</li>
 </ul>
-<h2 id="backward-compatibility-4">Backward Compatibility</h2>
+<h2 id="backward-compatibility-5">Backward Compatibility</h2>
 <ul>
 <li>None</li>
 </ul>
-<h2 id="dependencies-4">Dependencies</h2>
+<h2 id="dependencies-5">Dependencies</h2>
 <ul>
 <li>None</li>
 </ul>
@@ -2144,8 +2327,8 @@
 <div class="collapse">
 <input type="checkbox" id="collapse-section7" aria-hidden="true"> <label for="collapse-section7" aria-hidden="true"><strong>V1.8.0 / 07-April-2017</strong></label>
 <div>
-<h1 id="maintenance-release-8">Maintenance release</h1>
-<h2 id="main-changes-8">Main Changes</h2>
+<h1 id="maintenance-release-9">Maintenance release</h1>
+<h2 id="main-changes-9">Main Changes</h2>
 <ul>
 <li><strong>Drivers</strong>
 <ul>
@@ -2410,18 +2593,18 @@
 </tbody>
 </table></li>
 </ul>
-<h2 id="known-limitations-5">Known Limitations</h2>
+<h2 id="known-limitations-6">Known Limitations</h2>
 <ul>
 <li>None</li>
 </ul>
-<h2 id="development-toolchains-and-compilers-5">Development Toolchains and Compilers</h2>
+<h2 id="development-toolchains-and-compilers-6">Development Toolchains and Compilers</h2>
 <ul>
 <li>IAR Embedded Workbench for ARM (EWARM) toolchain V7.80.4 + ST-LINK</li>
 <li>RealView Microcontroller Development Kit (MDK-ARM) toolchain V5.23 + ST-LINK</li>
 <li>Atollic TrueSTUDIO STM32 (TrueSTUDIO) toolchain V5.4.2 + ST-LINK</li>
 <li>System Workbench for STM32 (SW4STM32) toolchain V1.13.1 + ST-LINK</li>
 </ul>
-<h2 id="supported-devices-and-eval-boards-5">Supported Devices and EVAL boards</h2>
+<h2 id="supported-devices-and-eval-boards-6">Supported Devices and EVAL boards</h2>
 <ul>
 <li>All STM32F030, STM32F070, STM32F0x1, STM32F0x2 and STM32F0x8 product lines devices are supported.</li>
 <li>Discovery boards: STM32F072B-Discovery RevC (MB1076), STM32F0308-Discovery RevA (MB1134)</li>
@@ -2429,11 +2612,11 @@
 <li>Nucleo32 boards: STM32F031K6-Nucleo, STM32F042K6-Nucleo RevC (MB1180)</li>
 <li>Evaluation boards: STM32072B-EVAL RevB (MB1070), STM32091C-EVAL RevB (MB1169)</li>
 </ul>
-<h2 id="backward-compatibility-5">Backward Compatibility</h2>
+<h2 id="backward-compatibility-6">Backward Compatibility</h2>
 <ul>
 <li>None</li>
 </ul>
-<h2 id="dependencies-5">Dependencies</h2>
+<h2 id="dependencies-6">Dependencies</h2>
 <ul>
 <li>None</li>
 </ul>
@@ -2442,8 +2625,8 @@
 <div class="collapse">
 <input type="checkbox" id="collapse-section68" aria-hidden="true"> <label for="collapse-section68" aria-hidden="true"><strong>V1.7.0 / 04-November-2016</strong></label>
 <div>
-<h1 id="maintenance-release-9">Maintenance release</h1>
-<h2 id="main-changes-9">Main Changes</h2>
+<h1 id="maintenance-release-10">Maintenance release</h1>
+<h2 id="main-changes-10">Main Changes</h2>
 <ul>
 <li><strong>Drivers</strong></li>
 <li>Fix known defects and several enhancements implementation.</li>
@@ -2740,18 +2923,18 @@
 </tbody>
 </table></li>
 </ul>
-<h2 id="known-limitations-6">Known Limitations</h2>
+<h2 id="known-limitations-7">Known Limitations</h2>
 <ul>
 <li>None</li>
 </ul>
-<h2 id="development-toolchains-and-compilers-6">Development Toolchains and Compilers</h2>
+<h2 id="development-toolchains-and-compilers-7">Development Toolchains and Compilers</h2>
 <ul>
 <li>IAR Embedded Workbench for ARM (EWARM) toolchain V7.60.1 + ST-LINK</li>
 <li>RealView Microcontroller Development Kit (MDK-ARM) toolchain V5.17 + ST-LINK</li>
 <li>Atollic TrueSTUDIO STM32 (TrueSTUDIO) toolchain V5.4.2 + ST-LINK</li>
 <li>System Workbench for STM32 (SW4STM32) toolchain V1.8.0 + ST-LINK</li>
 </ul>
-<h2 id="supported-devices-and-eval-boards-6">Supported Devices and EVAL boards</h2>
+<h2 id="supported-devices-and-eval-boards-7">Supported Devices and EVAL boards</h2>
 <ul>
 <li>All STM32F030, STM32F070, STM32F0x1, STM32F0x2 and STM32F0x8 product lines devices are supported.</li>
 <li>Discovery boards: STM32F072B-Discovery RevC (MB1076), STM32F0308-Discovery RevA (MB1134)</li>
@@ -2759,11 +2942,11 @@
 <li>Nucleo32 boards: STM32F031K6-Nucleo, STM32F042K6-Nucleo RevC (MB1180)</li>
 <li>Evaluation boards: STM32072B-EVAL RevB (MB1070), STM32091C-EVAL RevB (MB1169)</li>
 </ul>
-<h2 id="backward-compatibility-6">Backward Compatibility</h2>
+<h2 id="backward-compatibility-7">Backward Compatibility</h2>
 <ul>
 <li>None</li>
 </ul>
-<h2 id="dependencies-6">Dependencies</h2>
+<h2 id="dependencies-7">Dependencies</h2>
 <ul>
 <li>None</li>
 </ul>
@@ -2772,8 +2955,8 @@
 <div class="collapse">
 <input type="checkbox" id="collapse-section5" aria-hidden="true"> <label for="collapse-section5" aria-hidden="true"><strong>V1.6.0 / 27-May-2016</strong></label>
 <div>
-<h1 id="maintenance-release-10">Maintenance release</h1>
-<h2 id="main-changes-10">Main Changes</h2>
+<h1 id="maintenance-release-11">Maintenance release</h1>
+<h2 id="main-changes-11">Main Changes</h2>
 <ul>
 <li><strong>First official release introducing the STM32Cube LL (Low Layer) APIs for the STM32F0xx series :</strong>
 <ul>
@@ -3045,18 +3228,18 @@
 </tbody>
 </table></li>
 </ul>
-<h2 id="known-limitations-7">Known Limitations</h2>
+<h2 id="known-limitations-8">Known Limitations</h2>
 <ul>
 <li>None</li>
 </ul>
-<h2 id="development-toolchains-and-compilers-7">Development Toolchains and Compilers</h2>
+<h2 id="development-toolchains-and-compilers-8">Development Toolchains and Compilers</h2>
 <ul>
 <li>IAR Embedded Workbench for ARM (EWARM) toolchain V7.50.1 + ST-LINK</li>
 <li>RealView Microcontroller Development Kit (MDK-ARM) toolchain V5.17 + ST-LINK</li>
 <li>Atollic TrueSTUDIO STM32 (TrueSTUDIO) toolchain V5.4.2 + ST-LINK</li>
 <li>System Workbench for STM32 (SW4STM32) toolchain V1.8.0 + ST-LINK</li>
 </ul>
-<h2 id="supported-devices-and-eval-boards-7">Supported Devices and EVAL boards</h2>
+<h2 id="supported-devices-and-eval-boards-8">Supported Devices and EVAL boards</h2>
 <ul>
 <li>All STM32F030, STM32F070, STM32F0x1, STM32F0x2 and STM32F0x8 product lines devices are supported.</li>
 <li>Discovery boards: STM32F072B-Discovery RevC (MB1076), STM32F0308-Discovery RevA (MB1134)</li>
@@ -3064,11 +3247,11 @@
 <li>Nucleo32 boards: STM32F031K6-Nucleo, STM32F042K6-Nucleo RevC (MB1180)</li>
 <li>Evaluation boards: STM32072B-EVAL RevB (MB1070), STM32091C-EVAL RevB (MB1169)</li>
 </ul>
-<h2 id="backward-compatibility-7">Backward Compatibility</h2>
+<h2 id="backward-compatibility-8">Backward Compatibility</h2>
 <ul>
 <li>None</li>
 </ul>
-<h2 id="dependencies-7">Dependencies</h2>
+<h2 id="dependencies-8">Dependencies</h2>
 <ul>
 <li>None</li>
 </ul>
@@ -3077,8 +3260,8 @@
 <div class="collapse">
 <input type="checkbox" id="collapse-section4" aria-hidden="true"> <label for="collapse-section4" aria-hidden="true"><strong>V1.5.0 / 29-January-2016</strong></label>
 <div>
-<h1 id="maintenance-release-11">Maintenance release</h1>
-<h2 id="main-changes-11">Main Changes</h2>
+<h1 id="maintenance-release-12">Maintenance release</h1>
+<h2 id="main-changes-12">Main Changes</h2>
 <ul>
 <li><p><strong>Add support of System Workbench for STM32 (SW4STM32) toolchain.</strong></p></li>
 <li><strong>HAL</strong></li>
@@ -3360,18 +3543,18 @@
 </tbody>
 </table></li>
 </ul>
-<h2 id="known-limitations-8">Known Limitations</h2>
+<h2 id="known-limitations-9">Known Limitations</h2>
 <ul>
 <li>None</li>
 </ul>
-<h2 id="development-toolchains-and-compilers-8">Development Toolchains and Compilers</h2>
+<h2 id="development-toolchains-and-compilers-9">Development Toolchains and Compilers</h2>
 <ul>
 <li>IAR Embedded Workbench for ARM (EWARM) toolchain V7.40.7 + ST-LINK</li>
 <li>RealView Microcontroller Development Kit (MDK-ARM) toolchain V5.17 + ST-LINK</li>
 <li>Atollic TrueSTUDIO STM32 (TrueSTUDIO) toolchain V5.3.1 + ST-LINK</li>
 <li>System Workbench for STM32 (SW4STM32) toolchain V1.6.0 + ST-LINK</li>
 </ul>
-<h2 id="supported-devices-and-eval-boards-8">Supported Devices and EVAL boards</h2>
+<h2 id="supported-devices-and-eval-boards-9">Supported Devices and EVAL boards</h2>
 <ul>
 <li>All STM32F030, STM32F070, STM32F0x1, STM32F0x2 and STM32F0x8 product lines devices are supported.</li>
 <li>Discovery boards: STM32F072B-Discovery RevC (MB1076), STM32F0308-Discovery RevA (MB1134)</li>
@@ -3379,11 +3562,11 @@
 <li>Nucleo32 boards: STM32F031K6-Nucleo, STM32F042K6-Nucleo RevC (MB1180)</li>
 <li>Evaluation boards: STM32072B-EVAL RevB (MB1070), STM32091C-EVAL RevB (MB1169)</li>
 </ul>
-<h2 id="backward-compatibility-8">Backward Compatibility</h2>
+<h2 id="backward-compatibility-9">Backward Compatibility</h2>
 <ul>
 <li>None</li>
 </ul>
-<h2 id="dependencies-8">Dependencies</h2>
+<h2 id="dependencies-9">Dependencies</h2>
 <ul>
 <li>None</li>
 </ul>
@@ -3392,8 +3575,8 @@
 <div class="collapse">
 <input type="checkbox" id="collapse-section3" aria-hidden="true"> <label for="collapse-section3" aria-hidden="true"><strong>V1.4.0 / 11-September-2015</strong></label>
 <div>
-<h1 id="maintenance-release-12">Maintenance release</h1>
-<h2 id="main-changes-12">Main Changes</h2>
+<h1 id="maintenance-release-13">Maintenance release</h1>
+<h2 id="main-changes-13">Main Changes</h2>
 <ul>
 <li><strong>Adding support of 2 new Nucleo 32 boards.</strong>
 <ul>
@@ -3643,11 +3826,11 @@
 </tbody>
 </table></li>
 </ul>
-<h2 id="known-limitations-9">Known Limitations</h2>
+<h2 id="known-limitations-10">Known Limitations</h2>
 <ul>
 <li>None</li>
 </ul>
-<h2 id="development-toolchains-and-compilers-9">Development Toolchains and Compilers</h2>
+<h2 id="development-toolchains-and-compilers-10">Development Toolchains and Compilers</h2>
 <ul>
 <li>IAR Embedded Workbench for ARM (EWARM) toolchain V7.40 + ST-LINK
 <ul>
@@ -3661,13 +3844,13 @@
 </ul></li>
 <li>Atollic TrueSTUDIO STM32 (TrueSTUDIO) toolchain V5.1.1 + ST-LINK</li>
 </ul>
-<h2 id="supported-devices-and-eval-boards-9">Supported Devices and EVAL boards</h2>
+<h2 id="supported-devices-and-eval-boards-10">Supported Devices and EVAL boards</h2>
 <p>All STM32F030, STM32F070, STM32F0x1, STM32F0x2 and STM32F0x8 product lines devices are supported. - STM32F072B-Discovery Board RevB (MB1076) and STM32F0308-Discovery Board RevA (MB1134) - STM32F070RB_Nucleo, STM32F072RB-Nucleo, STM32F091RC-Nucleo and STM32F030R8-Nucleo Board RevC (MB1136) - STM32F031K6-Nucleo and STM32F042K6-Nucleo Board RevC (MB1180) - STM32072B-EVAL Board RevA (MB1070) - STM32091C-EVAL Board RevB (MB1169) - STM32 ST-LINK utility V3.4.0 or later.</p>
-<h2 id="backward-compatibility-9">Backward Compatibility</h2>
+<h2 id="backward-compatibility-10">Backward Compatibility</h2>
 <ul>
 <li>None</li>
 </ul>
-<h2 id="dependencies-9">Dependencies</h2>
+<h2 id="dependencies-10">Dependencies</h2>
 <ul>
 <li>None</li>
 </ul>
@@ -3676,8 +3859,8 @@
 <div class="collapse">
 <input type="checkbox" id="collapse-section1" aria-hidden="true"> <label for="collapse-section1" aria-hidden="true"><strong>V1.3.0 / 26-June-2015</strong></label>
 <div>
-<h1 id="maintenance-release-13">Maintenance release</h1>
-<h2 id="main-changes-13">Main Changes</h2>
+<h1 id="maintenance-release-14">Maintenance release</h1>
+<h2 id="main-changes-14">Main Changes</h2>
 <ul>
 <li><strong>All projects updated following changes in latest version of HAL and Middlewares.</strong></li>
 <li><p><strong>Fix known defects and several enhancements implementation.</strong></p></li>
@@ -3875,11 +4058,11 @@
 </tr>
 </tbody>
 </table>
-<h2 id="known-limitations-10">Known Limitations</h2>
+<h2 id="known-limitations-11">Known Limitations</h2>
 <ul>
 <li>None</li>
 </ul>
-<h2 id="development-toolchains-and-compilers-10">Development Toolchains and Compilers</h2>
+<h2 id="development-toolchains-and-compilers-11">Development Toolchains and Compilers</h2>
 <ul>
 <li>IAR Embedded Workbench for ARM (EWARM) toolchain V7.40 + ST-LINK
 <ul>
@@ -3891,7 +4074,7 @@
 </ul></li>
 <li>Atollic TrueSTUDIO STM32 (TrueSTUDIO) toolchain V5.1.1 + ST-LINK</li>
 </ul>
-<h2 id="supported-devices-and-eval-boards-10">Supported Devices and EVAL boards</h2>
+<h2 id="supported-devices-and-eval-boards-11">Supported Devices and EVAL boards</h2>
 <ul>
 <li>All STM32F030, STM32F70, STM32F0x1, STM32F0x2 and STM32F0x8 product lines devices are supported.</li>
 <li>STM32F072B-Discovery Board RevB (MB1076) and STM32F0308-Discovery Board RevA (MB1134)</li>
@@ -3900,11 +4083,11 @@
 <li>STM32091C-EVAL Board RevB (MB1169)</li>
 <li>STM32 ST-LINK utility V3.4.0 or later.</li>
 </ul>
-<h2 id="backward-compatibility-10">Backward Compatibility</h2>
+<h2 id="backward-compatibility-11">Backward Compatibility</h2>
 <ul>
 <li>None</li>
 </ul>
-<h2 id="dependencies-10">Dependencies</h2>
+<h2 id="dependencies-11">Dependencies</h2>
 <ul>
 <li>None</li>
 </ul>
@@ -3913,8 +4096,8 @@
 <div class="collapse">
 <input type="checkbox" id="collapse-section0" aria-hidden="true"> <label for="collapse-section0" aria-hidden="true"><strong>V1.2.1 / 09-January-2015</strong></label>
 <div>
-<h1 id="maintenance-release-14">Maintenance release</h1>
-<h2 id="main-changes-14">Main Changes</h2>
+<h1 id="maintenance-release-15">Maintenance release</h1>
+<h2 id="main-changes-15">Main Changes</h2>
 <ul>
 <li>Patch release for <strong>STM32F0xx</strong> Value line devices.</li>
 <li>This package contains a fixed version of the HAL &amp; CMSIS drivers, user needs simply to overwrite the old folders with the new ones.</li>
@@ -3947,8 +4130,8 @@
 <div class="collapse">
 <input type="checkbox" id="collapse-section100" aria-hidden="true"> <label for="collapse-section100" aria-hidden="true"><strong>V1.2.0 / 05-December-2014</strong></label>
 <div>
-<h1 id="maintenance-release-15">Maintenance release</h1>
-<h2 id="main-changes-15">Main Changes</h2>
+<h1 id="maintenance-release-16">Maintenance release</h1>
+<h2 id="main-changes-16">Main Changes</h2>
 <ul>
 <li>First official release for new F0 devices <strong>STM32F030xC, STM32F070x6/xB.</strong></li>
 <li>Full set of examples/application/demo running for device <strong>STM32F070xB on STM32F070RB-Nucleo board</strong></li>
@@ -4113,11 +4296,11 @@
 </tr>
 </tbody>
 </table>
-<h2 id="known-limitations-11">Known Limitations</h2>
+<h2 id="known-limitations-12">Known Limitations</h2>
 <ul>
 <li>None</li>
 </ul>
-<h2 id="development-toolchains-and-compilers-11">Development Toolchains and Compilers</h2>
+<h2 id="development-toolchains-and-compilers-12">Development Toolchains and Compilers</h2>
 <ul>
 <li>IAR Embedded Workbench for ARM (EWARM) toolchain V7.10 + ST-LINK
 <ul>
@@ -4129,7 +4312,7 @@
 </ul></li>
 <li>Atollic TrueSTUDIO STM32 (TrueSTUDIO) toolchain V5.1.1 + ST-LINK</li>
 </ul>
-<h2 id="supported-devices-and-eval-boards-11">Supported Devices and EVAL boards</h2>
+<h2 id="supported-devices-and-eval-boards-12">Supported Devices and EVAL boards</h2>
 <ul>
 <li>All STM32F030, STM32F70, STM32F0x1, STM32F0x2 and STM32F0x8 product lines devices are supported</li>
 <li>STM32F072B-Discovery Board RevB (MB1076) and STM32F0308-Discovery Board RevA (MB1134)</li>
@@ -4138,11 +4321,11 @@
 <li>STM32091C-EVAL Board RevB (MB1169)</li>
 <li>STM32 ST-LINK utility V3.4.0 or later.</li>
 </ul>
-<h2 id="backward-compatibility-11">Backward Compatibility</h2>
+<h2 id="backward-compatibility-12">Backward Compatibility</h2>
 <ul>
 <li>None</li>
 </ul>
-<h2 id="dependencies-11">Dependencies</h2>
+<h2 id="dependencies-12">Dependencies</h2>
 <ul>
 <li>None</li>
 </ul>
@@ -4151,8 +4334,8 @@
 <div class="collapse">
 <input type="checkbox" id="collapse-section1000" aria-hidden="true"> <label for="collapse-section1000" aria-hidden="true"><strong>V1.1.0 / 03-October-2014</strong></label>
 <div>
-<h1 id="maintenance-release-16">Maintenance release</h1>
-<h2 id="main-changes-16">Main Changes</h2>
+<h1 id="maintenance-release-17">Maintenance release</h1>
+<h2 id="main-changes-17">Main Changes</h2>
 <ul>
 <li>First official release for device <strong>STM32F091xC</strong></li>
 <li>Example porting on IAR, KEIL, TRUE STUDIO</li>
@@ -4327,17 +4510,17 @@
 </tr>
 </tbody>
 </table>
-<h2 id="known-limitations-12">Known Limitations</h2>
+<h2 id="known-limitations-13">Known Limitations</h2>
 <ul>
 <li>None</li>
 </ul>
-<h2 id="development-toolchains-and-compilers-12">Development Toolchains and Compilers</h2>
+<h2 id="development-toolchains-and-compilers-13">Development Toolchains and Compilers</h2>
 <ul>
 <li>IAR Embedded Workbench for ARM (EWARM) toolchain V7.10 + ST-LINK</li>
 <li>RealView Microcontroller Development Kit (MDK-ARM) toolchain V5.10 + ST-LINK</li>
 <li>Atollic TrueSTUDIO STM32 (TrueSTUDIO) toolchain V5.1.1 + ST-LINK</li>
 </ul>
-<h2 id="supported-devices-and-eval-boards-12">Supported Devices and EVAL boards</h2>
+<h2 id="supported-devices-and-eval-boards-13">Supported Devices and EVAL boards</h2>
 <ul>
 <li>All STM32F030, STM32F0x1, STM32F0x2 and STM32F0x8 product lines devices are supported</li>
 <li>STM32F072B-Discovery Board RevB (MB1076) and STM32F0308-Discovery Board RevA (MB1134)</li>
@@ -4346,11 +4529,11 @@
 <li>STM32091C-EVAL Board RevA (MB1169)</li>
 <li>Latest STM32 ST-LINK utility has to be used.</li>
 </ul>
-<h2 id="backward-compatibility-12">Backward Compatibility</h2>
+<h2 id="backward-compatibility-13">Backward Compatibility</h2>
 <ul>
 <li>None</li>
 </ul>
-<h2 id="dependencies-12">Dependencies</h2>
+<h2 id="dependencies-13">Dependencies</h2>
 <ul>
 <li>None</li>
 </ul>
@@ -4359,8 +4542,8 @@
 <div class="collapse">
 <input type="checkbox" id="collapse-section0000" aria-hidden="true"> <label for="collapse-section0000" aria-hidden="true"><strong>V1.0.0 / 18-June-2014</strong></label>
 <div>
-<h1 id="maintenance-release-17">Maintenance release</h1>
-<h2 id="main-changes-17">Main Changes</h2>
+<h1 id="maintenance-release-18">Maintenance release</h1>
+<h2 id="main-changes-18">Main Changes</h2>
 <ul>
 <li><strong>First official release of STM32CubeF0 (STM32Cube for STM32F0 Series)</strong></li>
 </ul>
@@ -4511,28 +4694,28 @@
 </tr>
 </tbody>
 </table>
-<h2 id="known-limitations-13">Known Limitations</h2>
+<h2 id="known-limitations-14">Known Limitations</h2>
 <ul>
 <li>None</li>
 </ul>
-<h2 id="development-toolchains-and-compilers-13">Development Toolchains and Compilers</h2>
+<h2 id="development-toolchains-and-compilers-14">Development Toolchains and Compilers</h2>
 <ul>
 <li>IAR Embedded Workbench for ARM (EWARM) toolchain V7.10 + ST-LINK</li>
 <li>RealView Microcontroller Development Kit (MDK-ARM) toolchain V5.10 + ST-LINK</li>
 <li>Atollic TrueSTUDIO STM32 (TrueSTUDIO) toolchain V5.0.0 + ST-LINK</li>
 </ul>
-<h2 id="supported-devices-and-eval-boards-13">Supported Devices and EVAL boards</h2>
+<h2 id="supported-devices-and-eval-boards-14">Supported Devices and EVAL boards</h2>
 <ul>
 <li>All STM32F030, STM32F0x1, STM32F0x2 and STM32F0x8 product lines devices are supported</li>
 <li>STM32F072B-Discovery Board RevB (MB1076) and STM32F0308-Discovery Board RevA (MB1134)</li>
 <li>STM32F072RB-Nucleo and STM32F030R8-Nucleo Board RevC (MB1136)</li>
 <li>STM32072B-EVAL Board RevA (MB1070)</li>
 </ul>
-<h2 id="backward-compatibility-13">Backward Compatibility</h2>
+<h2 id="backward-compatibility-14">Backward Compatibility</h2>
 <ul>
 <li>None</li>
 </ul>
-<h2 id="dependencies-13">Dependencies</h2>
+<h2 id="dependencies-14">Dependencies</h2>
 <ul>
 <li>None</li>
 </ul>

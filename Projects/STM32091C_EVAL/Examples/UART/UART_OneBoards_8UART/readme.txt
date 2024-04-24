@@ -48,13 +48,13 @@ GPIO, NVIC). You may update this function to change UART configuration.
 
 For this example aTxBuffer is predefined with a 180 chars string, that will be 
 transmitted/received in loop by packet of 18 data through all 8 UARTs. The packet
-size has been defined to 18 datas, it can be changed but  the result of 
+size has been defined to 18 data, it can be changed but  the result of 
 BUFFER_SIZE/PACKET_SIZE must be an integer.
 
 This can be monitored, on your favourite IDE, by watching in live specific variables:
 "UartTransfertState" will show the number of packet transmitted/received on each UART.
 "aRxBuffer" will show in real time the buffer state for each usart.
-"count" will show how many full transfert loop done.
+"count" will show how many full transfer loop done.
 
 STM32 Eval board's LEDs can be used to monitor the transfer status:
  - LED1 & LED4 : Toggled after each transfer.
@@ -62,7 +62,7 @@ STM32 Eval board's LEDs can be used to monitor the transfer status:
 
 @note 
 In case of SW break during the transfer, Uart HW processing is not stopped and 
-there is a big chance to get an overun if you restart the SW
+there is a big chance to get an overrun if you restart the SW
 
 @note
 In case one of the jumpers on CN1 is removed during the loopback test, 
