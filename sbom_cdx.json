@@ -1,0 +1,1914 @@
+{
+	"bomFormat": "CycloneDX",
+	"specVersion": "1.5",
+	"serialNumber": "urn:uuid:ff8c4f04-961f-42ea-87a5-38570b973807",
+	"version": 1,
+	"metadata": {
+		"timestamp": "2026-01-08T09:56:34Z",
+		"tools": [
+			{
+				"vendor": "Black Duck",
+				"name": "Hub",
+				"version": "2025.10.0"
+			},
+			{
+				"vendor": "CycloneDX",
+				"name": "cyclonedx-core-java",
+				"version": "5.0.5"
+			}
+		],
+		"authors": [
+			{
+				"name": "STMicroelectronics NV"
+			}
+		],
+		"component": {
+			"type": "application",
+			"bom-ref": "f541b1da-8af9-439c-86b4-72746e9f3ab8",
+			"supplier": {
+				"name": "ST Microelectronics"
+			},
+			"name": "STM32CubeF0",
+			"version": "1.11.6",
+			"licenses": [
+				{
+					"license": {
+						"name": "SOFTWARE PACKAGE LICENSE AGREEMENT (SLA0048)"
+					}
+				}
+			],
+			"pedigree": {
+				"notes": "SOFTWARE PACKAGE LICENSE AGREEMENT (SLA0048)"
+			},
+			"properties": [
+				{
+					"name": "BlackDuck-Component",
+					"value": "3286d4b3-a6cf-4b90-abb9-3eb85a70dfa0"
+				},
+				{
+					"name": "BlackDuck-ComponentVersion",
+					"value": "f541b1da-8af9-439c-86b4-72746e9f3ab8"
+				}
+			]
+		}
+	},
+	"components": [
+		{
+			"type": "library",
+			"bom-ref": "c3b50133-6133-46bc-8a22-0840d6088b38",
+			"supplier": {
+				"name": ""
+			},
+			"name": "FreeRTOS",
+			"version": "v10.0.1_20190329",
+			"licenses": [
+				{
+					"license": {
+						"id": "MIT"
+					}
+				}
+			],
+			"pedigree": {
+				"notes": "MIT License"
+			},
+			"properties": [
+				{
+					"name": "BlackDuck-Component",
+					"value": "1b8d2cd3-8cc8-4f2b-8053-ed10b468f00f"
+				},
+				{
+					"name": "BlackDuck-ComponentVersion",
+					"value": "c3b50133-6133-46bc-8a22-0840d6088b38"
+				}
+			]
+		},
+		{
+			"type": "library",
+			"bom-ref": "707c5425-a41d-4895-9d8a-34349e685e1f",
+			"supplier": {
+				"name": ""
+			},
+			"name": "FatFS",
+			"version": "r0.11_stm32cube_20150508",
+			"licenses": [
+				{
+					"license": {
+						"id": "BSD-3-Clause"
+					}
+				}
+			],
+			"pedigree": {
+				"notes": "BSD 3-clause \"New\" or \"Revised\" License"
+			},
+			"properties": [
+				{
+					"name": "BlackDuck-Component",
+					"value": "835f77f6-8ee3-4fb2-8866-96a7b9b194a5"
+				},
+				{
+					"name": "BlackDuck-ComponentVersion",
+					"value": "707c5425-a41d-4895-9d8a-34349e685e1f"
+				}
+			]
+		},
+		{
+			"type": "library",
+			"bom-ref": "74a8c2f8-f756-461d-98ca-047756a016e5",
+			"supplier": {
+				"name": ""
+			},
+			"author": "STMicroelectronics",
+			"name": "BSP Adafruit Shield (reference ID 802)",
+			"version": "2.0.1",
+			"licenses": [
+				{
+					"license": {
+						"id": "BSD-3-Clause"
+					}
+				}
+			],
+			"pedigree": {
+				"notes": "BSD 3-clause \"New\" or \"Revised\" License"
+			},
+			"properties": [
+				{
+					"name": "BlackDuck-Component",
+					"value": "d833264c-a382-4181-a558-6ea2826f513e"
+				},
+				{
+					"name": "BlackDuck-ComponentVersion",
+					"value": "74a8c2f8-f756-461d-98ca-047756a016e5"
+				}
+			]
+		},
+		{
+			"type": "library",
+			"bom-ref": "c08306ec-b65b-475b-936f-f03a624ae4ab",
+			"supplier": {
+				"name": ""
+			},
+			"author": "STMicroelectronics",
+			"name": "BSP Common",
+			"version": "4.0.1",
+			"licenses": [
+				{
+					"license": {
+						"id": "BSD-3-Clause"
+					}
+				}
+			],
+			"pedigree": {
+				"notes": "BSD 3-clause \"New\" or \"Revised\" License"
+			},
+			"properties": [
+				{
+					"name": "BlackDuck-Component",
+					"value": "155e25ed-788e-400b-8c4a-823e44e201cf"
+				},
+				{
+					"name": "BlackDuck-ComponentVersion",
+					"value": "c08306ec-b65b-475b-936f-f03a624ae4ab"
+				}
+			]
+		},
+		{
+			"type": "library",
+			"bom-ref": "25e8d63b-f9a7-4643-bdc6-330bceebd983",
+			"supplier": {
+				"name": ""
+			},
+			"author": "STMicroelectronics",
+			"name": "BSP hx8347d",
+			"version": "1.1.1",
+			"licenses": [
+				{
+					"license": {
+						"id": "BSD-3-Clause"
+					}
+				}
+			],
+			"pedigree": {
+				"notes": "BSD 3-clause \"New\" or \"Revised\" License"
+			},
+			"properties": [
+				{
+					"name": "BlackDuck-Component",
+					"value": "cea35e03-aff2-41ac-b419-828b7d042b92"
+				},
+				{
+					"name": "BlackDuck-ComponentVersion",
+					"value": "25e8d63b-f9a7-4643-bdc6-330bceebd983"
+				}
+			]
+		},
+		{
+			"type": "library",
+			"bom-ref": "08449624-c289-4206-8544-66c01c18cfb9",
+			"supplier": {
+				"name": ""
+			},
+			"author": "STMicroelectronics",
+			"name": "BSP i3g4250d",
+			"version": "1.0.1",
+			"licenses": [
+				{
+					"license": {
+						"id": "BSD-3-Clause"
+					}
+				}
+			],
+			"pedigree": {
+				"notes": "BSD 3-clause \"New\" or \"Revised\" License"
+			},
+			"properties": [
+				{
+					"name": "BlackDuck-Component",
+					"value": "7fe3b185-f352-4de8-a5df-ca95444ae7be"
+				},
+				{
+					"name": "BlackDuck-ComponentVersion",
+					"value": "08449624-c289-4206-8544-66c01c18cfb9"
+				}
+			]
+		},
+		{
+			"type": "library",
+			"bom-ref": "0f26c77b-2f53-4abe-871d-1cb8a6fd38ad",
+			"supplier": {
+				"name": ""
+			},
+			"author": "STMicroelectronics",
+			"name": "BSP l3gd20",
+			"version": "2.0.0",
+			"licenses": [
+				{
+					"license": {
+						"id": "BSD-3-Clause"
+					}
+				}
+			],
+			"pedigree": {
+				"notes": "BSD 3-clause \"New\" or \"Revised\" License"
+			},
+			"properties": [
+				{
+					"name": "BlackDuck-Component",
+					"value": "4976c855-5ce5-4f0c-ba14-a35ebfbf0193"
+				},
+				{
+					"name": "BlackDuck-ComponentVersion",
+					"value": "0f26c77b-2f53-4abe-871d-1cb8a6fd38ad"
+				}
+			]
+		},
+		{
+			"type": "library",
+			"bom-ref": "003bebfd-4fea-4441-a52d-0065e53bf0fd",
+			"supplier": {
+				"name": ""
+			},
+			"author": "STMicroelectronics",
+			"name": "BSP spfd5408",
+			"version": "1.1.1",
+			"licenses": [
+				{
+					"license": {
+						"id": "BSD-3-Clause"
+					}
+				}
+			],
+			"pedigree": {
+				"notes": "BSD 3-clause \"New\" or \"Revised\" License"
+			},
+			"properties": [
+				{
+					"name": "BlackDuck-Component",
+					"value": "6e1970b3-d216-4bb9-b0f3-07681be800ea"
+				},
+				{
+					"name": "BlackDuck-ComponentVersion",
+					"value": "003bebfd-4fea-4441-a52d-0065e53bf0fd"
+				}
+			]
+		},
+		{
+			"type": "library",
+			"bom-ref": "e25626b4-d528-4c48-a745-f0b794937db5",
+			"supplier": {
+				"name": ""
+			},
+			"author": "STMicroelectronics",
+			"name": "BSP st7735",
+			"version": "1.1.1",
+			"licenses": [
+				{
+					"license": {
+						"id": "BSD-3-Clause"
+					}
+				}
+			],
+			"pedigree": {
+				"notes": "BSD 3-clause \"New\" or \"Revised\" License"
+			},
+			"properties": [
+				{
+					"name": "BlackDuck-Component",
+					"value": "77619641-a8bb-490b-bd66-97070e742388"
+				},
+				{
+					"name": "BlackDuck-ComponentVersion",
+					"value": "e25626b4-d528-4c48-a745-f0b794937db5"
+				}
+			]
+		},
+		{
+			"type": "library",
+			"bom-ref": "ee2520c8-f002-4860-8c66-3b513ebb2ddb",
+			"supplier": {
+				"name": ""
+			},
+			"author": "STMicroelectronics",
+			"name": "BSP stlm75",
+			"version": "1.0.2",
+			"licenses": [
+				{
+					"license": {
+						"id": "BSD-3-Clause"
+					}
+				}
+			],
+			"pedigree": {
+				"notes": "BSD 3-clause \"New\" or \"Revised\" License"
+			},
+			"properties": [
+				{
+					"name": "BlackDuck-Component",
+					"value": "a0b0507b-c3d4-49a3-8936-1a18390c478d"
+				},
+				{
+					"name": "BlackDuck-ComponentVersion",
+					"value": "ee2520c8-f002-4860-8c66-3b513ebb2ddb"
+				}
+			]
+		},
+		{
+			"type": "library",
+			"bom-ref": "322c0125-55df-41a1-bbb8-efd3709b859e",
+			"supplier": {
+				"name": ""
+			},
+			"author": "STMicroelectronics",
+			"name": "BSP STM32072B_EVAL",
+			"version": "2.1.9",
+			"licenses": [
+				{
+					"license": {
+						"id": "BSD-3-Clause"
+					}
+				}
+			],
+			"pedigree": {
+				"notes": "BSD 3-clause \"New\" or \"Revised\" License"
+			},
+			"properties": [
+				{
+					"name": "BlackDuck-Component",
+					"value": "89c03c8d-4cd3-4450-b539-9f8ed36d4b4b"
+				},
+				{
+					"name": "BlackDuck-ComponentVersion",
+					"value": "322c0125-55df-41a1-bbb8-efd3709b859e"
+				}
+			]
+		},
+		{
+			"type": "library",
+			"bom-ref": "d1afd2d6-6007-47eb-9504-77c214fb79a7",
+			"supplier": {
+				"name": ""
+			},
+			"author": "STMicroelectronics",
+			"name": "BSP STM32091C_EVAL",
+			"version": "2.0.8",
+			"licenses": [
+				{
+					"license": {
+						"id": "BSD-3-Clause"
+					}
+				}
+			],
+			"pedigree": {
+				"notes": "BSD 3-clause \"New\" or \"Revised\" License"
+			},
+			"properties": [
+				{
+					"name": "BlackDuck-Component",
+					"value": "bcaa5c2e-3cbd-4bc1-a520-85949dd07c86"
+				},
+				{
+					"name": "BlackDuck-ComponentVersion",
+					"value": "d1afd2d6-6007-47eb-9504-77c214fb79a7"
+				}
+			]
+		},
+		{
+			"type": "library",
+			"bom-ref": "1699b0eb-35fc-420a-b74f-d57bcbbd631e",
+			"supplier": {
+				"name": ""
+			},
+			"author": "STMicroelectronics",
+			"name": "BSP STM32F0308-Discovery",
+			"version": "2.0.6",
+			"licenses": [
+				{
+					"license": {
+						"id": "BSD-3-Clause"
+					}
+				}
+			],
+			"pedigree": {
+				"notes": "BSD 3-clause \"New\" or \"Revised\" License"
+			},
+			"properties": [
+				{
+					"name": "BlackDuck-Component",
+					"value": "d54bb3e2-3fc9-4191-abec-df8822889e35"
+				},
+				{
+					"name": "BlackDuck-ComponentVersion",
+					"value": "1699b0eb-35fc-420a-b74f-d57bcbbd631e"
+				}
+			]
+		},
+		{
+			"type": "library",
+			"bom-ref": "036a37b0-019a-49c6-8fbf-c5a1c0fbee42",
+			"supplier": {
+				"name": ""
+			},
+			"author": "STMicroelectronics",
+			"name": "BSP STM32F072B-Discovery",
+			"version": "2.1.8",
+			"licenses": [
+				{
+					"license": {
+						"id": "BSD-3-Clause"
+					}
+				}
+			],
+			"pedigree": {
+				"notes": "BSD 3-clause \"New\" or \"Revised\" License"
+			},
+			"properties": [
+				{
+					"name": "BlackDuck-Component",
+					"value": "00d6f2a4-5e5e-41e9-a7ef-c8b4376bdd49"
+				},
+				{
+					"name": "BlackDuck-ComponentVersion",
+					"value": "036a37b0-019a-49c6-8fbf-c5a1c0fbee42"
+				}
+			]
+		},
+		{
+			"type": "library",
+			"bom-ref": "83ffda9b-487e-4311-8152-c49baf097d4a",
+			"supplier": {
+				"name": ""
+			},
+			"author": "STMicroelectronics",
+			"name": "BSP STM32F0xx-Nucleo",
+			"version": "1.1.7",
+			"licenses": [
+				{
+					"license": {
+						"id": "BSD-3-Clause"
+					}
+				}
+			],
+			"pedigree": {
+				"notes": "BSD 3-clause \"New\" or \"Revised\" License"
+			},
+			"properties": [
+				{
+					"name": "BlackDuck-Component",
+					"value": "dcb0b31c-6194-439f-b32b-0df449e8b848"
+				},
+				{
+					"name": "BlackDuck-ComponentVersion",
+					"value": "83ffda9b-487e-4311-8152-c49baf097d4a"
+				}
+			]
+		},
+		{
+			"type": "library",
+			"bom-ref": "c9b96c11-5af5-443a-bfb6-e948652f2dc5",
+			"supplier": {
+				"name": ""
+			},
+			"author": "STMicroelectronics",
+			"name": "BSP STM32F0xx_Nucleo_32",
+			"version": "1.0.5",
+			"licenses": [
+				{
+					"license": {
+						"id": "BSD-3-Clause"
+					}
+				}
+			],
+			"pedigree": {
+				"notes": "BSD 3-clause \"New\" or \"Revised\" License"
+			},
+			"properties": [
+				{
+					"name": "BlackDuck-Component",
+					"value": "98495eae-b9a7-456d-b360-f31a394aaf64"
+				},
+				{
+					"name": "BlackDuck-ComponentVersion",
+					"value": "c9b96c11-5af5-443a-bfb6-e948652f2dc5"
+				}
+			]
+		},
+		{
+			"type": "library",
+			"bom-ref": "925e6340-449b-4c57-9ebd-558e6429b7db",
+			"supplier": {
+				"name": ""
+			},
+			"name": "CMSIS_5",
+			"version": "5.4.0",
+			"licenses": [
+				{
+					"license": {
+						"id": "Apache-2.0"
+					}
+				}
+			],
+			"pedigree": {
+				"notes": "Apache License 2.0"
+			},
+			"properties": [
+				{
+					"name": "BlackDuck-Component",
+					"value": "24263aec-5491-418e-9bb6-247cf4473856"
+				},
+				{
+					"name": "BlackDuck-ComponentVersion",
+					"value": "925e6340-449b-4c57-9ebd-558e6429b7db"
+				}
+			]
+		},
+		{
+			"type": "library",
+			"bom-ref": "493da1d5-e063-4e14-8ff8-ac5433d0a4d8",
+			"supplier": {
+				"name": ""
+			},
+			"author": "STMicroelectronics",
+			"name": "CPU",
+			"version": "1.1.3",
+			"licenses": [
+				{
+					"license": {
+						"id": "BSD-3-Clause"
+					}
+				}
+			],
+			"pedigree": {
+				"notes": "BSD 3-clause \"New\" or \"Revised\" License"
+			},
+			"properties": [
+				{
+					"name": "BlackDuck-Component",
+					"value": "5b8018db-ee85-4f8a-858d-249fee3321c4"
+				},
+				{
+					"name": "BlackDuck-ComponentVersion",
+					"value": "493da1d5-e063-4e14-8ff8-ac5433d0a4d8"
+				}
+			]
+		},
+		{
+			"type": "library",
+			"bom-ref": "bc2c5cdc-3cef-4bfd-b517-53efab6f0a3e",
+			"supplier": {
+				"name": ""
+			},
+			"name": "FatFs Module",
+			"version": "R0.11",
+			"licenses": [
+				{
+					"license": {
+						"id": "BSD-3-Clause"
+					}
+				}
+			],
+			"pedigree": {
+				"notes": "BSD 3-clause \"New\" or \"Revised\" License"
+			},
+			"properties": [
+				{
+					"name": "BlackDuck-Component",
+					"value": "df67cc26-0cd3-4998-bf28-1b11b183ad24"
+				},
+				{
+					"name": "BlackDuck-ComponentVersion",
+					"value": "bc2c5cdc-3cef-4bfd-b517-53efab6f0a3e"
+				}
+			]
+		},
+		{
+			"type": "library",
+			"bom-ref": "cb70eebc-97a6-4214-9851-974c074e1eb0",
+			"supplier": {
+				"name": ""
+			},
+			"author": "STMicroelectronics",
+			"name": "Fonts",
+			"version": "1.0.2",
+			"licenses": [
+				{
+					"license": {
+						"id": "BSD-3-Clause"
+					}
+				}
+			],
+			"pedigree": {
+				"notes": "BSD 3-clause \"New\" or \"Revised\" License"
+			},
+			"properties": [
+				{
+					"name": "BlackDuck-Component",
+					"value": "d590377c-a66d-4ba5-9772-fad962ffb472"
+				},
+				{
+					"name": "BlackDuck-ComponentVersion",
+					"value": "cb70eebc-97a6-4214-9851-974c074e1eb0"
+				}
+			]
+		},
+		{
+			"type": "library",
+			"bom-ref": "c8dc4e32-a057-4539-989c-751fd4ba4d53",
+			"supplier": {
+				"name": "Organization: freertos"
+			},
+			"name": "FreeRTOS Real Time Kernel",
+			"version": "10.0.1",
+			"licenses": [
+				{
+					"license": {
+						"id": "MIT"
+					}
+				}
+			],
+			"cpe": "cpe:2.3:a:amazon:aws-freertos-kernel:10.0.1:*:*:*:*:*:*:*",
+			"purl": "pkg:github/FreeRTOS/FreeRTOS-Kernel@V10.0.1",
+			"pedigree": {
+				"notes": "MIT License"
+			},
+			"properties": [
+				{
+					"name": "BlackDuck-Component",
+					"value": "a891e362-3cfb-4c9c-a85a-31976384370e"
+				},
+				{
+					"name": "BlackDuck-ComponentVersion",
+					"value": "c8dc4e32-a057-4539-989c-751fd4ba4d53"
+				},
+				{
+					"name": "BlackDuck-ComponentOrigin",
+					"value": "4aa5fc1c-eee9-44ec-97bb-fcfb9213e379"
+				}
+			]
+		},
+		{
+			"type": "library",
+			"bom-ref": "93984a54-8133-424b-b8e9-e2ca91d8a454",
+			"supplier": {
+				"name": ""
+			},
+			"author": "STMicroelectronics",
+			"name": "FreeRTOS Real Time Kernel_STM32",
+			"version": "v10.0.1 / ST modified 20190329",
+			"licenses": [
+				{
+					"license": {
+						"id": "MIT"
+					}
+				}
+			],
+			"pedigree": {
+				"notes": "MIT License"
+			},
+			"properties": [
+				{
+					"name": "BlackDuck-Component",
+					"value": "81ca114d-abb4-46e4-8ec2-32b705c75d78"
+				},
+				{
+					"name": "BlackDuck-ComponentVersion",
+					"value": "93984a54-8133-424b-b8e9-e2ca91d8a454"
+				}
+			]
+		},
+		{
+			"type": "library",
+			"bom-ref": "cb641a37-c52a-457c-9a44-5cdc6df0a0b1",
+			"supplier": {
+				"name": "Organization: jquery"
+			},
+			"name": "jQuery",
+			"version": "1.7.1",
+			"licenses": [
+				{
+					"license": {
+						"id": "GPL-2.0-only"
+					}
+				},
+				{
+					"license": {
+						"id": "MIT"
+					}
+				}
+			],
+			"cpe": "cpe:2.3:a:jquery:jquery:1.7.1:10:*:*:*:*:*:*",
+			"purl": "pkg:github/jquery/jquery@1.7.1",
+			"pedigree": {
+				"notes": "(MIT License OR GNU General Public License v2.0 only)"
+			},
+			"properties": [
+				{
+					"name": "BlackDuck-Component",
+					"value": "286bed55-3d70-4402-b41f-efbec8daf3b6"
+				},
+				{
+					"name": "BlackDuck-ComponentVersion",
+					"value": "cb641a37-c52a-457c-9a44-5cdc6df0a0b1"
+				},
+				{
+					"name": "BlackDuck-ComponentOrigin",
+					"value": "219c69e4-1981-409b-ac7c-520d6f3d9854"
+				}
+			]
+		},
+		{
+			"type": "library",
+			"bom-ref": "4257499e-ae3a-4956-b193-1cb1c28c9a35",
+			"supplier": {
+				"name": ""
+			},
+			"author": "STMicroelectronics",
+			"name": "log",
+			"version": "1.0.3",
+			"licenses": [
+				{
+					"license": {
+						"id": "BSD-3-Clause"
+					}
+				}
+			],
+			"pedigree": {
+				"notes": "BSD 3-clause \"New\" or \"Revised\" License"
+			},
+			"properties": [
+				{
+					"name": "BlackDuck-Component",
+					"value": "8eced424-578e-442a-ba42-12e817288d7f"
+				},
+				{
+					"name": "BlackDuck-ComponentVersion",
+					"value": "4257499e-ae3a-4956-b193-1cb1c28c9a35"
+				}
+			]
+		},
+		{
+			"type": "library",
+			"bom-ref": "9dbd41a9-81a3-4733-b37f-f040b6e48e4d",
+			"supplier": {
+				"name": ""
+			},
+			"author": "STMicroelectronics",
+			"name": "STemWin",
+			"version": "5.32",
+			"licenses": [
+				{
+					"license": {
+						"name": "Ultimate Liberty license (SLA0044)"
+					}
+				}
+			],
+			"pedigree": {
+				"notes": "Ultimate Liberty license (SLA0044)"
+			},
+			"properties": [
+				{
+					"name": "BlackDuck-Component",
+					"value": "c079f47e-b2cb-4a24-8e4f-d140ecf04f31"
+				},
+				{
+					"name": "BlackDuck-ComponentVersion",
+					"value": "9dbd41a9-81a3-4733-b37f-f040b6e48e4d"
+				}
+			]
+		},
+		{
+			"type": "library",
+			"bom-ref": "58b25957-c625-46fb-92cd-535572149a4d",
+			"supplier": {
+				"name": ""
+			},
+			"author": "ST Microelectronics",
+			"name": "STemWin_Simulation",
+			"version": "1.9.0",
+			"licenses": [
+				{
+					"license": {
+						"name": "Ultimate Liberty license (SLA0044)"
+					}
+				}
+			],
+			"pedigree": {
+				"notes": "Ultimate Liberty license (SLA0044)"
+			},
+			"properties": [
+				{
+					"name": "BlackDuck-Component",
+					"value": "9e47efc2-32e0-4a83-8fa9-35889e131359"
+				},
+				{
+					"name": "BlackDuck-ComponentVersion",
+					"value": "58b25957-c625-46fb-92cd-535572149a4d"
+				}
+			]
+		},
+		{
+			"type": "library",
+			"bom-ref": "2183fe8c-451c-4867-af60-6c786dbdfb2e",
+			"supplier": {
+				"name": ""
+			},
+			"author": "STMicroelectronics",
+			"name": "STM32072B_EVAL Applications",
+			"version": "1.11.5",
+			"licenses": [
+				{
+					"license": {
+						"name": "Ultimate Liberty license (SLA0044)"
+					}
+				}
+			],
+			"pedigree": {
+				"notes": "Ultimate Liberty license (SLA0044)"
+			},
+			"properties": [
+				{
+					"name": "BlackDuck-Component",
+					"value": "d1d24b67-3568-4cdc-8fa2-3917ba6f34b9"
+				},
+				{
+					"name": "BlackDuck-ComponentVersion",
+					"value": "2183fe8c-451c-4867-af60-6c786dbdfb2e"
+				}
+			]
+		},
+		{
+			"type": "library",
+			"bom-ref": "5399e3a1-270d-42d0-8d0e-5cef4c7a4af9",
+			"supplier": {
+				"name": ""
+			},
+			"author": "STMicroelectronics",
+			"name": "STM32072B_EVAL Examples",
+			"version": "1.11.5",
+			"licenses": [
+				{
+					"license": {
+						"name": "Ultimate Liberty license (SLA0044)"
+					}
+				}
+			],
+			"pedigree": {
+				"notes": "Ultimate Liberty license (SLA0044)"
+			},
+			"properties": [
+				{
+					"name": "BlackDuck-Component",
+					"value": "f3a0194c-7a7c-434c-8f25-df31e4415035"
+				},
+				{
+					"name": "BlackDuck-ComponentVersion",
+					"value": "5399e3a1-270d-42d0-8d0e-5cef4c7a4af9"
+				}
+			]
+		},
+		{
+			"type": "library",
+			"bom-ref": "1e03c557-592b-45eb-a1b2-3e2ddf0111be",
+			"supplier": {
+				"name": ""
+			},
+			"author": "STMicroelectronics",
+			"name": "STM32072B_EVAL Templates",
+			"version": "1.11.5",
+			"licenses": [
+				{
+					"license": {
+						"name": "Ultimate Liberty license (SLA0044)"
+					}
+				}
+			],
+			"pedigree": {
+				"notes": "Ultimate Liberty license (SLA0044)"
+			},
+			"properties": [
+				{
+					"name": "BlackDuck-Component",
+					"value": "87fbc34e-5ce9-402d-a85f-535523397349"
+				},
+				{
+					"name": "BlackDuck-ComponentVersion",
+					"value": "1e03c557-592b-45eb-a1b2-3e2ddf0111be"
+				}
+			]
+		},
+		{
+			"type": "library",
+			"bom-ref": "9aeacdcc-414a-4a5d-80c2-9da2973e86cd",
+			"supplier": {
+				"name": ""
+			},
+			"author": "STMicroelectronics",
+			"name": "STM32091C_EVAL Applications",
+			"version": "1.11.5",
+			"licenses": [
+				{
+					"license": {
+						"name": "Ultimate Liberty license (SLA0044)"
+					}
+				}
+			],
+			"pedigree": {
+				"notes": "Ultimate Liberty license (SLA0044)"
+			},
+			"properties": [
+				{
+					"name": "BlackDuck-Component",
+					"value": "70e654e2-e2f1-4c65-90ee-9807f0f86d10"
+				},
+				{
+					"name": "BlackDuck-ComponentVersion",
+					"value": "9aeacdcc-414a-4a5d-80c2-9da2973e86cd"
+				}
+			]
+		},
+		{
+			"type": "library",
+			"bom-ref": "169e3a25-97e1-4fa2-a1e7-fb3b5b1a1ee1",
+			"supplier": {
+				"name": ""
+			},
+			"author": "STMicroelectronics",
+			"name": "STM32091C_EVAL Examples",
+			"version": "1.11.5",
+			"licenses": [
+				{
+					"license": {
+						"name": "Ultimate Liberty license (SLA0044)"
+					}
+				}
+			],
+			"pedigree": {
+				"notes": "Ultimate Liberty license (SLA0044)"
+			},
+			"properties": [
+				{
+					"name": "BlackDuck-Component",
+					"value": "e5c21280-03b9-448d-8d75-dab63ed0ee36"
+				},
+				{
+					"name": "BlackDuck-ComponentVersion",
+					"value": "169e3a25-97e1-4fa2-a1e7-fb3b5b1a1ee1"
+				}
+			]
+		},
+		{
+			"type": "library",
+			"bom-ref": "fa1599df-9703-4619-87f2-9db1c76026d3",
+			"supplier": {
+				"name": ""
+			},
+			"author": "STMicroelectronics",
+			"name": "STM32091C_EVAL Templates",
+			"version": "1.11.5",
+			"licenses": [
+				{
+					"license": {
+						"name": "Ultimate Liberty license (SLA0044)"
+					}
+				}
+			],
+			"pedigree": {
+				"notes": "Ultimate Liberty license (SLA0044)"
+			},
+			"properties": [
+				{
+					"name": "BlackDuck-Component",
+					"value": "9e93063d-763b-414d-9771-d8b6336e82ef"
+				},
+				{
+					"name": "BlackDuck-ComponentVersion",
+					"value": "fa1599df-9703-4619-87f2-9db1c76026d3"
+				}
+			]
+		},
+		{
+			"type": "library",
+			"bom-ref": "813278c1-a0e2-4002-bb0f-fabf98e5606d",
+			"supplier": {
+				"name": ""
+			},
+			"author": "STMicroelectronics",
+			"name": "STM32F0308-Discovery Applications",
+			"version": "1.11.5",
+			"licenses": [
+				{
+					"license": {
+						"name": "Ultimate Liberty license (SLA0044)"
+					}
+				}
+			],
+			"pedigree": {
+				"notes": "Ultimate Liberty license (SLA0044)"
+			},
+			"properties": [
+				{
+					"name": "BlackDuck-Component",
+					"value": "10a15f9e-cf38-4ca2-9fe6-6d70f8c407f2"
+				},
+				{
+					"name": "BlackDuck-ComponentVersion",
+					"value": "813278c1-a0e2-4002-bb0f-fabf98e5606d"
+				}
+			]
+		},
+		{
+			"type": "library",
+			"bom-ref": "386445c7-2339-482a-a11d-2327ccfd87a5",
+			"supplier": {
+				"name": ""
+			},
+			"author": "STMicroelectronics",
+			"name": "STM32F0308-Discovery Examples",
+			"version": "1.11.5",
+			"licenses": [
+				{
+					"license": {
+						"name": "Ultimate Liberty license (SLA0044)"
+					}
+				}
+			],
+			"pedigree": {
+				"notes": "Ultimate Liberty license (SLA0044)"
+			},
+			"properties": [
+				{
+					"name": "BlackDuck-Component",
+					"value": "b2d36ed5-9198-4791-8007-07d04b60418d"
+				},
+				{
+					"name": "BlackDuck-ComponentVersion",
+					"value": "386445c7-2339-482a-a11d-2327ccfd87a5"
+				}
+			]
+		},
+		{
+			"type": "library",
+			"bom-ref": "8b815d55-6f7b-4c57-a879-c0fa9fa04d48",
+			"supplier": {
+				"name": ""
+			},
+			"author": "STMicroelectronics",
+			"name": "STM32F0308-Discovery Templates",
+			"version": "1.11.5",
+			"licenses": [
+				{
+					"license": {
+						"name": "Ultimate Liberty license (SLA0044)"
+					}
+				}
+			],
+			"pedigree": {
+				"notes": "Ultimate Liberty license (SLA0044)"
+			},
+			"properties": [
+				{
+					"name": "BlackDuck-Component",
+					"value": "339cb92b-8bdd-4bcb-bcc4-f9deeb94ba26"
+				},
+				{
+					"name": "BlackDuck-ComponentVersion",
+					"value": "8b815d55-6f7b-4c57-a879-c0fa9fa04d48"
+				}
+			]
+		},
+		{
+			"type": "library",
+			"bom-ref": "56cfd421-d742-46de-a36b-ec022a357e63",
+			"supplier": {
+				"name": ""
+			},
+			"author": "STMicroelectronics",
+			"name": "STM32F030R8-Nucleo Applications",
+			"version": "1.11.5",
+			"licenses": [
+				{
+					"license": {
+						"name": "Ultimate Liberty license (SLA0044)"
+					}
+				}
+			],
+			"pedigree": {
+				"notes": "Ultimate Liberty license (SLA0044)"
+			},
+			"properties": [
+				{
+					"name": "BlackDuck-Component",
+					"value": "2a5ba77a-3342-4849-ad6c-8db602fb59a5"
+				},
+				{
+					"name": "BlackDuck-ComponentVersion",
+					"value": "56cfd421-d742-46de-a36b-ec022a357e63"
+				}
+			]
+		},
+		{
+			"type": "library",
+			"bom-ref": "9bd9204f-f6b7-4c42-ba76-fdd895e93c41",
+			"supplier": {
+				"name": ""
+			},
+			"author": "STMicroelectronics",
+			"name": "STM32F030R8-Nucleo Examples",
+			"version": "1.11.5",
+			"licenses": [
+				{
+					"license": {
+						"name": "Ultimate Liberty license (SLA0044)"
+					}
+				}
+			],
+			"pedigree": {
+				"notes": "Ultimate Liberty license (SLA0044)"
+			},
+			"properties": [
+				{
+					"name": "BlackDuck-Component",
+					"value": "f2d0beb8-d3b0-4502-a1a0-6e5838318905"
+				},
+				{
+					"name": "BlackDuck-ComponentVersion",
+					"value": "9bd9204f-f6b7-4c42-ba76-fdd895e93c41"
+				}
+			]
+		},
+		{
+			"type": "library",
+			"bom-ref": "83fd852b-ecc0-4668-a7da-6545c0fa8f91",
+			"supplier": {
+				"name": ""
+			},
+			"author": "STMicroelectronics",
+			"name": "STM32F030R8-Nucleo Templates",
+			"version": "1.11.5",
+			"licenses": [
+				{
+					"license": {
+						"name": "Ultimate Liberty license (SLA0044)"
+					}
+				}
+			],
+			"pedigree": {
+				"notes": "Ultimate Liberty license (SLA0044)"
+			},
+			"properties": [
+				{
+					"name": "BlackDuck-Component",
+					"value": "2b4430ad-3303-44fb-b383-05a04d7ffb27"
+				},
+				{
+					"name": "BlackDuck-ComponentVersion",
+					"value": "83fd852b-ecc0-4668-a7da-6545c0fa8f91"
+				}
+			]
+		},
+		{
+			"type": "library",
+			"bom-ref": "0fa1d6f3-62fd-45d1-8f59-7e8a6ee208d3",
+			"supplier": {
+				"name": ""
+			},
+			"author": "STMicroelectronics",
+			"name": "STM32F031K6-Nucleo Examples",
+			"version": "1.11.5",
+			"licenses": [
+				{
+					"license": {
+						"name": "Ultimate Liberty license (SLA0044)"
+					}
+				}
+			],
+			"pedigree": {
+				"notes": "Ultimate Liberty license (SLA0044)"
+			},
+			"properties": [
+				{
+					"name": "BlackDuck-Component",
+					"value": "8982dcf1-bbbf-4660-b58f-e2155b88ede7"
+				},
+				{
+					"name": "BlackDuck-ComponentVersion",
+					"value": "0fa1d6f3-62fd-45d1-8f59-7e8a6ee208d3"
+				}
+			]
+		},
+		{
+			"type": "library",
+			"bom-ref": "b66da1da-a3b7-4632-b6be-ffb66e13498c",
+			"supplier": {
+				"name": ""
+			},
+			"author": "STMicroelectronics",
+			"name": "STM32F031K6-Nucleo Templates",
+			"version": "1.11.5",
+			"licenses": [
+				{
+					"license": {
+						"name": "Ultimate Liberty license (SLA0044)"
+					}
+				}
+			],
+			"pedigree": {
+				"notes": "Ultimate Liberty license (SLA0044)"
+			},
+			"properties": [
+				{
+					"name": "BlackDuck-Component",
+					"value": "2c9b157c-4098-407f-b24c-720150fef3ab"
+				},
+				{
+					"name": "BlackDuck-ComponentVersion",
+					"value": "b66da1da-a3b7-4632-b6be-ffb66e13498c"
+				}
+			]
+		},
+		{
+			"type": "library",
+			"bom-ref": "6cba1789-2a98-4d60-b38a-55f21c13078c",
+			"supplier": {
+				"name": ""
+			},
+			"author": "STMicroelectronics",
+			"name": "STM32F042K6-Nucleo Examples",
+			"version": "1.11.5",
+			"licenses": [
+				{
+					"license": {
+						"name": "Ultimate Liberty license (SLA0044)"
+					}
+				}
+			],
+			"pedigree": {
+				"notes": "Ultimate Liberty license (SLA0044)"
+			},
+			"properties": [
+				{
+					"name": "BlackDuck-Component",
+					"value": "663b6942-a6ef-4a18-a3e9-897ef7880a23"
+				},
+				{
+					"name": "BlackDuck-ComponentVersion",
+					"value": "6cba1789-2a98-4d60-b38a-55f21c13078c"
+				}
+			]
+		},
+		{
+			"type": "library",
+			"bom-ref": "ff524816-b9bd-40c6-b02b-8f09b833e0ae",
+			"supplier": {
+				"name": ""
+			},
+			"author": "STMicroelectronics",
+			"name": "STM32F042K6-Nucleo Templates",
+			"version": "1.11.5",
+			"licenses": [
+				{
+					"license": {
+						"name": "Ultimate Liberty license (SLA0044)"
+					}
+				}
+			],
+			"pedigree": {
+				"notes": "Ultimate Liberty license (SLA0044)"
+			},
+			"properties": [
+				{
+					"name": "BlackDuck-Component",
+					"value": "d6970b4a-2358-4b36-9783-2988d9281389"
+				},
+				{
+					"name": "BlackDuck-ComponentVersion",
+					"value": "ff524816-b9bd-40c6-b02b-8f09b833e0ae"
+				}
+			]
+		},
+		{
+			"type": "library",
+			"bom-ref": "64869e67-6ddf-4075-b3b8-0850eae9bea2",
+			"supplier": {
+				"name": ""
+			},
+			"author": "STMicroelectronics",
+			"name": "STM32F070RB-Nucleo Applications",
+			"version": "1.11.5",
+			"licenses": [
+				{
+					"license": {
+						"name": "Ultimate Liberty license (SLA0044)"
+					}
+				}
+			],
+			"pedigree": {
+				"notes": "Ultimate Liberty license (SLA0044)"
+			},
+			"properties": [
+				{
+					"name": "BlackDuck-Component",
+					"value": "efc3db1d-c215-463d-9011-21bbec2ae997"
+				},
+				{
+					"name": "BlackDuck-ComponentVersion",
+					"value": "64869e67-6ddf-4075-b3b8-0850eae9bea2"
+				}
+			]
+		},
+		{
+			"type": "library",
+			"bom-ref": "a201073e-1724-4b13-983b-81ba103fcdab",
+			"supplier": {
+				"name": ""
+			},
+			"author": "STMicroelectronics",
+			"name": "STM32F070RB-Nucleo Examples",
+			"version": "1.11.5",
+			"licenses": [
+				{
+					"license": {
+						"name": "Ultimate Liberty license (SLA0044)"
+					}
+				}
+			],
+			"pedigree": {
+				"notes": "Ultimate Liberty license (SLA0044)"
+			},
+			"properties": [
+				{
+					"name": "BlackDuck-Component",
+					"value": "66961426-3a57-4626-b09d-83b844b97a82"
+				},
+				{
+					"name": "BlackDuck-ComponentVersion",
+					"value": "a201073e-1724-4b13-983b-81ba103fcdab"
+				}
+			]
+		},
+		{
+			"type": "library",
+			"bom-ref": "4ade768d-7e11-4505-8fc1-a83fed29582d",
+			"supplier": {
+				"name": ""
+			},
+			"author": "STMicroelectronics",
+			"name": "STM32F070RB-Nucleo Templates",
+			"version": "1.11.5",
+			"licenses": [
+				{
+					"license": {
+						"name": "Ultimate Liberty license (SLA0044)"
+					}
+				}
+			],
+			"pedigree": {
+				"notes": "Ultimate Liberty license (SLA0044)"
+			},
+			"properties": [
+				{
+					"name": "BlackDuck-Component",
+					"value": "fdeff4c5-69b8-4ec5-8ac0-f87e37a16d8e"
+				},
+				{
+					"name": "BlackDuck-ComponentVersion",
+					"value": "4ade768d-7e11-4505-8fc1-a83fed29582d"
+				}
+			]
+		},
+		{
+			"type": "library",
+			"bom-ref": "89236977-9bbe-4cb1-832b-8eacec3392a0",
+			"supplier": {
+				"name": ""
+			},
+			"author": "STMicroelectronics",
+			"name": "STM32F072B-Discovery Applications",
+			"version": "1.11.5",
+			"licenses": [
+				{
+					"license": {
+						"name": "Ultimate Liberty license (SLA0044)"
+					}
+				}
+			],
+			"pedigree": {
+				"notes": "Ultimate Liberty license (SLA0044)"
+			},
+			"properties": [
+				{
+					"name": "BlackDuck-Component",
+					"value": "c62d508a-e261-4b9f-8003-56df45c50a5b"
+				},
+				{
+					"name": "BlackDuck-ComponentVersion",
+					"value": "89236977-9bbe-4cb1-832b-8eacec3392a0"
+				}
+			]
+		},
+		{
+			"type": "library",
+			"bom-ref": "fdb14cf0-c5e8-420e-a915-ca7c4021ca29",
+			"supplier": {
+				"name": ""
+			},
+			"author": "STMicroelectronics",
+			"name": "STM32F072B-Discovery Examples",
+			"version": "1.11.5",
+			"licenses": [
+				{
+					"license": {
+						"name": "Ultimate Liberty license (SLA0044)"
+					}
+				}
+			],
+			"pedigree": {
+				"notes": "Ultimate Liberty license (SLA0044)"
+			},
+			"properties": [
+				{
+					"name": "BlackDuck-Component",
+					"value": "7c339f2d-b14d-449a-aaf7-e681efb188f3"
+				},
+				{
+					"name": "BlackDuck-ComponentVersion",
+					"value": "fdb14cf0-c5e8-420e-a915-ca7c4021ca29"
+				}
+			]
+		},
+		{
+			"type": "library",
+			"bom-ref": "e614826f-f130-4acd-a01a-0fec5a9b85dd",
+			"supplier": {
+				"name": ""
+			},
+			"author": "STMicroelectronics",
+			"name": "STM32F072B-Discovery Templates",
+			"version": "1.11.5",
+			"licenses": [
+				{
+					"license": {
+						"name": "Ultimate Liberty license (SLA0044)"
+					}
+				}
+			],
+			"pedigree": {
+				"notes": "Ultimate Liberty license (SLA0044)"
+			},
+			"properties": [
+				{
+					"name": "BlackDuck-Component",
+					"value": "c0c8932a-c3cd-4cc9-9548-33978d2ced38"
+				},
+				{
+					"name": "BlackDuck-ComponentVersion",
+					"value": "e614826f-f130-4acd-a01a-0fec5a9b85dd"
+				}
+			]
+		},
+		{
+			"type": "library",
+			"bom-ref": "2dc46db9-d01e-4d85-b70e-bae9f5e3cae0",
+			"supplier": {
+				"name": ""
+			},
+			"author": "STMicroelectronics",
+			"name": "STM32F072RB-Nucleo Applications",
+			"version": "1.11.5",
+			"licenses": [
+				{
+					"license": {
+						"name": "Ultimate Liberty license (SLA0044)"
+					}
+				}
+			],
+			"pedigree": {
+				"notes": "Ultimate Liberty license (SLA0044)"
+			},
+			"properties": [
+				{
+					"name": "BlackDuck-Component",
+					"value": "ee1556b6-b428-4461-a5af-0be45508ab92"
+				},
+				{
+					"name": "BlackDuck-ComponentVersion",
+					"value": "2dc46db9-d01e-4d85-b70e-bae9f5e3cae0"
+				}
+			]
+		},
+		{
+			"type": "library",
+			"bom-ref": "9a8acef2-bcba-43d4-91bc-0afcd0b85977",
+			"supplier": {
+				"name": ""
+			},
+			"author": "STMicroelectronics",
+			"name": "STM32F072RB-Nucleo Examples",
+			"version": "1.11.5",
+			"licenses": [
+				{
+					"license": {
+						"name": "Ultimate Liberty license (SLA0044)"
+					}
+				}
+			],
+			"pedigree": {
+				"notes": "Ultimate Liberty license (SLA0044)"
+			},
+			"properties": [
+				{
+					"name": "BlackDuck-Component",
+					"value": "cff6d0a3-484e-4b85-8024-c2649a03b131"
+				},
+				{
+					"name": "BlackDuck-ComponentVersion",
+					"value": "9a8acef2-bcba-43d4-91bc-0afcd0b85977"
+				}
+			]
+		},
+		{
+			"type": "library",
+			"bom-ref": "7413c11c-4168-4888-b4d5-a5cd4ff37df2",
+			"supplier": {
+				"name": ""
+			},
+			"author": "STMicroelectronics",
+			"name": "STM32F072RB-Nucleo Templates",
+			"version": "1.11.5",
+			"licenses": [
+				{
+					"license": {
+						"name": "Ultimate Liberty license (SLA0044)"
+					}
+				}
+			],
+			"pedigree": {
+				"notes": "Ultimate Liberty license (SLA0044)"
+			},
+			"properties": [
+				{
+					"name": "BlackDuck-Component",
+					"value": "f2c1a9d3-1d99-43a0-a7b9-18609dbe9298"
+				},
+				{
+					"name": "BlackDuck-ComponentVersion",
+					"value": "7413c11c-4168-4888-b4d5-a5cd4ff37df2"
+				}
+			]
+		},
+		{
+			"type": "library",
+			"bom-ref": "21998cf0-1348-4c5a-833c-83cf3fc3efd4",
+			"supplier": {
+				"name": ""
+			},
+			"author": "STMicroelectronics",
+			"name": "STM32F091RC-Nucleo Applications",
+			"version": "1.11.5",
+			"licenses": [
+				{
+					"license": {
+						"name": "Ultimate Liberty license (SLA0044)"
+					}
+				}
+			],
+			"pedigree": {
+				"notes": "Ultimate Liberty license (SLA0044)"
+			},
+			"properties": [
+				{
+					"name": "BlackDuck-Component",
+					"value": "97d4a8f0-8b27-4227-82ad-76fbb5844579"
+				},
+				{
+					"name": "BlackDuck-ComponentVersion",
+					"value": "21998cf0-1348-4c5a-833c-83cf3fc3efd4"
+				}
+			]
+		},
+		{
+			"type": "library",
+			"bom-ref": "cba2d51e-2568-4833-9b6b-af74f2c64c32",
+			"supplier": {
+				"name": ""
+			},
+			"author": "STMicroelectronics",
+			"name": "STM32F091RC-Nucleo Examples",
+			"version": "1.11.5",
+			"licenses": [
+				{
+					"license": {
+						"name": "Ultimate Liberty license (SLA0044)"
+					}
+				}
+			],
+			"pedigree": {
+				"notes": "Ultimate Liberty license (SLA0044)"
+			},
+			"properties": [
+				{
+					"name": "BlackDuck-Component",
+					"value": "a0256a8d-ee14-4881-b7cf-c09599f59fce"
+				},
+				{
+					"name": "BlackDuck-ComponentVersion",
+					"value": "cba2d51e-2568-4833-9b6b-af74f2c64c32"
+				}
+			]
+		},
+		{
+			"type": "library",
+			"bom-ref": "5537176e-7c83-49d4-81d2-e47ef24c53cc",
+			"supplier": {
+				"name": ""
+			},
+			"author": "STMicroelectronics",
+			"name": "STM32F091RC-Nucleo Templates",
+			"version": "1.11.5",
+			"licenses": [
+				{
+					"license": {
+						"name": "Ultimate Liberty license (SLA0044)"
+					}
+				}
+			],
+			"pedigree": {
+				"notes": "Ultimate Liberty license (SLA0044)"
+			},
+			"properties": [
+				{
+					"name": "BlackDuck-Component",
+					"value": "cc47ae51-0435-42d8-b3d5-54a0245d8b24"
+				},
+				{
+					"name": "BlackDuck-ComponentVersion",
+					"value": "5537176e-7c83-49d4-81d2-e47ef24c53cc"
+				}
+			]
+		},
+		{
+			"type": "library",
+			"bom-ref": "d6df0b43-1c28-445e-9197-16783ac059f0",
+			"supplier": {
+				"name": ""
+			},
+			"author": "STMicroelectronics",
+			"name": "STM32F0xx CMSIS",
+			"version": "2.3.7",
+			"licenses": [
+				{
+					"license": {
+						"id": "Apache-2.0"
+					}
+				}
+			],
+			"pedigree": {
+				"notes": "Apache License 2.0"
+			},
+			"properties": [
+				{
+					"name": "BlackDuck-Component",
+					"value": "41bfbce0-dd7e-48d9-8408-da8f1e5f521f"
+				},
+				{
+					"name": "BlackDuck-ComponentVersion",
+					"value": "d6df0b43-1c28-445e-9197-16783ac059f0"
+				}
+			]
+		},
+		{
+			"type": "library",
+			"bom-ref": "92d6b211-c998-4110-9060-3e78892c1f9a",
+			"supplier": {
+				"name": ""
+			},
+			"author": "STMicroelectronics",
+			"name": "STM32F0xx HAL Driver",
+			"version": "1.7.8",
+			"licenses": [
+				{
+					"license": {
+						"id": "BSD-3-Clause"
+					}
+				}
+			],
+			"pedigree": {
+				"notes": "BSD 3-clause \"New\" or \"Revised\" License"
+			},
+			"properties": [
+				{
+					"name": "BlackDuck-Component",
+					"value": "5977f520-6f0e-4ee6-b13b-55ed00fed08c"
+				},
+				{
+					"name": "BlackDuck-ComponentVersion",
+					"value": "92d6b211-c998-4110-9060-3e78892c1f9a"
+				}
+			]
+		},
+		{
+			"type": "library",
+			"bom-ref": "30a34d12-ec83-49a8-8952-96ebd49786f5",
+			"supplier": {
+				"name": ""
+			},
+			"author": "STMicroelectronics",
+			"name": "STM32_FatFS",
+			"version": "R0.11 / ST modified 20150508",
+			"licenses": [
+				{
+					"license": {
+						"id": "BSD-3-Clause"
+					}
+				}
+			],
+			"pedigree": {
+				"notes": "BSD 3-clause \"New\" or \"Revised\" License"
+			},
+			"properties": [
+				{
+					"name": "BlackDuck-Component",
+					"value": "5aa93d6e-ae14-454c-a033-609b1bbf7363"
+				},
+				{
+					"name": "BlackDuck-ComponentVersion",
+					"value": "30a34d12-ec83-49a8-8952-96ebd49786f5"
+				}
+			]
+		},
+		{
+			"type": "library",
+			"bom-ref": "259deaa9-abd2-4d85-8775-fce50927f59c",
+			"supplier": {
+				"name": ""
+			},
+			"author": "STMicroelectronics",
+			"name": "STM32_USB_Device_Library",
+			"version": "2.5.3",
+			"licenses": [
+				{
+					"license": {
+						"name": "Ultimate Liberty license (SLA0044)"
+					}
+				}
+			],
+			"pedigree": {
+				"notes": "Ultimate Liberty license (SLA0044)"
+			},
+			"properties": [
+				{
+					"name": "BlackDuck-Component",
+					"value": "9bfa4e04-b825-4209-b67b-81094af09891"
+				},
+				{
+					"name": "BlackDuck-ComponentVersion",
+					"value": "259deaa9-abd2-4d85-8775-fce50927f59c"
+				}
+			]
+		},
+		{
+			"type": "library",
+			"bom-ref": "05fd35f3-1b04-436c-9c38-bf0d56bd8843",
+			"supplier": {
+				"name": ""
+			},
+			"author": "STMicroelectronics",
+			"name": "Touch Sensing Library (TSL)",
+			"version": "2.2.4",
+			"licenses": [
+				{
+					"license": {
+						"name": "Ultimate Liberty license (SLA0044)"
+					}
+				}
+			],
+			"pedigree": {
+				"notes": "Ultimate Liberty license (SLA0044)"
+			},
+			"properties": [
+				{
+					"name": "BlackDuck-Component",
+					"value": "0165035d-5711-430a-8b4d-195c86d5ab79"
+				},
+				{
+					"name": "BlackDuck-ComponentVersion",
+					"value": "05fd35f3-1b04-436c-9c38-bf0d56bd8843"
+				}
+			]
+		}
+	],
+	"dependencies": [
+		{
+			"ref": "f541b1da-8af9-439c-86b4-72746e9f3ab8",
+			"dependsOn": [
+				"c3b50133-6133-46bc-8a22-0840d6088b38",
+				"707c5425-a41d-4895-9d8a-34349e685e1f",
+				"74a8c2f8-f756-461d-98ca-047756a016e5",
+				"c08306ec-b65b-475b-936f-f03a624ae4ab",
+				"25e8d63b-f9a7-4643-bdc6-330bceebd983",
+				"08449624-c289-4206-8544-66c01c18cfb9",
+				"0f26c77b-2f53-4abe-871d-1cb8a6fd38ad",
+				"003bebfd-4fea-4441-a52d-0065e53bf0fd",
+				"e25626b4-d528-4c48-a745-f0b794937db5",
+				"ee2520c8-f002-4860-8c66-3b513ebb2ddb",
+				"322c0125-55df-41a1-bbb8-efd3709b859e",
+				"d1afd2d6-6007-47eb-9504-77c214fb79a7",
+				"1699b0eb-35fc-420a-b74f-d57bcbbd631e",
+				"036a37b0-019a-49c6-8fbf-c5a1c0fbee42",
+				"83ffda9b-487e-4311-8152-c49baf097d4a",
+				"c9b96c11-5af5-443a-bfb6-e948652f2dc5",
+				"925e6340-449b-4c57-9ebd-558e6429b7db",
+				"493da1d5-e063-4e14-8ff8-ac5433d0a4d8",
+				"cb70eebc-97a6-4214-9851-974c074e1eb0",
+				"cb641a37-c52a-457c-9a44-5cdc6df0a0b1",
+				"4257499e-ae3a-4956-b193-1cb1c28c9a35",
+				"9dbd41a9-81a3-4733-b37f-f040b6e48e4d",
+				"58b25957-c625-46fb-92cd-535572149a4d",
+				"2183fe8c-451c-4867-af60-6c786dbdfb2e",
+				"5399e3a1-270d-42d0-8d0e-5cef4c7a4af9",
+				"1e03c557-592b-45eb-a1b2-3e2ddf0111be",
+				"9aeacdcc-414a-4a5d-80c2-9da2973e86cd",
+				"169e3a25-97e1-4fa2-a1e7-fb3b5b1a1ee1",
+				"fa1599df-9703-4619-87f2-9db1c76026d3",
+				"813278c1-a0e2-4002-bb0f-fabf98e5606d",
+				"386445c7-2339-482a-a11d-2327ccfd87a5",
+				"8b815d55-6f7b-4c57-a879-c0fa9fa04d48",
+				"56cfd421-d742-46de-a36b-ec022a357e63",
+				"9bd9204f-f6b7-4c42-ba76-fdd895e93c41",
+				"83fd852b-ecc0-4668-a7da-6545c0fa8f91",
+				"0fa1d6f3-62fd-45d1-8f59-7e8a6ee208d3",
+				"b66da1da-a3b7-4632-b6be-ffb66e13498c",
+				"6cba1789-2a98-4d60-b38a-55f21c13078c",
+				"ff524816-b9bd-40c6-b02b-8f09b833e0ae",
+				"64869e67-6ddf-4075-b3b8-0850eae9bea2",
+				"a201073e-1724-4b13-983b-81ba103fcdab",
+				"4ade768d-7e11-4505-8fc1-a83fed29582d",
+				"89236977-9bbe-4cb1-832b-8eacec3392a0",
+				"fdb14cf0-c5e8-420e-a915-ca7c4021ca29",
+				"e614826f-f130-4acd-a01a-0fec5a9b85dd",
+				"2dc46db9-d01e-4d85-b70e-bae9f5e3cae0",
+				"9a8acef2-bcba-43d4-91bc-0afcd0b85977",
+				"7413c11c-4168-4888-b4d5-a5cd4ff37df2",
+				"21998cf0-1348-4c5a-833c-83cf3fc3efd4",
+				"cba2d51e-2568-4833-9b6b-af74f2c64c32",
+				"5537176e-7c83-49d4-81d2-e47ef24c53cc",
+				"d6df0b43-1c28-445e-9197-16783ac059f0",
+				"92d6b211-c998-4110-9060-3e78892c1f9a",
+				"259deaa9-abd2-4d85-8775-fce50927f59c",
+				"05fd35f3-1b04-436c-9c38-bf0d56bd8843"
+			]
+		},
+		{
+			"ref": "707c5425-a41d-4895-9d8a-34349e685e1f",
+			"dependsOn": [
+				"bc2c5cdc-3cef-4bfd-b517-53efab6f0a3e",
+				"30a34d12-ec83-49a8-8952-96ebd49786f5"
+			]
+		},
+		{
+			"ref": "c3b50133-6133-46bc-8a22-0840d6088b38",
+			"dependsOn": [
+				"c8dc4e32-a057-4539-989c-751fd4ba4d53",
+				"93984a54-8133-424b-b8e9-e2ca91d8a454"
+			]
+		}
+	]
+}
