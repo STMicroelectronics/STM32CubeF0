@@ -31,7 +31,7 @@
 
 /* Private typedef -----------------------------------------------------------*/
 /* Private define ------------------------------------------------------------*/
-#define EEPROM_ADDRESS          0xA0
+#define EEPROM_ADDRESS          0xA6
 #define EEPROM_PAGESIZE         4     /* RF EEPROM ANT7-M24LR used */
 /* EEPROM TIMING is calculated in case of the I2C Clock source is the SYSCLK = 48 MHz */
 /* Set TIMING to 0x00E0D3FF to reach 100 KHz speed (Rise time = 50ns, Fall time = 10ns) */

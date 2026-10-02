@@ -1,6 +1,6 @@
 # STM32CubeF0 MCU Firmware Package
 
-![tag](https://img.shields.io/badge/tag-v1.11.6-brightgreen.svg)
+![tag](https://img.shields.io/badge/tag-v1.12.0-brightgreen.svg)
 
 > [!IMPORTANT]
 > This repository has been created using the `git submodule` command. Please refer to the ["How to use"](README.md#how-to-use) section for more details.

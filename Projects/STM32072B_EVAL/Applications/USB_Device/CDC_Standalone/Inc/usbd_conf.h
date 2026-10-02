@@ -47,8 +47,8 @@ void USBD_static_free(void *p);
 
 #define USBD_malloc               (uint32_t *)USBD_static_malloc
 #define USBD_free                 USBD_static_free
-#define USBD_memset               /* Not used */
-#define USBD_memcpy               /* Not used */
+#define USBD_memset               memset
+#define USBD_memcpy               memcpy
 
 
 /* DEBUG macros */

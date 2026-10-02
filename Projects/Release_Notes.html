@@ -61,10 +61,536 @@
 <div class="col-sm-12 col-lg-8">
 <h1 id="update-history">Update History</h1>
 <div class="collapse">
-<input type="checkbox" id="collapse-section11_6" checked aria-hidden="true"> <label for="collapse-section11_6" aria-hidden="true"><strong>V1.11.6 / 30-January-2026</strong></label>
+<input type="checkbox" id="collapse-section1_12_0" checked aria-hidden="true"> <label for="collapse-section1_12_0" aria-hidden="true"><strong>V1.12.0 / 19-September-2026</strong></label>
 <div>
 <h1 id="maintenance-release">Maintenance release</h1>
+<ul>
+<li>General updates to fix known defects and implement enhancements.</li>
+</ul>
 <h2 id="main-changes">Main Changes</h2>
+<ul>
+<li><strong>NUCLEO-F091RC</strong> / <strong>NUCLEO-F072RB</strong> / <strong>NUCLEO-F070RB</strong>/ <strong>NUCLEO-F030R8</strong>:
+<ul>
+<li>Add NEW GPIO_Demo Project : LED Blinking at Different Speeds with Button Control.</li>
+</ul></li>
+<li><strong>STM32072B_EVAL</strong> / <strong>STM32F072B-DISCO</strong>
+<ul>
+<li>Move USB Device projects to tag 2.11.6.</li>
+</ul></li>
+</ul>
+<p><strong>STM32072B_EVAL</strong>:</p>
+<ul>
+<li><strong>Applications</strong>
+<ul>
+<li>Correct typo and remove ambiguity from comment in MutexHighPriorityThreadr() of FreeRTOS_Mutexes application.</li>
+<li>Correct Flash and RAM sizes in the USB Device DFU linker configuration.</li>
+<li>Implement USBD_memset and USBD_memcpy in the CDC standalone application.</li>
+</ul></li>
+<li><strong>Examples</strong>
+<ul>
+<li>Fix the incorrect check on HAL_TIMEOUT in the I2C EEPROM example.</li>
+</ul></li>
+</ul>
+<p><strong>STM32091C_EVAL</strong>:</p>
+<ul>
+<li><strong>Applications</strong>
+<ul>
+<li>Correct typo and remove ambiguity from comment in MutexHighPriorityThreadr() of FreeRTOS_Mutexes application.</li>
+</ul></li>
+<li><strong>Examples</strong>
+<ul>
+<li>Fix the incorrect check on HAL_TIMEOUT in the I2C EEPROM example.</li>
+<li>Fix EEPROM address definition in the I2C EEPROM example.</li>
+</ul></li>
+</ul>
+<p><strong>STM32F072B-DISCO</strong>:</p>
+<ul>
+<li><p><strong>Applications</strong></p>
+<ul>
+<li>Correct Flash and RAM sizes in the USB Device DFU linker configuration.</li>
+</ul></li>
+<li><strong>Examples</strong>
+<ul>
+<li>Fix the incorrect check on HAL_TIMEOUT in the I2C EEPROM example.</li>
+</ul></li>
+<li><strong>Demonstrations</strong>
+<ul>
+<li>Fix the EWARM flashing error.</li>
+</ul></li>
+</ul>
+<p><strong>NUCLEO-F070RB</strong>:</p>
+<ul>
+<li><strong>Examples</strong>
+<ul>
+<li>Correct Flash and RAM sizes in the IWDG Window Mode linker configuration.</li>
+</ul></li>
+</ul>
+<h2 id="contents">Contents</h2>
+<h3 id="projects">Projects</h3>
+<table>
+<caption>Projects NUCLEO-F072RB</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: center;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-F072RB</td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F072RB/Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-F072RB</td>
+<td style="text-align: left;"><strong>Demonstrations</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F072RB/Demonstrations</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-F072RB</td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F072RB/Examples_LL</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-F072RB</td>
+<td style="text-align: left;"><strong>Low Layer Examples</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F072RB/Templates</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-F072RB</td>
+<td style="text-align: left;"><strong>Templates</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F072RB/Templates</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-F072RB</td>
+<td style="text-align: left;"><strong>Templates LL</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F072RB/Templates/Templates_LL</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Projects NUCLEO-F030R8</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: center;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-F030R8</td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F030R8/Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-F030R8</td>
+<td style="text-align: left;"><strong>Demonstrations</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F030R8/Demonstrations</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-F030R8</td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F030R8/Examples</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-F030R8</td>
+<td style="text-align: left;"><strong>Templates</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F030R8/Templates</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-F030R8</td>
+<td style="text-align: left;"><strong>Templates LL</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F030R8/Templates_LL</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Projects NUCLEO-F070RB</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: center;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-F070RB</td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F070RB/Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-F070RB</td>
+<td style="text-align: left;"><strong>Demonstrations</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F070RB/Demonstrations</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-F070RB</td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F070RB/Examples</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-F070RB</td>
+<td style="text-align: left;"><strong>Templates</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F070RB/Templates</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-F070RB</td>
+<td style="text-align: left;"><strong>Templates LL</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F070RB/Templates_LL</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Projects NUCLEO-F042K6</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: center;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-F042K6</td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F042K6/Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-F042K6</td>
+<td style="text-align: left;"><strong>Demonstrations</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F042K6/Demonstrations</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-F042K6</td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F042K6/Examples</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-F042K6</td>
+<td style="text-align: left;"><strong>Templates</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F042K6/Templates</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-F042K6</td>
+<td style="text-align: left;"><strong>Templates LL</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F042K6/Templates_LL</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Projects NUCLEO-F031K6</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: center;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-F031K6</td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F031K6/Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-F031K6</td>
+<td style="text-align: left;"><strong>Demonstrations</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F031K6/Demonstrations</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-F031K6</td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F031K6/Examples</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-F031K6</td>
+<td style="text-align: left;"><strong>Templates</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F031K6/Templates</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-F031K6</td>
+<td style="text-align: left;"><strong>Templates LL</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F031K6/Templates_LL</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Projects STM32f0308-DISCO</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: center;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">STM32f0308-DISCO</td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
+<td style="text-align: center;">Projects/STM32f0308-DISCO/Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32f0308-DISCO</td>
+<td style="text-align: left;"><strong>Demonstrations</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
+<td style="text-align: center;">Projects/STM32f0308-DISCO/Demonstrations</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32f0308-DISCO</td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
+<td style="text-align: center;">Projects/STM32f0308-DISCO/Examples</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32f0308-DISCO</td>
+<td style="text-align: left;"><strong>Templates</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
+<td style="text-align: center;">Projects/STM32f0308-DISCO/Templates</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32f0308-DISCO</td>
+<td style="text-align: left;"><strong>Templates LL</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
+<td style="text-align: center;">Projects/STM32f0308-DISCO/Templates_LL</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Projects STM32F072B-DISCO</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: center;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">STM32F072B-DISCO</td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
+<td style="text-align: center;">Projects/STM32F072B-DISCO/Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32F072B-DISCO</td>
+<td style="text-align: left;"><strong>Demonstrations</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
+<td style="text-align: center;">Projects/STM32F072B-DISCO/Demonstrations</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32F072B-DISCO</td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
+<td style="text-align: center;">Projects/STM32F072B-DISCO/Examples</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32F072B-DISCO</td>
+<td style="text-align: left;"><strong>Templates</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
+<td style="text-align: center;">Projects/STM32F072B-DISCO/Templates</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32F072B-DISCO</td>
+<td style="text-align: left;"><strong>Templates LL</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
+<td style="text-align: center;">Projects/STM32F072B-DISCO/Templates_LL</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Projects STM32072B-EVAL</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: center;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">STM32072B-EVAL</td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
+<td style="text-align: center;">Projects/STM32072B-EVAL/Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32072B-EVAL</td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
+<td style="text-align: center;">Projects/STM32072B-EVAL/Examples</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32072B-EVAL</td>
+<td style="text-align: left;"><strong>Templates</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
+<td style="text-align: center;">Projects/STM32072B-EVAL/Templates</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32072B-EVAL</td>
+<td style="text-align: left;"><strong>Templates LL</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
+<td style="text-align: center;">Projects/STM32072B-EVAL/Templates_LL</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Projects STM32091C_EVAL</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: center;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">STM32091C_EVAL</td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
+<td style="text-align: center;">Projects/STM32091C_EVAL/Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32091C_EVAL</td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
+<td style="text-align: center;">Projects/STM32091C_EVAL/Examples</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32091C_EVAL</td>
+<td style="text-align: left;"><strong>Templates</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
+<td style="text-align: center;">Projects/STM32091C_EVAL/Templates</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32091C_EVAL</td>
+<td style="text-align: left;"><strong>Templates LL</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
+<td style="text-align: center;">Projects/STM32091C_EVAL/Templates_LL</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32091C_EVAL</td>
+<td style="text-align: left;"><strong>Demonstrations</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
+<td style="text-align: center;">Projects/STM32091C_EVAL/Demonstrations</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Projects NUCLEO-F091RC</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: center;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-F091RC</td>
+<td style="text-align: left;"><strong>Demonstrations</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F091RC/Demonstrations</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-F091RC</td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F091RC/Examples</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-F091RC</td>
+<td style="text-align: left;"><strong>Templates</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F091RC/Templates</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-F091RC</td>
+<td style="text-align: left;"><strong>Templates LL</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F091RC/Templates_LL</td>
+</tr>
+</tbody>
+</table>
+<p>Note: in the tables above, project categories <strong>highlighted</strong> have changed since previous release.</p>
+<h2 id="known-limitations">Known Limitations</h2>
+<ul>
+<li>None</li>
+</ul>
+<h2 id="development-toolchains-and-compilers">Development Toolchains and Compilers</h2>
+<ul>
+<li>IAR Embedded Workbench for ARM (EWARM) toolchain V8.50.9+ ST-Link</li>
+<li><dl>
+<dt>RealView Microcontroller Development Kit (MDK-ARM) toolchain V5.38 (or upper) + ST-LINK, pack available here:</dt>
+<dd>www.keil.com/dd2/Pack/ (Section : STMicroelectronics STM32F0 Series Device Support)
+</dd>
+<dd>Only template projects are migrated to Arm Compiler 6 with MDK-ARM 5.31 (“AC-like Warnings” mode).
+</dd>
+</dl></li>
+<li>System Workbench for STM32 (SW4STM32) (7-2018-q2-update) toolchain V2.9.0 + ST-Link</li>
+</ul>
+<h2 id="supported-devices-and-eval-boards">Supported Devices and EVAL boards</h2>
+<ul>
+<li>All STM32F030, STM32F070, STM32F0x1, STM32F0x2 and STM32F0x8 product lines devices are supported.</li>
+<li>Discovery boards: STM32F072B-Discovery RevC (MB1076), STM32F0308-Discovery RevA (MB1134)</li>
+<li>Nucleo boards: STM32F070RB_Nucleo, STM32F072RB-Nucleo, STM32F091RC-Nucleo, STM32F030R8-Nucleo RevC (MB1136)</li>
+<li>Nucleo32 boards: STM32F031K6-Nucleo, STM32F042K6-Nucleo RevC (MB1180)</li>
+<li>Evaluation boards: STM32072B-EVAL RevB (MB1070), STM32091C-EVAL RevB (MB1169)</li>
+</ul>
+<h2 id="backward-compatibility">Backward Compatibility</h2>
+<ul>
+<li>None</li>
+</ul>
+<h2 id="dependencies">Dependencies</h2>
+<ul>
+<li>None</li>
+</ul>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section11_6" aria-hidden="true"> <label for="collapse-section11_6" aria-hidden="true"><strong>V1.11.6 / 30-January-2026</strong></label>
+<div>
+<h1 id="maintenance-release-1">Maintenance release</h1>
+<h2 id="main-changes-1">Main Changes</h2>
 <ul>
 <li>Update license on SW4STM32 linker files.</li>
 </ul>
@@ -73,8 +599,8 @@
 <div class="collapse">
 <input type="checkbox" id="collapse-section11_5" aria-hidden="true"> <label for="collapse-section11_5" aria-hidden="true"><strong>V1.11.5 / 29-March-2024</strong></label>
 <div>
-<h1 id="maintenance-release-1">Maintenance release</h1>
-<h2 id="main-changes-1">Main Changes</h2>
+<h1 id="maintenance-release-2">Maintenance release</h1>
+<h2 id="main-changes-2">Main Changes</h2>
 <ul>
 <li>Patch release to fix known defects and enhancements implementation.</li>
 <li><strong>Examples</strong>
@@ -92,8 +618,8 @@
 <div class="collapse">
 <input type="checkbox" id="collapse-section11_4" aria-hidden="true"> <label for="collapse-section11_4" aria-hidden="true"><strong>V1.11.4 / 27-January-2023</strong></label>
 <div>
-<h1 id="maintenance-release-2">Maintenance release</h1>
-<h2 id="main-changes-2">Main Changes</h2>
+<h1 id="maintenance-release-3">Maintenance release</h1>
+<h2 id="main-changes-3">Main Changes</h2>
 <ul>
 <li>Patch release to fix known defects and enhancements implementation.</li>
 <li>All source files: update disclaimer to add reference to the new license agreement.</li>
@@ -111,8 +637,8 @@
 <div class="collapse">
 <input type="checkbox" id="collapse-section11_3"  aria-hidden="true"> <label for="collapse-section11_3" aria-hidden="true"><strong>V1.11.3 / 23-July-2021</strong></label>
 <div>
-<h1 id="maintenance-release-3">Maintenance release</h1>
-<h2 id="main-changes-3">Main Changes</h2>
+<h1 id="maintenance-release-4">Maintenance release</h1>
+<h2 id="main-changes-4">Main Changes</h2>
 <ul>
 <li>Patch release to fix known defects and enhancements implementation.</li>
 <li><p><strong>Examples</strong></p>
@@ -126,8 +652,8 @@
 <div class="collapse">
 <input type="checkbox" id="collapse-section11_2"  aria-hidden="true"> <label for="collapse-section11_2" aria-hidden="true"><strong>V1.11.2 / 06-November-2020</strong></label>
 <div>
-<h1 id="maintenance-release-4">Maintenance release</h1>
-<h2 id="main-changes-4">Main Changes</h2>
+<h1 id="maintenance-release-5">Maintenance release</h1>
+<h2 id="main-changes-5">Main Changes</h2>
 <ul>
 <li>Patch release to fix known defects and enhancements implementation.</li>
 </ul>
@@ -145,7 +671,7 @@
 <li>Update EEPROM_Emulation application in order to fix issues related to EE_Init() and EE_VerifyPageFullyErased() APIs.</li>
 </ul></li>
 </ul>
-<h2 id="contents">Contents</h2>
+<h2 id="contents-1">Contents</h2>
 <table>
 <caption>Projects NUCLEO-F091RC</caption>
 <thead>
@@ -190,8 +716,8 @@
 <div class="collapse">
 <input type="checkbox" id="collapse-section11_1"  aria-hidden="true"> <label for="collapse-section11_1" aria-hidden="true"><strong>V1.11.1 / 24-July-2020</strong></label>
 <div>
-<h1 id="maintenance-release-5">Maintenance release</h1>
-<h2 id="main-changes-5">Main Changes</h2>
+<h1 id="maintenance-release-6">Maintenance release</h1>
+<h2 id="main-changes-6">Main Changes</h2>
 <ul>
 <li>Patch release to fix known defects and enhancements implementation</li>
 </ul>
@@ -200,8 +726,8 @@
 <div class="collapse">
 <input type="checkbox" id="collapse-section1_11_0" aria-hidden="true"> <label for="collapse-section1_11_0" aria-hidden="true"><strong>V1.11.0 / 12-September-2019</strong></label>
 <div>
-<h1 id="maintenance-release-6">Maintenance release</h1>
-<h2 id="main-changes-6">Main Changes</h2>
+<h1 id="maintenance-release-7">Maintenance release</h1>
+<h2 id="main-changes-7">Main Changes</h2>
 <ul>
 <li><strong>Projects</strong>
 <ul>
@@ -712,8 +1238,8 @@
 </ul></li>
 </ul></li>
 </ul>
-<h2 id="contents-1">Contents</h2>
-<h3 id="projects">Projects</h3>
+<h2 id="contents-2">Contents</h2>
+<h3 id="projects-1">Projects</h3>
 <table>
 <caption>Projects NUCLEO-F072RB</caption>
 <thead>
@@ -728,37 +1254,37 @@
 <tr class="odd">
 <td style="text-align: left;">NUCLEO-F072RB</td>
 <td style="text-align: left;"><strong>Applications</strong></td>
-<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
 <td style="text-align: center;">Projects/NUCLEO-F072RB/Applications</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">NUCLEO-F072RB</td>
 <td style="text-align: left;"><strong>Demonstrations</strong></td>
-<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
 <td style="text-align: center;">Projects/NUCLEO-F072RB/Demonstrations</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">NUCLEO-F072RB</td>
 <td style="text-align: left;"><strong>Examples</strong></td>
-<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
 <td style="text-align: center;">Projects/NUCLEO-F072RB/Examples_LL</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">NUCLEO-F072RB</td>
 <td style="text-align: left;"><strong>Low Layer Examples</strong></td>
-<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
 <td style="text-align: center;">Projects/NUCLEO-F072RB/Templates</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">NUCLEO-F072RB</td>
 <td style="text-align: left;"><strong>Templates</strong></td>
-<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
 <td style="text-align: center;">Projects/NUCLEO-F072RB/Templates</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">NUCLEO-F072RB</td>
 <td style="text-align: left;"><strong>Templates LL</strong></td>
-<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
 <td style="text-align: center;">Projects/NUCLEO-F072RB/Templates/Templates_LL</td>
 </tr>
 </tbody>
@@ -777,31 +1303,31 @@
 <tr class="odd">
 <td style="text-align: left;">NUCLEO-F030R8</td>
 <td style="text-align: left;"><strong>Applications</strong></td>
-<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
 <td style="text-align: center;">Projects/NUCLEO-F030R8/Applications</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">NUCLEO-F030R8</td>
 <td style="text-align: left;"><strong>Demonstrations</strong></td>
-<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
 <td style="text-align: center;">Projects/NUCLEO-F030R8/Demonstrations</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">NUCLEO-F030R8</td>
 <td style="text-align: left;"><strong>Examples</strong></td>
-<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
 <td style="text-align: center;">Projects/NUCLEO-F030R8/Examples</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">NUCLEO-F030R8</td>
 <td style="text-align: left;"><strong>Templates</strong></td>
-<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
 <td style="text-align: center;">Projects/NUCLEO-F030R8/Templates</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">NUCLEO-F030R8</td>
 <td style="text-align: left;"><strong>Templates LL</strong></td>
-<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
 <td style="text-align: center;">Projects/NUCLEO-F030R8/Templates_LL</td>
 </tr>
 </tbody>
@@ -820,31 +1346,31 @@
 <tr class="odd">
 <td style="text-align: left;">NUCLEO-F070RB</td>
 <td style="text-align: left;"><strong>Applications</strong></td>
-<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
 <td style="text-align: center;">Projects/NUCLEO-F070RB/Applications</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">NUCLEO-F070RB</td>
 <td style="text-align: left;"><strong>Demonstrations</strong></td>
-<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
 <td style="text-align: center;">Projects/NUCLEO-F070RB/Demonstrations</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">NUCLEO-F070RB</td>
 <td style="text-align: left;"><strong>Examples</strong></td>
-<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
 <td style="text-align: center;">Projects/NUCLEO-F070RB/Examples</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">NUCLEO-F070RB</td>
 <td style="text-align: left;"><strong>Templates</strong></td>
-<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
 <td style="text-align: center;">Projects/NUCLEO-F070RB/Templates</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">NUCLEO-F070RB</td>
 <td style="text-align: left;"><strong>Templates LL</strong></td>
-<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
 <td style="text-align: center;">Projects/NUCLEO-F070RB/Templates_LL</td>
 </tr>
 </tbody>
@@ -863,31 +1389,31 @@
 <tr class="odd">
 <td style="text-align: left;">NUCLEO-F042K6</td>
 <td style="text-align: left;"><strong>Applications</strong></td>
-<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
 <td style="text-align: center;">Projects/NUCLEO-F042K6/Applications</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">NUCLEO-F042K6</td>
 <td style="text-align: left;"><strong>Demonstrations</strong></td>
-<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
 <td style="text-align: center;">Projects/NUCLEO-F042K6/Demonstrations</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">NUCLEO-F042K6</td>
 <td style="text-align: left;"><strong>Examples</strong></td>
-<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
 <td style="text-align: center;">Projects/NUCLEO-F042K6/Examples</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">NUCLEO-F042K6</td>
 <td style="text-align: left;"><strong>Templates</strong></td>
-<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
 <td style="text-align: center;">Projects/NUCLEO-F042K6/Templates</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">NUCLEO-F042K6</td>
 <td style="text-align: left;"><strong>Templates LL</strong></td>
-<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
 <td style="text-align: center;">Projects/NUCLEO-F042K6/Templates_LL</td>
 </tr>
 </tbody>
@@ -906,31 +1432,31 @@
 <tr class="odd">
 <td style="text-align: left;">NUCLEO-F031K6</td>
 <td style="text-align: left;"><strong>Applications</strong></td>
-<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
 <td style="text-align: center;">Projects/NUCLEO-F031K6/Applications</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">NUCLEO-F031K6</td>
 <td style="text-align: left;"><strong>Demonstrations</strong></td>
-<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
 <td style="text-align: center;">Projects/NUCLEO-F031K6/Demonstrations</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">NUCLEO-F031K6</td>
 <td style="text-align: left;"><strong>Examples</strong></td>
-<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
 <td style="text-align: center;">Projects/NUCLEO-F031K6/Examples</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">NUCLEO-F031K6</td>
 <td style="text-align: left;"><strong>Templates</strong></td>
-<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
 <td style="text-align: center;">Projects/NUCLEO-F031K6/Templates</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">NUCLEO-F031K6</td>
 <td style="text-align: left;"><strong>Templates LL</strong></td>
-<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
 <td style="text-align: center;">Projects/NUCLEO-F031K6/Templates_LL</td>
 </tr>
 </tbody>
@@ -949,31 +1475,31 @@
 <tr class="odd">
 <td style="text-align: left;">STM32f0308-DISCO</td>
 <td style="text-align: left;"><strong>Applications</strong></td>
-<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
 <td style="text-align: center;">Projects/STM32f0308-DISCO/Applications</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">STM32f0308-DISCO</td>
 <td style="text-align: left;"><strong>Demonstrations</strong></td>
-<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
 <td style="text-align: center;">Projects/STM32f0308-DISCO/Demonstrations</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">STM32f0308-DISCO</td>
 <td style="text-align: left;"><strong>Examples</strong></td>
-<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
 <td style="text-align: center;">Projects/STM32f0308-DISCO/Examples</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">STM32f0308-DISCO</td>
 <td style="text-align: left;"><strong>Templates</strong></td>
-<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
 <td style="text-align: center;">Projects/STM32f0308-DISCO/Templates</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">STM32f0308-DISCO</td>
 <td style="text-align: left;"><strong>Templates LL</strong></td>
-<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
 <td style="text-align: center;">Projects/STM32f0308-DISCO/Templates_LL</td>
 </tr>
 </tbody>
@@ -992,31 +1518,31 @@
 <tr class="odd">
 <td style="text-align: left;">STM32F072B-DISCO</td>
 <td style="text-align: left;"><strong>Applications</strong></td>
-<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
 <td style="text-align: center;">Projects/STM32F072B-DISCO/Applications</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">STM32F072B-DISCO</td>
 <td style="text-align: left;"><strong>Demonstrations</strong></td>
-<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
 <td style="text-align: center;">Projects/STM32F072B-DISCO/Demonstrations</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">STM32F072B-DISCO</td>
 <td style="text-align: left;"><strong>Examples</strong></td>
-<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
 <td style="text-align: center;">Projects/STM32F072B-DISCO/Examples</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">STM32F072B-DISCO</td>
 <td style="text-align: left;"><strong>Templates</strong></td>
-<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
 <td style="text-align: center;">Projects/STM32F072B-DISCO/Templates</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">STM32F072B-DISCO</td>
 <td style="text-align: left;"><strong>Templates LL</strong></td>
-<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
 <td style="text-align: center;">Projects/STM32F072B-DISCO/Templates_LL</td>
 </tr>
 </tbody>
@@ -1035,25 +1561,25 @@
 <tr class="odd">
 <td style="text-align: left;">STM32072B-EVAL</td>
 <td style="text-align: left;"><strong>Applications</strong></td>
-<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
 <td style="text-align: center;">Projects/STM32072B-EVAL/Applications</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">STM32072B-EVAL</td>
 <td style="text-align: left;"><strong>Examples</strong></td>
-<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
 <td style="text-align: center;">Projects/STM32072B-EVAL/Examples</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">STM32072B-EVAL</td>
 <td style="text-align: left;"><strong>Templates</strong></td>
-<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
 <td style="text-align: center;">Projects/STM32072B-EVAL/Templates</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">STM32072B-EVAL</td>
 <td style="text-align: left;"><strong>Templates LL</strong></td>
-<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
 <td style="text-align: center;">Projects/STM32072B-EVAL/Templates_LL</td>
 </tr>
 </tbody>
@@ -1072,31 +1598,31 @@
 <tr class="odd">
 <td style="text-align: left;">STM32091C_EVAL</td>
 <td style="text-align: left;"><strong>Applications</strong></td>
-<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
 <td style="text-align: center;">Projects/STM32091C_EVAL/Applications</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">STM32091C_EVAL</td>
 <td style="text-align: left;"><strong>Examples</strong></td>
-<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
 <td style="text-align: center;">Projects/STM32091C_EVAL/Examples</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">STM32091C_EVAL</td>
 <td style="text-align: left;"><strong>Templates</strong></td>
-<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
 <td style="text-align: center;">Projects/STM32091C_EVAL/Templates</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">STM32091C_EVAL</td>
 <td style="text-align: left;"><strong>Templates LL</strong></td>
-<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
 <td style="text-align: center;">Projects/STM32091C_EVAL/Templates_LL</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">STM32091C_EVAL</td>
 <td style="text-align: left;"><strong>Demonstrations</strong></td>
-<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
 <td style="text-align: center;">Projects/STM32091C_EVAL/Demonstrations</td>
 </tr>
 </tbody>
@@ -1115,75 +1641,39 @@
 <tr class="odd">
 <td style="text-align: left;">NUCLEO-F091RC</td>
 <td style="text-align: left;"><strong>Demonstrations</strong></td>
-<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
 <td style="text-align: center;">Projects/NUCLEO-F091RC/Demonstrations</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">NUCLEO-F091RC</td>
 <td style="text-align: left;"><strong>Examples</strong></td>
-<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
 <td style="text-align: center;">Projects/NUCLEO-F091RC/Examples</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">NUCLEO-F091RC</td>
 <td style="text-align: left;"><strong>Templates</strong></td>
-<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
 <td style="text-align: center;">Projects/NUCLEO-F091RC/Templates</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">NUCLEO-F091RC</td>
 <td style="text-align: left;"><strong>Templates LL</strong></td>
-<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: left;"><strong>V1.12.0</strong></td>
 <td style="text-align: center;">Projects/NUCLEO-F091RC/Templates_LL</td>
 </tr>
 </tbody>
 </table>
 <p>Note: in the tables above, project categories <strong>highlighted</strong> have changed since previous release.</p>
-<h2 id="known-limitations">Known Limitations</h2>
-<ul>
-<li>None</li>
-</ul>
-<h2 id="development-toolchains-and-compilers">Development Toolchains and Compilers</h2>
-<ul>
-<li>IAR Embedded Workbench for ARM (EWARM) toolchain <strong>V8.22.2</strong> + ST-LINK</li>
-<li>RealView Microcontroller Development Kit (MDK-ARM) toolchain <strong>V5.26</strong> + ST-LINK</li>
-<li>System Workbench for STM32 (SW4STM32) toolchain <strong>V2.9</strong> + ST-LINK</li>
-</ul>
-<h2 id="supported-devices-and-eval-boards">Supported Devices and EVAL boards</h2>
-<ul>
-<li>All STM32F030, STM32F070, STM32F0x1, STM32F0x2 and STM32F0x8 product lines devices are supported.</li>
-<li>Discovery boards: STM32F072B-Discovery RevC (MB1076), STM32F0308-Discovery RevA (MB1134)</li>
-<li>Nucleo boards: STM32F070RB_Nucleo, STM32F072RB-Nucleo, STM32F091RC-Nucleo, STM32F030R8-Nucleo RevC (MB1136)</li>
-<li>Nucleo32 boards: STM32F031K6-Nucleo, STM32F042K6-Nucleo RevC (MB1180)</li>
-<li>Evaluation boards: STM32072B-EVAL RevB (MB1070), STM32091C-EVAL RevB (MB1169)</li>
-</ul>
-<h2 id="backward-compatibility">Backward Compatibility</h2>
-<ul>
-<li>None</li>
-</ul>
-<h2 id="dependencies">Dependencies</h2>
-<ul>
-<li>None</li>
-</ul>
-</div>
-</div>
-<div class="collapse">
-<input type="checkbox" id="collapse-section10_1" aria-hidden="true"> <label for="collapse-section10_1" aria-hidden="true"><strong>V1.10.1 / 09-May-2019</strong></label>
-<div>
-<h1 id="maintenance-release-7">Maintenance release</h1>
-<h2 id="main-changes-7">Main Changes</h2>
-<ul>
-<li>Fix known defects and several enhancements implementation.</li>
-</ul>
 <h2 id="known-limitations-1">Known Limitations</h2>
 <ul>
 <li>None</li>
 </ul>
 <h2 id="development-toolchains-and-compilers-1">Development Toolchains and Compilers</h2>
 <ul>
-<li>IAR Embedded Workbench for ARM (EWARM) toolchain V7.80.4 + ST-LINK</li>
-<li>RealView Microcontroller Development Kit (MDK-ARM) toolchain V5.23 + ST-LINK</li>
-<li>System Workbench for STM32 (SW4STM32) toolchain V2.0 + ST-LINK</li>
+<li>IAR Embedded Workbench for ARM (EWARM) toolchain <strong>V8.22.2</strong> + ST-LINK</li>
+<li>RealView Microcontroller Development Kit (MDK-ARM) toolchain <strong>V5.26</strong> + ST-LINK</li>
+<li>System Workbench for STM32 (SW4STM32) toolchain <strong>V2.9</strong> + ST-LINK</li>
 </ul>
 <h2 id="supported-devices-and-eval-boards-1">Supported Devices and EVAL boards</h2>
 <ul>
@@ -1204,84 +1694,13 @@
 </div>
 </div>
 <div class="collapse">
-<input type="checkbox" id="collapse-section9" aria-hidden="true"> <label for="collapse-section9" aria-hidden="true"><strong>V1.10.0 / 03-April-2019</strong></label>
+<input type="checkbox" id="collapse-section10_1" aria-hidden="true"> <label for="collapse-section10_1" aria-hidden="true"><strong>V1.10.1 / 09-May-2019</strong></label>
 <div>
 <h1 id="maintenance-release-8">Maintenance release</h1>
 <h2 id="main-changes-8">Main Changes</h2>
 <ul>
-<li><strong>Projects</strong>
-<ul>
-<li>Update CAN examples to support new HAL CAN driver.</li>
-</ul></li>
+<li>Fix known defects and several enhancements implementation.</li>
 </ul>
-<p><strong>STM32091C_EVAL</strong>:</p>
-<ul>
-<li><strong>Examples</strong>
-<ul>
-<li>Update CAN examples to be aligned to the new HAL CAN driver.</li>
-<li>Update CAN examples to set a fixed bitrate equal to 1 Mbit/s.</li>
-<li>Update stm32f0xx_hal_conf.h files to add support to HAL CAN Legacy Module.</li>
-</ul></li>
-<li><strong>Demonstrations</strong>
-<ul>
-<li>Fix issue with Netac SD card</li>
-</ul></li>
-</ul>
-<p><strong>STM32072B_EVAL</strong>:</p>
-<ul>
-<li><strong>Examples</strong>
-<ul>
-<li>Update CAN examples to be aligned to the new HAL CAN driver.</li>
-<li>Update CAN examples to set a fixed bitrate equal to 1 Mbit/s.</li>
-<li>Update stm32f0xx_hal_conf.h files to add support to HAL CAN Legacy Module.</li>
-</ul></li>
-</ul>
-<h2 id="contents-2">Contents</h2>
-<table>
-<caption>Projects STM32072B-EVAL</caption>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Board</th>
-<th style="text-align: left;">Project category</th>
-<th style="text-align: left;">Version</th>
-<th style="text-align: center;">Path</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">STM32072B-EVAL</td>
-<td style="text-align: left;"><strong>Examples</strong></td>
-<td style="text-align: left;"><strong>V1.11.0</strong></td>
-<td style="text-align: center;">Projects/STM32072B-EVAL/Examples</td>
-</tr>
-</tbody>
-</table>
-<table>
-<caption>Projects STM32091C_EVAL</caption>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Board</th>
-<th style="text-align: left;">Project category</th>
-<th style="text-align: left;">Version</th>
-<th style="text-align: center;">Path</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">STM32091C_EVAL</td>
-<td style="text-align: left;"><strong>Examples</strong></td>
-<td style="text-align: left;"><strong>V1.11.0</strong></td>
-<td style="text-align: center;">Projects/STM32091C_EVAL/Examples</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">STM32091C_EVAL</td>
-<td style="text-align: left;"><strong>Demonstrations</strong></td>
-<td style="text-align: left;"><strong>V1.11.0</strong></td>
-<td style="text-align: center;">Projects/STM32091C_EVAL/Demonstrations</td>
-</tr>
-</tbody>
-</table>
-<p>Note: in the tables above, project categories <strong>highlighted</strong> have changed since previous release.</p>
 <h2 id="known-limitations-2">Known Limitations</h2>
 <ul>
 <li>None</li>
@@ -1311,10 +1730,117 @@
 </div>
 </div>
 <div class="collapse">
-<input type="checkbox" id="collapse-section8" aria-hidden="true"> <label for="collapse-section8" aria-hidden="true"><strong>V1.9.0 / 25-August-2017</strong></label>
+<input type="checkbox" id="collapse-section9" aria-hidden="true"> <label for="collapse-section9" aria-hidden="true"><strong>V1.10.0 / 03-April-2019</strong></label>
 <div>
 <h1 id="maintenance-release-9">Maintenance release</h1>
 <h2 id="main-changes-9">Main Changes</h2>
+<ul>
+<li><strong>Projects</strong>
+<ul>
+<li>Update CAN examples to support new HAL CAN driver.</li>
+</ul></li>
+</ul>
+<p><strong>STM32091C_EVAL</strong>:</p>
+<ul>
+<li><strong>Examples</strong>
+<ul>
+<li>Update CAN examples to be aligned to the new HAL CAN driver.</li>
+<li>Update CAN examples to set a fixed bitrate equal to 1 Mbit/s.</li>
+<li>Update stm32f0xx_hal_conf.h files to add support to HAL CAN Legacy Module.</li>
+</ul></li>
+<li><strong>Demonstrations</strong>
+<ul>
+<li>Fix issue with Netac SD card</li>
+</ul></li>
+</ul>
+<p><strong>STM32072B_EVAL</strong>:</p>
+<ul>
+<li><strong>Examples</strong>
+<ul>
+<li>Update CAN examples to be aligned to the new HAL CAN driver.</li>
+<li>Update CAN examples to set a fixed bitrate equal to 1 Mbit/s.</li>
+<li>Update stm32f0xx_hal_conf.h files to add support to HAL CAN Legacy Module.</li>
+</ul></li>
+</ul>
+<h2 id="contents-3">Contents</h2>
+<table>
+<caption>Projects STM32072B-EVAL</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: center;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">STM32072B-EVAL</td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: center;">Projects/STM32072B-EVAL/Examples</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Projects STM32091C_EVAL</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: center;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">STM32091C_EVAL</td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: center;">Projects/STM32091C_EVAL/Examples</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32091C_EVAL</td>
+<td style="text-align: left;"><strong>Demonstrations</strong></td>
+<td style="text-align: left;"><strong>V1.11.0</strong></td>
+<td style="text-align: center;">Projects/STM32091C_EVAL/Demonstrations</td>
+</tr>
+</tbody>
+</table>
+<p>Note: in the tables above, project categories <strong>highlighted</strong> have changed since previous release.</p>
+<h2 id="known-limitations-3">Known Limitations</h2>
+<ul>
+<li>None</li>
+</ul>
+<h2 id="development-toolchains-and-compilers-3">Development Toolchains and Compilers</h2>
+<ul>
+<li>IAR Embedded Workbench for ARM (EWARM) toolchain V7.80.4 + ST-LINK</li>
+<li>RealView Microcontroller Development Kit (MDK-ARM) toolchain V5.23 + ST-LINK</li>
+<li>System Workbench for STM32 (SW4STM32) toolchain V2.0 + ST-LINK</li>
+</ul>
+<h2 id="supported-devices-and-eval-boards-3">Supported Devices and EVAL boards</h2>
+<ul>
+<li>All STM32F030, STM32F070, STM32F0x1, STM32F0x2 and STM32F0x8 product lines devices are supported.</li>
+<li>Discovery boards: STM32F072B-Discovery RevC (MB1076), STM32F0308-Discovery RevA (MB1134)</li>
+<li>Nucleo boards: STM32F070RB_Nucleo, STM32F072RB-Nucleo, STM32F091RC-Nucleo, STM32F030R8-Nucleo RevC (MB1136)</li>
+<li>Nucleo32 boards: STM32F031K6-Nucleo, STM32F042K6-Nucleo RevC (MB1180)</li>
+<li>Evaluation boards: STM32072B-EVAL RevB (MB1070), STM32091C-EVAL RevB (MB1169)</li>
+</ul>
+<h2 id="backward-compatibility-3">Backward Compatibility</h2>
+<ul>
+<li>None</li>
+</ul>
+<h2 id="dependencies-3">Dependencies</h2>
+<ul>
+<li>None</li>
+</ul>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section8" aria-hidden="true"> <label for="collapse-section8" aria-hidden="true"><strong>V1.9.0 / 25-August-2017</strong></label>
+<div>
+<h1 id="maintenance-release-10">Maintenance release</h1>
+<h2 id="main-changes-10">Main Changes</h2>
 <ul>
 <li><strong>Projects</strong>
 <ul>
@@ -1339,8 +1865,8 @@
 <li>Add a note in DFU example readme : “How to install Dfuse demo under Window 8.1”.</li>
 </ul></li>
 </ul>
-<h2 id="contents-3">Contents</h2>
-<h3 id="projects-1">Projects</h3>
+<h2 id="contents-4">Contents</h2>
+<h3 id="projects-2">Projects</h3>
 <table>
 <caption>Projects NUCLEO-F091RC</caption>
 <thead>
@@ -1705,59 +2231,6 @@
 </tbody>
 </table>
 <p>Note: in the tables above, project categories <strong>highlighted</strong> have changed since previous release.</p>
-<h2 id="known-limitations-3">Known Limitations</h2>
-<ul>
-<li>None</li>
-</ul>
-<h2 id="development-toolchains-and-compilers-3">Development Toolchains and Compilers</h2>
-<ul>
-<li>IAR Embedded Workbench for ARM (EWARM) toolchain V7.80.4 + ST-LINK</li>
-<li>RealView Microcontroller Development Kit (MDK-ARM) toolchain V5.23 + ST-LINK</li>
-<li>System Workbench for STM32 (SW4STM32) toolchain V2.0 + ST-LINK</li>
-</ul>
-<h2 id="supported-devices-and-eval-boards-3">Supported Devices and EVAL boards</h2>
-<ul>
-<li>All STM32F030, STM32F070, STM32F0x1, STM32F0x2 and STM32F0x8 product lines devices are supported.</li>
-<li>Discovery boards: STM32F072B-Discovery RevC (MB1076), STM32F0308-Discovery RevA (MB1134)</li>
-<li>Nucleo boards: STM32F070RB_Nucleo, STM32F072RB-Nucleo, STM32F091RC-Nucleo, STM32F030R8-Nucleo RevC (MB1136)</li>
-<li>Nucleo32 boards: STM32F031K6-Nucleo, STM32F042K6-Nucleo RevC (MB1180)</li>
-<li>Evaluation boards: STM32072B-EVAL RevB (MB1070), STM32091C-EVAL RevB (MB1169)</li>
-</ul>
-<h2 id="backward-compatibility-3">Backward Compatibility</h2>
-<ul>
-<li>None</li>
-</ul>
-<h2 id="dependencies-3">Dependencies</h2>
-<ul>
-<li>None</li>
-</ul>
-</div>
-</div>
-<div class="collapse">
-<input type="checkbox" id="collapse-section7" aria-hidden="true"> <label for="collapse-section7" aria-hidden="true"><strong>V1.8.0 / 07-April-2017</strong></label>
-<div>
-<h1 id="maintenance-release-10">Maintenance release</h1>
-<h2 id="main-changes-10">Main Changes</h2>
-<ul>
-<li><strong>Projects</strong>
-<ul>
-<li>All projects updated for compliance with MISRA rules :
-<ul>
-<li>MISRA C 2004 rule 10.6 (‘U’ suffix applied to all constants of ‘unsigned’ type).</li>
-</ul></li>
-<li><p><strong>Applications</strong></p>
-<ul>
-<li>Update FreeRTOS_ThreadCreation example to be aligned with latest reference code.</li>
-</ul></li>
-<li><p><strong>Examples</strong></p>
-<ul>
-<li>Update HAL_TimeBase_RTC_xxx examples to correct RTC_ASYNCH_PREDIV and RTC_SYNCH_PREDIV definition when LSI configured as RTC clock source.</li>
-<li>Update TIM_DMA, TIM_PWMOutput, SPI_FullDuplex_ComDMA, SPI_FullDuplex_ComIT, UART_TwoBoards_ComIT examples to be aligned with latest reference code.</li>
-<li>Update UART_TwoBoards_ComIT, TIM_PWMOutput, TIM_DMA examples to be aligned with latest reference code.</li>
-<li>Update ADC_DMA_Transfer, TIM_DMA, TIM_PWMOutput, TIM_ComplementarySignals, SPI_FullDuplex_ComDMA, SPI_FullDuplex_ComIT, UART_TwoBoards_ComIT, CRC_Example, UART_TwoBoards_ComIT, UART_TwoBoards_ComPolling examples to be aligned with latest reference code.</li>
-</ul></li>
-</ul></li>
-</ul>
 <h2 id="known-limitations-4">Known Limitations</h2>
 <ul>
 <li>None</li>
@@ -1766,8 +2239,7 @@
 <ul>
 <li>IAR Embedded Workbench for ARM (EWARM) toolchain V7.80.4 + ST-LINK</li>
 <li>RealView Microcontroller Development Kit (MDK-ARM) toolchain V5.23 + ST-LINK</li>
-<li>Atollic TrueSTUDIO STM32 (TrueSTUDIO) toolchain V5.4.2 + ST-LINK</li>
-<li>System Workbench for STM32 (SW4STM32) toolchain V1.13.1 + ST-LINK</li>
+<li>System Workbench for STM32 (SW4STM32) toolchain V2.0 + ST-LINK</li>
 </ul>
 <h2 id="supported-devices-and-eval-boards-4">Supported Devices and EVAL boards</h2>
 <ul>
@@ -1788,10 +2260,64 @@
 </div>
 </div>
 <div class="collapse">
-<input type="checkbox" id="collapse-section68" aria-hidden="true"> <label for="collapse-section68" aria-hidden="true"><strong>V1.7.0 / 04-November-2016</strong></label>
+<input type="checkbox" id="collapse-section7" aria-hidden="true"> <label for="collapse-section7" aria-hidden="true"><strong>V1.8.0 / 07-April-2017</strong></label>
 <div>
 <h1 id="maintenance-release-11">Maintenance release</h1>
 <h2 id="main-changes-11">Main Changes</h2>
+<ul>
+<li><strong>Projects</strong>
+<ul>
+<li>All projects updated for compliance with MISRA rules :
+<ul>
+<li>MISRA C 2004 rule 10.6 (‘U’ suffix applied to all constants of ‘unsigned’ type).</li>
+</ul></li>
+<li><p><strong>Applications</strong></p>
+<ul>
+<li>Update FreeRTOS_ThreadCreation example to be aligned with latest reference code.</li>
+</ul></li>
+<li><p><strong>Examples</strong></p>
+<ul>
+<li>Update HAL_TimeBase_RTC_xxx examples to correct RTC_ASYNCH_PREDIV and RTC_SYNCH_PREDIV definition when LSI configured as RTC clock source.</li>
+<li>Update TIM_DMA, TIM_PWMOutput, SPI_FullDuplex_ComDMA, SPI_FullDuplex_ComIT, UART_TwoBoards_ComIT examples to be aligned with latest reference code.</li>
+<li>Update UART_TwoBoards_ComIT, TIM_PWMOutput, TIM_DMA examples to be aligned with latest reference code.</li>
+<li>Update ADC_DMA_Transfer, TIM_DMA, TIM_PWMOutput, TIM_ComplementarySignals, SPI_FullDuplex_ComDMA, SPI_FullDuplex_ComIT, UART_TwoBoards_ComIT, CRC_Example, UART_TwoBoards_ComIT, UART_TwoBoards_ComPolling examples to be aligned with latest reference code.</li>
+</ul></li>
+</ul></li>
+</ul>
+<h2 id="known-limitations-5">Known Limitations</h2>
+<ul>
+<li>None</li>
+</ul>
+<h2 id="development-toolchains-and-compilers-5">Development Toolchains and Compilers</h2>
+<ul>
+<li>IAR Embedded Workbench for ARM (EWARM) toolchain V7.80.4 + ST-LINK</li>
+<li>RealView Microcontroller Development Kit (MDK-ARM) toolchain V5.23 + ST-LINK</li>
+<li>Atollic TrueSTUDIO STM32 (TrueSTUDIO) toolchain V5.4.2 + ST-LINK</li>
+<li>System Workbench for STM32 (SW4STM32) toolchain V1.13.1 + ST-LINK</li>
+</ul>
+<h2 id="supported-devices-and-eval-boards-5">Supported Devices and EVAL boards</h2>
+<ul>
+<li>All STM32F030, STM32F070, STM32F0x1, STM32F0x2 and STM32F0x8 product lines devices are supported.</li>
+<li>Discovery boards: STM32F072B-Discovery RevC (MB1076), STM32F0308-Discovery RevA (MB1134)</li>
+<li>Nucleo boards: STM32F070RB_Nucleo, STM32F072RB-Nucleo, STM32F091RC-Nucleo, STM32F030R8-Nucleo RevC (MB1136)</li>
+<li>Nucleo32 boards: STM32F031K6-Nucleo, STM32F042K6-Nucleo RevC (MB1180)</li>
+<li>Evaluation boards: STM32072B-EVAL RevB (MB1070), STM32091C-EVAL RevB (MB1169)</li>
+</ul>
+<h2 id="backward-compatibility-5">Backward Compatibility</h2>
+<ul>
+<li>None</li>
+</ul>
+<h2 id="dependencies-5">Dependencies</h2>
+<ul>
+<li>None</li>
+</ul>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section68" aria-hidden="true"> <label for="collapse-section68" aria-hidden="true"><strong>V1.7.0 / 04-November-2016</strong></label>
+<div>
+<h1 id="maintenance-release-12">Maintenance release</h1>
+<h2 id="main-changes-12">Main Changes</h2>
 <ul>
 <li><strong>Projects</strong>
 <ul>
@@ -1956,18 +2482,18 @@
 <li>Change of HAL API for TIM : add AutoReloadPreload capability in TIM handler. Impacts in FreeRTOS examples.</li>
 </ul></li>
 </ul>
-<h2 id="known-limitations-5">Known Limitations</h2>
+<h2 id="known-limitations-6">Known Limitations</h2>
 <ul>
 <li>None</li>
 </ul>
-<h2 id="development-toolchains-and-compilers-5">Development Toolchains and Compilers</h2>
+<h2 id="development-toolchains-and-compilers-6">Development Toolchains and Compilers</h2>
 <ul>
 <li>IAR Embedded Workbench for ARM (EWARM) toolchain V7.60.1 + ST-LINK</li>
 <li>RealView Microcontroller Development Kit (MDK-ARM) toolchain V5.17 + ST-LINK</li>
 <li>Atollic TrueSTUDIO STM32 (TrueSTUDIO) toolchain V5.4.2 + ST-LINK</li>
 <li>System Workbench for STM32 (SW4STM32) toolchain V1.8.0 + ST-LINK</li>
 </ul>
-<h2 id="supported-devices-and-eval-boards-5">Supported Devices and EVAL boards</h2>
+<h2 id="supported-devices-and-eval-boards-6">Supported Devices and EVAL boards</h2>
 <ul>
 <li>All STM32F030, STM32F070, STM32F0x1, STM32F0x2 and STM32F0x8 product lines devices are supported.</li>
 <li>Discovery boards: STM32F072B-Discovery RevC (MB1076), STM32F0308-Discovery RevA (MB1134)</li>
@@ -1975,11 +2501,11 @@
 <li>Nucleo32 boards: STM32F031K6-Nucleo, STM32F042K6-Nucleo RevC (MB1180)</li>
 <li>Evaluation boards: STM32072B-EVAL RevB (MB1070), STM32091C-EVAL RevB (MB1169)</li>
 </ul>
-<h2 id="backward-compatibility-5">Backward Compatibility</h2>
+<h2 id="backward-compatibility-6">Backward Compatibility</h2>
 <ul>
 <li>None</li>
 </ul>
-<h2 id="dependencies-5">Dependencies</h2>
+<h2 id="dependencies-6">Dependencies</h2>
 <ul>
 <li>None</li>
 </ul>
@@ -1988,8 +2514,8 @@
 <div class="collapse">
 <input type="checkbox" id="collapse-section5" aria-hidden="true"> <label for="collapse-section5" aria-hidden="true"><strong>V1.6.0 / 27-May-2016</strong></label>
 <div>
-<h1 id="maintenance-release-12">Maintenance release</h1>
-<h2 id="main-changes-12">Main Changes</h2>
+<h1 id="maintenance-release-13">Maintenance release</h1>
+<h2 id="main-changes-13">Main Changes</h2>
 <ul>
 <li><strong>First official release introducing the STM32Cube LL (Low Layer) APIs for the STM32F0xx series:</strong>
 <ul>
@@ -2332,18 +2858,18 @@
 </ul></li>
 </ul></li>
 </ul>
-<h2 id="known-limitations-6">Known Limitations</h2>
+<h2 id="known-limitations-7">Known Limitations</h2>
 <ul>
 <li>None</li>
 </ul>
-<h2 id="development-toolchains-and-compilers-6">Development Toolchains and Compilers</h2>
+<h2 id="development-toolchains-and-compilers-7">Development Toolchains and Compilers</h2>
 <ul>
 <li>IAR Embedded Workbench for ARM (EWARM) toolchain V7.50.1 + ST-LINK</li>
 <li>RealView Microcontroller Development Kit (MDK-ARM) toolchain V5.17 + ST-LINK</li>
 <li>Atollic TrueSTUDIO STM32 (TrueSTUDIO) toolchain V5.4.2 + ST-LINK</li>
 <li>System Workbench for STM32 (SW4STM32) toolchain V1.8.0 + ST-LINK</li>
 </ul>
-<h2 id="supported-devices-and-eval-boards-6">Supported Devices and EVAL boards</h2>
+<h2 id="supported-devices-and-eval-boards-7">Supported Devices and EVAL boards</h2>
 <ul>
 <li>All STM32F030, STM32F070, STM32F0x1, STM32F0x2 and STM32F0x8 product lines devices are supported.</li>
 <li>Discovery boards: STM32F072B-Discovery RevC (MB1076), STM32F0308-Discovery RevA (MB1134)</li>
@@ -2351,11 +2877,11 @@
 <li>Nucleo32 boards: STM32F031K6-Nucleo, STM32F042K6-Nucleo RevC (MB1180)</li>
 <li>Evaluation boards: STM32072B-EVAL RevB (MB1070), STM32091C-EVAL RevB (MB1169)</li>
 </ul>
-<h2 id="backward-compatibility-6">Backward Compatibility</h2>
+<h2 id="backward-compatibility-7">Backward Compatibility</h2>
 <ul>
 <li>None</li>
 </ul>
-<h2 id="dependencies-6">Dependencies</h2>
+<h2 id="dependencies-7">Dependencies</h2>
 <ul>
 <li>None</li>
 </ul>
@@ -2364,8 +2890,8 @@
 <div class="collapse">
 <input type="checkbox" id="collapse-section4" aria-hidden="true"> <label for="collapse-section4" aria-hidden="true"><strong>V1.5.0 / 29-January-2016</strong></label>
 <div>
-<h1 id="maintenance-release-13">Maintenance release</h1>
-<h2 id="main-changes-13">Main Changes</h2>
+<h1 id="maintenance-release-14">Maintenance release</h1>
+<h2 id="main-changes-14">Main Changes</h2>
 <ul>
 <li><p><strong>Add support of System Workbench for STM32 (SW4STM32) toolchain.</strong></p></li>
 <li><strong>Projects</strong>
@@ -2937,18 +3463,18 @@
 <li>Updated “Liberty” License with the new license “Ultimate Liberty”</li>
 </ul></li>
 </ul>
-<h2 id="known-limitations-7">Known Limitations</h2>
+<h2 id="known-limitations-8">Known Limitations</h2>
 <ul>
 <li>None</li>
 </ul>
-<h2 id="development-toolchains-and-compilers-7">Development Toolchains and Compilers</h2>
+<h2 id="development-toolchains-and-compilers-8">Development Toolchains and Compilers</h2>
 <ul>
 <li>IAR Embedded Workbench for ARM (EWARM) toolchain V7.40.7 + ST-LINK</li>
 <li>RealView Microcontroller Development Kit (MDK-ARM) toolchain V5.17 + ST-LINK</li>
 <li>Atollic TrueSTUDIO STM32 (TrueSTUDIO) toolchain V5.3.1 + ST-LINK</li>
 <li>System Workbench for STM32 (SW4STM32) toolchain V1.6.0 + ST-LINK</li>
 </ul>
-<h2 id="supported-devices-and-eval-boards-7">Supported Devices and EVAL boards</h2>
+<h2 id="supported-devices-and-eval-boards-8">Supported Devices and EVAL boards</h2>
 <ul>
 <li>All STM32F030, STM32F070, STM32F0x1, STM32F0x2 and STM32F0x8 product lines devices are supported.</li>
 <li>Discovery boards: STM32F072B-Discovery RevC (MB1076), STM32F0308-Discovery RevA (MB1134)</li>
@@ -2956,11 +3482,11 @@
 <li>Nucleo32 boards: STM32F031K6-Nucleo, STM32F042K6-Nucleo RevC (MB1180)</li>
 <li>Evaluation boards: STM32072B-EVAL RevB (MB1070), STM32091C-EVAL RevB (MB1169)</li>
 </ul>
-<h2 id="backward-compatibility-7">Backward Compatibility</h2>
+<h2 id="backward-compatibility-8">Backward Compatibility</h2>
 <ul>
 <li>None</li>
 </ul>
-<h2 id="dependencies-7">Dependencies</h2>
+<h2 id="dependencies-8">Dependencies</h2>
 <ul>
 <li>None</li>
 </ul>
@@ -2969,8 +3495,8 @@
 <div class="collapse">
 <input type="checkbox" id="collapse-section3" aria-hidden="true"> <label for="collapse-section3" aria-hidden="true"><strong>V1.4.0 / 11-September-2015</strong></label>
 <div>
-<h1 id="maintenance-release-14">Maintenance release</h1>
-<h2 id="main-changes-14">Main Changes</h2>
+<h1 id="maintenance-release-15">Maintenance release</h1>
+<h2 id="main-changes-15">Main Changes</h2>
 <ul>
 <li><strong>Adding support of 2 new Nucleo 32 boards.</strong>
 <ul>
@@ -2981,11 +3507,11 @@
 <li>Basic examples (GPIO_IOToggle) are provided to easily start new development on these boards.</li>
 <li>A demonstration using the Gravitech 7segments 4digits shield is added to provide sample code on how to display a counter on this shield.</li>
 </ul>
-<h2 id="known-limitations-8">Known Limitations</h2>
+<h2 id="known-limitations-9">Known Limitations</h2>
 <ul>
 <li>None</li>
 </ul>
-<h2 id="development-toolchains-and-compilers-8">Development Toolchains and Compilers</h2>
+<h2 id="development-toolchains-and-compilers-9">Development Toolchains and Compilers</h2>
 <ul>
 <li>IAR Embedded Workbench for ARM (EWARM) toolchain V7.40 + ST-LINK
 <ul>
@@ -2999,13 +3525,13 @@
 </ul></li>
 <li>Atollic TrueSTUDIO STM32 (TrueSTUDIO) toolchain V5.1.1 + ST-LINK</li>
 </ul>
-<h2 id="supported-devices-and-eval-boards-8">Supported Devices and EVAL boards</h2>
+<h2 id="supported-devices-and-eval-boards-9">Supported Devices and EVAL boards</h2>
 <p>All STM32F030, STM32F070, STM32F0x1, STM32F0x2 and STM32F0x8 product lines devices are supported. - STM32F072B-Discovery Board RevB (MB1076) and STM32F0308-Discovery Board RevA (MB1134) - STM32F070RB_Nucleo, STM32F072RB-Nucleo, STM32F091RC-Nucleo and STM32F030R8-Nucleo Board RevC (MB1136) - STM32F031K6-Nucleo and STM32F042K6-Nucleo Board RevC (MB1180) - STM32072B-EVAL Board RevA (MB1070) - STM32091C-EVAL Board RevB (MB1169) - STM32 ST-LINK utility V3.4.0 or later.</p>
-<h2 id="backward-compatibility-8">Backward Compatibility</h2>
+<h2 id="backward-compatibility-9">Backward Compatibility</h2>
 <ul>
 <li>None</li>
 </ul>
-<h2 id="dependencies-8">Dependencies</h2>
+<h2 id="dependencies-9">Dependencies</h2>
 <ul>
 <li>None</li>
 </ul>
@@ -3014,8 +3540,8 @@
 <div class="collapse">
 <input type="checkbox" id="collapse-section1" aria-hidden="true"> <label for="collapse-section1" aria-hidden="true"><strong>V1.3.0 / 26-June-2015</strong></label>
 <div>
-<h1 id="maintenance-release-15">Maintenance release</h1>
-<h2 id="main-changes-15">Main Changes</h2>
+<h1 id="maintenance-release-16">Maintenance release</h1>
+<h2 id="main-changes-16">Main Changes</h2>
 <ul>
 <li><strong>All projects updated following changes in latest version of HAL and Middlewares.</strong></li>
 <li><p><strong>Fix known defects and several enhancements implementation.</strong></p></li>
@@ -3075,11 +3601,11 @@
 <li>Update DMA/ADC examples projects.</li>
 </ul></li>
 </ul>
-<h2 id="known-limitations-9">Known Limitations</h2>
+<h2 id="known-limitations-10">Known Limitations</h2>
 <ul>
 <li>None</li>
 </ul>
-<h2 id="development-toolchains-and-compilers-9">Development Toolchains and Compilers</h2>
+<h2 id="development-toolchains-and-compilers-10">Development Toolchains and Compilers</h2>
 <ul>
 <li>IAR Embedded Workbench for ARM (EWARM) toolchain V7.40 + ST-LINK
 <ul>
@@ -3091,7 +3617,7 @@
 </ul></li>
 <li>Atollic TrueSTUDIO STM32 (TrueSTUDIO) toolchain V5.1.1 + ST-LINK</li>
 </ul>
-<h2 id="supported-devices-and-eval-boards-9">Supported Devices and EVAL boards</h2>
+<h2 id="supported-devices-and-eval-boards-10">Supported Devices and EVAL boards</h2>
 <ul>
 <li>All STM32F030, STM32F70, STM32F0x1, STM32F0x2 and STM32F0x8 product lines devices are supported.</li>
 <li>STM32F072B-Discovery Board RevB (MB1076) and STM32F0308-Discovery Board RevA (MB1134)</li>
@@ -3100,11 +3626,11 @@
 <li>STM32091C-EVAL Board RevB (MB1169)</li>
 <li>STM32 ST-LINK utility V3.4.0 or later.</li>
 </ul>
-<h2 id="backward-compatibility-9">Backward Compatibility</h2>
+<h2 id="backward-compatibility-10">Backward Compatibility</h2>
 <ul>
 <li>None</li>
 </ul>
-<h2 id="dependencies-9">Dependencies</h2>
+<h2 id="dependencies-10">Dependencies</h2>
 <ul>
 <li>None</li>
 </ul>
@@ -3113,8 +3639,8 @@
 <div class="collapse">
 <input type="checkbox" id="collapse-section0" aria-hidden="true"> <label for="collapse-section0" aria-hidden="true"><strong>V1.2.1 / 09-January-2015</strong></label>
 <div>
-<h1 id="maintenance-release-16">Maintenance release</h1>
-<h2 id="main-changes-16">Main Changes</h2>
+<h1 id="maintenance-release-17">Maintenance release</h1>
+<h2 id="main-changes-17">Main Changes</h2>
 <ul>
 <li>Patch release for <strong>STM32F0xx</strong> Value line devices.</li>
 </ul>
@@ -3123,8 +3649,8 @@
 <div class="collapse">
 <input type="checkbox" id="collapse-section100" aria-hidden="true"> <label for="collapse-section100" aria-hidden="true"><strong>V1.2.0 / 05-December-2014</strong></label>
 <div>
-<h1 id="maintenance-release-17">Maintenance release</h1>
-<h2 id="main-changes-17">Main Changes</h2>
+<h1 id="maintenance-release-18">Maintenance release</h1>
+<h2 id="main-changes-18">Main Changes</h2>
 <ul>
 <li>First official release for new F0 devices <strong>STM32F030xC, STM32F070x6/xB.</strong></li>
 <li>Full set of examples/application/demo running for device <strong>STM32F070xB on STM32F070RB-Nucleo board</strong></li>
@@ -3284,8 +3810,8 @@
 <li>Minor correction (compilation warning with HAL_SPI)</li>
 </ul></li>
 </ul>
-<h2 id="contents-4">Contents</h2>
-<h3 id="projects-2">Projects</h3>
+<h2 id="contents-5">Contents</h2>
+<h3 id="projects-3">Projects</h3>
 <table>
 <caption>Projects STM32072B-EVAL</caption>
 <thead>
@@ -3485,11 +4011,11 @@
 </tbody>
 </table>
 <p>Note: in the tables above, project categories <strong>highlighted</strong> have changed since previous release.</p>
-<h2 id="known-limitations-10">Known Limitations</h2>
+<h2 id="known-limitations-11">Known Limitations</h2>
 <ul>
 <li>None</li>
 </ul>
-<h2 id="development-toolchains-and-compilers-10">Development Toolchains and Compilers</h2>
+<h2 id="development-toolchains-and-compilers-11">Development Toolchains and Compilers</h2>
 <ul>
 <li>IAR Embedded Workbench for ARM (EWARM) toolchain V7.10 + ST-LINK
 <ul>
@@ -3501,7 +4027,7 @@
 </ul></li>
 <li>Atollic TrueSTUDIO STM32 (TrueSTUDIO) toolchain V5.1.1 + ST-LINK</li>
 </ul>
-<h2 id="supported-devices-and-eval-boards-10">Supported Devices and EVAL boards</h2>
+<h2 id="supported-devices-and-eval-boards-11">Supported Devices and EVAL boards</h2>
 <ul>
 <li>All STM32F030, STM32F70, STM32F0x1, STM32F0x2 and STM32F0x8 product lines devices are supported</li>
 <li>STM32F072B-Discovery Board RevB (MB1076) and STM32F0308-Discovery Board RevA (MB1134)</li>
@@ -3510,11 +4036,11 @@
 <li>STM32091C-EVAL Board RevB (MB1169)</li>
 <li>STM32 ST-LINK utility V3.4.0 or later.</li>
 </ul>
-<h2 id="backward-compatibility-10">Backward Compatibility</h2>
+<h2 id="backward-compatibility-11">Backward Compatibility</h2>
 <ul>
 <li>None</li>
 </ul>
-<h2 id="dependencies-10">Dependencies</h2>
+<h2 id="dependencies-11">Dependencies</h2>
 <ul>
 <li>None</li>
 </ul>
@@ -3523,8 +4049,8 @@
 <div class="collapse">
 <input type="checkbox" id="collapse-section1000" aria-hidden="true"> <label for="collapse-section1000" aria-hidden="true"><strong>V1.1.0 / 03-October-2014</strong></label>
 <div>
-<h1 id="maintenance-release-18">Maintenance release</h1>
-<h2 id="main-changes-18">Main Changes</h2>
+<h1 id="maintenance-release-19">Maintenance release</h1>
+<h2 id="main-changes-19">Main Changes</h2>
 <p><strong>STM32091C_EVAL</strong>:</p>
 <ul>
 <li>First official release for device <strong>STM32F091xC</strong></li>
@@ -3562,8 +4088,8 @@
 <li>CORTEXM_ModePrivilege replaced by CORTEXM_ProcessStack</li>
 </ul></li>
 </ul>
-<h2 id="contents-5">Contents</h2>
-<h3 id="projects-3">Projects</h3>
+<h2 id="contents-6">Contents</h2>
+<h3 id="projects-4">Projects</h3>
 <table>
 <caption>Projects STM32091C_EVAL</caption>
 <thead>
@@ -3696,17 +4222,17 @@
 </tbody>
 </table>
 <p>Note: in the tables above, project categories highlighted have changed since previous release.</p>
-<h2 id="known-limitations-11">Known Limitations</h2>
+<h2 id="known-limitations-12">Known Limitations</h2>
 <ul>
 <li>None</li>
 </ul>
-<h2 id="development-toolchains-and-compilers-11">Development Toolchains and Compilers</h2>
+<h2 id="development-toolchains-and-compilers-12">Development Toolchains and Compilers</h2>
 <ul>
 <li>IAR Embedded Workbench for ARM (EWARM) toolchain V7.10 + ST-LINK</li>
 <li>RealView Microcontroller Development Kit (MDK-ARM) toolchain V5.10 + ST-LINK</li>
 <li>Atollic TrueSTUDIO STM32 (TrueSTUDIO) toolchain V5.1.1 + ST-LINK</li>
 </ul>
-<h2 id="supported-devices-and-eval-boards-11">Supported Devices and EVAL boards</h2>
+<h2 id="supported-devices-and-eval-boards-12">Supported Devices and EVAL boards</h2>
 <ul>
 <li>All STM32F030, STM32F0x1, STM32F0x2 and STM32F0x8 product lines devices are supported</li>
 <li>STM32F072B-Discovery Board RevB (MB1076) and STM32F0308-Discovery Board RevA (MB1134)</li>
@@ -3715,11 +4241,11 @@
 <li>STM32091C-EVAL Board RevA (MB1169)</li>
 <li>Latest STM32 ST-LINK utility has to be used.</li>
 </ul>
-<h2 id="backward-compatibility-11">Backward Compatibility</h2>
+<h2 id="backward-compatibility-12">Backward Compatibility</h2>
 <ul>
 <li>None</li>
 </ul>
-<h2 id="dependencies-11">Dependencies</h2>
+<h2 id="dependencies-12">Dependencies</h2>
 <ul>
 <li>None</li>
 </ul>
@@ -3728,8 +4254,8 @@
 <div class="collapse">
 <input type="checkbox" id="collapse-section0000" aria-hidden="true"> <label for="collapse-section0000" aria-hidden="true"><strong>V1.0.0 / 18-June-2014</strong></label>
 <div>
-<h1 id="maintenance-release-19">Maintenance release</h1>
-<h2 id="main-changes-19">Main Changes</h2>
+<h1 id="maintenance-release-20">Maintenance release</h1>
+<h2 id="main-changes-20">Main Changes</h2>
 <ul>
 <li><strong>First official release of STM32CubeF0 (STM32Cube for STM32F0 Series)</strong></li>
 </ul>
@@ -3738,8 +4264,8 @@
 <p><strong>STM32f0308-DISCO</strong>: First official release</p>
 <p><strong>STM32F072B-DISCO</strong>: First official release</p>
 <p><strong>STM32F072B-EVAL</strong>: First official release</p>
-<h2 id="contents-6">Contents</h2>
-<h3 id="projects-4">Projects</h3>
+<h2 id="contents-7">Contents</h2>
+<h3 id="projects-5">Projects</h3>
 <table>
 <caption>Projects NUCLEO-F072RB</caption>
 <thead>
@@ -3926,28 +4452,28 @@
 </tbody>
 </table>
 <p>Note: in the tables above, project categories <strong>highlighted</strong> have changed since previous release.</p>
-<h2 id="known-limitations-12">Known Limitations</h2>
+<h2 id="known-limitations-13">Known Limitations</h2>
 <ul>
 <li>None</li>
 </ul>
-<h2 id="development-toolchains-and-compilers-12">Development Toolchains and Compilers</h2>
+<h2 id="development-toolchains-and-compilers-13">Development Toolchains and Compilers</h2>
 <ul>
 <li>IAR Embedded Workbench for ARM (EWARM) toolchain V7.10 + ST-LINK</li>
 <li>RealView Microcontroller Development Kit (MDK-ARM) toolchain V5.10 + ST-LINK</li>
 <li>Atollic TrueSTUDIO STM32 (TrueSTUDIO) toolchain V5.0.0 + ST-LINK</li>
 </ul>
-<h2 id="supported-devices-and-eval-boards-12">Supported Devices and EVAL boards</h2>
+<h2 id="supported-devices-and-eval-boards-13">Supported Devices and EVAL boards</h2>
 <ul>
 <li>All STM32F030, STM32F0x1, STM32F0x2 and STM32F0x8 product lines devices are supported</li>
 <li>STM32F072B-Discovery Board RevB (MB1076) and STM32F0308-Discovery Board RevA (MB1134)</li>
 <li>STM32F072RB-Nucleo and STM32F030R8-Nucleo Board RevC (MB1136)</li>
 <li>STM32072B-EVAL Board RevA (MB1070)</li>
 </ul>
-<h2 id="backward-compatibility-12">Backward Compatibility</h2>
+<h2 id="backward-compatibility-13">Backward Compatibility</h2>
 <ul>
 <li>None</li>
 </ul>
-<h2 id="dependencies-12">Dependencies</h2>
+<h2 id="dependencies-13">Dependencies</h2>
 <ul>
 <li>None</li>
 </ul>

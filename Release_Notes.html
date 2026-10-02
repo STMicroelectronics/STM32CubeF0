@@ -56,10 +56,388 @@
 <div class="col-sm-12 col-lg-8">
 <h1 id="update-history">Update History</h1>
 <div class="collapse">
-<input type="checkbox" id="collapse-section12_6" checked aria-hidden="true"> <label for="collapse-section12_6" aria-hidden="true"><strong>V1.11.6 / 30-January-2026</strong></label>
+<input type="checkbox" id="collapse-section1_12_0" checked aria-hidden="true"> <label for="collapse-section1_12_0" aria-hidden="true"><strong>V1.12.0 / 19-September-2026</strong></label>
 <div>
 <h1 id="maintenance-release">Maintenance release</h1>
 <h2 id="main-changes">Main Changes</h2>
+<ul>
+<li>General updates to fix known defects and enhancements implementation.</li>
+<li>Deliver <strong>SW_Security_Level.md</strong> file to state that STM32F0xx HAL Driver is classified to Security Level Medium.</li>
+<li>Upgrade <strong>USB Device</strong> library to new version <strong>v2.11.6</strong>.</li>
+<li>Upgrade <strong>TouchSensing</strong> library to new version <strong>v2.2.13</strong>.</li>
+<li>Upgrade CMSIS Core to v5.4.0_cm0_no_doc: Documentation based on jQuery 1.7.1 removed.</li>
+<li>Add GPIO_Demo.</li>
+<li><strong>SBOM</strong>
+<ul>
+<li>Deliver SBOM in <a href="sbom_cdx.json">CycloneDX v1.5 format</a>.</li>
+</ul></li>
+<li><strong>CMSIS</strong>
+<ul>
+<li>Remove Unique device ID (UID) register definition from STM32F030x4/x6/x8/xC and STM32F070x6/xB advanced Arm®-based 32-bit MCUs.</li>
+<li>Add support for HSI48 in SystemCoreClockUpdate.</li>
+</ul></li>
+<li><p><strong>HAL</strong></p>
+<ul>
+<li>HAL Generic
+<ul>
+<li>Fixed the TIM1 timebase initialization sequence by registering the callback before starting the timer.</li>
+</ul></li>
+<li>HAL/LL ADC
+<ul>
+<li>Align the __LL_ADC_CALC_TEMPERATURE_TYP_PARAMS() formula with the reference manual.</li>
+<li>Improve the LL_ADC_DeInit() API to avoid an infinite loop in case of timeout.</li>
+</ul></li>
+<li>HAL CAN
+<ul>
+<li>Avoid losing the receive FIFO overrun or full status by using a direct assignment.</li>
+</ul></li>
+<li>HAL CRC
+<ul>
+<li>Improve the performance of the 8-bit CRC handler.</li>
+</ul></li>
+<li>HAL DAC
+<ul>
+<li>Exclude DAC channel 2 callbacks for STM32F051x8 and STM32F058xx devices.</li>
+</ul></li>
+<li>HAL I2C
+<ul>
+<li>Update function HAL_I2C_IsDeviceReady() to take into account the number of trials.</li>
+</ul></li>
+<li>HAL/LL RCC
+<ul>
+<li>Add a void() macro to avoid warnings related to an unused MCOxPrescaler argument.</li>
+</ul></li>
+<li>HAL/LL RTC
+<ul>
+<li>Add an explicit cast in RTC_ByteToBcd2() to avoid an implicit narrowing conversion warning.</li>
+</ul></li>
+<li>HAL SMARTCARD
+<ul>
+<li>Update the configuration sequence to better fit SMARTCARD specifications.</li>
+</ul></li>
+<li>HAL/LL SPI
+<ul>
+<li>Add a note to clarify the behavior of HAL_SPI_Receive() in master mode.</li>
+<li>Avoid a buffer overflow in the FIFO state wait function.</li>
+<li>Add units to physical measurements in the driver documentation.</li>
+<li>Keep the BSY bit high until the end of a data transfer.</li>
+<li>Check the data size before changing the state in the reception API.</li>
+</ul></li>
+<li>HAL/LL TIM
+<ul>
+<li>Fix the complementary channel being systematically disabled by the output compare configuration function.</li>
+<li>Fix the TIM1 timebase initialization sequence by registering the callback before starting the timer.</li>
+<li>Fix the update flag (UIF) clearing in TIM_Base_SetConfig().</li>
+</ul></li>
+<li>HAL/LL UART
+<ul>
+<li>Provide the accurate position in the Rx event callback when Reception-to-Idle mode is used with DMA and the interrupt processing is delayed.</li>
+<li>Fix the transfer count in the DMA linked list.</li>
+<li>Remove the UART disable call from the HAL_UART_DeInit() API.</li>
+<li>Correct references to the wakeup callback and its callback ID define according to series capabilities.</li>
+<li>Fix the transfer count underflow when using polling mode.</li>
+<li>Add the IDLE event notification when using Reception-to-Idle with circular DMA, even when it occurs just after the transfer complete event.</li>
+<li>Correct the DMA Rx abort procedure impact on an ongoing Tx transfer in polling mode.</li>
+<li>Align the UART baud rate macro definitions between LL and HAL.</li>
+</ul></li>
+<li>HAL/LL USB
+<ul>
+<li>Fix the SA0035 driver buffer overflow issues in the USB driver.</li>
+</ul></li>
+<li>HAL/LL Utils
+<ul>
+<li>Remove Unique device ID (UID) register definition from STM32F030x4/x6/x8/xC and STM32F070x6/xB.</li>
+</ul></li>
+</ul></li>
+<li><strong>Middleware</strong>
+<ul>
+<li>Update to use USB Device Library <strong>V2.11.6</strong>.</li>
+<li>Update to use TouchSensing Library <strong>V2.2.13</strong>.</li>
+</ul></li>
+<li><p><strong>Projects</strong></p>
+<ul>
+<li>For the complete list of changes, please refer to the release notes of each firmware component.</li>
+</ul></li>
+</ul>
+<h2 id="contents">Contents</h2>
+<ul>
+<li>The STM32CubeF0 Firmware package comes with a rich set of examples running on STMicroelectronics boards, organized by board and provided with pre-configured projects for the main supported toolchains. The exhaustive list of projects is provided in this table <a href="Projects/STM32CubeProjectsList.html">STM32CubeProjectsList.html</a>.</li>
+<li>Projects release notes
+<ul>
+<li>STM32F030R8-Nucleo
+<ul>
+<li>Applications <a href="Projects\STM32F030R8-Nucleo\Applications\Release_Notes.html">release notes</a></li>
+<li>Demonstrations <a href="Projects\STM32F030R8-Nucleo\Demonstrations\Release_Notes.html">release notes</a></li>
+<li>Examples <a href="Projects\STM32F030R8-Nucleo\Examples\Release_Notes.html">release notes</a></li>
+<li>Templates <a href="Projects\STM32F030R8-Nucleo\Templates\Release_Notes.html">release notes</a></li>
+<li>Templates_LL <a href="Projects\STM32F030R8-Nucleo\Templates_LL\Release_Notes.html">release notes</a></li>
+</ul></li>
+<li>STM32F031K6-Nucleo
+<ul>
+<li>Demonstrations <a href="Projects\STM32F031K6-Nucleo\Demonstrations\Release_Notes.html">release notes</a></li>
+<li>Examples <a href="Projects\STM32F031K6-Nucleo\Examples\Release_Notes.html">release notes</a></li>
+<li>Templates <a href="Projects\STM32F031K6-Nucleo\Templates\Release_Notes.html">release notes</a></li>
+<li>Templates_LL <a href="Projects\STM32F031K6-Nucleo\Templates_LL\Release_Notes.html">release notes</a></li>
+</ul></li>
+<li>STM32F042K6-Nucleo
+<ul>
+<li>Demonstrations <a href="Projects\STM32F042K6-Nucleo\Demonstrations\Release_Notes.html">release notes</a></li>
+<li>Examples <a href="Projects\STM32F042K6-Nucleo\Examples\Release_Notes.html">release notes</a></li>
+<li>Templates <a href="Projects\STM32F042K6-Nucleo\Templates\Release_Notes.html">release notes</a></li>
+<li>Templates_LL <a href="Projects\STM32F042K6-Nucleo\Templates_LL\Release_Notes.html">release notes</a></li>
+</ul></li>
+<li>STM32F070RB-Nucleo
+<ul>
+<li>Applications <a href="Projects\STM32F070RB-Nucleo\Applications\Release_Notes.html">release notes</a></li>
+<li>Demonstrations <a href="Projects\STM32F070RB-Nucleo\Demonstrations\Release_Notes.html">release notes</a></li>
+<li>Examples <a href="Projects\STM32F070RB-Nucleo\Examples\Release_Notes.html">release notes</a></li>
+<li>Templates <a href="Projects\STM32F070RB-Nucleo\Templates\Release_Notes.html">release notes</a></li>
+<li>Templates_LL <a href="Projects\STM32F070RB-Nucleo\Templates_LL\Release_Notes.html">release notes</a></li>
+</ul></li>
+<li>STM32F072B-Discovery
+<ul>
+<li>Applications <a href="Projects\STM32F072B-Discovery\Applications\Release_Notes.html">release notes</a></li>
+<li>Demonstrations <a href="Projects\STM32F072B-Discovery\Demonstrations\Release_Notes.html">release notes</a></li>
+<li>Examples <a href="Projects\STM32F072B-Discovery\Examples\Release_Notes.html">release notes</a></li>
+<li>Templates <a href="Projects\STM32F072B-Discovery\Templates\Release_Notes.html">release notes</a></li>
+<li>Templates_LL <a href="Projects\STM32F072B-Discovery\Templates_LL\Release_Notes.html">release notes</a></li>
+</ul></li>
+<li>STM32F072RB-Nucleo
+<ul>
+<li>Applications <a href="Projects\STM32F072RB-Nucleo\Applications\Release_Notes.html">release notes</a></li>
+<li>Demonstrations <a href="Projects\STM32F072RB-Nucleo\Demonstrations\Release_Notes.html">release notes</a></li>
+<li>Examples <a href="Projects\STM32F072RB-Nucleo\Examples\Release_Notes.html">release notes</a></li>
+<li>Examples_LL <a href="Projects\STM32F072RB-Nucleo\Examples_LL\Release_Notes.html">release notes</a></li>
+<li>Examples_MIX <a href="Projects\STM32F072RB-Nucleo\Examples_MIX\Release_Notes.html">release notes</a></li>
+<li>Templates <a href="Projects\STM32F072RB-Nucleo\Templates\Release_Notes.html">release notes</a></li>
+<li>Templates_LL <a href="Projects\STM32F072RB-Nucleo\Templates_LL\Release_Notes.html">release notes</a></li>
+</ul></li>
+<li>STM32F091RC-Nucleo
+<ul>
+<li>Applications <a href="Projects\STM32F091RC-Nucleo\Applications\Release_Notes.html">release notes</a></li>
+<li>Demonstrations <a href="Projects\STM32F091RC-Nucleo\Demonstrations\Release_Notes.html">release notes</a></li>
+<li>Examples <a href="Projects\STM32F091RC-Nucleo\Examples\Release_Notes.html">release notes</a></li>
+<li>Templates <a href="Projects\STM32F091RC-Nucleo\Templates\Release_Notes.html">release notes</a></li>
+<li>Templates_LL <a href="Projects\STM32F091RC-Nucleo\Templates_LL\Release_Notes.html">release notes</a></li>
+</ul></li>
+<li>STM32F0308-Discovery
+<ul>
+<li>Applications <a href="Projects\STM32F0308-Discovery\Applications\Release_Notes.html">release notes</a></li>
+<li>Demonstrations <a href="Projects\STM32F0308-Discovery\Demonstrations\Release_Notes.html">release notes</a></li>
+<li>Examples <a href="Projects\STM32F0308-Discovery\Examples\Release_Notes.html">release notes</a></li>
+<li>Templates <a href="Projects\STM32F0308-Discovery\Templates\Release_Notes.html">release notes</a></li>
+<li>Templates_LL <a href="Projects\STM32F0308-Discovery\Templates_LL\Release_Notes.html">release notes</a></li>
+</ul></li>
+<li>STM32072B_EVAL
+<ul>
+<li>Applications <a href="Projects\STM32072B_EVAL\Applications\Release_Notes.html">release notes</a></li>
+<li>Examples <a href="Projects\STM32072B_EVAL\Examples\Release_Notes.html">release notes</a></li>
+<li>Templates <a href="Projects\STM32072B_EVAL\Templates\Release_Notes.html">release notes</a></li>
+<li>Templates_LL <a href="Projects\STM32072B_EVAL\Templates_LL\Release_Notes.html">release notes</a></li>
+</ul></li>
+<li>STM32091C_EVAL
+<ul>
+<li>Applications <a href="Projects\STM32091C_EVAL\Applications\Release_Notes.html">release notes</a></li>
+<li>Demonstrations <a href="Projects\STM32091C_EVAL\Demonstrations\Release_Notes.html">release notes</a></li>
+<li>Examples <a href="Projects\STM32091C_EVAL\Examples\Release_Notes.html">release notes</a></li>
+<li>Templates <a href="Projects\STM32091C_EVAL\Templates\Release_Notes.html">release notes</a></li>
+<li>Templates_LL <a href="Projects\STM32091C_EVAL\Templates_LL\Release_Notes.html">release notes</a></li>
+</ul></li>
+</ul>
+<table>
+<caption>Drivers</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: center;">Version</th>
+<th style="text-align: center;">Release note</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>CMSIS</strong></td>
+<td style="text-align: center;"><strong>v5.4.0_cm0_no_doc</strong></td>
+<td style="text-align: center;"><a href="Drivers/CMSIS/st_readme.txt">release notes</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>STM32F0xx CMSIS</strong></td>
+<td style="text-align: center;"><strong>V2.3.8</strong></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/cmsis-device-f0/blob/master/Release_Notes.html">release notes</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>STM32F0xx HAL</strong></td>
+<td style="text-align: center;"><strong>V1.7.9</strong></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32f0xx-hal-driver/blob/master/Release_Notes.html">release notes</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">BSP STM32091C_EVAL</td>
+<td style="text-align: center;">V2.0.8</td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32091c-eval-bsp/blob/main/Release_Notes.html">release notes</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">BSP STM32072B_EVAL</td>
+<td style="text-align: center;">V2.1.9</td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32072b-eval-bsp/blob/main/Release_Notes.html">release notes</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">BSP STM32F072B-Discovery</td>
+<td style="text-align: center;">V2.1.8</td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/32f072bdiscovery-bsp/blob/main/Release_Notes.html">release notes</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">BSP STM32F0308-Discovery</td>
+<td style="text-align: center;">V2.0.6</td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/32f0308discovery-bsp/blob/main/Release_Notes.html">release notes</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">BSP STM32F0xx-Nucleo</td>
+<td style="text-align: center;">V1.1.7</td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32f0xx-nucleo-bsp/blob/main/Release_Notes.html">release notes</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">BSP STM32F0xx_Nucleo_32</td>
+<td style="text-align: center;">V1.0.5</td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32f0xx-nucleo-32-bsp/blob/main/Release_Notes.html">release notes</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">BSP Components Common</td>
+<td style="text-align: center;">V4.0.1</td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-bsp-common/blob/v4.0.1/Release_Notes.html">release notes</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">BSP Components l3gd20</td>
+<td style="text-align: center;">V2.0.0</td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-l3gd20/blob/v2.0.0/Release_Notes.html">release notes</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">BSP Components hx8347d</td>
+<td style="text-align: center;">V1.1.1</td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-hx8347d/blob/v1.1.1/Release_Notes.html">release notes</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">BSP Components spfd5408</td>
+<td style="text-align: center;">V1.1.1</td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-spfd5408/blob/v1.1.1/Release_Notes.html">release notes</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">BSP Components st7735</td>
+<td style="text-align: center;">V1.1.1</td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-st7735/blob/v1.1.1/Release_Notes.html">release notes</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">BSP Components stlm75</td>
+<td style="text-align: center;">V1.0.2</td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-stlm75/blob/v1.0.2/Release_Notes.html">release notes</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">BSP Adafruit_Shield</td>
+<td style="text-align: center;">V2.0.1</td>
+<td style="text-align: center;"><a href="Drivers/BSP/Adafruit_Shield/Release_Notes.html">release notes</a></td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Middlewares</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: center;">Version</th>
+<th style="text-align: center;">Release note</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>STM32 USB Device Library</strong></td>
+<td style="text-align: center;"><strong>V2.11.6</strong></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-mw-usb-device/blob/v2.11.6/Release_Notes.html">release notes</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>STM32 TouchSensing Library</strong></td>
+<td style="text-align: center;"><strong>V2.2.13</strong></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-mw-touchsensing/blob/v2.2.13/Release_Notes.html">release notes</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">FatFS</td>
+<td style="text-align: center;">R0.11</td>
+<td style="text-align: center;"><a href="https://github.com/STMicroelectronics/stm32-mw-fatfs/blob/r0.11_stm32cube_20150508/doc/updates.txt">release notes</a> ST modified 20150508 <a href="https://github.com/STMicroelectronics/stm32-mw-fatfs/blob/r0.11_stm32cube_20150508/src/st_readme.txt">release notes</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">FreeRTOS</td>
+<td style="text-align: center;">V10.0.1</td>
+<td style="text-align: center;"><a href="https://github.com/STMicroelectronics/stm32-mw-freertos/blob/v10.0.1_20190329/Source/readme.txt">release notes</a> ST modified 20190329 <a href="https://github.com/STMicroelectronics/stm32-mw-freertos/blob/v10.0.1_20190329/Source/st_readme.txt">release notes</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STemWin Library</td>
+<td style="text-align: center;">V5.32</td>
+<td style="text-align: center;"><a href="Middlewares/ST/STemWin/Release_Notes.html">release notes</a> ST modified 20160205</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Utilities</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: center;">Version</th>
+<th style="text-align: center;">Release note</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">CPU</td>
+<td style="text-align: center;">V1.1.0</td>
+<td style="text-align: center;"><a href="Utilities/CPU/Release_Notes.html">release notes</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Fonts</td>
+<td style="text-align: center;">V1.0.0</td>
+<td style="text-align: center;"><a href="Utilities/Fonts/Release_Notes.html">release notes</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Log</td>
+<td style="text-align: center;">V1.0.0</td>
+<td style="text-align: center;"><a href="Utilities/Log/Release_Notes.html">release notes</a></td>
+</tr>
+</tbody>
+</table></li>
+</ul>
+<h2 id="known-limitations">Known Limitations</h2>
+<ul>
+<li>None</li>
+</ul>
+<h2 id="development-toolchains-and-compilers">Development Toolchains and Compilers</h2>
+<ul>
+<li>IAR Embedded Workbench for ARM (EWARM) toolchain <strong>V8.50.9</strong>+ ST-Link</li>
+<li>RealView Microcontroller Development Kit (MDK-ARM) toolchain <strong>V5.38</strong> (or upper) + ST-LINK, pack available here:
+<ul>
+<li><a href="https://www.keil.com/dd2/Pack/">www.keil.com/dd2/Pack/</a> (Section : STMicroelectronics STM32F0 Series Device Support)</li>
+<li>Only template projects are migrated to Arm Compiler 6 with MDK-ARM 5.31 (“AC-like Warnings” mode).</li>
+</ul></li>
+<li>System Workbench for STM32 (SW4STM32) (7-2018-q2-update) toolchain <strong>V2.9.0</strong> + ST-Link</li>
+</ul>
+<h2 id="supported-devices-and-eval-boards">Supported Devices and EVAL boards</h2>
+<ul>
+<li>All STM32F030, STM32F070, STM32F0x1, STM32F0x2 and STM32F0x8 product lines devices are supported.</li>
+<li>Discovery boards: STM32F072B-Discovery RevC (MB1076), STM32F0308-Discovery RevA (MB1134)</li>
+<li>Nucleo boards: STM32F070RB_Nucleo, STM32F072RB-Nucleo, STM32F091RC-Nucleo, STM32F030R8-Nucleo RevC (MB1136)</li>
+<li>Nucleo32 boards: STM32F031K6-Nucleo, STM32F042K6-Nucleo RevC (MB1180)</li>
+<li>Evaluation boards: STM32072B-EVAL RevB (MB1070), STM32091C-EVAL RevB (MB1169)</li>
+</ul>
+<h2 id="backward-compatibility">Backward Compatibility</h2>
+<ul>
+<li>None</li>
+</ul>
+<h2 id="dependencies">Dependencies</h2>
+<ul>
+<li>None</li>
+</ul>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section12_6" aria-hidden="true"> <label for="collapse-section12_6" aria-hidden="true"><strong>V1.11.6 / 30-January-2026</strong></label>
+<div>
+<h1 id="maintenance-release-1">Maintenance release</h1>
+<h2 id="main-changes-1">Main Changes</h2>
 <ul>
 <li>Patch release to deliver the SBOM in CycloneDX v1.5 format and the SW_Security_Level.md file to indicate the STM32CubeFW software security level.</li>
 <li>SLA0044 Legal terms updated to latest revision (Rev 6 / October 2025)</li>
@@ -71,8 +449,8 @@
 <div class="collapse">
 <input type="checkbox" id="collapse-section11_5" aria-hidden="true"> <label for="collapse-section11_5" aria-hidden="true"><strong>V1.11.5 / 29-March-2024</strong></label>
 <div>
-<h1 id="maintenance-release-1">Maintenance release</h1>
-<h2 id="main-changes-1">Main Changes</h2>
+<h1 id="maintenance-release-2">Maintenance release</h1>
+<h2 id="main-changes-2">Main Changes</h2>
 <ul>
 <li><p>Patch release to fix known defects and enhancements implementation.</p></li>
 <li><strong>HAL</strong> updates
@@ -213,17 +591,17 @@
 <tr class="even">
 <td style="text-align: left;"><strong>BSP Components i3g4250d</strong></td>
 <td style="text-align: center;"><strong>V1.0.1</strong></td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-i3g4250d/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-i3g4250d/blob/v1.0.1/Release_Notes.html">release notes</a></td>
 </tr>
 </tbody>
 </table>
 <p><br />
 </p>
-<h2 id="known-limitations">Known Limitations</h2>
+<h2 id="known-limitations-1">Known Limitations</h2>
 <ul>
 <li>None</li>
 </ul>
-<h2 id="development-toolchains-and-compilers">Development Toolchains and Compilers</h2>
+<h2 id="development-toolchains-and-compilers-1">Development Toolchains and Compilers</h2>
 <ul>
 <li>IAR Embedded Workbench for ARM (EWARM) toolchain <strong>V8.50.9</strong>+ ST-Link</li>
 <li>RealView Microcontroller Development Kit (MDK-ARM) toolchain <strong>V5.38</strong> (or upper) + ST-LINK, pack available here:
@@ -233,7 +611,7 @@
 </ul></li>
 <li>System Workbench for STM32 (SW4STM32) (7-2018-q2-update) toolchain <strong>V2.9.0</strong> + ST-Link</li>
 </ul>
-<h2 id="supported-devices-and-eval-boards">Supported Devices and EVAL boards</h2>
+<h2 id="supported-devices-and-eval-boards-1">Supported Devices and EVAL boards</h2>
 <ul>
 <li>All STM32F030, STM32F070, STM32F0x1, STM32F0x2 and STM32F0x8 product lines devices are supported.</li>
 <li>Discovery boards: STM32F072B-Discovery RevC (MB1076), STM32F0308-Discovery RevA (MB1134)</li>
@@ -241,11 +619,11 @@
 <li>Nucleo32 boards: STM32F031K6-Nucleo, STM32F042K6-Nucleo RevC (MB1180)</li>
 <li>Evaluation boards: STM32072B-EVAL RevB (MB1070), STM32091C-EVAL RevB (MB1169)</li>
 </ul>
-<h2 id="backward-compatibility">Backward Compatibility</h2>
+<h2 id="backward-compatibility-1">Backward Compatibility</h2>
 <ul>
 <li>None</li>
 </ul>
-<h2 id="dependencies">Dependencies</h2>
+<h2 id="dependencies-1">Dependencies</h2>
 <ul>
 <li>None</li>
 </ul>
@@ -254,8 +632,8 @@
 <div class="collapse">
 <input type="checkbox" id="collapse-section11_4" aria-hidden="true"> <label for="collapse-section11_4" aria-hidden="true"><strong>V1.11.4 / 27-January-2023</strong></label>
 <div>
-<h1 id="maintenance-release-2">Maintenance release</h1>
-<h2 id="main-changes-2">Main Changes</h2>
+<h1 id="maintenance-release-3">Maintenance release</h1>
+<h2 id="main-changes-3">Main Changes</h2>
 <ul>
 <li>Patch release to fix known defects and enhancements implementation.</li>
 <li>All source files: update disclaimer to add reference to the new license agreement.<br />
@@ -509,11 +887,11 @@
 </table>
 <p><br />
 </p>
-<h2 id="known-limitations-1">Known Limitations</h2>
+<h2 id="known-limitations-2">Known Limitations</h2>
 <ul>
 <li>None</li>
 </ul>
-<h2 id="development-toolchains-and-compilers-1">Development Toolchains and Compilers</h2>
+<h2 id="development-toolchains-and-compilers-2">Development Toolchains and Compilers</h2>
 <ul>
 <li>IAR Embedded Workbench for ARM (EWARM) toolchain <strong>V8.40.2</strong>+ ST-Link</li>
 <li>RealView Microcontroller Development Kit (MDK-ARM) toolchain V5.31 (or upper) + ST-LINK, pack available here:
@@ -523,7 +901,7 @@
 </ul></li>
 <li>System Workbench for STM32 (SW4STM32) (7-2018-q2-update) toolchain <strong>V2.9.0</strong> + ST-Link</li>
 </ul>
-<h2 id="supported-devices-and-eval-boards-1">Supported Devices and EVAL boards</h2>
+<h2 id="supported-devices-and-eval-boards-2">Supported Devices and EVAL boards</h2>
 <ul>
 <li>All STM32F030, STM32F070, STM32F0x1, STM32F0x2 and STM32F0x8 product lines devices are supported.</li>
 <li>Discovery boards: STM32F072B-Discovery RevC (MB1076), STM32F0308-Discovery RevA (MB1134)</li>
@@ -531,11 +909,11 @@
 <li>Nucleo32 boards: STM32F031K6-Nucleo, STM32F042K6-Nucleo RevC (MB1180)</li>
 <li>Evaluation boards: STM32072B-EVAL RevB (MB1070), STM32091C-EVAL RevB (MB1169)</li>
 </ul>
-<h2 id="backward-compatibility-1">Backward Compatibility</h2>
+<h2 id="backward-compatibility-2">Backward Compatibility</h2>
 <ul>
 <li>None</li>
 </ul>
-<h2 id="dependencies-1">Dependencies</h2>
+<h2 id="dependencies-2">Dependencies</h2>
 <ul>
 <li>None</li>
 </ul>
@@ -544,8 +922,8 @@
 <div class="collapse">
 <input type="checkbox" id="collapse-section11_3"  aria-hidden="true"> <label for="collapse-section11_3" aria-hidden="true"><strong>V1.11.3 / 23-July-2021</strong></label>
 <div>
-<h1 id="maintenance-release-3">Maintenance release</h1>
-<h2 id="main-changes-3">Main Changes</h2>
+<h1 id="maintenance-release-4">Maintenance release</h1>
+<h2 id="main-changes-4">Main Changes</h2>
 <ul>
 <li><p>Patch release to fix known defects and enhancements implementation.</p></li>
 <li><strong>CMSIS</strong> updates
@@ -655,7 +1033,7 @@
 </ul></li>
 <li><p>For the complete list of changes, please refer to the release notes of each firmware component</p></li>
 </ul>
-<h2 id="contents">Contents</h2>
+<h2 id="contents-1">Contents</h2>
 <ul>
 <li>The STM32CubeF0 Firmware package comes with a rich set of examples running on STMicroelectronics boards, organized by board and provided with pre-configured projects for the main supported toolchains. The exhaustive list of projects is provided in this table <a href="Projects/STM32CubeProjectsList.html">STM32CubeProjectsList.html</a>.</li>
 <li>Projects release notes
@@ -741,7 +1119,7 @@
 </ul></li>
 </ul></li>
 </ul>
-<h2 id="contents-1">Contents</h2>
+<h2 id="contents-2">Contents</h2>
 <table>
 <caption>Drivers</caption>
 <thead>
@@ -770,7 +1148,7 @@
 <tr class="even">
 <td style="text-align: left;">BSP Components i3g4250d</td>
 <td style="text-align: center;">V1.0.0</td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-i3g4250d/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-i3g4250d/blob/v1.0.1/Release_Notes.html">release notes</a></td>
 </tr>
 </tbody>
 </table>
@@ -779,8 +1157,8 @@
 <div class="collapse">
 <input type="checkbox" id="collapse-section11_2"  aria-hidden="true"> <label for="collapse-section11_2" aria-hidden="true"><strong>V1.11.2 / 06-November-2020</strong></label>
 <div>
-<h1 id="maintenance-release-4">Maintenance release</h1>
-<h2 id="main-changes-4">Main Changes</h2>
+<h1 id="maintenance-release-5">Maintenance release</h1>
+<h2 id="main-changes-5">Main Changes</h2>
 <ul>
 <li>Patch release to fix known defects and enhancements implementation.</li>
 <li>Remove “register” keyword to be compliant with new C++ rules:
@@ -927,7 +1305,7 @@
 </ul></li>
 <li><p>For the complete list of changes, please refer to the release notes of each firmware component</p></li>
 </ul>
-<h2 id="contents-2">Contents</h2>
+<h2 id="contents-3">Contents</h2>
 <ul>
 <li>The STM32CubeF0 Firmware package comes with a rich set of examples running on STMicroelectronics boards, organized by board and provided with pre-configured projects for the main supported toolchains. The exhaustive list of projects is provided in this table <a href="Projects/STM32CubeProjectsList.html">STM32CubeProjectsList.html</a>.</li>
 <li>Projects release notes
@@ -1013,7 +1391,7 @@
 </ul></li>
 </ul></li>
 </ul>
-<h2 id="contents-3">Contents</h2>
+<h2 id="contents-4">Contents</h2>
 <table>
 <caption>Drivers</caption>
 <thead>
@@ -1042,7 +1420,7 @@
 <tr class="even">
 <td style="text-align: left;"><strong>BSP Components i3g4250d</strong></td>
 <td style="text-align: center;"><strong>V1.0.0</strong></td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-i3g4250d/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-i3g4250d/blob/v1.0.1/Release_Notes.html">release notes</a></td>
 </tr>
 </tbody>
 </table>
@@ -1051,8 +1429,8 @@
 <div class="collapse">
 <input type="checkbox" id="collapse-section11_1"  aria-hidden="true"> <label for="collapse-section11_1" aria-hidden="true"><strong>V1.11.1 / 24-July-2020</strong></label>
 <div>
-<h1 id="maintenance-release-5">Maintenance release</h1>
-<h2 id="main-changes-5">Main Changes</h2>
+<h1 id="maintenance-release-6">Maintenance release</h1>
+<h2 id="main-changes-6">Main Changes</h2>
 <ul>
 <li><p>Patch release to fix known defects and enhancements implementation</p></li>
 <li><strong>HAL</strong>
@@ -1089,7 +1467,7 @@
 </ul></li>
 <li><p>For the complete list of changes, please refer to the release notes of each firmware component</p></li>
 </ul>
-<h2 id="contents-4">Contents</h2>
+<h2 id="contents-5">Contents</h2>
 <table>
 <caption>Drivers</caption>
 <thead>
@@ -1112,8 +1490,8 @@
 <div class="collapse">
 <input type="checkbox" id="collapse-section1_11_0" aria-hidden="true"> <label for="collapse-section1_11_0" aria-hidden="true"><strong>V1.11.0 / 12-September-2019</strong></label>
 <div>
-<h1 id="maintenance-release-6">Maintenance release</h1>
-<h2 id="main-changes-6">Main Changes</h2>
+<h1 id="maintenance-release-7">Maintenance release</h1>
+<h2 id="main-changes-7">Main Changes</h2>
 <ul>
 <li>General updates to fix known defects and enhancements implementation</li>
 <li>Add support of HAL callback registration feature</li>
@@ -1194,7 +1572,7 @@
 </ul></li>
 <li><p>For the complete list of changes, please refer to the release notes of each firmware component</p></li>
 </ul>
-<h2 id="contents-5">Contents</h2>
+<h2 id="contents-6">Contents</h2>
 <ul>
 <li>The STM32CubeF0 Firmware package comes with a rich set of examples running on STMicroelectronics boards, organized by board and provided with pre-configured projects for the main supported toolchains. The exhaustive list of projects is provided in this table <a href="Projects/STM32CubeProjectsList.html">STM32CubeProjectsList.html</a>.</li>
 <li>Projects release notes
@@ -1292,7 +1670,7 @@
 <tr class="odd">
 <td style="text-align: left;"><strong>CMSIS</strong></td>
 <td style="text-align: center;"><strong>V5.4.0</strong></td>
-<td style="text-align: center;"><a href="Drivers/CMSIS/docs/General/html/index.html">release notes</a></td>
+<td style="text-align: center;"><a href="Drivers/CMSIS/st_readme.txt">release notes</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><strong>STM32F0xx CMSIS</strong></td>
@@ -1337,32 +1715,32 @@
 <tr class="even">
 <td style="text-align: left;">BSP Components Common</td>
 <td style="text-align: center;">V4.0.1</td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-bsp-common/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-bsp-common/blob/v4.0.1/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">BSP Components l3gd20</td>
 <td style="text-align: center;">V2.0.0</td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-l3gd20/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-l3gd20/blob/v2.0.0/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">BSP Components hx8347d</td>
 <td style="text-align: center;">V1.1.1</td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-hx8347d/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-hx8347d/blob/v1.1.1/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">BSP Components spfd5408</td>
 <td style="text-align: center;">V1.1.1</td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-spfd5408/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-spfd5408/blob/v1.1.1/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">BSP Components st7735</td>
 <td style="text-align: center;">V1.1.1</td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-st7735/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-st7735/blob/v1.1.1/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">BSP Components stlm75</td>
 <td style="text-align: center;">V1.0.2</td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-stlm75/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-stlm75/blob/v1.0.2/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">BSP Adafruit_Shield</td>
@@ -1384,22 +1762,22 @@
 <tr class="odd">
 <td style="text-align: left;"><strong>STM32 USB Device Library</strong></td>
 <td style="text-align: center;"><strong>V2.5.3</strong></td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-mw-usb-device/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-mw-usb-device/blob/v2.11.6/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><strong>STM32 TouchSensing Library</strong></td>
 <td style="text-align: center;"><strong>V2.2.4</strong></td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-mw-touchsensing/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-mw-touchsensing/blob/v2.2.13/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">FatFS</td>
 <td style="text-align: center;">R0.11</td>
-<td style="text-align: center;"><a href="https://github.com/STMicroelectronics/stm32-mw-fatfs/blob/TAG_stm32cube_DATE/doc/updates.txt">release notes</a> ST modified 20150508 <a href="https://github.com/STMicroelectronics/stm32-mw-fatfs/blob/TAG_stm32cube_DATE/src/st_readme.txt">release notes</a></td>
+<td style="text-align: center;"><a href="https://github.com/STMicroelectronics/stm32-mw-fatfs/blob/r0.11_stm32cube_20150508/doc/updates.txt">release notes</a> ST modified 20150508 <a href="https://github.com/STMicroelectronics/stm32-mw-fatfs/blob/r0.11_stm32cube_20150508/src/st_readme.txt">release notes</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><strong>FreeRTOS</strong></td>
 <td style="text-align: center;"><strong>V10.0.1</strong></td>
-<td style="text-align: center;"><a href="https://github.com/STMicroelectronics/stm32-mw-freertos/blob/TAG_DATE/Source/readme.txt">release notes</a> <strong>ST modified 20190329</strong> <a href="https://github.com/STMicroelectronics/stm32-mw-freertos/blob/TAG_DATE/Source/st_readme.txt">release notes</a></td>
+<td style="text-align: center;"><a href="https://github.com/STMicroelectronics/stm32-mw-freertos/blob/v10.0.1_20190329/Source/readme.txt">release notes</a> <strong>ST modified 20190329</strong> <a href="https://github.com/STMicroelectronics/stm32-mw-freertos/blob/v10.0.1_20190329/Source/st_readme.txt">release notes</a></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">STemWin Library</td>
@@ -1436,17 +1814,17 @@
 </tbody>
 </table></li>
 </ul>
-<h2 id="known-limitations-2">Known Limitations</h2>
+<h2 id="known-limitations-3">Known Limitations</h2>
 <ul>
 <li>None</li>
 </ul>
-<h2 id="development-toolchains-and-compilers-2">Development Toolchains and Compilers</h2>
+<h2 id="development-toolchains-and-compilers-3">Development Toolchains and Compilers</h2>
 <ul>
 <li>IAR Embedded Workbench for ARM (EWARM) toolchain <strong>V8.22.2</strong> + ST-LINK</li>
 <li>RealView Microcontroller Development Kit (MDK-ARM) toolchain <strong>V5.26</strong> + ST-LINK</li>
 <li>System Workbench for STM32 (SW4STM32) toolchain <strong>V2.9</strong> + ST-LINK</li>
 </ul>
-<h2 id="supported-devices-and-eval-boards-2">Supported Devices and EVAL boards</h2>
+<h2 id="supported-devices-and-eval-boards-3">Supported Devices and EVAL boards</h2>
 <ul>
 <li>All STM32F030, STM32F070, STM32F0x1, STM32F0x2 and STM32F0x8 product lines devices are supported.</li>
 <li>Discovery boards: STM32F072B-Discovery RevC (MB1076), STM32F0308-Discovery RevA (MB1134)</li>
@@ -1454,11 +1832,11 @@
 <li>Nucleo32 boards: STM32F031K6-Nucleo, STM32F042K6-Nucleo RevC (MB1180)</li>
 <li>Evaluation boards: STM32072B-EVAL RevB (MB1070), STM32091C-EVAL RevB (MB1169)</li>
 </ul>
-<h2 id="backward-compatibility-2">Backward Compatibility</h2>
+<h2 id="backward-compatibility-3">Backward Compatibility</h2>
 <ul>
 <li>None</li>
 </ul>
-<h2 id="dependencies-2">Dependencies</h2>
+<h2 id="dependencies-3">Dependencies</h2>
 <ul>
 <li>None</li>
 </ul>
@@ -1467,8 +1845,8 @@
 <div class="collapse">
 <input type="checkbox" id="collapse-section10_1" aria-hidden="true"> <label for="collapse-section10_1" aria-hidden="true"><strong>V1.10.1 / 09-May-2019</strong></label>
 <div>
-<h1 id="maintenance-release-7">Maintenance release</h1>
-<h2 id="main-changes-7">Main Changes</h2>
+<h1 id="maintenance-release-8">Maintenance release</h1>
+<h2 id="main-changes-8">Main Changes</h2>
 <ul>
 <li><p>Fix known defects and several enhancements implementation.</p></li>
 <li><strong>HAL</strong>
@@ -1477,7 +1855,7 @@
 </ul></li>
 </ul>
 <p>For the complete list of changes, please refer to the release notes of each firmware component</p>
-<h2 id="contents-6">Contents</h2>
+<h2 id="contents-7">Contents</h2>
 <ul>
 <li>The STM32CubeF0 Firmware package comes with a rich set of examples running on STMicroelectronics boards, organized by board and provided with pre-configured projects for the main supported toolchains. The exhaustive list of projects is provided in this table <a href="Projects/STM32CubeProjectsList.html">STM32CubeProjectsList.html</a>.</li>
 <li>Projects release notes
@@ -1620,32 +1998,32 @@
 <tr class="even">
 <td style="text-align: left;">BSP Components Common</td>
 <td style="text-align: center;">V4.0.1</td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-bsp-common/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-bsp-common/blob/v4.0.1/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">BSP Components l3gd20</td>
 <td style="text-align: center;">V2.0.0</td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-l3gd20/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-l3gd20/blob/v2.0.0/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">BSP Components hx8347d</td>
 <td style="text-align: center;">V1.1.1</td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-hx8347d/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-hx8347d/blob/v1.1.1/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">BSP Components spfd5408</td>
 <td style="text-align: center;">V1.1.1</td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-spfd5408/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-spfd5408/blob/v1.1.1/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">BSP Components st7735</td>
 <td style="text-align: center;">V1.1.1</td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-st7735/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-st7735/blob/v1.1.1/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">BSP Components stlm75</td>
 <td style="text-align: center;">V1.0.1</td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-stlm75/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-stlm75/blob/v1.0.2/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">BSP Adafruit_Shield</td>
@@ -1667,22 +2045,22 @@
 <tr class="odd">
 <td style="text-align: left;">STM32 USB Device Library</td>
 <td style="text-align: center;">V2.4.2</td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-mw-usb-device/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-mw-usb-device/blob/v2.11.6/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">STM32 TouchSensing Library</td>
 <td style="text-align: center;">V2.2.0</td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-mw-touchsensing/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-mw-touchsensing/blob/v2.2.13/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">FatFS</td>
 <td style="text-align: center;">R0.11</td>
-<td style="text-align: center;"><a href="https://github.com/STMicroelectronics/stm32-mw-fatfs/blob/TAG_stm32cube_DATE/doc/updates.txt">release notes</a> ST modified 20150508 <a href="https://github.com/STMicroelectronics/stm32-mw-fatfs/blob/TAG_stm32cube_DATE/src/st_readme.txt">release notes</a></td>
+<td style="text-align: center;"><a href="https://github.com/STMicroelectronics/stm32-mw-fatfs/blob/r0.11_stm32cube_20150508/doc/updates.txt">release notes</a> ST modified 20150508 <a href="https://github.com/STMicroelectronics/stm32-mw-fatfs/blob/r0.11_stm32cube_20150508/src/st_readme.txt">release notes</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">FreeRTOS</td>
 <td style="text-align: center;">V9.0.0</td>
-<td style="text-align: center;"><a href="https://github.com/STMicroelectronics/stm32-mw-freertos/blob/TAG_DATE/Source/readme.txt">release notes</a> ST modified 20170303 <a href="https://github.com/STMicroelectronics/stm32-mw-freertos/blob/TAG_DATE/Source/st_readme.txt">release notes</a></td>
+<td style="text-align: center;"><a href="https://github.com/STMicroelectronics/stm32-mw-freertos/blob/v10.0.1_20190329/Source/readme.txt">release notes</a> ST modified 20170303 <a href="https://github.com/STMicroelectronics/stm32-mw-freertos/blob/v10.0.1_20190329/Source/st_readme.txt">release notes</a></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">STemWin Library</td>
@@ -1719,17 +2097,17 @@
 </tbody>
 </table></li>
 </ul>
-<h2 id="known-limitations-3">Known Limitations</h2>
+<h2 id="known-limitations-4">Known Limitations</h2>
 <ul>
 <li>None</li>
 </ul>
-<h2 id="development-toolchains-and-compilers-3">Development Toolchains and Compilers</h2>
+<h2 id="development-toolchains-and-compilers-4">Development Toolchains and Compilers</h2>
 <ul>
 <li>IAR Embedded Workbench for ARM (EWARM) toolchain V7.80.4 + ST-LINK</li>
 <li>RealView Microcontroller Development Kit (MDK-ARM) toolchain V5.23 + ST-LINK</li>
 <li>System Workbench for STM32 (SW4STM32) toolchain V2.0 + ST-LINK</li>
 </ul>
-<h2 id="supported-devices-and-eval-boards-3">Supported Devices and EVAL boards</h2>
+<h2 id="supported-devices-and-eval-boards-4">Supported Devices and EVAL boards</h2>
 <ul>
 <li>All STM32F030, STM32F070, STM32F0x1, STM32F0x2 and STM32F0x8 product lines devices are supported.</li>
 <li>Discovery boards: STM32F072B-Discovery RevC (MB1076), STM32F0308-Discovery RevA (MB1134)</li>
@@ -1737,11 +2115,11 @@
 <li>Nucleo32 boards: STM32F031K6-Nucleo, STM32F042K6-Nucleo RevC (MB1180)</li>
 <li>Evaluation boards: STM32072B-EVAL RevB (MB1070), STM32091C-EVAL RevB (MB1169)</li>
 </ul>
-<h2 id="backward-compatibility-3">Backward Compatibility</h2>
+<h2 id="backward-compatibility-4">Backward Compatibility</h2>
 <ul>
 <li>None</li>
 </ul>
-<h2 id="dependencies-3">Dependencies</h2>
+<h2 id="dependencies-4">Dependencies</h2>
 <ul>
 <li>None</li>
 </ul>
@@ -1750,8 +2128,8 @@
 <div class="collapse">
 <input type="checkbox" id="collapse-section9" aria-hidden="true"> <label for="collapse-section9" aria-hidden="true"><strong>V1.10.0 / 03-April-2019</strong></label>
 <div>
-<h1 id="maintenance-release-8">Maintenance release</h1>
-<h2 id="main-changes-8">Main Changes</h2>
+<h1 id="maintenance-release-9">Maintenance release</h1>
+<h2 id="main-changes-9">Main Changes</h2>
 <ul>
 <li><p>Demonstrations binaries are no more delivered within the STM32CubeF0 MCU package. They are available for download, in addition to their required media files if any, in a standalone package accessible through each hardware board official webpage. Please refer to the corresponding demonstration binary readme.txt to get webpage for each board.</p></li>
 <li><strong>The following changes done on the HAL drivers require an update on the application code based on older HAL versions</strong>
@@ -1774,7 +2152,7 @@
 </ul></li>
 <li><p>For the complete list of changes, please refer to the release notes of each firmware component</p></li>
 </ul>
-<h2 id="contents-7">Contents</h2>
+<h2 id="contents-8">Contents</h2>
 <ul>
 <li>The STM32CubeF0 Firmware package comes with a rich set of examples running on STMicroelectronics boards, organized by board and provided with pre-configured projects for the main supported toolchains. The exhaustive list of projects is provided in this table <a href="Projects/STM32CubeProjectsList.html">STM32CubeProjectsList.html</a>.</li>
 <li>Projects release notes
@@ -1917,32 +2295,32 @@
 <tr class="even">
 <td style="text-align: left;">BSP Components Common</td>
 <td style="text-align: center;">V4.0.1</td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-bsp-common/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-bsp-common/blob/v4.0.1/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">BSP Components l3gd20</td>
 <td style="text-align: center;">V2.0.0</td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-l3gd20/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-l3gd20/blob/v2.0.0/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">BSP Components hx8347d</td>
 <td style="text-align: center;">V1.1.1</td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-hx8347d/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-hx8347d/blob/v1.1.1/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">BSP Components spfd5408</td>
 <td style="text-align: center;">V1.1.1</td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-spfd5408/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-spfd5408/blob/v1.1.1/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">BSP Components st7735</td>
 <td style="text-align: center;">V1.1.1</td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-st7735/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-st7735/blob/v1.1.1/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">BSP Components stlm75</td>
 <td style="text-align: center;">V1.0.1</td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-stlm75/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-stlm75/blob/v1.0.2/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">BSP Adafruit_Shield</td>
@@ -1964,22 +2342,22 @@
 <tr class="odd">
 <td style="text-align: left;">STM32 USB Device Library</td>
 <td style="text-align: center;">V2.4.2</td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-mw-usb-device/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-mw-usb-device/blob/v2.11.6/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">STM32 TouchSensing Library</td>
 <td style="text-align: center;">V2.2.0</td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-mw-touchsensing/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-mw-touchsensing/blob/v2.2.13/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">FatFS</td>
 <td style="text-align: center;">R0.11</td>
-<td style="text-align: center;"><a href="https://github.com/STMicroelectronics/stm32-mw-fatfs/blob/TAG_stm32cube_DATE/doc/updates.txt">release notes</a> ST modified 20150508 <a href="https://github.com/STMicroelectronics/stm32-mw-fatfs/blob/TAG_stm32cube_DATE/src/st_readme.txt">release notes</a></td>
+<td style="text-align: center;"><a href="https://github.com/STMicroelectronics/stm32-mw-fatfs/blob/r0.11_stm32cube_20150508/doc/updates.txt">release notes</a> ST modified 20150508 <a href="https://github.com/STMicroelectronics/stm32-mw-fatfs/blob/r0.11_stm32cube_20150508/src/st_readme.txt">release notes</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">FreeRTOS</td>
 <td style="text-align: center;">V9.0.0</td>
-<td style="text-align: center;"><a href="https://github.com/STMicroelectronics/stm32-mw-freertos/blob/TAG_DATE/Source/readme.txt">release notes</a> ST modified 20170303 <a href="https://github.com/STMicroelectronics/stm32-mw-freertos/blob/TAG_DATE/Source/st_readme.txt">release notes</a></td>
+<td style="text-align: center;"><a href="https://github.com/STMicroelectronics/stm32-mw-freertos/blob/v10.0.1_20190329/Source/readme.txt">release notes</a> ST modified 20170303 <a href="https://github.com/STMicroelectronics/stm32-mw-freertos/blob/v10.0.1_20190329/Source/st_readme.txt">release notes</a></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">STemWin Library</td>
@@ -2016,17 +2394,17 @@
 </tbody>
 </table></li>
 </ul>
-<h2 id="known-limitations-4">Known Limitations</h2>
+<h2 id="known-limitations-5">Known Limitations</h2>
 <ul>
 <li>None</li>
 </ul>
-<h2 id="development-toolchains-and-compilers-4">Development Toolchains and Compilers</h2>
+<h2 id="development-toolchains-and-compilers-5">Development Toolchains and Compilers</h2>
 <ul>
 <li>IAR Embedded Workbench for ARM (EWARM) toolchain V7.80.4 + ST-LINK</li>
 <li>RealView Microcontroller Development Kit (MDK-ARM) toolchain V5.23 + ST-LINK</li>
 <li>System Workbench for STM32 (SW4STM32) toolchain V2.0 + ST-LINK</li>
 </ul>
-<h2 id="supported-devices-and-eval-boards-4">Supported Devices and EVAL boards</h2>
+<h2 id="supported-devices-and-eval-boards-5">Supported Devices and EVAL boards</h2>
 <ul>
 <li>All STM32F030, STM32F070, STM32F0x1, STM32F0x2 and STM32F0x8 product lines devices are supported.</li>
 <li>Discovery boards: STM32F072B-Discovery RevC (MB1076), STM32F0308-Discovery RevA (MB1134)</li>
@@ -2034,11 +2412,11 @@
 <li>Nucleo32 boards: STM32F031K6-Nucleo, STM32F042K6-Nucleo RevC (MB1180)</li>
 <li>Evaluation boards: STM32072B-EVAL RevB (MB1070), STM32091C-EVAL RevB (MB1169)</li>
 </ul>
-<h2 id="backward-compatibility-4">Backward Compatibility</h2>
+<h2 id="backward-compatibility-5">Backward Compatibility</h2>
 <ul>
 <li>None</li>
 </ul>
-<h2 id="dependencies-4">Dependencies</h2>
+<h2 id="dependencies-5">Dependencies</h2>
 <ul>
 <li>None</li>
 </ul>
@@ -2047,8 +2425,8 @@
 <div class="collapse">
 <input type="checkbox" id="collapse-section8" aria-hidden="true"> <label for="collapse-section8" aria-hidden="true"><strong>V1.9.0 / 25-August-2017</strong></label>
 <div>
-<h1 id="maintenance-release-9">Maintenance release</h1>
-<h2 id="main-changes-9">Main Changes</h2>
+<h1 id="maintenance-release-10">Maintenance release</h1>
+<h2 id="main-changes-10">Main Changes</h2>
 <ul>
 <li><strong>Drivers</strong>
 <ul>
@@ -2068,7 +2446,7 @@
 <li>Remove Cortex-M3/M4 specific defines and macros in FreeRTOSConfig.h from all FreeRTOS based applications.</li>
 </ul></li>
 </ul>
-<h2 id="contents-8">Contents</h2>
+<h2 id="contents-9">Contents</h2>
 <ul>
 <li>The STM32CubeF0 Firmware package comes with a rich set of examples running on STMicroelectronics boards, organized by board and provided with pre-configured projects for the main supported toolchains. The exhaustive list of projects is provided in this table <a href="Projects/STM32CubeProjectsList.html">STM32CubeProjectsList.html</a>.</li>
 <li>Projects release notes
@@ -2210,32 +2588,32 @@
 <tr class="even">
 <td style="text-align: left;">BSP Components Common</td>
 <td style="text-align: center;">V4.0.1</td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-bsp-common/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-bsp-common/blob/v4.0.1/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">BSP Components l3gd20</td>
 <td style="text-align: center;">V2.0.0</td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-l3gd20/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-l3gd20/blob/v2.0.0/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">BSP Components hx8347d</td>
 <td style="text-align: center;">V1.1.1</td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-hx8347d/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-hx8347d/blob/v1.1.1/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">BSP Components spfd5408</td>
 <td style="text-align: center;">V1.1.1</td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-spfd5408/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-spfd5408/blob/v1.1.1/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">BSP Components st7735</td>
 <td style="text-align: center;">V1.1.1</td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-st7735/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-st7735/blob/v1.1.1/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">BSP Components stlm75</td>
 <td style="text-align: center;">V1.0.1</td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-stlm75/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-stlm75/blob/v1.0.2/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">BSP Adafruit_Shield</td>
@@ -2257,22 +2635,22 @@
 <tr class="odd">
 <td style="text-align: left;">STM32 USB Device Library</td>
 <td style="text-align: center;">V2.4.2</td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-mw-usb-device/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-mw-usb-device/blob/v2.11.6/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">STM32 TouchSensing Library</td>
 <td style="text-align: center;">V2.2.0</td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-mw-touchsensing/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-mw-touchsensing/blob/v2.2.13/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">FatFS</td>
 <td style="text-align: center;">R0.11</td>
-<td style="text-align: center;"><a href="https://github.com/STMicroelectronics/stm32-mw-fatfs/blob/TAG_stm32cube_DATE/doc/updates.txt">release notes</a> ST modified 20150508 <a href="https://github.com/STMicroelectronics/stm32-mw-fatfs/blob/TAG_stm32cube_DATE/src/st_readme.txt">release notes</a></td>
+<td style="text-align: center;"><a href="https://github.com/STMicroelectronics/stm32-mw-fatfs/blob/r0.11_stm32cube_20150508/doc/updates.txt">release notes</a> ST modified 20150508 <a href="https://github.com/STMicroelectronics/stm32-mw-fatfs/blob/r0.11_stm32cube_20150508/src/st_readme.txt">release notes</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">FreeRTOS</td>
 <td style="text-align: center;">V9.0.0</td>
-<td style="text-align: center;"><a href="https://github.com/STMicroelectronics/stm32-mw-freertos/blob/TAG_DATE/Source/readme.txt">release notes</a> ST modified 20170303 <a href="https://github.com/STMicroelectronics/stm32-mw-freertos/blob/TAG_DATE/Source/st_readme.txt">release notes</a></td>
+<td style="text-align: center;"><a href="https://github.com/STMicroelectronics/stm32-mw-freertos/blob/v10.0.1_20190329/Source/readme.txt">release notes</a> ST modified 20170303 <a href="https://github.com/STMicroelectronics/stm32-mw-freertos/blob/v10.0.1_20190329/Source/st_readme.txt">release notes</a></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">STemWin STemWinLibrary</td>
@@ -2309,17 +2687,17 @@
 </tbody>
 </table></li>
 </ul>
-<h2 id="known-limitations-5">Known Limitations</h2>
+<h2 id="known-limitations-6">Known Limitations</h2>
 <ul>
 <li>None</li>
 </ul>
-<h2 id="development-toolchains-and-compilers-5">Development Toolchains and Compilers</h2>
+<h2 id="development-toolchains-and-compilers-6">Development Toolchains and Compilers</h2>
 <ul>
 <li>IAR Embedded Workbench for ARM (EWARM) toolchain V7.80.4 + ST-LINK</li>
 <li>RealView Microcontroller Development Kit (MDK-ARM) toolchain V5.23 + ST-LINK</li>
 <li>System Workbench for STM32 (SW4STM32) toolchain V2.0 + ST-LINK</li>
 </ul>
-<h2 id="supported-devices-and-eval-boards-5">Supported Devices and EVAL boards</h2>
+<h2 id="supported-devices-and-eval-boards-6">Supported Devices and EVAL boards</h2>
 <ul>
 <li>All STM32F030, STM32F070, STM32F0x1, STM32F0x2 and STM32F0x8 product lines devices are supported.</li>
 <li>Discovery boards: STM32F072B-Discovery RevC (MB1076), STM32F0308-Discovery RevA (MB1134)</li>
@@ -2327,11 +2705,11 @@
 <li>Nucleo32 boards: STM32F031K6-Nucleo, STM32F042K6-Nucleo RevC (MB1180)</li>
 <li>Evaluation boards: STM32072B-EVAL RevB (MB1070), STM32091C-EVAL RevB (MB1169)</li>
 </ul>
-<h2 id="backward-compatibility-5">Backward Compatibility</h2>
+<h2 id="backward-compatibility-6">Backward Compatibility</h2>
 <ul>
 <li>None</li>
 </ul>
-<h2 id="dependencies-5">Dependencies</h2>
+<h2 id="dependencies-6">Dependencies</h2>
 <ul>
 <li>None</li>
 </ul>
@@ -2340,8 +2718,8 @@
 <div class="collapse">
 <input type="checkbox" id="collapse-section7" aria-hidden="true"> <label for="collapse-section7" aria-hidden="true"><strong>V1.8.0 / 07-April-2017</strong></label>
 <div>
-<h1 id="maintenance-release-10">Maintenance release</h1>
-<h2 id="main-changes-10">Main Changes</h2>
+<h1 id="maintenance-release-11">Maintenance release</h1>
+<h2 id="main-changes-11">Main Changes</h2>
 <ul>
 <li><strong>Drivers</strong>
 <ul>
@@ -2365,7 +2743,7 @@
 <li>Upgrade to use FreeRTOS V9.0.0 (ST modified 20170303).</li>
 </ul></li>
 </ul>
-<h2 id="contents-9">Contents</h2>
+<h2 id="contents-10">Contents</h2>
 <ul>
 <li>The STM32CubeF0 Firmware package comes with a rich set of examples running on STMicroelectronics boards, organized by board and provided with pre-configured projects for the main supported toolchains. The exhaustive list of projects is provided in this table <a href="Projects/STM32CubeProjectsList.html">STM32CubeProjectsList.html</a>.</li>
 <li>Projects release notes
@@ -2507,32 +2885,32 @@
 <tr class="even">
 <td style="text-align: left;">BSP Components Common</td>
 <td style="text-align: center;">V4.0.1</td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-bsp-common/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-bsp-common/blob/v4.0.1/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">BSP Components l3gd20</td>
 <td style="text-align: center;">V2.0.0</td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-l3gd20/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-l3gd20/blob/v2.0.0/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">BSP Components hx8347d</td>
 <td style="text-align: center;">V1.1.1</td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-hx8347d/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-hx8347d/blob/v1.1.1/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">BSP Components spfd5408</td>
 <td style="text-align: center;">V1.1.1</td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-spfd5408/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-spfd5408/blob/v1.1.1/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">BSP Components st7735</td>
 <td style="text-align: center;">V1.1.1</td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-st7735/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-st7735/blob/v1.1.1/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">BSP Components stlm75</td>
 <td style="text-align: center;">V1.0.1</td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-stlm75/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-stlm75/blob/v1.0.2/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">BSP Adafruit_Shield</td>
@@ -2554,22 +2932,22 @@
 <tr class="odd">
 <td style="text-align: left;">STM32 USB Device Library</td>
 <td style="text-align: center;">V2.4.2</td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-mw-usb-device/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-mw-usb-device/blob/v2.11.6/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">STM32 TouchSensing Library</td>
 <td style="text-align: center;">V2.2.0</td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-mw-touchsensing/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-mw-touchsensing/blob/v2.2.13/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">FatFS</td>
 <td style="text-align: center;">R0.11</td>
-<td style="text-align: center;"><a href="https://github.com/STMicroelectronics/stm32-mw-fatfs/blob/TAG_stm32cube_DATE/doc/updates.txt">release notes</a> ST modified 20150508 <a href="https://github.com/STMicroelectronics/stm32-mw-fatfs/blob/TAG_stm32cube_DATE/src/st_readme.txt">release notes</a></td>
+<td style="text-align: center;"><a href="https://github.com/STMicroelectronics/stm32-mw-fatfs/blob/r0.11_stm32cube_20150508/doc/updates.txt">release notes</a> ST modified 20150508 <a href="https://github.com/STMicroelectronics/stm32-mw-fatfs/blob/r0.11_stm32cube_20150508/src/st_readme.txt">release notes</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><strong>FreeRTOS</strong></td>
 <td style="text-align: center;"><strong>V9.0.0</strong></td>
-<td style="text-align: center;"><a href="https://github.com/STMicroelectronics/stm32-mw-freertos/blob/TAG_DATE/Source/readme.txt">release notes</a> <strong>ST modified 20170303</strong> <a href="https://github.com/STMicroelectronics/stm32-mw-freertos/blob/TAG_DATE/Source/st_readme.txt">release notes</a></td>
+<td style="text-align: center;"><a href="https://github.com/STMicroelectronics/stm32-mw-freertos/blob/v10.0.1_20190329/Source/readme.txt">release notes</a> <strong>ST modified 20170303</strong> <a href="https://github.com/STMicroelectronics/stm32-mw-freertos/blob/v10.0.1_20190329/Source/st_readme.txt">release notes</a></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">STemWin STemWinLibrary</td>
@@ -2606,18 +2984,18 @@
 </tbody>
 </table></li>
 </ul>
-<h2 id="known-limitations-6">Known Limitations</h2>
+<h2 id="known-limitations-7">Known Limitations</h2>
 <ul>
 <li>None</li>
 </ul>
-<h2 id="development-toolchains-and-compilers-6">Development Toolchains and Compilers</h2>
+<h2 id="development-toolchains-and-compilers-7">Development Toolchains and Compilers</h2>
 <ul>
 <li>IAR Embedded Workbench for ARM (EWARM) toolchain V7.80.4 + ST-LINK</li>
 <li>RealView Microcontroller Development Kit (MDK-ARM) toolchain V5.23 + ST-LINK</li>
 <li>Atollic TrueSTUDIO STM32 (TrueSTUDIO) toolchain V5.4.2 + ST-LINK</li>
 <li>System Workbench for STM32 (SW4STM32) toolchain V1.13.1 + ST-LINK</li>
 </ul>
-<h2 id="supported-devices-and-eval-boards-6">Supported Devices and EVAL boards</h2>
+<h2 id="supported-devices-and-eval-boards-7">Supported Devices and EVAL boards</h2>
 <ul>
 <li>All STM32F030, STM32F070, STM32F0x1, STM32F0x2 and STM32F0x8 product lines devices are supported.</li>
 <li>Discovery boards: STM32F072B-Discovery RevC (MB1076), STM32F0308-Discovery RevA (MB1134)</li>
@@ -2625,11 +3003,11 @@
 <li>Nucleo32 boards: STM32F031K6-Nucleo, STM32F042K6-Nucleo RevC (MB1180)</li>
 <li>Evaluation boards: STM32072B-EVAL RevB (MB1070), STM32091C-EVAL RevB (MB1169)</li>
 </ul>
-<h2 id="backward-compatibility-6">Backward Compatibility</h2>
+<h2 id="backward-compatibility-7">Backward Compatibility</h2>
 <ul>
 <li>None</li>
 </ul>
-<h2 id="dependencies-6">Dependencies</h2>
+<h2 id="dependencies-7">Dependencies</h2>
 <ul>
 <li>None</li>
 </ul>
@@ -2638,8 +3016,8 @@
 <div class="collapse">
 <input type="checkbox" id="collapse-section68" aria-hidden="true"> <label for="collapse-section68" aria-hidden="true"><strong>V1.7.0 / 04-November-2016</strong></label>
 <div>
-<h1 id="maintenance-release-11">Maintenance release</h1>
-<h2 id="main-changes-11">Main Changes</h2>
+<h1 id="maintenance-release-12">Maintenance release</h1>
+<h2 id="main-changes-12">Main Changes</h2>
 <ul>
 <li><strong>Drivers</strong></li>
 <li>Fix known defects and several enhancements implementation.</li>
@@ -2695,7 +3073,7 @@
 <li>Upgrade to use STemWinLibrary 5.32 (build 20160205).</li>
 </ul></li>
 </ul>
-<h2 id="contents-10">Contents</h2>
+<h2 id="contents-11">Contents</h2>
 <ul>
 <li>The STM32CubeF0 Firmware package comes with a rich set of examples running on STMicroelectronics boards, organized by board and provided with pre-configured projects for the main supported toolchains. The exhaustive list of projects is provided in this table <a href="Projects/STM32CubeProjectsList.html">STM32CubeProjectsList.html</a>.</li>
 <li>Projects release notes
@@ -2837,32 +3215,32 @@
 <tr class="even">
 <td style="text-align: left;">BSP Components Common</td>
 <td style="text-align: center;">V4.0.1</td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-bsp-common/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-bsp-common/blob/v4.0.1/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">BSP Components l3gd20</td>
 <td style="text-align: center;">V2.0.0</td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-l3gd20/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-l3gd20/blob/v2.0.0/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">BSP Components hx8347d</td>
 <td style="text-align: center;">V1.1.1</td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-hx8347d/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-hx8347d/blob/v1.1.1/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">BSP Components spfd5408</td>
 <td style="text-align: center;">V1.1.1</td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-spfd5408/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-spfd5408/blob/v1.1.1/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">BSP Components st7735</td>
 <td style="text-align: center;">V1.1.1</td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-st7735/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-st7735/blob/v1.1.1/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">BSP Components stlm75</td>
 <td style="text-align: center;">V1.0.1</td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-stlm75/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-stlm75/blob/v1.0.2/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">BSP Adafruit_Shield</td>
@@ -2884,22 +3262,22 @@
 <tr class="odd">
 <td style="text-align: left;">STM32 USB Device Library</td>
 <td style="text-align: center;">V2.4.2</td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-mw-usb-device/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-mw-usb-device/blob/v2.11.6/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">STM32 TouchSensing Library</td>
 <td style="text-align: center;">V2.2.0</td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-mw-touchsensing/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-mw-touchsensing/blob/v2.2.13/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">FatFS</td>
 <td style="text-align: center;">R0.11</td>
-<td style="text-align: center;"><a href="https://github.com/STMicroelectronics/stm32-mw-fatfs/blob/TAG_stm32cube_DATE/doc/updates.txt">release notes</a> ST modified 20150508 <a href="https://github.com/STMicroelectronics/stm32-mw-fatfs/blob/TAG_stm32cube_DATE/src/st_readme.txt">release notes</a></td>
+<td style="text-align: center;"><a href="https://github.com/STMicroelectronics/stm32-mw-fatfs/blob/r0.11_stm32cube_20150508/doc/updates.txt">release notes</a> ST modified 20150508 <a href="https://github.com/STMicroelectronics/stm32-mw-fatfs/blob/r0.11_stm32cube_20150508/src/st_readme.txt">release notes</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">FreeRTOS</td>
 <td style="text-align: center;">V9.0.0</td>
-<td style="text-align: center;"><a href="https://github.com/STMicroelectronics/stm32-mw-freertos/blob/TAG_DATE/Source/readme.txt">release notes</a> ST modified 20170303 <a href="https://github.com/STMicroelectronics/stm32-mw-freertos/blob/TAG_DATE/Source/st_readme.txt">release notes</a></td>
+<td style="text-align: center;"><a href="https://github.com/STMicroelectronics/stm32-mw-freertos/blob/v10.0.1_20190329/Source/readme.txt">release notes</a> ST modified 20170303 <a href="https://github.com/STMicroelectronics/stm32-mw-freertos/blob/v10.0.1_20190329/Source/st_readme.txt">release notes</a></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><strong>STemWin STemWinLibrary</strong></td>
@@ -2936,18 +3314,18 @@
 </tbody>
 </table></li>
 </ul>
-<h2 id="known-limitations-7">Known Limitations</h2>
+<h2 id="known-limitations-8">Known Limitations</h2>
 <ul>
 <li>None</li>
 </ul>
-<h2 id="development-toolchains-and-compilers-7">Development Toolchains and Compilers</h2>
+<h2 id="development-toolchains-and-compilers-8">Development Toolchains and Compilers</h2>
 <ul>
 <li>IAR Embedded Workbench for ARM (EWARM) toolchain V7.60.1 + ST-LINK</li>
 <li>RealView Microcontroller Development Kit (MDK-ARM) toolchain V5.17 + ST-LINK</li>
 <li>Atollic TrueSTUDIO STM32 (TrueSTUDIO) toolchain V5.4.2 + ST-LINK</li>
 <li>System Workbench for STM32 (SW4STM32) toolchain V1.8.0 + ST-LINK</li>
 </ul>
-<h2 id="supported-devices-and-eval-boards-7">Supported Devices and EVAL boards</h2>
+<h2 id="supported-devices-and-eval-boards-8">Supported Devices and EVAL boards</h2>
 <ul>
 <li>All STM32F030, STM32F070, STM32F0x1, STM32F0x2 and STM32F0x8 product lines devices are supported.</li>
 <li>Discovery boards: STM32F072B-Discovery RevC (MB1076), STM32F0308-Discovery RevA (MB1134)</li>
@@ -2955,11 +3333,11 @@
 <li>Nucleo32 boards: STM32F031K6-Nucleo, STM32F042K6-Nucleo RevC (MB1180)</li>
 <li>Evaluation boards: STM32072B-EVAL RevB (MB1070), STM32091C-EVAL RevB (MB1169)</li>
 </ul>
-<h2 id="backward-compatibility-7">Backward Compatibility</h2>
+<h2 id="backward-compatibility-8">Backward Compatibility</h2>
 <ul>
 <li>None</li>
 </ul>
-<h2 id="dependencies-7">Dependencies</h2>
+<h2 id="dependencies-8">Dependencies</h2>
 <ul>
 <li>None</li>
 </ul>
@@ -2968,8 +3346,8 @@
 <div class="collapse">
 <input type="checkbox" id="collapse-section5" aria-hidden="true"> <label for="collapse-section5" aria-hidden="true"><strong>V1.6.0 / 27-May-2016</strong></label>
 <div>
-<h1 id="maintenance-release-12">Maintenance release</h1>
-<h2 id="main-changes-12">Main Changes</h2>
+<h1 id="maintenance-release-13">Maintenance release</h1>
+<h2 id="main-changes-13">Main Changes</h2>
 <ul>
 <li><strong>First official release introducing the STM32Cube LL (Low Layer) APIs for the STM32F0xx series :</strong>
 <ul>
@@ -3000,7 +3378,7 @@
 <li>Upgrade to use FreeRTOS V8.2.3 (ST modified 20160122).</li>
 <li>Provided fixes for minor issues in cmsis_os.c and FreeRTOS.h files.</li>
 </ul>
-<h2 id="contents-11">Contents</h2>
+<h2 id="contents-12">Contents</h2>
 <ul>
 <li>The STM32CubeF0 Firmware package comes with a rich set of examples running on STMicroelectronics boards, organized by board and provided with pre-configured projects for the main supported toolchains. The exhaustive list of projects is provided in this table <a href="Projects/STM32CubeProjectsList.html">STM32CubeProjectsList.html</a>.</li>
 <li>Projects release notes
@@ -3142,32 +3520,32 @@
 <tr class="even">
 <td style="text-align: left;"><strong>BSP Components Common</strong></td>
 <td style="text-align: center;"><strong>V4.0.1</strong></td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-bsp-common/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-bsp-common/blob/v4.0.1/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><strong>BSP Components l3gd20</strong></td>
 <td style="text-align: center;"><strong>V2.0.0</strong></td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-l3gd20/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-l3gd20/blob/v2.0.0/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">BSP Components hx8347d</td>
 <td style="text-align: center;">V1.1.1</td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-hx8347d/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-hx8347d/blob/v1.1.1/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">BSP Components spfd5408</td>
 <td style="text-align: center;">V1.1.1</td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-spfd5408/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-spfd5408/blob/v1.1.1/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">BSP Components st7735</td>
 <td style="text-align: center;">V1.1.1</td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-st7735/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-st7735/blob/v1.1.1/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">BSP Components stlm75</td>
 <td style="text-align: center;">V1.0.1</td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-stlm75/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-stlm75/blob/v1.0.2/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">BSP Adafruit_Shield</td>
@@ -3189,22 +3567,22 @@
 <tr class="odd">
 <td style="text-align: left;">STM32 USB Device Library</td>
 <td style="text-align: center;">V2.4.2</td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-mw-usb-device/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-mw-usb-device/blob/v2.11.6/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">STM32 TouchSensing Library</td>
 <td style="text-align: center;">V2.2.0</td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-mw-touchsensing/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-mw-touchsensing/blob/v2.2.13/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">FatFS</td>
 <td style="text-align: center;">R0.11</td>
-<td style="text-align: center;"><a href="https://github.com/STMicroelectronics/stm32-mw-fatfs/blob/TAG_stm32cube_DATE/doc/updates.txt">release notes</a> ST modified 20150508 <a href="https://github.com/STMicroelectronics/stm32-mw-fatfs/blob/TAG_stm32cube_DATE/src/st_readme.txt">release notes</a></td>
+<td style="text-align: center;"><a href="https://github.com/STMicroelectronics/stm32-mw-fatfs/blob/r0.11_stm32cube_20150508/doc/updates.txt">release notes</a> ST modified 20150508 <a href="https://github.com/STMicroelectronics/stm32-mw-fatfs/blob/r0.11_stm32cube_20150508/src/st_readme.txt">release notes</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><strong>FreeRTOS</strong></td>
 <td style="text-align: center;"><strong>V8.2.3</strong></td>
-<td style="text-align: center;"><a href="https://github.com/STMicroelectronics/stm32-mw-freertos/blob/TAG_DATE/Source/readme.txt">release notes</a> <strong>ST modified 20160122</strong> <a href="https://github.com/STMicroelectronics/stm32-mw-freertos/blob/TAG_DATE/Source/st_readme.txt">release notes</a></td>
+<td style="text-align: center;"><a href="https://github.com/STMicroelectronics/stm32-mw-freertos/blob/v10.0.1_20190329/Source/readme.txt">release notes</a> <strong>ST modified 20160122</strong> <a href="https://github.com/STMicroelectronics/stm32-mw-freertos/blob/v10.0.1_20190329/Source/st_readme.txt">release notes</a></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">STemWin STemWinLibrary</td>
@@ -3241,18 +3619,18 @@
 </tbody>
 </table></li>
 </ul>
-<h2 id="known-limitations-8">Known Limitations</h2>
+<h2 id="known-limitations-9">Known Limitations</h2>
 <ul>
 <li>None</li>
 </ul>
-<h2 id="development-toolchains-and-compilers-8">Development Toolchains and Compilers</h2>
+<h2 id="development-toolchains-and-compilers-9">Development Toolchains and Compilers</h2>
 <ul>
 <li>IAR Embedded Workbench for ARM (EWARM) toolchain V7.50.1 + ST-LINK</li>
 <li>RealView Microcontroller Development Kit (MDK-ARM) toolchain V5.17 + ST-LINK</li>
 <li>Atollic TrueSTUDIO STM32 (TrueSTUDIO) toolchain V5.4.2 + ST-LINK</li>
 <li>System Workbench for STM32 (SW4STM32) toolchain V1.8.0 + ST-LINK</li>
 </ul>
-<h2 id="supported-devices-and-eval-boards-8">Supported Devices and EVAL boards</h2>
+<h2 id="supported-devices-and-eval-boards-9">Supported Devices and EVAL boards</h2>
 <ul>
 <li>All STM32F030, STM32F070, STM32F0x1, STM32F0x2 and STM32F0x8 product lines devices are supported.</li>
 <li>Discovery boards: STM32F072B-Discovery RevC (MB1076), STM32F0308-Discovery RevA (MB1134)</li>
@@ -3260,11 +3638,11 @@
 <li>Nucleo32 boards: STM32F031K6-Nucleo, STM32F042K6-Nucleo RevC (MB1180)</li>
 <li>Evaluation boards: STM32072B-EVAL RevB (MB1070), STM32091C-EVAL RevB (MB1169)</li>
 </ul>
-<h2 id="backward-compatibility-8">Backward Compatibility</h2>
+<h2 id="backward-compatibility-9">Backward Compatibility</h2>
 <ul>
 <li>None</li>
 </ul>
-<h2 id="dependencies-8">Dependencies</h2>
+<h2 id="dependencies-9">Dependencies</h2>
 <ul>
 <li>None</li>
 </ul>
@@ -3273,8 +3651,8 @@
 <div class="collapse">
 <input type="checkbox" id="collapse-section4" aria-hidden="true"> <label for="collapse-section4" aria-hidden="true"><strong>V1.5.0 / 29-January-2016</strong></label>
 <div>
-<h1 id="maintenance-release-13">Maintenance release</h1>
-<h2 id="main-changes-13">Main Changes</h2>
+<h1 id="maintenance-release-14">Maintenance release</h1>
+<h2 id="main-changes-14">Main Changes</h2>
 <ul>
 <li><p><strong>Add support of System Workbench for STM32 (SW4STM32) toolchain.</strong></p></li>
 <li><strong>HAL</strong></li>
@@ -3317,7 +3695,7 @@
 <li>Update to CMSIS V4.5.0 (CMSIS-CORE 4.30.0).</li>
 </ul></li>
 </ul>
-<h2 id="contents-12">Contents</h2>
+<h2 id="contents-13">Contents</h2>
 <ul>
 <li>The STM32CubeF0 Firmware package comes with a rich set of examples running on STMicroelectronics boards, organized by board and provided with pre-configured projects for the main supported toolchains. The exhaustive list of projects is provided in this table <a href="Projects/STM32CubeProjectsList.html">STM32CubeProjectsList.html</a>.</li>
 <li>Projects release notes
@@ -3457,32 +3835,32 @@
 <tr class="even">
 <td style="text-align: left;">BSP Components Common</td>
 <td style="text-align: center;">V4.0.1</td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-bsp-common/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-bsp-common/blob/v4.0.1/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">BSP Components l3gd20</td>
 <td style="text-align: center;">V2.0.0</td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-l3gd20/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-l3gd20/blob/v2.0.0/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">BSP Components hx8347d</td>
 <td style="text-align: center;">V1.1.1</td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-hx8347d/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-hx8347d/blob/v1.1.1/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">BSP Components spfd5408</td>
 <td style="text-align: center;">V1.1.1</td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-spfd5408/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-spfd5408/blob/v1.1.1/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">BSP Components st7735</td>
 <td style="text-align: center;">V1.1.1</td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-st7735/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-st7735/blob/v1.1.1/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">BSP Components stlm75</td>
 <td style="text-align: center;">V1.0.1</td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-stlm75/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-stlm75/blob/v1.0.2/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><strong>BSP Adafruit_Shield</strong></td>
@@ -3504,22 +3882,22 @@
 <tr class="odd">
 <td style="text-align: left;"><strong>STM32 USB Device Library</strong></td>
 <td style="text-align: center;"><strong>V2.4.2</strong></td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-mw-usb-device/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-mw-usb-device/blob/v2.11.6/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><strong>STM32 TouchSensing Library</strong></td>
 <td style="text-align: center;"><strong>V2.2.0</strong></td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-mw-touchsensing/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-mw-touchsensing/blob/v2.2.13/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">FatFS</td>
 <td style="text-align: center;">R0.11</td>
-<td style="text-align: center;"><a href="https://github.com/STMicroelectronics/stm32-mw-fatfs/blob/TAG_stm32cube_DATE/doc/updates.txt">release notes</a> ST modified 20150508 <a href="https://github.com/STMicroelectronics/stm32-mw-fatfs/blob/TAG_stm32cube_DATE/src/st_readme.txt">release notes</a></td>
+<td style="text-align: center;"><a href="https://github.com/STMicroelectronics/stm32-mw-fatfs/blob/r0.11_stm32cube_20150508/doc/updates.txt">release notes</a> ST modified 20150508 <a href="https://github.com/STMicroelectronics/stm32-mw-fatfs/blob/r0.11_stm32cube_20150508/src/st_readme.txt">release notes</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">FreeRTOS</td>
 <td style="text-align: center;">V9.0.0</td>
-<td style="text-align: center;"><a href="https://github.com/STMicroelectronics/stm32-mw-freertos/blob/TAG_DATE/Source/readme.txt">release notes</a> ST modified 20170303 <a href="https://github.com/STMicroelectronics/stm32-mw-freertos/blob/TAG_DATE/Source/st_readme.txt">release notes</a></td>
+<td style="text-align: center;"><a href="https://github.com/STMicroelectronics/stm32-mw-freertos/blob/v10.0.1_20190329/Source/readme.txt">release notes</a> ST modified 20170303 <a href="https://github.com/STMicroelectronics/stm32-mw-freertos/blob/v10.0.1_20190329/Source/st_readme.txt">release notes</a></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><strong>STemWin STemWinLibrary</strong></td>
@@ -3556,18 +3934,18 @@
 </tbody>
 </table></li>
 </ul>
-<h2 id="known-limitations-9">Known Limitations</h2>
+<h2 id="known-limitations-10">Known Limitations</h2>
 <ul>
 <li>None</li>
 </ul>
-<h2 id="development-toolchains-and-compilers-9">Development Toolchains and Compilers</h2>
+<h2 id="development-toolchains-and-compilers-10">Development Toolchains and Compilers</h2>
 <ul>
 <li>IAR Embedded Workbench for ARM (EWARM) toolchain V7.40.7 + ST-LINK</li>
 <li>RealView Microcontroller Development Kit (MDK-ARM) toolchain V5.17 + ST-LINK</li>
 <li>Atollic TrueSTUDIO STM32 (TrueSTUDIO) toolchain V5.3.1 + ST-LINK</li>
 <li>System Workbench for STM32 (SW4STM32) toolchain V1.6.0 + ST-LINK</li>
 </ul>
-<h2 id="supported-devices-and-eval-boards-9">Supported Devices and EVAL boards</h2>
+<h2 id="supported-devices-and-eval-boards-10">Supported Devices and EVAL boards</h2>
 <ul>
 <li>All STM32F030, STM32F070, STM32F0x1, STM32F0x2 and STM32F0x8 product lines devices are supported.</li>
 <li>Discovery boards: STM32F072B-Discovery RevC (MB1076), STM32F0308-Discovery RevA (MB1134)</li>
@@ -3575,11 +3953,11 @@
 <li>Nucleo32 boards: STM32F031K6-Nucleo, STM32F042K6-Nucleo RevC (MB1180)</li>
 <li>Evaluation boards: STM32072B-EVAL RevB (MB1070), STM32091C-EVAL RevB (MB1169)</li>
 </ul>
-<h2 id="backward-compatibility-9">Backward Compatibility</h2>
+<h2 id="backward-compatibility-10">Backward Compatibility</h2>
 <ul>
 <li>None</li>
 </ul>
-<h2 id="dependencies-9">Dependencies</h2>
+<h2 id="dependencies-10">Dependencies</h2>
 <ul>
 <li>None</li>
 </ul>
@@ -3588,8 +3966,8 @@
 <div class="collapse">
 <input type="checkbox" id="collapse-section3" aria-hidden="true"> <label for="collapse-section3" aria-hidden="true"><strong>V1.4.0 / 11-September-2015</strong></label>
 <div>
-<h1 id="maintenance-release-14">Maintenance release</h1>
-<h2 id="main-changes-14">Main Changes</h2>
+<h1 id="maintenance-release-15">Maintenance release</h1>
+<h2 id="main-changes-15">Main Changes</h2>
 <ul>
 <li><strong>Adding support of 2 new Nucleo 32 boards.</strong>
 <ul>
@@ -3600,7 +3978,7 @@
 <li>Basic examples (GPIO_IOToggle) are provided to easily start new development on these boards.</li>
 <li>A demonstration using the Gravitech 7segments 4digits shield is added to provide sample code on how to display a counter on this shield.</li>
 </ul>
-<h2 id="contents-13">Contents</h2>
+<h2 id="contents-14">Contents</h2>
 <ul>
 <li>The STM32CubeF0 Firmware package comes with a rich set of examples running on STMicroelectronics boards, organized by board and provided with pre-configured projects for the main supported toolchains. The exhaustive list of projects is provided in this table <a href="Projects/STM32CubeProjectsList.html">STM32CubeProjectsList.html</a>.</li>
 <li>Projects release notes
@@ -3740,32 +4118,32 @@
 <tr class="even">
 <td style="text-align: left;">BSP Components Common</td>
 <td style="text-align: center;">V4.0.1</td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-bsp-common/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-bsp-common/blob/v4.0.1/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">BSP Components l3gd20</td>
 <td style="text-align: center;">V2.0.0</td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-l3gd20/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-l3gd20/blob/v2.0.0/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">BSP Components hx8347d</td>
 <td style="text-align: center;">V1.1.1</td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-hx8347d/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-hx8347d/blob/v1.1.1/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">BSP Components spfd5408</td>
 <td style="text-align: center;">V1.1.1</td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-spfd5408/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-spfd5408/blob/v1.1.1/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">BSP Components st7735</td>
 <td style="text-align: center;">V1.1.1</td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-st7735/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-st7735/blob/v1.1.1/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">BSP Components stlm75</td>
 <td style="text-align: center;">V1.0.1</td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-stlm75/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-stlm75/blob/v1.0.2/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">BSP Adafruit_Shield</td>
@@ -3787,22 +4165,22 @@
 <tr class="odd">
 <td style="text-align: left;">STM32 USB Device Library</td>
 <td style="text-align: center;">V2.4.2</td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-mw-usb-device/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-mw-usb-device/blob/v2.11.6/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">STM32 TouchSensing Library</td>
 <td style="text-align: center;">V2.2.0</td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-mw-touchsensing/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-mw-touchsensing/blob/v2.2.13/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">FatFS</td>
 <td style="text-align: center;">R0.11</td>
-<td style="text-align: center;"><a href="https://github.com/STMicroelectronics/stm32-mw-fatfs/blob/TAG_stm32cube_DATE/doc/updates.txt">release notes</a> ST modified 20150508 <a href="https://github.com/STMicroelectronics/stm32-mw-fatfs/blob/TAG_stm32cube_DATE/src/st_readme.txt">release notes</a></td>
+<td style="text-align: center;"><a href="https://github.com/STMicroelectronics/stm32-mw-fatfs/blob/r0.11_stm32cube_20150508/doc/updates.txt">release notes</a> ST modified 20150508 <a href="https://github.com/STMicroelectronics/stm32-mw-fatfs/blob/r0.11_stm32cube_20150508/src/st_readme.txt">release notes</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">FreeRTOS</td>
 <td style="text-align: center;">V9.0.0</td>
-<td style="text-align: center;"><a href="https://github.com/STMicroelectronics/stm32-mw-freertos/blob/TAG_DATE/Source/readme.txt">release notes</a> ST modified 20170303 <a href="https://github.com/STMicroelectronics/stm32-mw-freertos/blob/TAG_DATE/Source/st_readme.txt">release notes</a></td>
+<td style="text-align: center;"><a href="https://github.com/STMicroelectronics/stm32-mw-freertos/blob/v10.0.1_20190329/Source/readme.txt">release notes</a> ST modified 20170303 <a href="https://github.com/STMicroelectronics/stm32-mw-freertos/blob/v10.0.1_20190329/Source/st_readme.txt">release notes</a></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">STemWin STemWinLibrary</td>
@@ -3839,11 +4217,11 @@
 </tbody>
 </table></li>
 </ul>
-<h2 id="known-limitations-10">Known Limitations</h2>
+<h2 id="known-limitations-11">Known Limitations</h2>
 <ul>
 <li>None</li>
 </ul>
-<h2 id="development-toolchains-and-compilers-10">Development Toolchains and Compilers</h2>
+<h2 id="development-toolchains-and-compilers-11">Development Toolchains and Compilers</h2>
 <ul>
 <li>IAR Embedded Workbench for ARM (EWARM) toolchain V7.40 + ST-LINK
 <ul>
@@ -3857,13 +4235,13 @@
 </ul></li>
 <li>Atollic TrueSTUDIO STM32 (TrueSTUDIO) toolchain V5.1.1 + ST-LINK</li>
 </ul>
-<h2 id="supported-devices-and-eval-boards-10">Supported Devices and EVAL boards</h2>
+<h2 id="supported-devices-and-eval-boards-11">Supported Devices and EVAL boards</h2>
 <p>All STM32F030, STM32F070, STM32F0x1, STM32F0x2 and STM32F0x8 product lines devices are supported. - STM32F072B-Discovery Board RevB (MB1076) and STM32F0308-Discovery Board RevA (MB1134) - STM32F070RB_Nucleo, STM32F072RB-Nucleo, STM32F091RC-Nucleo and STM32F030R8-Nucleo Board RevC (MB1136) - STM32F031K6-Nucleo and STM32F042K6-Nucleo Board RevC (MB1180) - STM32072B-EVAL Board RevA (MB1070) - STM32091C-EVAL Board RevB (MB1169) - STM32 ST-LINK utility V3.4.0 or later.</p>
-<h2 id="backward-compatibility-10">Backward Compatibility</h2>
+<h2 id="backward-compatibility-11">Backward Compatibility</h2>
 <ul>
 <li>None</li>
 </ul>
-<h2 id="dependencies-10">Dependencies</h2>
+<h2 id="dependencies-11">Dependencies</h2>
 <ul>
 <li>None</li>
 </ul>
@@ -3872,8 +4250,8 @@
 <div class="collapse">
 <input type="checkbox" id="collapse-section1" aria-hidden="true"> <label for="collapse-section1" aria-hidden="true"><strong>V1.3.0 / 26-June-2015</strong></label>
 <div>
-<h1 id="maintenance-release-15">Maintenance release</h1>
-<h2 id="main-changes-15">Main Changes</h2>
+<h1 id="maintenance-release-16">Maintenance release</h1>
+<h2 id="main-changes-16">Main Changes</h2>
 <ul>
 <li><strong>All projects updated following changes in latest version of HAL and Middlewares.</strong></li>
 <li><p><strong>Fix known defects and several enhancements implementation.</strong></p></li>
@@ -3905,7 +4283,7 @@
 <li>Upgrade to use SEGGER emWin version V5.28, for more details about the changes in this version refer to <strong>Revision History</strong> section in STemWin528.pdf document.</li>
 </ul></li>
 </ul>
-<h2 id="contents-14">Contents</h2>
+<h2 id="contents-15">Contents</h2>
 <table>
 <caption>Drivers</caption>
 <thead>
@@ -3959,32 +4337,32 @@
 <tr class="odd">
 <td style="text-align: left;"><strong>BSP Components Common</strong></td>
 <td style="text-align: center;"><strong>V1.2.1</strong></td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-bsp-common/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-bsp-common/blob/v4.0.1/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><strong>BSP Components l3gd20</strong></td>
 <td style="text-align: center;"><strong>V1.1.1</strong></td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-l3gd20/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-l3gd20/blob/v2.0.0/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><strong>BSP Components hx8347d</strong></td>
 <td style="text-align: center;"><strong>V1.1.1</strong></td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-hx8347d/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-hx8347d/blob/v1.1.1/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><strong>BSP Components spfd5408</strong></td>
 <td style="text-align: center;"><strong>V1.1.1</strong></td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-spfd5408/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-spfd5408/blob/v1.1.1/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><strong>BSP Components st7735</strong></td>
 <td style="text-align: center;"><strong>V1.1.1</strong></td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-st7735/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-st7735/blob/v1.1.1/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><strong>BSP Components stlm75</strong></td>
 <td style="text-align: center;"><strong>V1.0.1</strong></td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-stlm75/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-stlm75/blob/v1.0.2/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><strong>BSP Adafruit_Shield</strong></td>
@@ -4006,22 +4384,22 @@
 <tr class="odd">
 <td style="text-align: left;"><strong>STM32 USB Device Library</strong></td>
 <td style="text-align: center;"><strong>V2.4.0</strong></td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-mw-usb-device/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-mw-usb-device/blob/v2.11.6/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><strong>STM32 TouchSensing Library</strong></td>
 <td style="text-align: center;"><strong>V2.0.0</strong></td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-mw-touchsensing/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-mw-touchsensing/blob/v2.2.13/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><strong>FatFS</strong></td>
 <td style="text-align: center;"><strong>R0.11</strong></td>
-<td style="text-align: center;"><a href="https://github.com/STMicroelectronics/stm32-mw-fatfs/blob/TAG_stm32cube_DATE/doc/updates.txt">release notes</a> <strong>ST modified 20150508</strong> <a href="https://github.com/STMicroelectronics/stm32-mw-fatfs/blob/TAG_stm32cube_DATE/src/st_readme.txt">release notes</a></td>
+<td style="text-align: center;"><a href="https://github.com/STMicroelectronics/stm32-mw-fatfs/blob/r0.11_stm32cube_20150508/doc/updates.txt">release notes</a> <strong>ST modified 20150508</strong> <a href="https://github.com/STMicroelectronics/stm32-mw-fatfs/blob/r0.11_stm32cube_20150508/src/st_readme.txt">release notes</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><strong>FreeRTOS</strong></td>
 <td style="text-align: center;"><strong>V8.2.1</strong></td>
-<td style="text-align: center;"><a href="https://github.com/STMicroelectronics/stm32-mw-freertos/blob/TAG_DATE/Source/readme.txt">release notes</a> <strong>ST modified 20150327 </strong> <a href="https://github.com/STMicroelectronics/stm32-mw-freertos/blob/TAG_DATE/Source/st_readme.txt">release notes</a></td>
+<td style="text-align: center;"><a href="https://github.com/STMicroelectronics/stm32-mw-freertos/blob/v10.0.1_20190329/Source/readme.txt">release notes</a> <strong>ST modified 20150327 </strong> <a href="https://github.com/STMicroelectronics/stm32-mw-freertos/blob/v10.0.1_20190329/Source/st_readme.txt">release notes</a></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><strong>STemWin STemWinLibrary</strong></td>
@@ -4071,11 +4449,11 @@
 </tr>
 </tbody>
 </table>
-<h2 id="known-limitations-11">Known Limitations</h2>
+<h2 id="known-limitations-12">Known Limitations</h2>
 <ul>
 <li>None</li>
 </ul>
-<h2 id="development-toolchains-and-compilers-11">Development Toolchains and Compilers</h2>
+<h2 id="development-toolchains-and-compilers-12">Development Toolchains and Compilers</h2>
 <ul>
 <li>IAR Embedded Workbench for ARM (EWARM) toolchain V7.40 + ST-LINK
 <ul>
@@ -4087,7 +4465,7 @@
 </ul></li>
 <li>Atollic TrueSTUDIO STM32 (TrueSTUDIO) toolchain V5.1.1 + ST-LINK</li>
 </ul>
-<h2 id="supported-devices-and-eval-boards-11">Supported Devices and EVAL boards</h2>
+<h2 id="supported-devices-and-eval-boards-12">Supported Devices and EVAL boards</h2>
 <ul>
 <li>All STM32F030, STM32F70, STM32F0x1, STM32F0x2 and STM32F0x8 product lines devices are supported.</li>
 <li>STM32F072B-Discovery Board RevB (MB1076) and STM32F0308-Discovery Board RevA (MB1134)</li>
@@ -4096,11 +4474,11 @@
 <li>STM32091C-EVAL Board RevB (MB1169)</li>
 <li>STM32 ST-LINK utility V3.4.0 or later.</li>
 </ul>
-<h2 id="backward-compatibility-11">Backward Compatibility</h2>
+<h2 id="backward-compatibility-12">Backward Compatibility</h2>
 <ul>
 <li>None</li>
 </ul>
-<h2 id="dependencies-11">Dependencies</h2>
+<h2 id="dependencies-12">Dependencies</h2>
 <ul>
 <li>None</li>
 </ul>
@@ -4109,13 +4487,13 @@
 <div class="collapse">
 <input type="checkbox" id="collapse-section0" aria-hidden="true"> <label for="collapse-section0" aria-hidden="true"><strong>V1.2.1 / 09-January-2015</strong></label>
 <div>
-<h1 id="maintenance-release-16">Maintenance release</h1>
-<h2 id="main-changes-16">Main Changes</h2>
+<h1 id="maintenance-release-17">Maintenance release</h1>
+<h2 id="main-changes-17">Main Changes</h2>
 <ul>
 <li>Patch release for <strong>STM32F0xx</strong> Value line devices.</li>
 <li>This package contains a fixed version of the HAL &amp; CMSIS drivers, user needs simply to overwrite the old folders with the new ones.</li>
 </ul>
-<h2 id="contents-15">Contents</h2>
+<h2 id="contents-16">Contents</h2>
 <table>
 <caption>Drivers</caption>
 <thead>
@@ -4143,8 +4521,8 @@
 <div class="collapse">
 <input type="checkbox" id="collapse-section100" aria-hidden="true"> <label for="collapse-section100" aria-hidden="true"><strong>V1.2.0 / 05-December-2014</strong></label>
 <div>
-<h1 id="maintenance-release-17">Maintenance release</h1>
-<h2 id="main-changes-17">Main Changes</h2>
+<h1 id="maintenance-release-18">Maintenance release</h1>
+<h2 id="main-changes-18">Main Changes</h2>
 <ul>
 <li>First official release for new F0 devices <strong>STM32F030xC, STM32F070x6/xB.</strong></li>
 <li>Full set of examples/application/demo running for device <strong>STM32F070xB on STM32F070RB-Nucleo board</strong></li>
@@ -4152,7 +4530,7 @@
 <li>Examples/application/templates/demo update for compatibility</li>
 <li>MDK-ARM projects converted to vision 5.</li>
 </ul>
-<h2 id="contents-16">Contents</h2>
+<h2 id="contents-17">Contents</h2>
 <table>
 <caption>Drivers</caption>
 <thead>
@@ -4206,32 +4584,32 @@
 <tr class="odd">
 <td style="text-align: left;"><strong>BSP Components Common</strong></td>
 <td style="text-align: center;"><strong>V1.2.1</strong></td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-bsp-common/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-bsp-common/blob/v4.0.1/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><strong>BSP Components l3gd20</strong></td>
 <td style="text-align: center;"><strong>V1.1.1</strong></td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-l3gd20/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-l3gd20/blob/v2.0.0/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><strong>BSP Components hx8347d</strong></td>
 <td style="text-align: center;"><strong>V1.1.1</strong></td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-hx8347d/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-hx8347d/blob/v1.1.1/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><strong>BSP Components spfd5408</strong></td>
 <td style="text-align: center;"><strong>V1.1.1</strong></td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-spfd5408/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-spfd5408/blob/v1.1.1/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><strong>BSP Components st7735</strong></td>
 <td style="text-align: center;"><strong>V1.1.1</strong></td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-st7735/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-st7735/blob/v1.1.1/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><strong>BSP Components stlm75</strong></td>
 <td style="text-align: center;"><strong>V1.0.1</strong></td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-stlm75/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-stlm75/blob/v1.0.2/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><strong>BSP Adafruit_Shield</strong></td>
@@ -4253,17 +4631,17 @@
 <tr class="odd">
 <td style="text-align: left;">**STM32 USB Device Library*</td>
 <td style="text-align: center;">* <strong>V2.3.0</strong></td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-mw-usb-device/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-mw-usb-device/blob/v2.11.6/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">STM32 TouchSensing Library</td>
 <td style="text-align: center;">V2.2.0</td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-mw-touchsensing/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-mw-touchsensing/blob/v2.2.13/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><strong>FatFS</strong></td>
 <td style="text-align: center;"><strong>R0.10b</strong></td>
-<td style="text-align: center;"><a href="https://github.com/STMicroelectronics/stm32-mw-fatfs/blob/TAG_stm32cube_DATE/doc/updates.txt">release notes</a> <strong>ST modified 20141120</strong> <a href="https://github.com/STMicroelectronics/stm32-mw-fatfs/blob/TAG_stm32cube_DATE/src/st_readme.txt">release notes</a></td>
+<td style="text-align: center;"><a href="https://github.com/STMicroelectronics/stm32-mw-fatfs/blob/r0.11_stm32cube_20150508/doc/updates.txt">release notes</a> <strong>ST modified 20141120</strong> <a href="https://github.com/STMicroelectronics/stm32-mw-fatfs/blob/r0.11_stm32cube_20150508/src/st_readme.txt">release notes</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><strong>STemWin STemWinLibrary</strong></td>
@@ -4309,11 +4687,11 @@
 </tr>
 </tbody>
 </table>
-<h2 id="known-limitations-12">Known Limitations</h2>
+<h2 id="known-limitations-13">Known Limitations</h2>
 <ul>
 <li>None</li>
 </ul>
-<h2 id="development-toolchains-and-compilers-12">Development Toolchains and Compilers</h2>
+<h2 id="development-toolchains-and-compilers-13">Development Toolchains and Compilers</h2>
 <ul>
 <li>IAR Embedded Workbench for ARM (EWARM) toolchain V7.10 + ST-LINK
 <ul>
@@ -4325,7 +4703,7 @@
 </ul></li>
 <li>Atollic TrueSTUDIO STM32 (TrueSTUDIO) toolchain V5.1.1 + ST-LINK</li>
 </ul>
-<h2 id="supported-devices-and-eval-boards-12">Supported Devices and EVAL boards</h2>
+<h2 id="supported-devices-and-eval-boards-13">Supported Devices and EVAL boards</h2>
 <ul>
 <li>All STM32F030, STM32F70, STM32F0x1, STM32F0x2 and STM32F0x8 product lines devices are supported</li>
 <li>STM32F072B-Discovery Board RevB (MB1076) and STM32F0308-Discovery Board RevA (MB1134)</li>
@@ -4334,11 +4712,11 @@
 <li>STM32091C-EVAL Board RevB (MB1169)</li>
 <li>STM32 ST-LINK utility V3.4.0 or later.</li>
 </ul>
-<h2 id="backward-compatibility-12">Backward Compatibility</h2>
+<h2 id="backward-compatibility-13">Backward Compatibility</h2>
 <ul>
 <li>None</li>
 </ul>
-<h2 id="dependencies-12">Dependencies</h2>
+<h2 id="dependencies-13">Dependencies</h2>
 <ul>
 <li>None</li>
 </ul>
@@ -4347,8 +4725,8 @@
 <div class="collapse">
 <input type="checkbox" id="collapse-section1000" aria-hidden="true"> <label for="collapse-section1000" aria-hidden="true"><strong>V1.1.0 / 03-October-2014</strong></label>
 <div>
-<h1 id="maintenance-release-18">Maintenance release</h1>
-<h2 id="main-changes-18">Main Changes</h2>
+<h1 id="maintenance-release-19">Maintenance release</h1>
+<h2 id="main-changes-19">Main Changes</h2>
 <ul>
 <li>First official release for device <strong>STM32F091xC</strong></li>
 <li>Example porting on IAR, KEIL, TRUE STUDIO</li>
@@ -4366,7 +4744,7 @@
 <li>new example created: CORTEXM_ProcessStack</li>
 </ul></li>
 </ul>
-<h2 id="contents-17">Contents</h2>
+<h2 id="contents-18">Contents</h2>
 <table>
 <caption>Drivers</caption>
 <thead>
@@ -4420,32 +4798,32 @@
 <tr class="odd">
 <td style="text-align: left;">BSP Components Common</td>
 <td style="text-align: center;">V1.0.0</td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-bsp-common/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-bsp-common/blob/v4.0.1/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">BSP Components l3gd20</td>
 <td style="text-align: center;">V1.1.0</td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-l3gd20/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-l3gd20/blob/v2.0.0/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">BSP Components hx8347d</td>
 <td style="text-align: center;">V1.1.0</td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-hx8347d/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-hx8347d/blob/v1.1.1/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">BSP Components spfd5408</td>
 <td style="text-align: center;">V1.1.0</td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-spfd5408/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-spfd5408/blob/v1.1.1/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">BSP Components st7735</td>
 <td style="text-align: center;">V1.1.0</td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-st7735/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-st7735/blob/v1.1.1/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">BSP Components stlm75</td>
 <td style="text-align: center;">V1.0.0</td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-stlm75/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-stlm75/blob/v1.0.2/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">BSP Adafruit_Shield</td>
@@ -4467,22 +4845,22 @@
 <tr class="odd">
 <td style="text-align: left;">STM32 USB Device Library</td>
 <td style="text-align: center;">V2.2.0</td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-mw-usb-device/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-mw-usb-device/blob/v2.11.6/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">STM32 TouchSensing Library</td>
 <td style="text-align: center;">V2.0.0</td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-mw-touchsensing/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-mw-touchsensing/blob/v2.2.13/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">FatFS</td>
 <td style="text-align: center;">R0.10</td>
-<td style="text-align: center;"><a href="https://github.com/STMicroelectronics/stm32-mw-fatfs/blob/TAG_stm32cube_DATE/doc/updates.txt">release notes</a> ST modified 20140912 <a href="https://github.com/STMicroelectronics/stm32-mw-fatfs/blob/TAG_stm32cube_DATE/src/st_readme.txt">release notes</a></td>
+<td style="text-align: center;"><a href="https://github.com/STMicroelectronics/stm32-mw-fatfs/blob/r0.11_stm32cube_20150508/doc/updates.txt">release notes</a> ST modified 20140912 <a href="https://github.com/STMicroelectronics/stm32-mw-fatfs/blob/r0.11_stm32cube_20150508/src/st_readme.txt">release notes</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">FreeRTOS</td>
 <td style="text-align: center;">V7.6.0</td>
-<td style="text-align: center;"><a href="https://github.com/STMicroelectronics/stm32-mw-freertos/blob/TAG_DATE/Source/readme.txt">release notes</a> ST modified 20140613 <a href="https://github.com/STMicroelectronics/stm32-mw-freertos/blob/TAG_DATE/Source/st_readme.txt">release notes</a></td>
+<td style="text-align: center;"><a href="https://github.com/STMicroelectronics/stm32-mw-freertos/blob/v10.0.1_20190329/Source/readme.txt">release notes</a> ST modified 20140613 <a href="https://github.com/STMicroelectronics/stm32-mw-freertos/blob/v10.0.1_20190329/Source/st_readme.txt">release notes</a></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">STemWin STemWinLibrary</td>
@@ -4523,17 +4901,17 @@
 </tr>
 </tbody>
 </table>
-<h2 id="known-limitations-13">Known Limitations</h2>
+<h2 id="known-limitations-14">Known Limitations</h2>
 <ul>
 <li>None</li>
 </ul>
-<h2 id="development-toolchains-and-compilers-13">Development Toolchains and Compilers</h2>
+<h2 id="development-toolchains-and-compilers-14">Development Toolchains and Compilers</h2>
 <ul>
 <li>IAR Embedded Workbench for ARM (EWARM) toolchain V7.10 + ST-LINK</li>
 <li>RealView Microcontroller Development Kit (MDK-ARM) toolchain V5.10 + ST-LINK</li>
 <li>Atollic TrueSTUDIO STM32 (TrueSTUDIO) toolchain V5.1.1 + ST-LINK</li>
 </ul>
-<h2 id="supported-devices-and-eval-boards-13">Supported Devices and EVAL boards</h2>
+<h2 id="supported-devices-and-eval-boards-14">Supported Devices and EVAL boards</h2>
 <ul>
 <li>All STM32F030, STM32F0x1, STM32F0x2 and STM32F0x8 product lines devices are supported</li>
 <li>STM32F072B-Discovery Board RevB (MB1076) and STM32F0308-Discovery Board RevA (MB1134)</li>
@@ -4542,11 +4920,11 @@
 <li>STM32091C-EVAL Board RevA (MB1169)</li>
 <li>Latest STM32 ST-LINK utility has to be used.</li>
 </ul>
-<h2 id="backward-compatibility-13">Backward Compatibility</h2>
+<h2 id="backward-compatibility-14">Backward Compatibility</h2>
 <ul>
 <li>None</li>
 </ul>
-<h2 id="dependencies-13">Dependencies</h2>
+<h2 id="dependencies-14">Dependencies</h2>
 <ul>
 <li>None</li>
 </ul>
@@ -4555,12 +4933,12 @@
 <div class="collapse">
 <input type="checkbox" id="collapse-section0000" aria-hidden="true"> <label for="collapse-section0000" aria-hidden="true"><strong>V1.0.0 / 18-June-2014</strong></label>
 <div>
-<h1 id="maintenance-release-19">Maintenance release</h1>
-<h2 id="main-changes-19">Main Changes</h2>
+<h1 id="maintenance-release-20">Maintenance release</h1>
+<h2 id="main-changes-20">Main Changes</h2>
 <ul>
 <li><strong>First official release of STM32CubeF0 (STM32Cube for STM32F0 Series)</strong></li>
 </ul>
-<h2 id="contents-18">Contents</h2>
+<h2 id="contents-19">Contents</h2>
 <table>
 <caption>Drivers</caption>
 <thead>
@@ -4609,32 +4987,32 @@
 <tr class="even">
 <td style="text-align: left;">BSP Components Common</td>
 <td style="text-align: center;">V1.1.0</td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-bsp-common/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-bsp-common/blob/v4.0.1/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">BSP Components l3gd20</td>
 <td style="text-align: center;">V1.1.0</td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-l3gd20/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-l3gd20/blob/v2.0.0/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">BSP Components hx8347d</td>
 <td style="text-align: center;">V1.0.0</td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-hx8347d/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-hx8347d/blob/v1.1.1/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">BSP Components spfd5408</td>
 <td style="text-align: center;">V1.0.0</td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-spfd5408/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-spfd5408/blob/v1.1.1/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">BSP Components st7735</td>
 <td style="text-align: center;">V1.0.0</td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-st7735/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-st7735/blob/v1.1.1/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">BSP Components stlm75</td>
 <td style="text-align: center;">V1.0.0</td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-stlm75/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-stlm75/blob/v1.0.2/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">BSP Adafruit_Shield</td>
@@ -4656,22 +5034,22 @@
 <tr class="odd">
 <td style="text-align: left;">STM32 USB Device Library</td>
 <td style="text-align: center;">V2.2.0</td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-mw-usb-device/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-mw-usb-device/blob/v2.11.6/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">STM32 TouchSensing Library</td>
 <td style="text-align: center;">V2.0.0</td>
-<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-mw-touchsensing/blob/TAG/Release_Notes.html">release notes</a></td>
+<td style="text-align: center;"><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-mw-touchsensing/blob/v2.2.13/Release_Notes.html">release notes</a></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">FatFS</td>
 <td style="text-align: center;">R0.10</td>
-<td style="text-align: center;"><a href="https://github.com/STMicroelectronics/stm32-mw-fatfs/blob/TAG_stm32cube_DATE/doc/updates.txt">release notes</a> ST modified 20140422 <a href="https://github.com/STMicroelectronics/stm32-mw-fatfs/blob/TAG_stm32cube_DATE/src/st_readme.txt">release notes</a></td>
+<td style="text-align: center;"><a href="https://github.com/STMicroelectronics/stm32-mw-fatfs/blob/r0.11_stm32cube_20150508/doc/updates.txt">release notes</a> ST modified 20140422 <a href="https://github.com/STMicroelectronics/stm32-mw-fatfs/blob/r0.11_stm32cube_20150508/src/st_readme.txt">release notes</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">FreeRTOS</td>
 <td style="text-align: center;">V7.6.0</td>
-<td style="text-align: center;"><a href="https://github.com/STMicroelectronics/stm32-mw-freertos/blob/TAG_DATE/Source/readme.txt">release notes</a> ST modified 20140613 <a href="https://github.com/STMicroelectronics/stm32-mw-freertos/blob/TAG_DATE/Source/st_readme.txt">release notes</a></td>
+<td style="text-align: center;"><a href="https://github.com/STMicroelectronics/stm32-mw-freertos/blob/v10.0.1_20190329/Source/readme.txt">release notes</a> ST modified 20140613 <a href="https://github.com/STMicroelectronics/stm32-mw-freertos/blob/v10.0.1_20190329/Source/st_readme.txt">release notes</a></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">STemWin STemWinLibrary</td>
@@ -4707,28 +5085,28 @@
 </tr>
 </tbody>
 </table>
-<h2 id="known-limitations-14">Known Limitations</h2>
+<h2 id="known-limitations-15">Known Limitations</h2>
 <ul>
 <li>None</li>
 </ul>
-<h2 id="development-toolchains-and-compilers-14">Development Toolchains and Compilers</h2>
+<h2 id="development-toolchains-and-compilers-15">Development Toolchains and Compilers</h2>
 <ul>
 <li>IAR Embedded Workbench for ARM (EWARM) toolchain V7.10 + ST-LINK</li>
 <li>RealView Microcontroller Development Kit (MDK-ARM) toolchain V5.10 + ST-LINK</li>
 <li>Atollic TrueSTUDIO STM32 (TrueSTUDIO) toolchain V5.0.0 + ST-LINK</li>
 </ul>
-<h2 id="supported-devices-and-eval-boards-14">Supported Devices and EVAL boards</h2>
+<h2 id="supported-devices-and-eval-boards-15">Supported Devices and EVAL boards</h2>
 <ul>
 <li>All STM32F030, STM32F0x1, STM32F0x2 and STM32F0x8 product lines devices are supported</li>
 <li>STM32F072B-Discovery Board RevB (MB1076) and STM32F0308-Discovery Board RevA (MB1134)</li>
 <li>STM32F072RB-Nucleo and STM32F030R8-Nucleo Board RevC (MB1136)</li>
 <li>STM32072B-EVAL Board RevA (MB1070)</li>
 </ul>
-<h2 id="backward-compatibility-14">Backward Compatibility</h2>
+<h2 id="backward-compatibility-15">Backward Compatibility</h2>
 <ul>
 <li>None</li>
 </ul>
-<h2 id="dependencies-14">Dependencies</h2>
+<h2 id="dependencies-15">Dependencies</h2>
 <ul>
 <li>None</li>
 </ul>
